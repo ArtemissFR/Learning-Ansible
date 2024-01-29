@@ -13,3 +13,6 @@
 - name: Apply fish by default
   ansible.builtin.shell: "chsh -s /usr/bin/fish"
   register: result
+
+ post_tasks:
+    - name: "The custom terminal has been installed !"
