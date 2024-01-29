@@ -29,4 +29,4 @@
         name: postgresql
         state: started
 
-- include_tasks: package_.yml
+- include_tasks: package_list.yml
