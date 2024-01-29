@@ -1,2 +1,1 @@
-#~ Learning Ansible ~
- By Louis Provost
+# ~ Learning Ansible ~
