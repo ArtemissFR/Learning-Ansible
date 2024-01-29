@@ -28,3 +28,5 @@
       ansible.builtin.service:
         name: postgresql
         state: started
+
+- include_tasks: package_.yml
