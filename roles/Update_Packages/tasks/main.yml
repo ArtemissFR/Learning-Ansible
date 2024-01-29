@@ -8,10 +8,10 @@
       ansible.builtin.yum:
         name: httpd
         state: latest
-    - name: Write the apache config file
-      ansible.builtin.template:
-        src: templates/page.j2
-        dest: /etc/httpd.conf
+    #- name: Write the apache config file
+    #  ansible.builtin.template:
+    #    src: templates/page.j2
+    #    dest: /etc/httpd.conf
 
 #################################################
 
