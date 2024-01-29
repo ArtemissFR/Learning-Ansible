@@ -1,0 +1,35 @@
+- name: Install Nmap
+  ansible.builtin.package:
+    name:
+      - nmap
+    state: present
+
+- name: Install Net-Tools
+  ansible.builtin.package:
+    name:
+      - net-tools
+    state: present
+
+- name: Install WGet
+  ansible.builtin.package:
+    name:
+      - wget
+    state: present
+
+- name: Install Curl
+  ansible.builtin.package:
+    name:
+      - curl
+    state: present
+
+- name: Install OpenSSH-Server
+  ansible.builtin.package:
+    name:
+      - openssh-server
+    state: present
+
+- name: Install WireShark
+  ansible.builtin.package:
+    name:
+      - wireshark
+    state: present
