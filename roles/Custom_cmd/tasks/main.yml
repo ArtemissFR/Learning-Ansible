@@ -1,0 +1,15 @@
+- name: Install Tilix
+  ansible.builtin.package:
+    name:
+      - tilix
+    state: present
+
+- name: Install Fish
+  ansible.builtin.package:
+    name:
+      - fish
+    state: present
+
+- name: Apply fish by default
+  ansible.builtin.shell: "chsh -s /usr/bin/fish"
+  register: result
