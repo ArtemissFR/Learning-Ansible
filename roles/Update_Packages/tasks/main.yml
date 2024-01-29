@@ -1,7 +1,7 @@
 ---
 - name: Update Web Servers
-  hosts: {{ var }}
-  remote_user: {{ var }}
+  hosts: Cluster-Zone
+  remote_user: root
 
   tasks:
     - name: Ensure apache is the latest version
@@ -16,8 +16,8 @@
 #################################################
 
 - name: Update DB Servers
-  hosts: {{ var }}
-  remote_user: {{ var }}
+  hosts: Cluster-Zone
+  remote_user: root
 
   tasks:
     - name: Ensure Postgresql is at the latest version
