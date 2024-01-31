@@ -1,0 +1,3 @@
+- name: Test reachability to Ansible using default vrf
+  cisco.ios.ios_ping:
+    dest: 10.2.2.10
