@@ -1,6 +1,11 @@
-- name: Testing the connection
-  hosts: 
-    - Routers
+---
+
+- hosts: Routers
+  gather_facts: False
+  connection: local
+
   tasks:
-    - name: Ping the hosts
-      ping:
+  - name: Ping test
+    shell: ping -c 1 -w 2 {{ ansible_host }}
+    delegate_to: localhost
+    ignore_errors: true
