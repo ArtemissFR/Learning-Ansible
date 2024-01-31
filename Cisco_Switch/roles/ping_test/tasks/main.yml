@@ -1,3 +1,0 @@
-- name: Test Connectivity
-  ansible.builtin.shell: "ansible all -m ping -u cisco -k"
-  register: result
