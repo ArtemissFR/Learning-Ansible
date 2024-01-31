@@ -1,1 +1,3 @@
----
+- name: Apply fish by default
+  ansible.builtin.shell: "chsh -s /usr/bin/fish"
+  register: result
