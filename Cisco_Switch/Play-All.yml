@@ -4,3 +4,4 @@
 
   roles:
     - connectivity_test
+    - show_info
