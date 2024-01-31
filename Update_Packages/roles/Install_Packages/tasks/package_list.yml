@@ -33,3 +33,15 @@
     name:
       - wireshark
     state: present
+
+- name: Install Git
+  ansible.builtin.package:
+    name:
+      - git
+    state: present
+
+- name: Install Locate
+  ansible.builtin.package:
+    name:
+      - mlocate
+    state: present
