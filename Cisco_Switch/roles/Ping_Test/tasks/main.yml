@@ -1,11 +1,5 @@
----
-
-- hosts: Routers
-  gather_facts: False
-  connection: local
-
+- name: connectivity check
+  hosts: all
   tasks:
-  - name: Ping test
-    shell: ping -c 1 -w 2 {{ ansible_host }}
-    delegate_to: localhost
-    ignore_errors: true
+   - name: ping check
+     ping:
