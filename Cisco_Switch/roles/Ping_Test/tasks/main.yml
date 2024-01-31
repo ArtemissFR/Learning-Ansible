@@ -1,5 +1,3 @@
-- name: connectivity check
-  hosts: all
-  tasks:
-   - name: ping check
-     ping:
+- name: Connectivity Check
+  ansible.builtin.shell: "ping {{ ansible_hosts }}"
+  register: result
