@@ -1,3 +1,0 @@
-- name: Connectivity Check
-  ansible.builtin.shell: "ping {{ ansible_hosts }}"
-  register: result
