@@ -1,0 +1,6 @@
+---
+- hosts: Routers
+  become: yes
+
+  roles:
+    - Ping_Test
