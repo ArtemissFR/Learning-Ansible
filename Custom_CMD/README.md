@@ -12,5 +12,3 @@
 
 ### Apply_Configuration.yml :
 - Apply *fish* by default
-
-Created by : Artemiss
