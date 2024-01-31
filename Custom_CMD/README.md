@@ -1,6 +1,6 @@
 # ~ Custom CMD ~
 
-## List of playbook :
+## List of roles :
 - Packages_Install.yml
 - Apply_Configuration.yml
 
