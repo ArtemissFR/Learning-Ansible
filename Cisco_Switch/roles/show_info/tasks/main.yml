@@ -3,3 +3,14 @@
     commands:
       - show version
       - show interfaces
+
+- name: Gather only the config and default facts
+  cisco.ios.ios_facts:
+    gather_subset:
+      - config
+
+# Test to see the difference :
+
+- name: Gather all legacy facts
+  cisco.ios.ios_facts:
+    gather_subset: all
