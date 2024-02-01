@@ -1,9 +1,15 @@
-# CISCO
+# ~ CISCO ~ 
 
-## List of playbook :
-- 
--
--
+## List of roles :
+- **"connectivity_test"**
+ --> 
+`Ping the remote nodes`
+- **"show_info"**
+ --> 
+`Show information about the version & the interfaces (need to do -v )`
+- **"conf_base"**
+ --> 
+`Configure the CISCO systems`
 
 ## [Important] - To edit :
 Edit : `/roles/conf_base/vars/main.yml` to configure *vars* for the CISCO configuration.
