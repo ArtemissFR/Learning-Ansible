@@ -29,12 +29,12 @@
 - name: Configure the Users
   ios_config:
     lines:
-    - username {{ USER }} password {{ PASSWORD }}
+    - username {{ CISCO_USER }} password {{ CISCO_PASS }}
 
 - name: "Enable" password configuration
   ios_config:
     lines: 
-    - enable secret {{ SECRET }}
+    - enable secret {{ CISCO_SECRET }}
 
 - name: Encrypt the passwords
   ios_config:
