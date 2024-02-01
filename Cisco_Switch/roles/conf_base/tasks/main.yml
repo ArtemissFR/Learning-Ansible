@@ -6,7 +6,7 @@
 
 - name: Configure Domain Name
   ios_system:
-    domain: ansible.local
+    domain: {{ DOMAIN }}
 
 - name: Configure DNS lookup sources
   ios_system:
@@ -15,13 +15,13 @@
 - name: Configure banner
   cisco.ios.ios_banner:
     banner: motd
-    text: "ACCESS NOT ALLOWED ! | This router is properties of Artemiss !"
+    text: "ACCESS NOT ALLOWED ! | This router is properties of Artemiss !" # Set your Banner here !
     state: present
 
 - name: Configure the login banner
   cisco.ios.ios_banner:
     banner: login
-    text: |
+    text: | # Set your login banner here !
       Banner of Login
       Please Register
     state: present
@@ -29,12 +29,12 @@
 - name: Configure the Users
   ios_config:
     lines:
-    - username admin password admin
+    - username {{ USER }} password {{ PASSWORD }}
 
 - name: "Enable" password configuration
   ios_config:
     lines: 
-    - enable secret hello
+    - enable secret {{ SECRET }}
 
 - name: Encrypt the passwords
   ios_config:
