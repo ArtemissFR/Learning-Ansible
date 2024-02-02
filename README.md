@@ -8,23 +8,20 @@ The project is organized as follows:
 
 ```
 /
-|-- tests/
-| |-- test1/
-| |-- test2/
+|-- Cisco_Switch/
+| |-- Play-All.yml
+| |-- roles/
 | |-- ...
-|-- roles/
-| |-- role1/
-| |-- role2/
+|-- Custom_CMD/
+| |-- Launch.yml
+| |-- roles/
 | |-- ...
-|-- inventories/
-|-- playbooks/
+|-- Update_Packages/
+| |-- Launch.yml
+| |-- roles/
+| |-- ...
 |-- README.md
 ```
-- **tests/** : Contains different Ansible tests, each in its own directory.
-- **roles/** : Ansible roles used in the tests, each role in its own directory.
-- **inventories/** : Ansible inventories for different environments.
-- **playbooks/** : Ansible playbooks to orchestrate various tasks.
-
 ## How to Use
 
 . **Clone the Project:**
