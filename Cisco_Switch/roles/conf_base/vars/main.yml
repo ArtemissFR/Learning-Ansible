@@ -1,7 +1,5 @@
 # Configure the file for your Cisco systems.
 
-DOMAIN: 'ansible.local'
-
 CISCO_USER: admin # Configure the User.
 CISCO_PASS: admin # Configure the password of the user.
 
