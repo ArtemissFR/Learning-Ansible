@@ -57,3 +57,10 @@
     name:
       - torcs
     state: present
+
+- name: Install Pip
+  ansible.builtin.package:
+    name:
+      - python3-pip
+      - pipx
+    state: present
