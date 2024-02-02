@@ -1,0 +1,6 @@
+- name: Enable and Add description do Interfaces
+  cisco.ios.ios_interfaces:
+    config:
+      - name: FastEthernet0/0
+        description: Configured by Artemiss
+        enabled: true
