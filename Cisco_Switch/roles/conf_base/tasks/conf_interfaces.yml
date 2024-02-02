@@ -5,6 +5,7 @@
        # For the Routers : The Switch will make an error.
         description: Routers Configured by Artemiss
         enabled: true
+        ignore_errors: true
 
 - name: Enable and Add description to Interfaces on Switch
   cisco.ios.ios_interfaces:
@@ -13,3 +14,4 @@
       # For the Switch : The Routers will make an error.
         description: Switch Configured by Artemiss
         enabled: true
+        ignore_errors: true
