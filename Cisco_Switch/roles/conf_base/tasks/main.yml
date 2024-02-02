@@ -12,9 +12,9 @@
   ios_system:
     lookup_enabled: yes
 
-- include_tasks: conf_interfaces
-- include_tasks: conf_banner
-- include_tasks: conf_security
+- include_tasks: conf_interfaces.yml
+- include_tasks: conf_banner.yml
+- include_tasks: conf_security.yml
 
 - name: Save the Configuration
   ios_config:
