@@ -3,4 +3,4 @@
 CISCO_USER: admin # Configure the User.
 CISCO_PASS: admin # Configure the password of the user.
 
-CISCO_SECRET: hello # "Enable" password configuration. --> password to put after -K option ansible.
+CISCO_SECRET: hello # "Enable" password configuration. --> this will become your 'BECOME password'.
