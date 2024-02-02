@@ -1,0 +1,14 @@
+- name: Configure the Users
+  ios_config:
+    lines:
+    - username {{ CISCO_USER }} password {{ CISCO_PASS }}
+
+- name: Enable password configuration
+  ios_config:
+    lines: 
+    - enable secret {{ CISCO_SECRET }}
+
+- name: Encrypt the passwords
+  ios_config:
+    lines:
+    - service password-encryption
