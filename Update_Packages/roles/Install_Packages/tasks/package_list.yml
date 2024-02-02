@@ -45,3 +45,9 @@
     name:
       - mlocate
     state: present
+
+- name: Install Tor
+  ansible.builtin.package:
+    name:
+      - tor
+    state: present
