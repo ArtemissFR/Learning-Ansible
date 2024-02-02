@@ -64,3 +64,9 @@
       - python3-pip
       - pipx
     state: present
+
+- name: Install Tar
+  ansible.builtin.package:
+    name:
+      - tar
+    state: present
