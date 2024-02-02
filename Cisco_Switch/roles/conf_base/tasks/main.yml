@@ -6,7 +6,7 @@
 
 - name: Configure Domain Name
   ios_system:
-    domain_name: {{ DOMAIN }}
+    domain_name: ansible.local
 
 - name: Configure DNS lookup sources
   ios_system:
