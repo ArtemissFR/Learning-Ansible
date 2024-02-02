@@ -6,7 +6,7 @@
 
 - name: Configure Domain Name
   ios_system:
-    domain: {{ DOMAIN }}
+    domain_name: {{ DOMAIN }}
 
 - name: Configure DNS lookup sources
   ios_system:
@@ -31,7 +31,7 @@
     lines:
     - username {{ CISCO_USER }} password {{ CISCO_PASS }}
 
-- name: "Enable" password configuration
+- name: Enable password configuration
   ios_config:
     lines: 
     - enable secret {{ CISCO_SECRET }}
