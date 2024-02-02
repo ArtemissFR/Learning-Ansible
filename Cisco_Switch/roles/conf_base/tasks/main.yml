@@ -19,7 +19,3 @@
 - name: Save the Configuration
   ios_config:
     save_when: changed
-
-- name: Message
-      debug:
-        msg: "The configuration has been done successfully !"
