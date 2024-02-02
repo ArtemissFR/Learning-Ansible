@@ -5,3 +5,4 @@
   roles:
     - connectivity_test
     - show_info
+    - conf_base
