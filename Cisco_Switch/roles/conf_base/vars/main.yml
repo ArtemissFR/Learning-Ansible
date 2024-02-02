@@ -4,3 +4,6 @@ CISCO_USER: admin # Configure the User.
 CISCO_PASS: admin # Configure the password of the user.
 
 CISCO_SECRET: hello # "Enable" password configuration. --> this will become your 'BECOME password'.
+
+ROUTERS_INT: FastEthernet0/0 # Configure the interface of the Routers here !
+SWITCH_INT: GigabitEthernet0/0 # Configure the interface of the Switchs here !
