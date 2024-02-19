@@ -9,6 +9,3 @@
     name:
       - fish
     state: present
-
- post_tasks:
-    - name: "The custom terminal has been installed !"
