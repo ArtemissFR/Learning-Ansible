@@ -28,11 +28,11 @@
       - openssh-server
     state: present
 
-- name: Install WireShark
-  ansible.builtin.package:
-    name:
-      - wireshark
-    state: present
+#- name: Install WireShark
+#  ansible.builtin.package:
+#    name:
+#      - wireshark
+#    state: present
 
 - name: Install Git
   ansible.builtin.package:
