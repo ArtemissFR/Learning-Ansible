@@ -1,3 +1,0 @@
-# Simple Tasks
-
-## Target = localhost
