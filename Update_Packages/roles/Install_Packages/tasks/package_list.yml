@@ -70,3 +70,9 @@
     name:
       - tar
     state: present
+
+- name: Install Traceroute
+  ansible.builtin.package:
+    name:
+      - traceroute
+    state: present
