@@ -1,6 +1,6 @@
 # Configure the file for your Cisco systems.
 
-DOMAIN: ansible.lan
+DOMAIN: ansible.lan # Configure the domain.
 
 CISCO_USER: admin # Configure the User.
 CISCO_PASS: admin # Configure the password of the user.
@@ -10,5 +10,5 @@ CISCO_SECRET: cisco # "Enable" password configuration. --> this will become your
 ROUTERS_INT: FastEthernet0/0 # Configure the interface of the Routers here !
 SWITCH_INT: GigabitEthernet0/0 # Configure the interface of the Switchs here !
 
-BANNER_TEXT: "Artemiss Banner"
-LOGIN_BANNER_TEXT: "Artemiss Login Banner"
+BANNER_TEXT: "Artemiss Banner" # Configure your banner here.
+LOGIN_BANNER_TEXT: "Artemiss Login Banner" # Configure your login banner here.
