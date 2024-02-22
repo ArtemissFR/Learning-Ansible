@@ -1,0 +1,2 @@
+#Edit this variable and set the ip of your Ansible Manager. (this local host)
+ANSIBLE_MANAGER: 10.5.5.200
