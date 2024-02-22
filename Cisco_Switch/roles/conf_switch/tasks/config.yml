@@ -17,3 +17,4 @@
         state: active
         shutdown: disabled
       state: merged
+    ignore_errors: true
