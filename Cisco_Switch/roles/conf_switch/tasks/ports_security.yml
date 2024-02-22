@@ -61,3 +61,30 @@
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
       parents: interface Ethernet5/2
+
+  - name: Security config of port Ethernet5/3
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet5/3
+
+  - name: Security config of port Ethernet6/0
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet6/0
+
+  - name: Security config of port Ethernet6/1
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet6/1
