@@ -2,18 +2,45 @@
   - name: Affectation of the VLAN to the interfaces
     ios_l2_interfaces:
       config:
-      - name: Vlan_10
-        vlan_id: 10
-        state: active
-        shutdown: disabled
+      - name: Ethernet4/0
+        mode: access
+        access: 
+          vlan: 10
+          
+      - name: Ethernet4/1
+        mode: access
+        access: 
+          vlan: 10
 
-      - name: Vlan_20
-        vlan_id: 20
-        state: active
-        shutdown: enabled
+      - name: Ethernet4/2
+        mode: access
+        access: 
+          vlan: 10
 
-      - name: Vlan_30
-        vlan_id: 30
-        state: active
-        shutdown: disabled
+      - name: Ethernet4/3
+        mode: access
+        access: 
+          vlan: 10
+
+      - name: Ethernet9/0
+        mode: trunk
+        trunk:
+          allowed_vlans: 10,30,40
+          encapsulation: dot1q
+
+      - name: Ethernet9/1
+        mode: trunk
+        trunk:
+          allowed_vlans: 10,30,40
+          encapsulation: dot1q
+
+      - name: Ethernet5/1
+        mode: access
+        access:
+          vlan: 20
+
+      - name: Ethernet6/0-3
+        mode: access
+        access:
+          vlan: 30
       state: merged
