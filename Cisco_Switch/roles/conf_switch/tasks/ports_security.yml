@@ -1,0 +1,63 @@
+---
+  - name: Security config of all ports
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet4/0
+
+  - name: Security config of port Ethernet4/3
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet4/1
+
+  - name: Security config of port Ethernet4/2
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet4/2
+
+  - name: Security config of port Ethernet4/3
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet4/3
+
+  - name: Security config of port Ethernet5/0
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet5/0
+
+  - name: Security config of port Ethernet5/1
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet5/1
+
+  - name: Security config of port Ethernet5/2
+    ios_config:
+      lines:
+      - switchport port-security
+      - switchport port-security maximum 10
+      - switchport port-security mac-address sticky
+      - switchport port-security violation shutdown
+      parents: interface Ethernet5/2
