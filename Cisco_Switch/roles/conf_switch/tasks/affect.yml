@@ -35,3 +35,4 @@
         access:
           vlan: 30
       state: merged
+    ignore_errors: true
