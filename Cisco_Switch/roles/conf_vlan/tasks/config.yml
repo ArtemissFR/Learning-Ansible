@@ -1,1 +1,19 @@
+---
+  - name: Config of the VLAN 10 and 20 on the Switchs
+    ios_vlans:
+      config:
+      - name: Vlan_10
+        vlan_id: 10
+        state: active
+        shutdown: disabled
 
+      - name: Vlan_20
+        vlan_id: 20
+        state: active
+        shutdown: enabled
+
+      - name: Vlan_30
+        vlan_id: 30
+        state: active
+        shutdown: disabled
+      state: merged
