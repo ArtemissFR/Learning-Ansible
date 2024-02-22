@@ -17,5 +17,4 @@
 ## [*Important*] - To edit :
 Edit : `/roles/conf_base/vars/main.yml` / `/roles/conf_switch/vars/main.yml` / `/roles/connectivity_test/vars/main.yml` to configure *vars* for the Ansible playbook configuration.
 
-![Logo](https://www.pngall.com/wp-content/uploads/13/Cisco-Logo-PNG-Image-180x180.png)
-![Logo](https://d31ezp3r8jwmks.cloudfront.net/DAFukNr4EL6VYqG5SkXBBS9D)
+![Logo](https://media.licdn.com/dms/image/D5612AQHnijgzV7qlCw/article-cover_image-shrink_600_2000/0/1698729502059?e=2147483647&v=beta&t=qJcTqaDJWis2hXc1G9l3xo-Z_FI3AuV85Laij_-ZRbI)
