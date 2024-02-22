@@ -8,7 +8,7 @@
       - switchport port-security violation shutdown
       parents: interface Ethernet4/0
 
-  - name: Security config of port Ethernet4/3
+  - name: Security config of port Ethernet4/0
     ios_config:
       lines:
       - switchport port-security
