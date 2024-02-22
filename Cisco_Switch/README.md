@@ -10,6 +10,9 @@
 - **"conf_base"**
  --> 
 `Configure the CISCO systems`
+- **"conf_switch"**
+ --> 
+`Configure the switchs`
 
 ## [*Important*] - To edit :
 Edit : `/roles/conf_base/vars/main.yml` to configure *vars* for the CISCO configuration.
