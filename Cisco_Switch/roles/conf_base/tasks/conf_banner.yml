@@ -7,5 +7,5 @@
 - name: Configure the login banner
   cisco.ios.ios_banner:
     banner: login
-    text: | "{{ LOGIN_BANNER_TEXT }}"  # Set your Login Banner here !
+    text: "{{ LOGIN_BANNER_TEXT }}"  # Set your Login Banner here !
     state: present
