@@ -6,85 +6,85 @@
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet4/0
+      parents: interface GigabitEthernet2/0
 
-  - name: Security config of port GigabitEthernet4/0
+  - name: Security config of port GigabitEthernet2/1
     ios_config:
       lines:
       - switchport port-security
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet4/1
+      parents: interface GigabitEthernet2/1
 
-  - name: Security config of port GigabitEthernet4/2
+  - name: Security config of port GigabitEthernet2/2
     ios_config:
       lines:
       - switchport port-security
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet4/2
+      parents: interface GigabitEthernet2/2
 
-  - name: Security config of port GigabitEthernet4/3
+  - name: Security config of port GigabitEthernet2/3
     ios_config:
       lines:
       - switchport port-security
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet4/3
+      parents: interface GigabitEthernet2/3
 
-  - name: Security config of port GigabitEthernet5/0
+  - name: Security config of port GigabitEthernet1/1
     ios_config:
       lines:
       - switchport port-security
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet5/0
+      parents: interface GigabitEthernet1/1
 
-  - name: Security config of port GigabitEthernet5/1
+  - name: Security config of port GigabitEthernet1/2
     ios_config:
       lines:
       - switchport port-security
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet5/1
+      parents: interface GigabitEthernet1/2
 
-  - name: Security config of port GigabitEthernet5/2
+  - name: Security config of port GigabitEthernet1/3
     ios_config:
       lines:
       - switchport port-security
       - switchport port-security maximum 10
       - switchport port-security mac-address sticky
       - switchport port-security violation shutdown
-      parents: interface GigabitEthernet5/2
+      parents: interface GigabitEthernet1/3
 
-  - name: Security config of port GigabitEthernet5/3
-    ios_config:
-      lines:
-      - switchport port-security
-      - switchport port-security maximum 10
-      - switchport port-security mac-address sticky
-      - switchport port-security violation shutdown
-      parents: interface GigabitEthernet5/3
+#  - name: Security config of port GigabitEthernet(*/*)
+#    ios_config:
+#      lines:
+#      - switchport port-security
+#      - switchport port-security maximum 10
+#      - switchport port-security mac-address sticky
+#      - switchport port-security violation shutdown
+#      parents: interface GigabitEthernet(*/*)
 
-  - name: Security config of port GigabitEthernet6/0
-    ios_config:
-      lines:
-      - switchport port-security
-      - switchport port-security maximum 10
-      - switchport port-security mac-address sticky
-      - switchport port-security violation shutdown
-      parents: interface GigabitEthernet6/0
+#  - name: Security config of port GigabitEthernet(*/*)
+#    ios_config:
+#      lines:
+#      - switchport port-security
+#      - switchport port-security maximum 10
+#      - switchport port-security mac-address sticky
+#      - switchport port-security violation shutdown
+#      parents: interface GigabitEthernet(*/*)
 
-  - name: Security config of port GigabitEthernet6/1
-    ios_config:
-      lines:
-      - switchport port-security
-      - switchport port-security maximum 10
-      - switchport port-security mac-address sticky
-      - switchport port-security violation shutdown
-      parents: interface GigabitEthernet6/1
+#  - name: Security config of port GigabitEthernet(*/*)
+#    ios_config:
+#      lines:
+#      - switchport port-security
+#      - switchport port-security maximum 10
+#      - switchport port-security mac-address sticky
+#      - switchport port-security violation shutdown
+#      parents: interface GigabitEthernet(*/*)
