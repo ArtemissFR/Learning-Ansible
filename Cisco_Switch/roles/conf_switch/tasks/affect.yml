@@ -30,9 +30,9 @@
         access:
           vlan: 20
 
-      - name: GigabitEthernet3/0-3
-        mode: access
-        access:
-          vlan: 30
-      state: merged
+#      - name: GigabitEthernet3/0-3
+#        mode: access
+#        access:
+#          vlan: 30
+#      state: merged
     ignore_errors: true
