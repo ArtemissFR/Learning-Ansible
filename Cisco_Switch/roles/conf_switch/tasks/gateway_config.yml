@@ -1,4 +1,5 @@
 ---
   - name: Configuration of the default gateway on the switchs
     ios_config:
-      lines: ip default-gateway "{{ DEFAULT_GATEWAY }}"
+      lines: 
+        - ip default-gateway "{{ DEFAULT_GATEWAY }}"
