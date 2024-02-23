@@ -19,16 +19,6 @@
       parents: interface GigabitEthernet2/1
     ignore_errors: true
 
-  - name: Security config of port GigabitEthernet2/2
-    ios_config:
-      lines:
-      - switchport port-security
-      - switchport port-security maximum 10
-      - switchport port-security mac-address sticky
-      - switchport port-security violation shutdown
-      parents: interface GigabitEthernet2/2
-    ignore_errors: true
-
   - name: Security config of port GigabitEthernet2/3
     ios_config:
       lines:
