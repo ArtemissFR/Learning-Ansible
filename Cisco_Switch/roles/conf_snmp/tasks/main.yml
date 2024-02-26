@@ -1,0 +1,7 @@
+--- 
+  - name: Configuration of SNMP public and private
+    ios_config:
+      commands:
+        - snmp-server community ansible-cisco-public RO
+        - snmp-server community ansible-cisco-private RW
+        - snmp-server community ansible-cisco-private-test RW
