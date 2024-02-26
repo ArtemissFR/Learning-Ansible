@@ -52,11 +52,11 @@
       - tor
     state: present
 
-- name: Install Torcs (Cars Game)
-  ansible.builtin.package:
-    name:
-      - torcs
-    state: present
+#- name: Install Torcs (Cars Game)
+#  ansible.builtin.package:
+#    name:
+#      - torcs
+#    state: present
 
 - name: Install Pip
   ansible.builtin.package:
