@@ -1,0 +1,7 @@
+---
+- hosts: CISCO
+  become: yes
+
+  roles:
+    - connectivity_test
+    - show_info
