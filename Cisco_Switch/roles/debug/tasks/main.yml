@@ -31,10 +31,10 @@
   debug:
      var: config_
 
-- name: Show config results
+- name: Show hardware results
   debug:
      var: hardware_
 
-- name: Show config results
+- name: Show interfaces results
   debug:
      var: interfaces_
