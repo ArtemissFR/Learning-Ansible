@@ -4,6 +4,7 @@
       - show mac address-table
   tags: show_mac
   register: show_output
+  ignore_errors: true
 
 - name: Display the command output
   debug:
