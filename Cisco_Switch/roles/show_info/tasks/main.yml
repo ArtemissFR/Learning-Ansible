@@ -8,3 +8,11 @@
 - name: Show info results
   debug:
      var: info_
+
+- name: Show the hostname
+  debug:
+     msg: "The name of the hostname is : {{ ansible_net_hostname }}"
+
+- name: Show the IpV4 information
+  debug:
+     msg: "The name of the hostname is : {{ ansible_net_all_ipv4_addresses }}"
