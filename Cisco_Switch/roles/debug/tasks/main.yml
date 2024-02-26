@@ -46,3 +46,5 @@
 - name: Show the IpV4 information
   debug:
      msg: "The Ip of this machine is : {{ ansible_net_all_ipv4_addresses }}"
+
+- include_tasks: show_mac.yml
