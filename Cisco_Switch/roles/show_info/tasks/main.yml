@@ -4,7 +4,7 @@
       - show version
       - show interfaces
 
-- name: Gather all legacy facts
+- name: Gather config legacy facts
   cisco.ios.ios_facts:
     gather_subset: 
     - config                        # You can replace this by : [config, default, hardware, interfaces, all]
