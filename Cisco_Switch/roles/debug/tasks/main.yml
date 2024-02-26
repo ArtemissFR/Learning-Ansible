@@ -45,4 +45,4 @@
 
 - name: Show the IpV4 information
   debug:
-     msg: "The name of the hostname is : {{ ansible_net_all_ipv4_addresses }}"
+     msg: "The Ip of this machine is : {{ ansible_net_all_ipv4_addresses }}"
