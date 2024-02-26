@@ -1,0 +1,11 @@
+- name: Collect Mac-address table
+  ios_command:
+    commands:
+      - show mac address-table
+    tags: show_mac
+    register: show_output
+
+- name: Display the command output
+  debug:
+    var: show_output
+  tags: show_mac
