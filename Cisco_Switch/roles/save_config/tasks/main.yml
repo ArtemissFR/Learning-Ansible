@@ -1,0 +1,15 @@
+---
+  - name: Execute write memory
+    ios_config:
+      commands:
+        - do write memory
+
+  - name: Do "Show run" command
+    ios_config:
+      commands:
+        - show run
+    register: show_run
+
+  - name: Show result of "show run"
+    debug:
+      var: show_run
