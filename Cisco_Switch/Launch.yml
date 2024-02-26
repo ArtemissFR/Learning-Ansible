@@ -7,3 +7,4 @@
     - show_info
     - conf_base
     - conf_switch
+    - conf_snmp
