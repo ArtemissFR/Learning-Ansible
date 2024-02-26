@@ -7,9 +7,9 @@
 - name: Gather all legacy facts
   cisco.ios.ios_facts:
     gather_subset: 
-    - all                        # You can replace this by : [config, default, hardware, interfaces]
-  register: all_
+    - config                        # You can replace this by : [config, default, hardware, interfaces, all]
+  register: config_
 
 - name: Show results
   debug:
-     var: all_
+     var: config_
