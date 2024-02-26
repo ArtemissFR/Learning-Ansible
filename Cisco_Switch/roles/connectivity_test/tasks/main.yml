@@ -2,3 +2,7 @@
   cisco.ios.ios_ping:
     dest: "{{ ANSIBLE_MANAGER }}"
   register: connection_
+
+- name: Show connection results
+  debug:
+     var: connection_
