@@ -5,36 +5,6 @@
       - show interfaces
   register: info_
 
-- name: Gather config legacy facts
-  cisco.ios.ios_facts:
-    gather_subset: 
-    - config                        # You can replace this by : [config, default, hardware, interfaces, all]
-  register: config_
-
-- name: Gather hardware legacy facts
-  cisco.ios.ios_facts:
-    gather_subset: 
-    - hardware
-  register: hardware_  
-
-- name: Gather interfaces legacy facts
-  cisco.ios.ios_facts:
-    gather_subset: 
-    - hardware
-  register: interfaces_ 
-
 - name: Show info results
   debug:
      var: info_
-
-- name: Show config results
-  debug:
-     var: config_
-
-- name: Show config results
-  debug:
-     var: hardware_
-
-- name: Show config results
-  debug:
-     var: interfaces_
