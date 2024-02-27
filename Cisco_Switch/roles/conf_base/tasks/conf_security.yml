@@ -18,6 +18,6 @@
     lines:
     - username scp privilege 15 password {{ CISCO_SCP_PASS }}
 
-  - name: Enable scp server
-    ios_config:
-      lines: ip scp server enable 
+- name: Enable scp server
+  ios_config:
+    lines: ip scp server enable 
