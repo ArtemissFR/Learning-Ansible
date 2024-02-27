@@ -1,5 +1,7 @@
 ---
   - name: Enable scp server
+    ios_config:
+      lines: ip scp server enable 
 
   - name: Copy running config
     command:  
