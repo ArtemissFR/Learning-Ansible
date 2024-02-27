@@ -1,11 +1,21 @@
 ---
-  - name: Copy running config
-    command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
-    ignore_errors: true
+#  - name: Copy running config
+#    command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
+#    ignore_errors: true
+#
+#  - name: Config replace
+#    remote_user: scp
+#    ios_command:
+#      commands:
+#        - "config replace flash:{{ inventory_hostname }}_latest.config force"
+#    ignore_errors: true
 
-  - name: Config replace
-    remote_user: scp
-    ios_command:
-      commands:
-        - "config replace flash:{{ inventory_hostname }}_latest.config force"
-    ignore_errors: true
+  - name: test copy
+    ansible.builtin.copy:
+      src: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}_latest.config"
+      dest: "cisco@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
+
+#  - name: test copy 2
+#    ansible.builtin.fetch:
+#      src: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}_latest.config"
+#      dest: "cisco@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
