@@ -1,8 +1,13 @@
 ---
-  - name: Configurable backup path
-    cisco.ios.ios_config:
-      src: ios_template.j2
-      backup: true
-      backup_options:
-        filename: backup.cfg
-        dir_path: /home/user
+#  - name: Configurable backup path
+#    cisco.ios.ios_config:
+#      src: ios_template.j2
+#      backup: true
+#      backup_options:
+#        filename: backup.cfg
+#        dir_path: /home/user
+
+  - name: Backup config
+    ios_config:
+      backup: yes
+    register: config_output
