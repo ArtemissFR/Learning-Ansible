@@ -5,6 +5,8 @@ DOMAIN: ansible.lan # Configure the domain.
 CISCO_USER: admin # Configure the User.
 CISCO_PASS: admin # Configure the password of the user.
 
+CISCO_SCP_PASS: cisco # Configure the SCP user password.
+
 CISCO_SECRET: cisco # "Enable" password configuration. --> this will become your 'BECOME password'.
 
 ROUTERS_INT: FastEthernet0/0 # Configure the interface of the Routers here !
