@@ -9,13 +9,15 @@
 
   - name: Remove none important lines +1
     lineinfile:
-      path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}.config"
+      path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/*.config"
+#      path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}.config"
       regex: 'Building configuration.*'
       state: absent
 
   - name: Remove none important lines +2
     lineinfile:
       path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/*.config"
+#      path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}.config"
       regex: 'Current configuration.*'
       state: absent
 
