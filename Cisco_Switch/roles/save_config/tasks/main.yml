@@ -5,17 +5,6 @@
         - do write memory
     register: write_memory
 
-  - name: Get the Running config
-    ios_command:
-      commands:
-        - show run
-    register: show_output
-    ignore_errors: true
-
 #  - name: Display the write memory result
 #    debug:
 #      var: write_memory
-
-  - name: Display the running config
-    debug:
-      var: show_output
