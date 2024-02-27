@@ -1,0 +1,9 @@
+---
+  - name: Backup Routers and Switchs
+    hosts: S1
+    gather_facts: no
+
+    tasks:
+    - name: Copy running config
+      command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
+      ignore_errors: true
