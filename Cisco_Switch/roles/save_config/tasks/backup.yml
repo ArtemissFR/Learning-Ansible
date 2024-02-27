@@ -3,7 +3,7 @@
     ios_config:
       backup: yes
       backup_options: 
-        filename: "{{ inventory_hostname }}.config"
+#        filename: "{{ inventory_hostname }}.config"
         dir_path: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup
     register: config_output
 
