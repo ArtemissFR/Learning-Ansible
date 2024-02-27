@@ -1,0 +1,6 @@
+---
+- hosts: CISCO
+  become: yes
+
+  roles:
+    - restore_conf
