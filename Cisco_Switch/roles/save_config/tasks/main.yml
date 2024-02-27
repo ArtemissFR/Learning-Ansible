@@ -9,5 +9,5 @@
 #    debug:
 #      var: write_memory
 
-- include_tasks: show_run.yml
-- include_tasks: backup.yml
+  - include_tasks: show_run.yml
+  - include_tasks: backup.yml
