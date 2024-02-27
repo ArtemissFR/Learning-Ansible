@@ -3,6 +3,7 @@
     command:  "scp backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
 
   - name: Config replace
+    remote_user: cisco
     ios_command:
       commands:
         - "config replace flash:{{ inventory_hostname }}_latest.config force"
