@@ -1,0 +1,6 @@
+---
+- hosts: CISCO
+  become: yes
+
+  roles:
+    - save_config
