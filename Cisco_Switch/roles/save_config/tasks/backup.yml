@@ -8,7 +8,7 @@
     register: config_output
 
   - name: Remove no line commands
-    lineinline:
+    lineinfile:
       path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}.config"
       regex: 'Building configuration.*'
       state: absent
