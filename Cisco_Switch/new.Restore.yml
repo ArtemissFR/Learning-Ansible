@@ -5,5 +5,9 @@
 
     tasks:
     - name: Copy running config
-      command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
+      ansible.builtin.expect:
+        command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
+        responses:
+          (?i)password: "cisco"
+      #no_log: true #Activate this to not see the password !
       ignore_errors: true
