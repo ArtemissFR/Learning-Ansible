@@ -21,7 +21,7 @@
       regex: 'Current configuration.*'
       state: absent
 
-#  - name: Copy & Rename Backup
-#    copy:
-#      src: "{{ config_output.backup_path }}"
-#      dest: "./backup/{{ inventory_hostname }}.config"
+  - name: Copy & Rename Backup
+    copy:
+      src: "{{ config_output.backup_path }}"
+      dest: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}_latest.config"
