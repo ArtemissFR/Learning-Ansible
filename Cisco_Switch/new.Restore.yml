@@ -1,6 +1,6 @@
 ---
   - name: Backup Routers and Switchs
-    hosts: S1
+    hosts: S1,S2,S3
     gather_facts: no
 
     tasks:
