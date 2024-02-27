@@ -1,12 +1,4 @@
 ---
-#  - name: Configurable backup path
-#    cisco.ios.ios_config:
-#      src: ios_template.j2
-#      backup: true
-#      backup_options:
-#        filename: backup.cfg
-#        dir_path: /home/user
-
   - name: Backup config
     ios_config:
       backup: yes
@@ -15,6 +7,12 @@
         dir_path: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup
     register: config_output
 
+  - name: Remove no line commands
+    lineinline:
+      path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}.config"
+      regex: 'Building configuration.*'
+      state: absent
+      
 #  - name: Rename Backup
 #    copy:
 #      src: "{{ config_output.backup_path }}"
