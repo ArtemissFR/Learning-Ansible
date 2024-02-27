@@ -1,0 +1,5 @@
+---
+  - name: Enable scp server
+
+  - name: Copy running config
+    command:  
