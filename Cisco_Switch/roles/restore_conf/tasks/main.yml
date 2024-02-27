@@ -4,7 +4,7 @@
     ignore_errors: true
 
   - name: Config replace
-    remote_user: cisco
+    remote_user: scp
     ios_command:
       commands:
         - "config replace flash:{{ inventory_hostname }}_latest.config force"
