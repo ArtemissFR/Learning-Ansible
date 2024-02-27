@@ -4,12 +4,13 @@
       commands:
         - do write memory
 
-  - name: Do "Show run" command
-    ios_config:
+  - name: Get the Running config
+    ios_command:
       commands:
         - show run
-    register: show_run
+    register: show_output
+    ignore_errors: true
 
-  - name: Show result of "show run"
+  - name: Display the running config
     debug:
-      var: show_run
+      var: show_output
