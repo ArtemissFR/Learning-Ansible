@@ -12,7 +12,7 @@
       backup: yes
       backup_options: 
         filename: "{{ inventory_hostname }}-{{ date }}.config"
-        dir_path: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/backup
+        dir_path: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup
     register: config_output
 
 #  - name: Rename Backup
