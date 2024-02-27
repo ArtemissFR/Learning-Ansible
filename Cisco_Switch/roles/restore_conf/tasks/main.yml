@@ -1,6 +1,6 @@
 ---
   - name: Copy running config
-    command:  "scp backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
+    command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
     ignore_errors: true
 
   - name: Config replace
