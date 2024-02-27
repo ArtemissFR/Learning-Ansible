@@ -8,3 +8,6 @@
 #  - name: Display the write memory result
 #    debug:
 #      var: write_memory
+
+- include_tasks: show_run.yml
+- include_tasks: backup.yml
