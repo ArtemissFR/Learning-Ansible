@@ -8,6 +8,3 @@
         - snmp-server community {{ SNMP_PUBLIC }} RO
         - snmp-server community {{ SNMP_PRIVATE }} RW
         - snmp-server community {{ SNMP_PRIVATE_TEST }} RW
-#        - snmp-server community ansible-cisco-public RO
-#        - snmp-server community ansible-cisco-private RW
-#        - snmp-server community ansible-cisco-private-test RW
