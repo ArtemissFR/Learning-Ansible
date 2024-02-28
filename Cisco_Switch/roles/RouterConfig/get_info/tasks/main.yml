@@ -21,5 +21,5 @@
   - name: Gather hardware facts
     cisco.ios.ios_facts:
       gather_subset: 
-      - harware
+      - hardware
     register: hardware_
