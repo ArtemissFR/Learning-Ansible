@@ -14,3 +14,15 @@
     - name: Print a message
       ansible.builtin.debug:
         msg: 'Logging in as {{ username }}'
+
+
+###
+  vars_prompt:
+    - name: "test_connectivity"
+      prompt: "[???] Do you want to test the connection (yes/no) ?"
+      private: no
+
+  tasks:
+    - include_tasks: ./roles/connectivity_test/tasks/main.yml
+      when: test_connectivity | bool
+###
