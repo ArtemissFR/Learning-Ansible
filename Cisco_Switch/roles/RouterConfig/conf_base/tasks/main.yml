@@ -1,7 +1,7 @@
 ---
 ######################################HOSTNAME######################################
 
-  - name: Hostname Asking
+  - name: Hostname
     pause:
       prompt: "Which hostname would you like to set for you Router ? ( {{ inventory_hostname }} by default)
     register: HOSTNAME
@@ -14,7 +14,7 @@
 
 ######################################DOMAIN######################################
 
-  - name: Domain Asking
+  - name: Domain
     pause:
       prompt: "Which domain would you like to set ? 
     register: DOMAIN
@@ -27,7 +27,7 @@
 
 ######################################DNS-LOOKUP######################################
 
-   - name: DNS_Lookup Asking
+   - name: DNS_Lookup
       pause:
         prompt: "Would you like to activate the DNS lookup ? (yes/no)
       register: DNS_LOOKUP
@@ -38,7 +38,12 @@
     when: DNS_LOOKUP | bool
 ######################################DNS-LOOKUP######################################
 
+######################################INTERFACE######################################
 
-
+   - name: Interface
+      pause:
+        prompt: "Would you like to customise an interface ? (yes/no)
+      register: INT_CHOICE
 
   - include_tasks: interface_conf.yml
+    when: INT_CHOISE | bool
