@@ -11,3 +11,5 @@
     ios_system:
       lookup_enabled: yes
     when: dns_lookup | bool
+
+  - include_tasks: interface_conf.yml
