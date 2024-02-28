@@ -8,7 +8,7 @@
       gather_subset: 
       - '!all'
       - '!min'
-      gather_network_ressources:
+      gather_network_resources:
       - interfaces
     register: interfaces_
 
