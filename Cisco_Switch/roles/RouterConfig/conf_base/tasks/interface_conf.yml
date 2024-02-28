@@ -4,9 +4,9 @@
       var: interfaces_
 
   - name: Interface
-      pause:
-        prompt: "[???] Which router interface would you like to set ? "
-      register: ROUTER_INT
+    pause:
+      prompt: "[???] Which router interface would you like to set ? "
+    register: ROUTER_INT
 
   - name: Enable {{ ROUTER_INT.user_input }} Interface on Router
     cisco.ios.ios_interfaces:
