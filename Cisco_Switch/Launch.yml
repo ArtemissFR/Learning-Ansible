@@ -10,7 +10,7 @@
 
     - name: BANNER_TEXT
       prompt: What banner would you like to set ? [default:Banner]
-      default: "Artemiss Banner"
+      default: "Banner"
       private: false
 
     - name: LOGIN_BANNER_TEXT
