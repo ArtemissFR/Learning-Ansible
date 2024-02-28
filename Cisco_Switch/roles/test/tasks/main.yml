@@ -1,6 +1,0 @@
-- name: Bare include (free-form)
-  ansible.builtin.include_vars: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/vars.yml
-
-- name: test vars
-  debug:
-     msg: "The Ip of this machine is : {{ USER }}"
