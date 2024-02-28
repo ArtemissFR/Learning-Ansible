@@ -32,5 +32,5 @@
 
   - name: Convert Interfaces facts in List
     set_fact:
-      interface_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
+      interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
 #########################################CONVERT#########################################
