@@ -3,6 +3,8 @@
     debug:
        msg: "This role will collect information about {{ inventory_hostname }} to help you !"
 
+#########################################GATHER#########################################
+
   - name: Gather interfaces facts
     cisco.ios.ios_facts:
       gather_subset: 
@@ -24,14 +26,11 @@
       - hardware
     register: hardware_
 
-#########################################
-  - name: List of Interfaces
-    debug:
-      var: interfaces_
+#########################################GATHER#########################################
 
-  - name: Display all interfaces names
-    ansible.builtin.debug:
-      var: interfaces_
-    loop: "{{ domain_definition | community.general.json_query('interfaces_.ansible_facts.ansible_network_resources.interfaces[*].name') }}"
+#########################################CONVERT#########################################
 
-#########################################
+  - name: Convert Interfaces facts in List
+    set_fact:
+      interface_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
+#########################################CONVERT#########################################
