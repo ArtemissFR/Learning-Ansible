@@ -6,6 +6,9 @@
   - name: Gather interfaces facts
     cisco.ios.ios_facts:
       gather_subset: 
+      - '!all'
+      - '!min'
+      gather_network_ressources:
       - interfaces
     register: interfaces_
 
