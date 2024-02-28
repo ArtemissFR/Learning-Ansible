@@ -3,7 +3,7 @@
 
   - name: Hostname
     pause:
-      prompt: "[???] Which hostname would you like to set for you Router ? ( {{ inventory_hostname }} by default)"
+      prompt: "[???] Which hostname would you like to set for you Router ? "
     register: HOSTNAME
       
   - name: Applying Hostname
