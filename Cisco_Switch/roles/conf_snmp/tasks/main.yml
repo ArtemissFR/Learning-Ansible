@@ -1,4 +1,7 @@
 --- 
+  - name: Include the variables
+    ansible.builtin.include_vars: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/VARS.yml
+
   - name: Configuration of SNMP public and private
     ios_config:
       commands:
