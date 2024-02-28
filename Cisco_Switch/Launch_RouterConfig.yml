@@ -8,14 +8,9 @@
       default: "ansible.lan"
       private: false
 
-    - name: BANNER_TEXT
-      prompt: [???] What banner would you like to set ?
-      default: "Banner"
-      private: false
-
-    - name: LOGIN_BANNER_TEXT
-      prompt: [???] What login banner would you like to set ?
-      default: "Login Banner"
+    - name: HOSTNAME
+      prompt: [???] What hostname would you like to set ?
+      default: {{ inventory_hostname }}
       private: false
 
 
