@@ -35,7 +35,7 @@
   - name: Configure DNS lookup sources
     ios_system:
       lookup_enabled: yes
-    when: "{{ DNS_LOOKUP.user_input }}" | bool
+    when: {{ DNS_LOOKUP.user_input }} | bool
 ######################################DNS-LOOKUP######################################
 
 ######################################INTERFACE######################################
@@ -46,6 +46,6 @@
     register: INT_CHOICE
 
   - include_tasks: interface_conf.yml
-    when: "{{ INT_CHOICE.user_input }}" | bool
+    when: {{ INT_CHOICE.user_input }} | bool
     
 ######################################INTERFACE######################################
