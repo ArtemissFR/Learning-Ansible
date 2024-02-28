@@ -1,4 +1,8 @@
 ---
+  - name: List of Interfaces
+    debug:
+      var: interfaces_
+
   - name: Interface
       pause:
         prompt: "[???] Which router interface would you like to set ? "
