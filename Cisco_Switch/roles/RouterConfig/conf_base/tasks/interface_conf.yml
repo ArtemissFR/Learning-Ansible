@@ -5,4 +5,3 @@
         - name: "{{ ROUTER_INT }}"
           description: Interface configured by Ansible
           enabled: true
-    ignore_errors: true
