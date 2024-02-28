@@ -6,7 +6,7 @@
   - name: Display all interfaces names
     ansible.builtin.debug:
       var: interfaces_
-    loop: "{{ interfaces_definition | community.general.json_query('interfaces_.ansible_facts.ansible_network_resources.interfaces[*].name') }}"
+    loop: "{{ domain_definition | community.general.json_query('interfaces_.ansible_facts.ansible_network_resources.interfaces[*].name') }}"
 
   - name: Interface
     pause:
