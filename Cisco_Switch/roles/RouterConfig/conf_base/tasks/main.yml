@@ -8,7 +8,7 @@
       
   - name: Applying Hostname
     ios_config:
-      lines: hostname {{ HOSTNAME }}
+      lines: hostname "{{ HOSTNAME.user_input }}"
       
 ######################################HOSTNAME######################################
 
@@ -21,7 +21,7 @@
 
   - name: Configure Domain Name
     ios_system:
-      domain_name: "{{ DOMAIN }}"
+      domain_name: "{{ DOMAIN.user_input }}"
       
 ######################################DOMAIN######################################
 
@@ -35,7 +35,7 @@
   - name: Configure DNS lookup sources
     ios_system:
       lookup_enabled: yes
-    when: DNS_LOOKUP | bool
+    when: "{{ DNS_LOOKUP.user_input }}" | bool
 ######################################DNS-LOOKUP######################################
 
 ######################################INTERFACE######################################
@@ -46,6 +46,6 @@
     register: INT_CHOICE
 
   - include_tasks: interface_conf.yml
-    when: INT_CHOISE | bool
+    when: "{{ INT_CHOICE.user_input }}" | bool
     
 ######################################INTERFACE######################################
