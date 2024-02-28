@@ -13,6 +13,10 @@
       default: {{ inventory_hostname }}
       private: false
 
+    - name: "dns_lookup"
+      prompt: "[???] Do you want to activate the DNS lookup (yes/no) ?"
+      private: no
+
 
   roles:
     - connectivity_test
