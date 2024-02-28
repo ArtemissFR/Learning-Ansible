@@ -12,7 +12,12 @@
       #no_log: true #Activate this to not see the password !
       ignore_errors: true
 
-    - name: Config replace
-      ios_command:
-         commands:
-           - "config replace flash0:{{ inventory_hostname }}_latest.config force"
+
+
+      
+#################################NOT WORKING#################################
+#    - name: Config replace
+#      ios_command:
+#         commands:
+#           - "config replace flash0:{{ inventory_hostname }}_latest.config force"
+#################################NOT WORKING#################################
