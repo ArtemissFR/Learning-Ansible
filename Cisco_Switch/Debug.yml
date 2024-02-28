@@ -7,7 +7,7 @@
       private: no
 
   tasks:
-    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/connectivity_test/tasks/main.yml
+    - include_tasks: ./roles/connectivity_test/tasks/main.yml
       when: test_connectivity | bool
 
-    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/debug/tasks/main.yml
+    - include_tasks: ./roles/debug/tasks/main.yml
