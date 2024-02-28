@@ -1,5 +1,5 @@
 ---
-- hosts: Routers
+- hosts: R1
   become: yes
 
   tasks:
