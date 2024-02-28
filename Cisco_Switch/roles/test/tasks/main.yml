@@ -1,0 +1,6 @@
+- name: Bare include (free-form)
+  ansible.builtin.include_vars: ../../../test_vars.yaml
+
+- name: test vars
+  debug:
+     msg: "The Ip of this machine is : {{ USER }}"
