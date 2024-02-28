@@ -2,7 +2,7 @@
   - name: Enable and Add description to Interfaces on Routers
     cisco.ios.ios_interfaces:
       config:
-        - name: "{{ ROUTERS_INT }}" # Replace this by the interface you want to configure.
+        - name: "{{ ROUTER_INT }}" # Replace this by the interface you want to configure.
          # For the Routers : The Switch will make an error.
           description: Routers Configured by Artemiss
           enabled: true
