@@ -1,4 +1,9 @@
 ---
+  - name: Interface
+      pause:
+        prompt: "Which router interface would you like to set ? "
+      register: ROUTER_INT
+
   - name: Enable {{ ROUTER_INT }} Interface on Router
     cisco.ios.ios_interfaces:
       config:
