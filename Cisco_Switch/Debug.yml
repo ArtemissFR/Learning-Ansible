@@ -3,12 +3,11 @@
   become: yes
   vars_prompt:
     - name: "test_connectivity"
-      prompt: "Do you want to test the connection (yes/no) ?"
+      prompt: "[???] Do you want to test the connection (yes/no) ?"
       private: no
 
-  - include_role: connectivity_test
-    when: test_connectivity | bool
+  tasks:
+    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/connectivity_test/tasks/main.yml
+      when: test_connectivity | bool
 
-  roles:
-#    - connectivity_test
-    - debug
+    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/debug/tasks/main.yml
