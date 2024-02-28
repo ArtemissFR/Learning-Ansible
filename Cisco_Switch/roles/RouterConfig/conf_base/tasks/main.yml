@@ -3,7 +3,7 @@
 
   - name: Hostname
     pause:
-      prompt: "Which hostname would you like to set for you Router ? ( {{ inventory_hostname }} by default)
+      prompt: "[???] Which hostname would you like to set for you Router ? ( {{ inventory_hostname }} by default)
     register: HOSTNAME
       
   - name: Applying Hostname
@@ -16,7 +16,7 @@
 
   - name: Domain
     pause:
-      prompt: "Which domain would you like to set ? 
+      prompt: "[???] Which domain would you like to set ? 
     register: DOMAIN
 
   - name: Configure Domain Name
@@ -29,7 +29,7 @@
 
    - name: DNS_Lookup
       pause:
-        prompt: "Would you like to activate the DNS lookup ? (yes/no)
+        prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)
       register: DNS_LOOKUP
   
     - name: Configure DNS lookup sources
@@ -42,7 +42,7 @@
 
    - name: Interface
       pause:
-        prompt: "Would you like to customise an interface ? (yes/no)
+        prompt: "[???] Would you like to customise an interface ? (yes/no)
       register: INT_CHOICE
 
   - include_tasks: interface_conf.yml
