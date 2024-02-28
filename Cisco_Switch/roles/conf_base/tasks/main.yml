@@ -1,4 +1,6 @@
 ---
+- name: Include the variables
+  ansible.builtin.include_vars: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/VARS.yml
 
 - name: Configure Hostname
   ios_config:
