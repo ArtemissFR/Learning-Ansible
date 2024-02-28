@@ -1,1 +1,13 @@
+---
+  - name: Configure Hostname
+  ios_config:
+    lines: hostname {{ HOSTNAME }}
 
+  - name: Configure Domain Name
+    ios_system:
+      domain_name: "{{ DOMAIN }}"
+
+  - name: Configure DNS lookup sources
+    ios_system:
+      lookup_enabled: yes
+    when: dns_lookup | bool
