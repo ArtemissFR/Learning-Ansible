@@ -12,9 +12,7 @@
       #no_log: true #Activate this to not see the password !
       ignore_errors: true
 
-
-
-      
+  
 #################################NOT WORKING#################################
 #    - name: Config replace
 #      ios_command:
