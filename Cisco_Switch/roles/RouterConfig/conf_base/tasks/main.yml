@@ -8,7 +8,7 @@
       
   - name: Applying Hostname
     ios_config:
-      lines: hostname "{{ HOSTNAME.user_input | default( {{ inventory_hostname }}, true ) }}"
+      lines: hostname "{{ HOSTNAME.user_input }}"
       
 ######################################HOSTNAME######################################
 
