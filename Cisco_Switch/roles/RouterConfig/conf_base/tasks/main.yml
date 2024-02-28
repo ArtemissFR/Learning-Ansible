@@ -27,15 +27,15 @@
 
 ######################################DNS-LOOKUP######################################
 
-   - name: DNS_Lookup
-     pause:
-       prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
-     register: DNS_LOOKUP
+  - name: DNS_Lookup
+    pause:
+      prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
+    register: DNS_LOOKUP
   
-   - name: Configure DNS lookup sources
-     ios_system:
-       lookup_enabled: yes
-     when: DNS_LOOKUP | bool
+  - name: Configure DNS lookup sources
+    ios_system:
+      lookup_enabled: yes
+    when: DNS_LOOKUP | bool
 ######################################DNS-LOOKUP######################################
 
 ######################################INTERFACE######################################
