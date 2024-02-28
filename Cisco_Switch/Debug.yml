@@ -1,7 +1,14 @@
 ---
 - hosts: CISCO
   become: yes
+  vars_prompt:
+    - name: "test_connectivity"
+      prompt: "Do you want to test the connection (yes/no) ?"
+      private: no
+
+  - include_role: connectivity_test
+    when: test_connectivity | bool
 
   roles:
-    - connectivity_test
+#    - connectivity_test
     - debug
