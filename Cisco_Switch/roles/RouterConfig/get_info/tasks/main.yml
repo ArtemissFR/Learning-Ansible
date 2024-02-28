@@ -1,4 +1,8 @@
 ---
+  - name: INFORMATION
+    debug:
+       msg: "This role will collect information to help you respond future question !"
+
   - name: Gather interfaces facts
     cisco.ios.ios_facts:
       gather_subset: 
