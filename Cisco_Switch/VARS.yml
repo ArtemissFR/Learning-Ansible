@@ -14,3 +14,8 @@ SWITCH_INT: GigabitEthernet0/0 # Configure the interface of the Switchs here !
 
 BANNER_TEXT: "Artemiss Banner" # Configure your banner here.
 LOGIN_BANNER_TEXT: "Artemiss Login Banner" # Configure your login banner here.
+
+# Modify the variables here for the configuration of SNMP public and private.
+SNMP_PUBLIC: ansible-cisco-public
+SNMP_PRIVATE: ansible-cisco-private
+SNMP_PRIVATE_TEST: ansible-cisco-private-test
