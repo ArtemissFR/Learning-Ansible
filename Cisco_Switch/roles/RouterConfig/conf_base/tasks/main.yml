@@ -1,5 +1,6 @@
 ---
 ######################################HOSTNAME######################################
+
   - name: Hostname Asking
     pause:
       prompt: "Which hostname would you like to set for you Router ? ( {{ inventory_hostname }} by default)
@@ -8,9 +9,11 @@
   - name: Applying Hostname
     ios_config:
       lines: hostname {{ HOSTNAME }}
+      
 ######################################HOSTNAME######################################
 
 ######################################DOMAIN######################################
+
   - name: Domain Asking
     pause:
       prompt: "Which domain would you like to set ? 
@@ -19,9 +22,11 @@
   - name: Configure Domain Name
     ios_system:
       domain_name: "{{ DOMAIN }}"
+      
 ######################################DOMAIN######################################
 
 ######################################DNS-LOOKUP######################################
+
    - name: DNS_Lookup Asking
       pause:
         prompt: "Would you like to activate the DNS lookup ? (yes/no)
