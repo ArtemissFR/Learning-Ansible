@@ -1,7 +1,7 @@
 ---
   - name: List of Interfaces
     debug:
-      var: interfaces_.name
+      var: interfaces_
 
   - name: Interface
     pause:
