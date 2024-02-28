@@ -1,15 +1,15 @@
 # Configure this file to suit your needs !
 
 #########################BASE CONFIGURATION#########################
-DOMAIN: ansible.lan # Configure the domain.
+#DOMAIN: ansible.lan # Configure the domain.
 
 ANSIBLE_MANAGER: 10.5.5.200 # Set the ip of your Ansible Manager. (this local host)
 
 ROUTERS_INT: FastEthernet0/0 # Configure the interface of the Routers here !
 SWITCH_INT: GigabitEthernet0/0 # Configure the interface of the Switchs here !
 
-BANNER_TEXT: "Artemiss Banner" # Configure your banner here.
-LOGIN_BANNER_TEXT: "Artemiss Login Banner" # Configure your login banner here.
+#BANNER_TEXT: "Artemiss Banner" # Configure your banner here.
+#LOGIN_BANNER_TEXT: "Artemiss Login Banner" # Configure your login banner here.
 
 #########################SECURITY CONFIGURATION#########################
 CISCO_USER: admin # Configure the Admin User.
