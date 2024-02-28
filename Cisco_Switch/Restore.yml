@@ -1,5 +1,11 @@
 ---
-- hosts: S1,S2,S3
+vars_prompt:
+
+    - name: host
+      prompt: On which host(s) do you want to apply latest configuration ? [S1,S2,S3,R1,R2]
+      private: false
+
+- hosts: {{ host }}
   become: yes
 
   roles:
