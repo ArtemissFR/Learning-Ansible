@@ -23,3 +23,9 @@
       gather_subset: 
       - hardware
     register: hardware_
+
+#########################################
+  - name: List of Interfaces
+    debug:
+      var: interfaces_
+#########################################
