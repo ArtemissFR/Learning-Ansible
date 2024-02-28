@@ -3,6 +3,11 @@
     debug:
       var: interfaces_
 
+  - name: Display all interfaces names
+    ansible.builtin.debug:
+      var: interfaces_
+    loop: "{{ interfaces_definition | community.general.json_query('interfaces_.ansible_facts.ansible_network_resources.interfaces[*].name') }}"
+
   - name: Interface
     pause:
       prompt: "[???] Which router interface would you like to set ? "
