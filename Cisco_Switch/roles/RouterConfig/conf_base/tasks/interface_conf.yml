@@ -1,5 +1,5 @@
 ---
-  - name: Enable and Add description to Interfaces on Routers
+  - name: Enable {{ ROUTER_INT }} Interface on Router
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ ROUTER_INT }}"
