@@ -1,0 +1,10 @@
+---
+  - name: Backup Routers and Switchs
+    hosts: S1,S2,S3
+    gather_facts: no
+
+    tasks:
+    - name: Config replace
+      ios_command:
+         commands:
+           - "config replace flash0:{{ inventory_hostname }}_latest.config force"
