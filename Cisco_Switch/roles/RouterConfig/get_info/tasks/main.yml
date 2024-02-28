@@ -1,13 +1,6 @@
 ---
-  - name: Configure Hostname
-  ios_config:
-    lines: hostname {{ HOSTNAME }}
-
-  - name: Configure Domain Name
-    ios_system:
-      domain_name: "{{ DOMAIN }}"
-
-  - name: Configure DNS lookup sources
-    ios_system:
-      lookup_enabled: yes
-    when: dns_lookup | bool
+  - name: Gather interfaces facts
+    cisco.ios.ios_facts:
+      gather_subset: 
+      - interfaces                        # You can replace this by : [config, default, hardware, interfaces, all]
+    register: interfaces_
