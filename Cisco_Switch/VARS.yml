@@ -19,3 +19,6 @@ LOGIN_BANNER_TEXT: "Artemiss Login Banner" # Configure your login banner here.
 SNMP_PUBLIC: ansible-cisco-public
 SNMP_PRIVATE: ansible-cisco-private
 SNMP_PRIVATE_TEST: ansible-cisco-private-test
+
+#Edit this variable and set the ip of your Ansible Manager. (this local host)
+ANSIBLE_MANAGER: 10.5.5.200
