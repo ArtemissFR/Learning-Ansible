@@ -6,17 +6,17 @@
   - name: Gather interfaces facts
     cisco.ios.ios_facts:
       gather_subset: 
-      - interfaces                        # You can replace this by : [config, default, hardware, interfaces, all]
+      - interfaces
     register: interfaces_
 
   - name: Gather config facts
     cisco.ios.ios_facts:
       gather_subset: 
-      - config                      # You can replace this by : [config, default, hardware, interfaces, all]
+      - config
     register: config_
 
   - name: Gather hardware facts
     cisco.ios.ios_facts:
       gather_subset: 
-      - harware                    # You can replace this by : [config, default, hardware, interfaces, all]
+      - harware
     register: hardware_
