@@ -1,0 +1,23 @@
+---
+- hosts: Routers
+  become: yes
+  vars_prompt:
+
+    - name: DOMAIN
+      prompt: [???] What domain would you like to set ?
+      default: "ansible.lan"
+      private: false
+
+    - name: BANNER_TEXT
+      prompt: [???] What banner would you like to set ?
+      default: "Banner"
+      private: false
+
+    - name: LOGIN_BANNER_TEXT
+      prompt: [???] What login banner would you like to set ?
+      default: "Login Banner"
+      private: false
+
+
+  roles:
+    - connectivity_test
