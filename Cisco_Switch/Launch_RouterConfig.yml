@@ -3,4 +3,7 @@
   become: yes
 
   tasks:
-    - include_tasks: ./roles/RouterConfig/get_info/main.yml
+  
+    - include_tasks: ./roles/RouterConfig/get_info/tasks/main.yml
+    
+    - include_tasks: ./roles/RouterConfig/conf_base/tasks/main.yml
