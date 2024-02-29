@@ -13,13 +13,13 @@
 
   - name: SNMP
     pause:
-      prompt: "[???] What PUBLIC SNMP server whould you like to set ? "
+      prompt: "[???] What PUBLIC SNMP server whould you like to set ? (example: ansible-cisco-public)"
     register: SNMP_PUBLIC
     when: SNMP_PUBLIC_CHOICE.user_input | bool
 
   - name: SNMP
     pause:
-      prompt: "[???] What PRIVATE SNMP server whould you like to set ? "
+      prompt: "[???] What PRIVATE SNMP server whould you like to set ? (example: ansible-cisco-private)"
     register: SNMP_PRIVATE
     when: SNMP_PRIVATE_CHOICE.user_input | bool
 #####PROMPT#####
