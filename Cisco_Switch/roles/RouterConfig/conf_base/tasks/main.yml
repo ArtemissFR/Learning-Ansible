@@ -53,3 +53,15 @@
     when: INT_CHOICE.user_input | bool
     
 ######################################INTERFACE######################################
+
+######################################SECURITY######################################
+
+  - name: Security
+    pause:
+      prompt: "[???] Would you like to customise the security parameters ? (yes/no)"
+    register: SECURITY_CHOICE
+
+  - include_tasks: security_conf.yml
+    when: SECURITY_CHOICE.user_input | bool
+    
+######################################SECURITY######################################
