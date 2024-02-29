@@ -9,21 +9,25 @@
 
 ##################################CONFIG-OF-INTERFACES##################################
 
+#####CHOOSE-INTERFACE#####
   - name: Interface
     pause:
       prompt: "[???] Which router interface would you like to set ? "
     register: ROUTER_INT
-
+#####CHOOSE-INTERFACE#####
+#####ADD-DESCRIPTION-TO-INTERFACE#####
   - name: Interface
     pause:
       prompt: "[???] What description do you want to put on the interface ? "
     register: ROUTER_INT_DESC
-
+#####ADD-DESCRIPTION-TO-INTERFACE#####
+#####APPLY-CONFIGURATION-TO-INTERFACE#####
   - name: Enable {{ ROUTER_INT.user_input }} Interface on Router
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ ROUTER_INT.user_input }}"
           description: "{{ ROUTER_INT_DESC }}"
           enabled: true
+#####APPLY-CONFIGURATION-TO-INTERFACE#####
 
 ##################################CONFIG-OF-INTERFACES##################################
