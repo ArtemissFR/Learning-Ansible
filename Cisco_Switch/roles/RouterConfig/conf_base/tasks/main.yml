@@ -1,46 +1,19 @@
 ---
-######################################HOSTNAME######################################
+######################################BASICS######################################
 
-  - name: Hostname
+  - name: BASICS
     pause:
-      prompt: "[???] Which hostname would you like to set for you Router ? "
-    register: HOSTNAME
-      
-  - name: Applying Hostname
-    ios_config:
-      lines: hostname "{{ HOSTNAME.user_input }}"
-      
-######################################HOSTNAME######################################
+      prompt: "[???] Would you like to customise the basic parameters ? (yes/no)"
+    register: BASICS_CHOICE
 
-######################################DOMAIN######################################
-
-  - name: Domain
-    pause:
-      prompt: "[???] Which domain would you like to set ? "
-    register: DOMAIN
-
-  - name: Configure Domain Name
-    ios_system:
-      domain_name: "{{ DOMAIN.user_input }}"
-      
-######################################DOMAIN######################################
-
-######################################DNS-LOOKUP######################################
-
-  - name: DNS_Lookup
-    pause:
-      prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
-    register: DNS_LOOKUP
-
-  - name: Configure DNS lookup sources
-    ios_system:
-      lookup_enabled: yes
-    when: DNS_LOOKUP.user_input | bool
-######################################DNS-LOOKUP######################################
+  - include_tasks: basic_conf.yml
+    when: BASICS_CHOICE.user_input | bool
+    
+######################################BASICS######################################
 
 ######################################INTERFACE######################################
 
-  - name: Interface
+  - name: INTERFACE
     pause:
       prompt: "[???] Would you like to customise an interface ? (yes/no)"
     register: INT_CHOICE
@@ -52,7 +25,7 @@
 
 ######################################SECURITY######################################
 
-  - name: Security
+  - name: SECURITY
     pause:
       prompt: "[???] Would you like to customise the security parameters ? (yes/no)"
     register: SECURITY_CHOICE
