@@ -16,7 +16,7 @@
 
   - name: DOMAIN
     pause:
-      prompt: "[???] Which domain would you like to set ? "
+      prompt: "[???] Which domain would you like to set ? (example : ansible.lan)"
     register: DOMAIN
 
   - name: Configure Domain Name
