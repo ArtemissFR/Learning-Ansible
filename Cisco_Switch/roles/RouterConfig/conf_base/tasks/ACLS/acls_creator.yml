@@ -1,11 +1,12 @@
 ##################################CONFIG-OF-ACLS##################################
 
-#####REPLACE/MERGE/OVERRIDEN/DELETED/RENDERED#####
+#####ACLS-STATE#####
   - name: Interface
     pause:
-      prompt: "[???] Which router interface would you like to set ? "
-    register: ROUTER_INT
-#####REPLACE/MERGE#####
+      prompt: "[???] Which state you want your ACLs to be ? [merged/replaced/overriden/deleted/rendered]"
+    register: ACLS_STATE
+#####ACLS-STATE#####
+
 #####ADD-DESCRIPTION-TO-INTERFACE#####
   - name: Interface
     pause:
