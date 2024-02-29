@@ -7,13 +7,6 @@
     register: ACLS_STATE
 #####ACLS-STATE#####
 
-#####ADD-DESCRIPTION-TO-INTERFACE#####
-  - name: Interface
-    pause:
-      prompt: "[???] What description do you want to put on the interface ? "
-    register: ROUTER_INT_DESC
-#####ADD-DESCRIPTION-TO-INTERFACE#####
-
 #####APPLY-CONFIGURATION#####
   - name: Replaces device configuration of listed acls with provided configuration
   cisco.ios.ios_acls:
