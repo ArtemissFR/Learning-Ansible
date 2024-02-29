@@ -21,10 +21,16 @@
       prompt: "[???] What level of privilege would you like to set ? "
     register: CISCO_USER_PRIVILEGE
     when: CISCO_USER_CHOICE.user_input | bool
+
+  - name: User
+    pause:
+      prompt: "[???] What password would you like to set for the Enable Password ? "
+    register: CISCO_SECRET
+    when: CISCO_USER_CHOICE.user_input | bool
 #####PROMPT-REQUEST#####
 
 #####GENERAL-SECURITY-CONFIG#####
-- name: Creation of a new User
+- name: "Creation of the new User : {{ CISCO_USER }}"
   ios_config:
     lines:
     - username {{ CISCO_USER }} privilege {{ CISCO_USER_PRIVILEGE }} password {{ CISCO_USER_PASS }}
