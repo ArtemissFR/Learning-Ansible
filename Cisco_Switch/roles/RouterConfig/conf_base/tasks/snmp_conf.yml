@@ -1,16 +1,37 @@
 #########################SNMP-CONFIGURATION#########################
 
 #####PROMPT#####
+  - name: SNMP
+    pause:
+      prompt: "[???] Would you like to set up a Public SNMP server ? (yes/no)"
+    register: SNMP_PUBLIC_CHOICE
 
+  - name: SNMP
+    pause:
+      prompt: "[???] Would you like to set up a Private SNMP server ? (yes/no)"
+    register: SNMP_PRIVATE_CHOICE
+
+  - name: SNMP
+    pause:
+      prompt: "[???] What PUBLIC SNMP server whould you like to set ? "
+    register: SNMP_PUBLIC
+
+  - name: SNMP
+    pause:
+      prompt: "[???] What PRIVATE SNMP server whould you like to set ? "
+    register: SNMP_PRIVATE
 #####PROMPT#####
 
 #####APPLY-CONFIG#####
-  - name: Configuration of SNMP public and private
+  - name: "Configuration of the SNMP Public Server ( {{ SNMP_PUBLIC.user_input }} )"
     ios_config:
       commands:
-        - snmp-server community {{ SNMP_PUBLIC }} RO
-        - snmp-server community {{ SNMP_PRIVATE }} RW
-        - snmp-server community {{ SNMP_PRIVATE_TEST }} RW
+        - snmp-server community {{ SNMP_PUBLIC.user_input }} RO
+
+  - name: "Configuration of the SNMP private Server ( {{ SNMP_PRIVATE.user_input }} )"
+    ios_config:
+      commands:
+        - snmp-server community {{ SNMP_PRIVATE.user_input }} RW
 #####APPLY-CONFIG#####
 
 #####RECAP#####
