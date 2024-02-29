@@ -1,11 +1,11 @@
 ##################################CONFIG-OF-ACLS##################################
 
-#####CHOOSE-INTERFACE#####
+#####REPLACE/MERGE/OVERRIDEN/DELETED#####
   - name: Interface
     pause:
       prompt: "[???] Which router interface would you like to set ? "
     register: ROUTER_INT
-#####CHOOSE-INTERFACE#####
+#####REPLACE/MERGE#####
 #####ADD-DESCRIPTION-TO-INTERFACE#####
   - name: Interface
     pause:
