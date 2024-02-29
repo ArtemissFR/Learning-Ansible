@@ -1,12 +1,30 @@
 #####PROMPT-REQUEST#####
+  - name: User
+    pause:
+      prompt: "[???] Would you like to create a new User ? (yes/no)"
+    register: CISCO_USER_CHOICE
 
+  - name: User
+    pause:
+      prompt: "[???] Choose a Username : "
+    register: CISCO_USER
+
+  - name: User
+    pause:
+      prompt: "[???] Choose a password : "
+    register: CISCO_USER_PASS
+
+  - name: User
+    pause:
+      prompt: "[???] What level of privilege would you like to set ? "
+    register: CISCO_USER_PRIVILEGE
 #####PROMPT-REQUEST#####
 
 #####GENERAL-SECURITY-CONFIG#####
 - name: Creation of a new User
   ios_config:
     lines:
-    - username {{ CISCO_USER }} password {{ CISCO_PASS }}
+    - username {{ CISCO_USER }} privilege {{ CISCO_USER_PRIVILEGE }} password {{ CISCO_USER_PASS }}
 
 - name: Enable password configuration
   ios_config:
@@ -20,10 +38,7 @@
 #####GENERAL-SECURITY-CONFIG#####
 
 #####SCP-CONFIG#####
-- name: Configure the SCP User
-  ios_config:
-    lines:
-    - username scp privilege 15 password {{ CISCO_SCP_PASS }}
+
 
 - name: Enable scp server
   ios_config:
