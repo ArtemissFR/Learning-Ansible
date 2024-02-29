@@ -38,7 +38,10 @@
 #####GENERAL-SECURITY-CONFIG#####
 
 #####SCP-CONFIG#####
-
+- name: User
+  pause:
+    prompt: "[???] Would you like to enable the SCP Server ? (yes/no)"
+  register: SCP_SERVER_CHOICE
 
 - name: Enable scp server
   ios_config:
