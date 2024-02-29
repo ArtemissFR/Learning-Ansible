@@ -42,7 +42,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for eq ? "
-    register: ACLS_TTL_eq
+    register: ACLS_TTL_data
     when: ACLS_TTL.user_input == "eq"
 #####ACLS-TTL-eq#####
 
@@ -50,7 +50,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for gt ?"
-    register: ACLS_TTL_gt
+    register: ACLS_TTL_data
     when: ACLS_TTL.user_input == "gt"
 #####ACLS-TTL-gt#####
 
@@ -58,7 +58,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for lt ?"
-    register: ACLS_TTL_lt
+    register: ACLS_TTL_data
     when: ACLS_TTL.user_input == "lt"
 #####ACLS-TTL-lt#####
 
@@ -66,22 +66,22 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for neq ?"
-    register: ACLS_TTL_neq
+    register: ACLS_TTL_data
     when: ACLS_TTL.user_input == "neq"
 #####ACLS-TTL-neq#####
 
 #####ACLS-TTL-range#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for range end ?"
-    register: ACLS_TTL_range_end
-    when: ACLS_TTL.user_input == "range"
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] What is the number of packets you want to set for range end ?"
+#    register: ACLS_TTL_range_end
+#    when: ACLS_TTL.user_input == "range"
 
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for range start ?"
-    register: ACLS_TTL_range_start
-    when: ACLS_TTL.user_input == "range"
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] What is the number of packets you want to set for range start ?"
+#    register: ACLS_TTL_range_start
+#    when: ACLS_TTL.user_input == "range"
 #####ACLS-TTL-range#####
 #########################################################################################################################################################
 
@@ -111,7 +111,7 @@
                       eq: www
                   dscp: ef
                   ttl:
-                    eq: 10
+                    {{ ACLS_TTL.user_input }}: {{ ACLS_TTL_data.user_input }}
 #            - name: 150
 #              aces:
 #                - grant: deny
