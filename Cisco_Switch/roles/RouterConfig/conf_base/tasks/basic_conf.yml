@@ -1,7 +1,7 @@
 
 ######################################HOSTNAME######################################
 
-  - name: Hostname
+  - name: HOSTNAME
     pause:
       prompt: "[???] Which hostname would you like to set for you Router ? "
     register: HOSTNAME
@@ -14,7 +14,7 @@
 
 ######################################DOMAIN######################################
 
-  - name: Domain
+  - name: DOMAIN
     pause:
       prompt: "[???] Which domain would you like to set ? "
     register: DOMAIN
@@ -27,7 +27,7 @@
 
 ######################################DNS-LOOKUP######################################
 
-  - name: DNS_Lookup
+  - name: DNS LOOKUP
     pause:
       prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
     register: DNS_LOOKUP
@@ -37,3 +37,30 @@
       lookup_enabled: yes
     when: DNS_LOOKUP.user_input | bool
 ######################################DNS-LOOKUP######################################
+
+######################################BANNERS######################################
+
+  - name: BANNERS
+    pause:
+      prompt: "[???] Would you like to configure the BASE banner ? (yes/no)"
+    register: BASE_BANNER_CHOICE
+
+  - name: BANNERS
+    pause:
+      prompt: "[???] What do you want to put in your BASE banner ?"
+    register: BASE_BANNER
+    when: BASE_BANNER_CHOICE.user_input | bool
+
+  - name: BANNERS
+    pause:
+      prompt: "[???] Would you like to configure the LOGIN banner ? (yes/no)"
+    register: LOGIN_BANNER_CHOICE
+
+  - name: BANNERS
+    pause:
+      prompt: "[???] What do you want to put in your LOGIN banner ?"
+    register: LOGIN_BANNER
+    when: LOGIN_BANNER_CHOICE.user_input | bool
+
+
+######################################BANNERS######################################
