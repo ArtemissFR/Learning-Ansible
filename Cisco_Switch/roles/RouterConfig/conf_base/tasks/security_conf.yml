@@ -33,13 +33,13 @@
 - name: "Creation of the new User : {{ CISCO_USER }}"
   ios_config:
     lines:
-    - username {{ CISCO_USER }} privilege {{ CISCO_USER_PRIVILEGE }} password {{ CISCO_USER_PASS }}
+    - username {{ CISCO_USER.user_input }} privilege {{ CISCO_USER_PRIVILEGE.user_input }} password {{ CISCO_USER_PASS.user_input }}
   when: CISCO_USER_CHOICE.user_input | bool
 
 - name: Enable password configuration
   ios_config:
     lines: 
-    - enable secret {{ CISCO_SECRET }}
+    - enable secret {{ CISCO_SECRET.user_input }}
   when: CISCO_USER_CHOICE.user_input | bool
 
 - name: Encrypt the passwords
