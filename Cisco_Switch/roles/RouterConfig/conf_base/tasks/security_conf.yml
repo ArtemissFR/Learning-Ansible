@@ -8,16 +8,19 @@
     pause:
       prompt: "[???] Choose a Username : "
     register: CISCO_USER
+    when: CISCO_USER_CHOICE.user_input | bool
 
   - name: User
     pause:
       prompt: "[???] Choose a password : "
     register: CISCO_USER_PASS
+    when: CISCO_USER_CHOICE.user_input | bool
 
   - name: User
     pause:
       prompt: "[???] What level of privilege would you like to set ? "
     register: CISCO_USER_PRIVILEGE
+    when: CISCO_USER_CHOICE.user_input | bool
 #####PROMPT-REQUEST#####
 
 #####GENERAL-SECURITY-CONFIG#####
@@ -25,16 +28,19 @@
   ios_config:
     lines:
     - username {{ CISCO_USER }} privilege {{ CISCO_USER_PRIVILEGE }} password {{ CISCO_USER_PASS }}
+  when: CISCO_USER_CHOICE.user_input | bool
 
 - name: Enable password configuration
   ios_config:
     lines: 
     - enable secret {{ CISCO_SECRET }}
+  when: CISCO_USER_CHOICE.user_input | bool
 
 - name: Encrypt the passwords
   ios_config:
     lines:
     - service password-encryption
+  when: CISCO_USER_CHOICE.user_input | bool
 #####GENERAL-SECURITY-CONFIG#####
 
 #####SCP-CONFIG#####
