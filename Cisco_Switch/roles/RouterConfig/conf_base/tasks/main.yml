@@ -31,11 +31,15 @@
     pause:
       prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
     register: DNS_LOOKUP
-  
-  - name: Configure DNS lookup sources
+
+  - name: Configure DNS Lookup based on user choice
     ios_system:
-      lookup_enabled: yes
-    when: DNS_LOOKUP.user_input | bool
+      lookup_enabled: {{ DNS_LOOKUP }}
+  
+#  - name: Configure DNS lookup sources
+#    ios_system:
+#      lookup_enabled: yes
+#    when: DNS_LOOKUP.user_input | bool
 ######################################DNS-LOOKUP######################################
 
 ######################################INTERFACE######################################
