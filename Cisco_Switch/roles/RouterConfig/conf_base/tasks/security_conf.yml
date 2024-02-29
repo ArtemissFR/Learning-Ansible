@@ -52,4 +52,5 @@
 - name: Enable scp server
   ios_config:
     lines: ip scp server enable 
+  when: SCP_SERVER_CHOICE.user_input | bool
 #####SCP-CONFIG#####
