@@ -21,6 +21,69 @@
     register: ACLS_GRANT
 #####ACLS-GRANT#####
 
+
+
+#########################################################################################################################################################
+  #      #####    #       #####
+ # #     #        #       #
+#   #    #        #       #####
+#####    #        #           # 
+#   #    #####    ####    #####
+
+#####ACLS-TTL#####
+  - name: ACLS
+    pause:
+      prompt: "[???] Which type of TTL you want your ACLs to be ? [eq/gt/lt/neq/range]"
+    register: ACLS_TTL
+#####ACLS-TTL#####
+
+#####ACLS-TTL-eq#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for eq ? "
+    register: ACLS_TTL_eq
+    when: ACLS_TTL.user_input == "eq"
+#####ACLS-TTL-eq#####
+
+#####ACLS-TTL-gt#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for gt ?"
+    register: ACLS_TTL_gt
+    when: ACLS_TTL.user_input == "gt"
+#####ACLS-TTL-gt#####
+
+#####ACLS-TTL-lt#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for lt ?"
+    register: ACLS_TTL_lt
+    when: ACLS_TTL.user_input == "lt"
+#####ACLS-TTL-lt#####
+
+#####ACLS-TTL-neq#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for neq ?"
+    register: ACLS_TTL_neq
+    when: ACLS_TTL.user_input == "neq"
+#####ACLS-TTL-neq#####
+
+#####ACLS-TTL-range#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for range end ?"
+    register: ACLS_TTL_range_end
+    when: ACLS_TTL.user_input == "range"
+
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for range start ?"
+    register: ACLS_TTL_range_start
+    when: ACLS_TTL.user_input == "range"
+#####ACLS-TTL-range#####
+#########################################################################################################################################################
+
 ####################################################################PROMPT####################################################################
 
 ####################################################################CONFIG-OF-ACLS####################################################################
