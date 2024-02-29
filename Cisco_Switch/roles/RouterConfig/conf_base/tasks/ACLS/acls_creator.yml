@@ -195,7 +195,7 @@
                     address: {{ ACLS_DEST_IP.user_input }}
                     wildcard_bits: {{ ACLS_DEST_WILD.user_input }}
                     port_protocol:
-                      eq: www
+                      {{ ACLS_PORT_PROTOCOL.user_input }}: {{ ACLS_PORT_PROTOCOL_data }}
                   dscp: {{ ACLS_DSCP.user_input }}
                   ttl:
                     {{ ACLS_TTL.user_input }}: {{ ACLS_TTL_data.user_input }}
@@ -219,6 +219,6 @@
 #                  dscp: ef
 #                  ttl:
 #                    eq: 10
-      state: {{ ACLS_STATE.user_ }}
+      state: {{ ACLS_STATE.user_input }}
 #####APPLY-CONFIGURATION#####
 ####################################################################CONFIG-OF-ACLS####################################################################
