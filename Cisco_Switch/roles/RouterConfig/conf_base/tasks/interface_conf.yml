@@ -1,17 +1,29 @@
 ---
+##################################LIST-OF-INTERFACES##################################
+
   - name: List of Interfaces
     debug:
       msg: "{{ interfaces_fact }}"
+      
+##################################LIST-OF-INTERFACES##################################
 
+##################################CONFIG-OF-INTERFACES##################################
 
   - name: Interface
     pause:
       prompt: "[???] Which router interface would you like to set ? "
     register: ROUTER_INT
 
+  - name: Interface
+    pause:
+      prompt: "[???] What description do you want to put on the interface ? "
+    register: ROUTER_INT_DESC
+
   - name: Enable {{ ROUTER_INT.user_input }} Interface on Router
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ ROUTER_INT.user_input }}"
-          description: Interface configured by Ansible
+          description: "{{ ROUTER_INT_DESC }}"
           enabled: true
+
+##################################CONFIG-OF-INTERFACES##################################
