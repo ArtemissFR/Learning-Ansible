@@ -28,7 +28,39 @@
     register: ACLS_GRANT
 #####ACLS-GRANT#####
 
+#########################################################################################################################################################
+#####ACLS-SOURCE#####
+  - name: ACLS
+    pause:
+      prompt: "[???] SOURCE IP ? "
+    register: ACLS_SOURCE_IP
 
+  - name: ACLS
+    pause:
+      prompt: "[???] SOURCE Wildcard_bits ? "
+    register: ACLS_SOURCE_WILD
+#####ACLS-SOURCE#####
+#####ACLS-DESTINATION#####
+  - name: ACLS
+    pause:
+      prompt: "[???] DESTINATION IP ? "
+    register: ACLS_DEST_IP
+
+  - name: ACLS
+    pause:
+      prompt: "[???] DESTINATION Wildcard_bits ? "
+    register: ACLS_DESTINATION_WILD
+#####ACLS-DESTINATION#####
+#########################################################################################################################################################
+
+#########################################################################################################################################################
+#####ACLS-DSCP#####
+  - name: ACLS
+    pause:
+      prompt: "[???] dscp var ? "
+    register: ACLS_DSCP
+#####ACLS-DSCP#####
+#########################################################################################################################################################
 
 #########################################################################################################################################################
 #####ACLS-TTL#####
@@ -109,7 +141,7 @@
                     wildcard_bits: 0.0.0.255
                     port_protocol:
                       eq: www
-                  dscp: ef
+                  dscp: {{ ACLS_DSCP.user_input }}
                   ttl:
                     {{ ACLS_TTL.user_input }}: {{ ACLS_TTL_data.user_input }}
 #            - name: 150
