@@ -50,5 +50,5 @@
                 dscp: ef
                 ttl:
                   eq: 10
-    state: replaced
+    state: {{ ACLS_STATE.user_ }}
 #####APPLY-CONFIGURATION#####
