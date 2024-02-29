@@ -29,7 +29,7 @@
   - name: Apply the new ACLs configuration
     cisco.ios.ios_acls:
       config:
-        - afi: ipv4
+        - afi: {{ ACLS_AFI.user_input }}
           acls:
             - name: 110
               aces:
