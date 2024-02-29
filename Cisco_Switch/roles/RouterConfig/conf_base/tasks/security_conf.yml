@@ -50,7 +50,7 @@
 #####GENERAL-SECURITY-CONFIG#####
 
 #####SCP-CONFIG#####
-- name: User
+- name: SCP
   pause:
     prompt: "[???] Would you like to enable the SCP Server ? (yes/no)"
   register: SCP_SERVER_CHOICE
@@ -62,5 +62,7 @@
 #####SCP-CONFIG#####
 
 #####RECAP#####
-
+  - name: RECAP
+    debug:
+      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}.
 #####RECAP#####
