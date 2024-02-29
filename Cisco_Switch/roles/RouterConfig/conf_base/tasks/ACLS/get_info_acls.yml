@@ -9,11 +9,15 @@
 
 #########################################GATHER#########################################
 
-  - name: Gather Existing ACLS
-    cisco.ios.ios_command:
-      commands:
-        - show access-lists
-    register: ACLS
+  - name: Gather ACLs configuration from target device
+    cisco.ios.ios_acls:
+      state: gathered
+
+#  - name: Gather Existing ACLS
+#    cisco.ios.ios_command:
+#      commands:
+#        - show access-lists
+#    register: ACLS
 
 #########################################GATHER#########################################
 
