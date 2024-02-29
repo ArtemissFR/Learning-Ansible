@@ -79,6 +79,20 @@
 #####APPLY-CONF#####
 
 #####RECAP#####
+  - name: RECAP (HOSTNAME)
+    debug:
+      msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
 
+  - name: RECAP (DOMAIN)
+    debug:
+      msg: " You have set {{ DOMAIN.user_input }} as Domain."
+
+  - name: RECAP (BASE-BANNER)
+    debug:
+      msg: " You have add {{ BASE_BANNER.user_input }} as Base Banner."
+
+  - name: RECAP (LOGIN-BANNER)
+    debug:
+      msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
 #####RECAP#####
 ######################################BANNERS######################################
