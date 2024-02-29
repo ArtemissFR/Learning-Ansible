@@ -39,7 +39,14 @@
 #####APPLY-CONFIG#####
 
 #####RECAP#####
+  - name: RECAP
+    debug:
+      msg: " You have decided to set up a PUBLIC SNMP Server : {{ SNMP_PUBLIC.user_input }} ."
 
+  - name: RECAP
+    debug:
+      msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
+#####RECAP#####
 #####RECAP#####
 
 #########################SNMP-CONFIGURATION#########################
