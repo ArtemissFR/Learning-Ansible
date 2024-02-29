@@ -46,3 +46,15 @@
     when: SNMP_CHOICE.user_input | bool
     
 ######################################SNMP######################################
+
+######################################ACLS######################################
+
+  - name: ACLS
+    pause:
+      prompt: "[???] Would you like to edit ACLS parameters ? (yes/no)"
+    register: ACLS_CHOICE
+
+  - include_tasks: ./ACLS/main.yml
+    when: ACLS_CHOICE.user_input | bool
+    
+######################################ACLS######################################
