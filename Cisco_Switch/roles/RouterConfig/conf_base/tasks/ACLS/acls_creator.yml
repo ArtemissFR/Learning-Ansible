@@ -1,11 +1,25 @@
 ####################################################################PROMPT####################################################################
 
 #####ACLS-STATE#####
-  - name: Interface
+  - name: ACLS
     pause:
-      prompt: "[???] Which state you want your ACLs to be ? [merged/replaced/overriden/deleted/rendered]"
+      prompt: "[???] Which STATE you want your ACLs to be ? [merged/replaced/overriden/deleted/rendered]"
     register: ACLS_STATE
 #####ACLS-STATE#####
+
+#####ACLS-AFI#####
+  - name: ACLS
+    pause:
+      prompt: "[???] Which type of AFI you want your ACLs to be ? [ipv4/ipv6]"
+    register: ACLS_AFI
+#####ACLS-AFI#####
+
+#####ACLS-GRANT#####
+  - name: ACLS
+    pause:
+      prompt: "[???] Which type of GRANT you want your ACLs to be ? [permit/deny]"
+    register: ACLS_GRANT
+#####ACLS-GRANT#####
 
 ####################################################################PROMPT####################################################################
 
