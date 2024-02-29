@@ -26,12 +26,14 @@
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ ROUTER_INT.user_input }}"
-          description: "{{ ROUTER_INT_DESC }}"
+          description: "{{ ROUTER_INT_DESC.user_input }}"
           enabled: true
 #####APPLY-CONFIGURATION-TO-INTERFACE#####
 
 #####RECAP-INTERFACE#####
-
+  - name: RECAP
+    debug:
+      msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
 #####RECAP-INTERFACE#####
 
 ##################################CONFIG-OF-INTERFACES##################################
