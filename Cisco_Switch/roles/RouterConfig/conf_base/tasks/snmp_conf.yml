@@ -49,6 +49,5 @@
       msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
     when: SNMP_PRIVATE_CHOICE.user_input | bool
 #####RECAP#####
-#####RECAP#####
 
 #########################SNMP-CONFIGURATION#########################
