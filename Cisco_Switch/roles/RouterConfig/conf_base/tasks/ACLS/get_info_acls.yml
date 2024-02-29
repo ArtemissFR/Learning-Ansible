@@ -9,12 +9,16 @@
 
 #########################################GATHER#########################################
 
+  - name: Gather Existing ACLS
+    cisco.ios.ios_command:
+      commands:
+        - show access-lists
+    register: ACLS
 
 #########################################GATHER#########################################
 
-#########################################CONVERT#########################################
+###TEST
 
-  - name: Convert Interfaces facts in List
-    set_fact:
-      interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
-#########################################CONVERT#########################################
+  - name: cat ACLS
+    debug:
+      var: ACLS
