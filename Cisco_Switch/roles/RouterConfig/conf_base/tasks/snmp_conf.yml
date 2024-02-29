@@ -1,0 +1,20 @@
+#########################SNMP-CONFIGURATION#########################
+
+#####PROMPT#####
+
+#####PROMPT#####
+
+#####APPLY-CONFIG#####
+  - name: Configuration of SNMP public and private
+    ios_config:
+      commands:
+        - snmp-server community {{ SNMP_PUBLIC }} RO
+        - snmp-server community {{ SNMP_PRIVATE }} RW
+        - snmp-server community {{ SNMP_PRIVATE_TEST }} RW
+#####APPLY-CONFIG#####
+
+#####RECAP#####
+
+#####RECAP#####
+
+#########################SNMP-CONFIGURATION#########################
