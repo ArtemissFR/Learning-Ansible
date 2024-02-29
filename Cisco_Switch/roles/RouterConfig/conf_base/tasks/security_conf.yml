@@ -30,23 +30,23 @@
 #####PROMPT-REQUEST#####
 
 #####GENERAL-SECURITY-CONFIG#####
-- name: "Creation of the new User : {{ CISCO_USER }}"
-  ios_config:
-    lines:
-    - username {{ CISCO_USER.user_input }} privilege {{ CISCO_USER_PRIVILEGE.user_input }} password {{ CISCO_USER_PASS.user_input }}
-  when: CISCO_USER_CHOICE.user_input | bool
+  - name: "Creation of the new User : {{ CISCO_USER.user_input }}"
+    ios_config:
+      lines:
+      - username {{ CISCO_USER.user_input }} privilege {{ CISCO_USER_PRIVILEGE.user_input }} password {{ CISCO_USER_PASS.user_input }}
+    when: CISCO_USER_CHOICE.user_input | bool
 
-- name: Enable password configuration
-  ios_config:
-    lines: 
-    - enable secret {{ CISCO_SECRET.user_input }}
-  when: CISCO_USER_CHOICE.user_input | bool
+  - name: Enable password configuration
+    ios_config:
+      lines: 
+      - enable secret {{ CISCO_SECRET.user_input }}
+    when: CISCO_USER_CHOICE.user_input | bool
 
-- name: Encrypt the passwords
-  ios_config:
-    lines:
-    - service password-encryption
-  when: CISCO_USER_CHOICE.user_input | bool
+  - name: Encrypt the passwords
+    ios_config:
+      lines:
+      - service password-encryption
+    when: CISCO_USER_CHOICE.user_input | bool
 #####GENERAL-SECURITY-CONFIG#####
 
 #####SCP-CONFIG#####
@@ -64,5 +64,5 @@
 #####RECAP#####
   - name: RECAP
     debug:
-      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}.
+      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
 #####RECAP#####
