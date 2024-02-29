@@ -12,7 +12,7 @@
 #####CHOOSE-INTERFACE#####
   - name: Interface
     pause:
-      prompt: "[???] Which router interface would you like to set ? "
+      prompt: "[???] Which router interface would you like to set ? (example : FastEthernet0/0)"
     register: ROUTER_INT
 #####CHOOSE-INTERFACE#####
 #####ADD-DESCRIPTION-TO-INTERFACE#####
