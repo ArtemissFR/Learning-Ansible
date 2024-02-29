@@ -65,3 +65,15 @@
     when: SECURITY_CHOICE.user_input | bool
     
 ######################################SECURITY######################################
+
+######################################SNMP######################################
+
+  - name: SNMP
+    pause:
+      prompt: "[???] Would you like to customise the SNMP parameters ? (yes/no)"
+    register: SNMP_CHOICE
+
+  - include_tasks: snmp_conf.yml
+    when: SNMP_CHOICE.user_input | bool
+    
+######################################SNMP######################################
