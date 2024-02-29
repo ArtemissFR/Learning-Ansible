@@ -1,1 +1,18 @@
+##################################CONFIG-OF-ACLS##################################
 
+#####CHOOSE-INTERFACE#####
+  - name: Interface
+    pause:
+      prompt: "[???] Which router interface would you like to set ? "
+    register: ROUTER_INT
+#####CHOOSE-INTERFACE#####
+#####ADD-DESCRIPTION-TO-INTERFACE#####
+  - name: Interface
+    pause:
+      prompt: "[???] What description do you want to put on the interface ? "
+    register: ROUTER_INT_DESC
+#####ADD-DESCRIPTION-TO-INTERFACE#####
+
+#####APPLY-CONFIGURATION#####
+
+#####APPLY-CONFIGURATION#####
