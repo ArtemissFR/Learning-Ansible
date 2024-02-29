@@ -18,7 +18,7 @@
 
   - name: User
     pause:
-      prompt: "[???] What level of privilege would you like to set ? "
+      prompt: "[???] What level of privilege would you like to set ? (Level 1 : Read-Only | Level 2 : Read-Only + Ping | Level 15 : Full Access)"
     register: CISCO_USER_PRIVILEGE
     when: CISCO_USER_CHOICE.user_input | bool
 
