@@ -12,7 +12,7 @@
 ####################################################################CONFIG-OF-ACLS####################################################################
 
 #####APPLY-CONFIGURATION#####
-  - name: Replaces device configuration of listed acls with provided configuration
+  - name: Apply the new ACLs configuration
   cisco.ios.ios_acls:
     config:
       - afi: ipv4
