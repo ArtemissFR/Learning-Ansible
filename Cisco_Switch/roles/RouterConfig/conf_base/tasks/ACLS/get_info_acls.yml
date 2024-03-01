@@ -9,7 +9,7 @@
 
   - name: [ACLs] INFORMATION
     debug:
-       msg: "This role will collect information about ACLS from {{ inventory_hostname }} to help you !"
+      msg: "This role will collect information about ACLS from {{ inventory_hostname }} to help you !"
 
 ############################################################INFORMATION############################################################
 
