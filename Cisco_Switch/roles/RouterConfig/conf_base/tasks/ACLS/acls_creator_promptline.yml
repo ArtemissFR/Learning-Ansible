@@ -57,26 +57,16 @@
       prompt: "[???] Would you like a list of all option and parameters you can add ? (yes/no)"
     register: ACLS_OPTION_LIST_CHOICE
 
-#  - name: ACLS
-#    ansible.builtin.debug:
-#      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONSPARAMETERS.txt') | list }}"
-#    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+  - name: ACLS
+    ansible.builtin.debug:
+      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONSPARAMETERS.txt') | list }}"
+    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 
-  - name: "Read a file content"
-    shell: |
-      cat /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/ACLS/HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
-    register: ACLS_OPTIONSPARAMETERS
-    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
-  
-  - name: "Print the file content to a console"
-    debug:
-      msg: "{{ ACLS_OPTIONSPARAMETERS.stdout }}"
-    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 #####HELP#####
 
   - name: ACLS
     pause:
-      prompt: "[???] Which options would you like to add ? (format : tll eq 10 )"
+      prompt: "[???] Which options would you like to add ? (format : ttl eq 10 )"
     register: ACLS_OPTION
 ###################################ACLS-1-PARAMETERS###################################
 ####################################################################COMMAND-2####################################################################
