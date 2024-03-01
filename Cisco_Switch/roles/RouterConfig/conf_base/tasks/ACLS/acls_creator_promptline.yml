@@ -65,12 +65,12 @@
   - name: "Read a file content"
     shell: |
       cat ./HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt
-    register: ACLS_OPTIONS&PARAMETERS
+    register: ACLS_OPTIONSPARAMETERS
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
   
   - name: "Print the file content to a console"
     debug:
-      msg: "{{ ACLS_OPTIONS&PARAMETERS.stdout }}"
+      msg: "{{ ACLS_OPTIONSPARAMETERS.stdout }}"
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 #####HELP#####
 
