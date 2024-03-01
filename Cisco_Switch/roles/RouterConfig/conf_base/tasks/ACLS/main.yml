@@ -11,6 +11,10 @@
 ######################################GATHER######################################
 
 ######################################PROMPT######################################
+  - name: ACLS
+    pause:
+      prompt: "[???] Do you want to launch the ACLS Creator ? (yes/no)"
+    register: ACLS_CREATOR_CHOICE
 
 ######################################PROMPT######################################
 
@@ -18,8 +22,10 @@
   - name: INFORMATION
     debug:
       msg:  Starting the ACLS creator engine ... 
+    when: ACLS_CREATOR_CHOICE.user_input | bool
 ######################################INFORMATION######################################
 
 ######################################ACLS_CREATOR######################################
   - include_tasks: acls_creator.yml
+    when: ACLS_CREATOR_CHOICE.user_input | bool
 ######################################ACLS_CREATOR######################################
