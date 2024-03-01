@@ -31,6 +31,6 @@
   - name: Apply the ACLs configuration
     cisco.ios.ios_config:
       lines:
-        - ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}
-        - {{ ACLS_COMMAND_LINE.user_input }}
+        - "ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}"
+        - "{{ ACLS_COMMAND_LINE.user_input }}"
 #####ACLS_LINE_CREATOR#####
