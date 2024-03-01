@@ -28,5 +28,5 @@
       config:
         - afi: "{{ ACLS_DELETE_AFI_BASED_TYPE.user_input }}"
       state: deleted
-    when: ACLS_DELETE_AFI_BASED.user_input | bool
+    when: ACLS_DELETE_ALL.user_input == "no"
 ####################################################################SCRIPT####################################################################
