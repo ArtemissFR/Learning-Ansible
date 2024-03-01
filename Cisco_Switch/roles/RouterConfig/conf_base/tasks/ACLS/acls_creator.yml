@@ -157,10 +157,12 @@
                     address: "{{ ACLS_DEST_IP.user_input }}"
                     wildcard_bits: "{{ ACLS_DEST_WILD.user_input }}"
                     port_protocol:
-                      "{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_DATA.user_input }}"
+                      eq: "{{ ACLS_PORT_PROTOCOL_DATA.user_input }}"
+                      #"{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_DATA.user_input }}"
                   dscp: "{{ ACLS_DSCP.user_input }}"
                   ttl:
-                    "{{ ACLS_TTL.user_input }}": "{{ ACLS_TTL_DATA.user_input }}"
+                    eq: "{{ ACLS_TTL_DATA.user_input }}"
+                    #"{{ ACLS_TTL.user_input }}": "{{ ACLS_TTL_DATA.user_input }}"
 #            - name: 150
 #              aces:
 #                - grant: deny
