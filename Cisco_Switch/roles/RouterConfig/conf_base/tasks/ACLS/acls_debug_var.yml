@@ -41,7 +41,7 @@
 
   - name: ACLS_TTL_DATA
     debug:
-      msg: "{{ ACLS_TTL_data.user_input }}"
+      msg: "{{ ACLS_TTL_DATA.user_input }}"
 
   - name: cat ACLS
     debug:
