@@ -1,45 +1,45 @@
 ####################################################################DEBUG####################################################################
-  - name: cat ACLS
+  - name: ACLS_AFI
     debug:
       msg: "{{ ACLS_AFI.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_GRANT
     debug:
       msg: "{{ ACLS_GRANT.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_SOURCE_IP
     debug:
       msg: "{{ ACLS_SOURCE_IP.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_SOURCE_WILD
     debug:
       msg: "{{ ACLS_SOURCE_WILD.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_DEST_IP
     debug:
       msg: "{{ ACLS_DEST_IP.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_DEST_WILD
     debug:
       msg: "{{ ACLS_DEST_WILD.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_PORT_PROTOCOL
     debug:
       msg: "{{ ACLS_PORT_PROTOCOL.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_PORT_PROTOCOL_DATA
     debug:
-      msg: "{{ ACLS_PORT_PROTOCOL_data.user_input }}"
+      msg: "{{ ACLS_PORT_PROTOCOL_DATA.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_DSCP
     debug:
       msg: "{{ ACLS_DSCP.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_TTL
     debug:
       msg: "{{ ACLS_TTL.user_input }}"
 
-  - name: cat ACLS
+  - name: ACLS_TTL_DATA
     debug:
       msg: "{{ ACLS_TTL_data.user_input }}"
 
