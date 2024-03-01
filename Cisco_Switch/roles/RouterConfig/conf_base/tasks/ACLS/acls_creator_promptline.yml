@@ -64,7 +64,7 @@
 
   - name: "Read a file content"
     shell: |
-      cat ./HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
+      cat /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/ACLS/HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
     register: ACLS_OPTIONSPARAMETERS
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
   
