@@ -9,7 +9,7 @@
 #####ACLS_COMMAND_LINE_EXAMPLE#####
   - name: ACLS
     debug:
-      msg: "example : 'ip access-list extended 110", 'deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 echo dscp ef ttl eq 10', 'permit ip host 2.2.2.2 host 3.3.3.3'"
+      msg: "example : ip access-list extended 110, deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 echo dscp ef ttl eq 10, permit ip host 2.2.2.2 host 3.3.3.3"
 #####ACLS_COMMAND_LINE_EXAMPLE#####
 
 #####ACLS_COMMAND_LINE#####
