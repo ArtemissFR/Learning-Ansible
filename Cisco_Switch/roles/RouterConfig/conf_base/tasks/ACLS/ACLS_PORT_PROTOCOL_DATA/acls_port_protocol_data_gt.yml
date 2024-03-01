@@ -1,1 +1,7 @@
-
+#####ACLS-PORT-PROTOCOL-gt#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for gt ?"
+    register: ACLS_PORT_PROTOCOL_DATA
+    when: ACLS_PORT_PROTOCOL.user_input == "gt"
+#####ACLS-PORT-PROTOCOL-gt#####
