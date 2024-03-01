@@ -71,6 +71,17 @@
 ####################################################################COMMAND-2####################################################################
 ####################################################################PROMPT####################################################################
 
+####################################################################VALIDATION####################################################################
+  - name: Your Access-List :
+    debug:
+      msg: "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }} {{ ACLS_OPTION.user_input }}"
+
+  - name: ACLS
+    pause:
+      prompt: "[???] Are you sure you want to apply this Access-List ? (yes/no)"
+    register: ACLS_VALIDATION_CHOICE
+####################################################################VALIDATION####################################################################
+
 ####################################################################SCRIPT####################################################################
 #####ACLS_LINE_CREATOR#####
   - name: Apply the ACLs configuration
@@ -78,6 +89,7 @@
       lines:
         - "ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}"
         - "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }} {{ ACLS_OPTION.user_input }}"
+    when: ACLS_VALIDATION_CHOICE.user_input | bool
 #####ACLS_LINE_CREATOR#####
 ####################################################################SCRIPT####################################################################
 
@@ -86,5 +98,18 @@
   - name: INFORMATION
     debug:
       msg: "Done ! Your ACLs configuration has been deployed perfectly !"
+    when: ACLS_VALIDATION_CHOICE.user_input | bool
+
+  - name: INFORMATION
+    debug:
+      msg: "Configuration aborted !"
+    when: ACLS_VALIDATION_CHOICE.user_input == "no"
 #####INFORMATION#####
+
+#####RECAP#####
+  - name: "RECAP of {{ ACLS_LINE_NAME.user_input }}"
+    debug:
+      msg: "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }} {{ ACLS_OPTION.user_input }}"
+    when: ACLS_VALIDATION_CHOICE.user_input | bool
+#####RECAP#####
 ####################################################################OTHER####################################################################
