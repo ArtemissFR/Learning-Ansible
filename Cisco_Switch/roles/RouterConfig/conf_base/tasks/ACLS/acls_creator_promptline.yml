@@ -6,6 +6,7 @@
 
 
 ####################################################################PROMPT####################################################################
+####################################################################COMMAND-1####################################################################
 #####ACLS_LINE_NAME#####
   - name: ACLS
     pause:
@@ -19,7 +20,9 @@
       prompt: "[???] What type would you like your ACLs to be ? (extended/standard/resequence/logging/log-update)"
     register: ACLS_LINE_TYPE
 #####ACLS_LINE_TYPE#####
+####################################################################COMMAND-1####################################################################
 
+####################################################################COMMAND-2####################################################################
 #####ACLS_COMMAND_LINE#####
 #  - name: ACLS
 #    pause:
@@ -30,11 +33,17 @@
 #####ACLS-GRANT#####
   - name: ACLS
     pause:
-      prompt: "[???] Which type of GRANT you want your ACLs to be ? [permit/deny]"
+      prompt: "[???] Which type of GRANT you want your ACLs to be ? (permit/deny)"
     register: ACLS_GRANT
 #####ACLS-GRANT#####
 
-#########################################################################################################################################################
+#####ACLS-PROTOCOL#####
+  - name: ACLS
+    pause:
+      prompt: "[???] Which protocol should the rule apply to? (ahp/eigrp/esp/gre/icmp/igmp/ip/ipinip/nos/ospf/pcp/pim/tcp/udp)"
+    register: ACLS_BASE_PROTOCOL
+#####ACLS-PROTOCOL#####
+
 #####ACLS-SOURCE#####
   - name: ACLS
     pause:
@@ -57,6 +66,7 @@
       prompt: "[???] DESTINATION Wildcard_bits ? "
     register: ACLS_DEST_WILD
 #####ACLS-DESTINATION#####
+####################################################################COMMAND-2####################################################################
 ####################################################################PROMPT####################################################################
 
 ####################################################################SCRIPT####################################################################
@@ -65,7 +75,7 @@
     cisco.ios.ios_config:
       lines:
         - "ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}"
-        - "{{ ACLS_GRANT.user_input }} {{ ACLS_GRANT.user_input }}"
+        - "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }}"
 #####ACLS_LINE_CREATOR#####
 ####################################################################SCRIPT####################################################################
 
