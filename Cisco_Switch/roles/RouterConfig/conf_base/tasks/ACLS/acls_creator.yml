@@ -180,25 +180,25 @@
   - name: Apply the new ACLs configuration
     cisco.ios.ios_acls:
       config:
-        - afi: {{ ACLS_AFI.user_input }}
+        - afi: "{{ ACLS_AFI.user_input }}"
           acls:
             - name: 110
               aces:
-                - grant: {{ ACLS_GRANT.user_input }}
+                - grant: "{{ ACLS_GRANT.user_input }}"
                   protocol_options:
                     tcp:
                       syn: true
                   source:
-                    address: {{ ACLS_SOURCE_IP.user_input }}
-                    wildcard_bits: {{ ACLS_SOURCE_WILD.user_input }}
+                    address: "{{ ACLS_SOURCE_IP.user_input }}"
+                    wildcard_bits: "{{ ACLS_SOURCE_WILD.user_input }}"
                   destination:
-                    address: {{ ACLS_DEST_IP.user_input }}
-                    wildcard_bits: {{ ACLS_DEST_WILD.user_input }}
+                    address: "{{ ACLS_DEST_IP.user_input }}"
+                    wildcard_bits: "{{ ACLS_DEST_WILD.user_input }}"
                     port_protocol:
-                      {{ ACLS_PORT_PROTOCOL.user_input }}: {{ ACLS_PORT_PROTOCOL_data }}
-                  dscp: {{ ACLS_DSCP.user_input }}
+                      "{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_data }}"
+                  dscp: "{{ ACLS_DSCP.user_input }}"
                   ttl:
-                    {{ ACLS_TTL.user_input }}: {{ ACLS_TTL_data.user_input }}
+                    "{{ ACLS_TTL.user_input }}": "{{ ACLS_TTL_data.user_input }}"
 #            - name: 150
 #              aces:
 #                - grant: deny
@@ -219,6 +219,6 @@
 #                  dscp: ef
 #                  ttl:
 #                    eq: 10
-      state: {{ ACLS_STATE.user_input }}
+      state: "{{ ACLS_STATE.user_input }}"
 #####APPLY-CONFIGURATION#####
 ####################################################################CONFIG-OF-ACLS####################################################################
