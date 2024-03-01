@@ -1,18 +1,18 @@
 # ~ CISCO X ANSIBLE ~ 
 
-## List of roles :
-- **"connectivity_test"**
+## List of Launcher :
+- **"Launch_FirstTest.yml"**
  --> 
-`Ping the remote nodes`
-- **"show_info"**
+`Première expérience de test sur machine CISCO`
+- **"Launcher_RouterConfig.yml"**
  --> 
-`Show information about the version & the interfaces (need to do -v )`
-- **"conf_base"**
+  `A pack of different configuration for CISCO Routers`
+- **"Save.yml"**
  --> 
-`Configure the CISCO systems`
-- **"conf_switch"**
+  `Make a backup file of every CISCO machine`
+- **"Restore.yml"**
  --> 
-`Configure the switchs`
+  `Allow you to restore a backup file on a remote CISCO`
 
 ## Edit Vars :
 You will need to the edit the `"VARS.yml"` file to suit your needs and customize the playbook.
