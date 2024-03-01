@@ -1,1 +1,13 @@
+#####ACLS-TTL-range#####
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] What is the number of packets you want to set for range end ?"
+#    register: ACLS_TTL_range_end
+#    when: ACLS_TTL.user_input == "range"
 
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] What is the number of packets you want to set for range start ?"
+#    register: ACLS_TTL_range_start
+#    when: ACLS_TTL.user_input == "range"
+#####ACLS-TTL-range#####
