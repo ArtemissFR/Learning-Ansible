@@ -1,1 +1,14 @@
 
+#####ACLS-PORT-PROTOCOL-range#####
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] What is the number of packets you want to set for range end ?"
+#    register: ACLS_PORT_PROTOCOL_range_end
+#    when: ACLS_PORT_PROTOCOL.user_input == "range"
+
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] What is the number of packets you want to set for range start ?"
+#    register: ACLS_PORT_PROTOCOL_range_start
+#    when: ACLS_PORT_PROTOCOL.user_input == "range"
+#####ACLS-PORT-PROTOCOL-range#####
