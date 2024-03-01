@@ -62,49 +62,23 @@
 #####ACLS-PORT-PROTOCOL#####
 
 #####ACLS-PORT-PROTOCOL-eq#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for eq ? "
-    register: ACLS_PORT_PROTOCOL_DATA
-    when: ACLS_PORT_PROTOCOL.user_input == "eq"
+  - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_eq.yml
 #####ACLS-PORT-PROTOCOL-eq#####
 
 #####ACLS-PORT-PROTOCOL-gt#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for gt ?"
-    register: ACLS_PORT_PROTOCOL_DATA
-    when: ACLS_PORT_PROTOCOL.user_input == "gt"
+  - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_gt.yml
 #####ACLS-PORT-PROTOCOL-gt#####
 
 #####ACLS-PORT-PROTOCOL-lt#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for lt ?"
-    register: ACLS_PORT_PROTOCOL_DATA
-    when: ACLS_PORT_PROTOCOL.user_input == "lt"
+  - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_lt.yml
 #####ACLS-PORT-PROTOCOL-lt#####
 
 #####ACLS-PORT-PROTOCOL-neq#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for neq ?"
-    register: ACLS_PORT_PROTOCOL_DATA
-    when: ACLS_PORT_PROTOCOL.user_input == "neq"
+  - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_neq.yml
 #####ACLS-PORT-PROTOCOL-neq#####
 
 #####ACLS-PORT-PROTOCOL-range#####
-#  - name: ACLS
-#    pause:
-#      prompt: "[???] What is the number of packets you want to set for range end ?"
-#    register: ACLS_PORT_PROTOCOL_range_end
-#    when: ACLS_PORT_PROTOCOL.user_input == "range"
-
-#  - name: ACLS
-#    pause:
-#      prompt: "[???] What is the number of packets you want to set for range start ?"
-#    register: ACLS_PORT_PROTOCOL_range_start
-#    when: ACLS_PORT_PROTOCOL.user_input == "range"
+#  - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_range.yml
 #####ACLS-PORT-PROTOCOL-range#####
 #########################################################################################################################################################
 
