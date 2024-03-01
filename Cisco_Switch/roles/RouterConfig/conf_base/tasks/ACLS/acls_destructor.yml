@@ -1,1 +1,10 @@
+  - name: ACLS
+    pause:
+      prompt: "[???] Do you want to delete ALL of configured ACLs ? (yes/no)"
+    register: ACLS_DELETE_ALL
+
+  - name: ACLS
+    pause:
+      prompt: "[???] Do you want to delete SPECIFIC configured ACLs ? (yes/no)"
+    register: ACLS_DELETE_SPECIFIC
 
