@@ -9,16 +9,24 @@
       prompt: "[???] Do you want to delete ACLs based on AFI ? (yes/no)"
     register: ACLS_DELETE_AFI_BASED
     when: ACLS_DELETE_ALL.user_input == "no"
+
+  - name: ACLS
+    pause:
+      prompt: "[???] Choose what type of AFI you want to delete : (ipv4/ipv6) "
+    register: ACLS_DELETE_AFI_BASED_TYPE
+    when: (ACLS_DELETE_ALL.user_input == "no" and ACLS_DELETE_AFI_BASED.user_input == "yes")
 ####################################################################PROMPT####################################################################
 
 ####################################################################SCRIPT####################################################################
-- name: Delete ALL of configured ACLs
-  cisco.ios.ios_acls:
-    state: deleted
-
-- name: "Delete ACLs based on AFI (Note: This won't delete the all configured ACLs)"
-  cisco.ios.ios_acls:
-    config:
-      - afi: ipv4
-    state: deleted
+  - name: Delete ALL of configured ACLs
+    cisco.ios.ios_acls:
+      state: deleted
+    when: ACLS_DELETE_ALL.user_input | bool
+  
+  - name: Delete ACLs based on AFI
+    cisco.ios.ios_acls:
+      config:
+        - afi: "{{ ACLS_DELETE_AFI_BASED_TYPE.user_input }}"
+      state: deleted
+    when: ACLS_DELETE_AFI_BASED.user_input | bool
 ####################################################################SCRIPT####################################################################
