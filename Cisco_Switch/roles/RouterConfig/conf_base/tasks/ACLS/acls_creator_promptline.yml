@@ -50,7 +50,21 @@
     register: ACLS_DEST_IP
 #####ACLS-DESTINATION#####
 
+###################################ACLS-1-PARAMETERS###################################
 
+  - name: ACLS
+    pause:
+      prompt: "[???] Would you like a list of all option you can add ? (yes/no)"
+    register: ACLS_OPTION_LIST_CHOICE
+
+  - name: ACLS
+    ansible.builtin.debug:
+      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONS.txt') }}"
+    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+
+
+
+###################################ACLS-1-PARAMETERS###################################
 
 #####ACLS_COMMAND_PARAMETERS#####
 #  - name: ACLS
