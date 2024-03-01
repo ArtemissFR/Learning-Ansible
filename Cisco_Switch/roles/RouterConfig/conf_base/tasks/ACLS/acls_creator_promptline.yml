@@ -23,13 +23,6 @@
 ####################################################################COMMAND-1####################################################################
 
 ####################################################################COMMAND-2####################################################################
-#####ACLS_COMMAND_PARAMETERS#####
-#  - name: ACLS
-#    pause:
-#      prompt: "[???] If you have other parameters you would like to add , add theme below :"
-#    register: ACLS_COMMAND_PARAMETERS
-#####ACLS_COMMAND_PARAMETERS#####
-
 #####ACLS-GRANT#####
   - name: ACLS
     pause:
@@ -56,6 +49,15 @@
       prompt: "[???] Configure your DESTINATION host : (any/host/[ip])"
     register: ACLS_DEST_IP
 #####ACLS-DESTINATION#####
+
+
+
+#####ACLS_COMMAND_PARAMETERS#####
+#  - name: ACLS
+#    pause:
+#      prompt: "[???] If you have other parameters you would like to add , add theme below :"
+#    register: ACLS_COMMAND_PARAMETERS
+#####ACLS_COMMAND_PARAMETERS#####
 ####################################################################COMMAND-2####################################################################
 ####################################################################PROMPT####################################################################
 
