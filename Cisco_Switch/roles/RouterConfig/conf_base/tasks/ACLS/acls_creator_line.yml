@@ -22,5 +22,5 @@
 #####ACLS_LINE_CREATOR#####
   - name: Apply the ACLs configuration
     cisco.ios.ios_command:
-      commands: {{ ACLS_COMMAND_LINE.user_input }}
+      commands: "{{ ACLS_COMMAND_LINE.user_input }}"
 #####ACLS_LINE_CREATOR#####
