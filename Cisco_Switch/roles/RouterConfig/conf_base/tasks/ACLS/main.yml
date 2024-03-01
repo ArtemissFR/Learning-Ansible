@@ -23,7 +23,7 @@
 
   - name: ACLS
     pause:
-      prompt: "[???] Do you want to launch the ACLS Creator with PROMPT or in LINE ? (promptV1/line (promptV1 is limited) )"
+      prompt: "[???] Do you want to launch the ACLS Creator with PROMPT or in LINE ? (prompt/line (prompt is limited) )"
     register: ACLS_CREATOR_TYPE_CHOICE
     when: ACLS_CREATOR_CHOICE.user_input | bool
 ######################################PROMPT######################################
@@ -43,8 +43,8 @@
     debug:
       msg:  "Starting the ACLS creator {{  ACLS_CREATOR_TYPE_CHOICE.user_input }} engine ... "
 
-  - include_tasks: acls_creator_promptV1.yml
-    when: ACLS_CREATOR_TYPE_CHOICE.user_input == "promptV1"
+  - include_tasks: acls_creator_prompt.yml
+    when: ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt"
 
   - include_tasks: acls_creator_line.yml
     when: ACLS_CREATOR_TYPE_CHOICE.user_input == "line"
