@@ -1,1 +1,8 @@
 
+#####ACLS-TTL-lt#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for lt ?"
+    register: ACLS_TTL_DATA
+    when: ACLS_TTL.user_input == "lt"
+#####ACLS-TTL-lt#####
