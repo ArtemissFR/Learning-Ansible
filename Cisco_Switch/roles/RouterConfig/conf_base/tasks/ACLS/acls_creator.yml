@@ -105,48 +105,27 @@
 #####ACLS-TTL#####
 
 #####ACLS-TTL-eq#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for eq ? "
-    register: ACLS_TTL_DATA
+  - include_tasks: ./ACLS_TLL_DATA/acls_tll_data_eq.yml
     when: ACLS_TTL.user_input == "eq"
 #####ACLS-TTL-eq#####
 
 #####ACLS-TTL-gt#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for gt ?"
-    register: ACLS_TTL_DATA
+  - include_tasks: ./ACLS_TLL_DATA/acls_tll_data_gt.yml
     when: ACLS_TTL.user_input == "gt"
 #####ACLS-TTL-gt#####
 
 #####ACLS-TTL-lt#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for lt ?"
-    register: ACLS_TTL_DATA
+  - include_tasks: ./ACLS_TLL_DATA/acls_tll_data_lt.yml
     when: ACLS_TTL.user_input == "lt"
 #####ACLS-TTL-lt#####
 
 #####ACLS-TTL-neq#####
-  - name: ACLS
-    pause:
-      prompt: "[???] What is the number of packets you want to set for neq ?"
-    register: ACLS_TTL_DATA
+  - include_tasks: ./ACLS_TLL_DATA/acls_tll_data_neq.yml
     when: ACLS_TTL.user_input == "neq"
 #####ACLS-TTL-neq#####
 
 #####ACLS-TTL-range#####
-#  - name: ACLS
-#    pause:
-#      prompt: "[???] What is the number of packets you want to set for range end ?"
-#    register: ACLS_TTL_range_end
-#    when: ACLS_TTL.user_input == "range"
-
-#  - name: ACLS
-#    pause:
-#      prompt: "[???] What is the number of packets you want to set for range start ?"
-#    register: ACLS_TTL_range_start
+#  - include_tasks: ./ACLS_TLL_DATA/acls_tll_data_range.yml
 #    when: ACLS_TTL.user_input == "range"
 #####ACLS-TTL-range#####
 #########################################################################################################################################################
