@@ -1,0 +1,7 @@
+#####ACLS-TTL-eq#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What is the number of packets you want to set for eq ? "
+    register: ACLS_TTL_DATA
+    when: ACLS_TTL.user_input == "eq"
+#####ACLS-TTL-eq#####
