@@ -7,6 +7,13 @@
 
 ####################################################################PROMPT####################################################################
 
+#####ACLS_NAME#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What name do you want to set ?"
+    register: ACLS_NAME
+#####ACLS_NAME#####
+
 #####ACLS-STATE#####
   - name: ACLS
     pause:
@@ -150,7 +157,7 @@
       config:
         - afi: "{{ ACLS_AFI.user_input }}"
           acls:
-            - name: 110
+            - name: "{{ ACLS_NAME.user_input }}"
               aces:
                 - grant: "{{ ACLS_GRANT.user_input }}"
                   protocol_options:
