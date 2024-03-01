@@ -7,10 +7,15 @@
 
 ####################################################################PROMPT####################################################################
 
-#####ACLS_NAME#####
+#####ACLS_COMMAND_LINE#####
   - name: ACLS
     pause:
-      prompt: "[???] What name do you want to set ?"
-    register: ACLS_NAME
-#####ACLS_NAME#####
+      prompt: "[???] Write your ACLs command here : (example : "
+    register: ACLS_COMMAND_LINE
+#####ACLS_COMMAND_LINE#####
 
+#####ACLS_LINE_CREATOR#####
+  - name: Apply the ACLs configuration
+    cisco.ios.ios_command:
+      commands: {{ ACLS_COMMAND_LINE.user_input }}
+#####ACLS_LINE_CREATOR#####
