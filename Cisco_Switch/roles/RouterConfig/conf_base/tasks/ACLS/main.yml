@@ -35,7 +35,7 @@
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
 
   - include_tasks: acls_destructor.yml
-    when: ACLS_DESTRUCTOR.user_input | bool
+    when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
 ######################################ACLS_DESTRUCTOR######################################
 
 ######################################ACLS_CREATOR######################################
