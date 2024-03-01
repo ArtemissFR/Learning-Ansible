@@ -51,19 +51,22 @@
 #####ACLS-DESTINATION#####
 
 ###################################ACLS-1-PARAMETERS###################################
-
+#####HELP#####
   - name: ACLS
     pause:
-      prompt: "[???] Would you like a list of all option you can add ? (yes/no)"
+      prompt: "[???] Would you like a list of all option and parameters you can add ? (yes/no)"
     register: ACLS_OPTION_LIST_CHOICE
 
   - name: ACLS
     ansible.builtin.debug:
-      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONS.txt') }}"
+      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt') }}"
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+#####HELP#####
 
-
-
+  - name: ACLS
+    pause:
+      prompt: "[???] Which options would you like to add ? (format : tll eq 10 )"
+    register: ACLS_OPTION
 ###################################ACLS-1-PARAMETERS###################################
 
 #####ACLS_COMMAND_PARAMETERS#####
@@ -81,7 +84,7 @@
     cisco.ios.ios_config:
       lines:
         - "ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}"
-        - "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }}"
+        - "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }} {{ ACLS_OPTION.user_input }}"
 #####ACLS_LINE_CREATOR#####
 ####################################################################SCRIPT####################################################################
 
