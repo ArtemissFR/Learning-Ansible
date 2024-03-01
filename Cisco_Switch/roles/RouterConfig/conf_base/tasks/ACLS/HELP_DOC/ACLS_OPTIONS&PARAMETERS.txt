@@ -1,0 +1,55 @@
+  administratively-prohibited  Administratively prohibited
+  alternate-address            Alternate address
+  conversion-error             Datagram conversion
+  dod-host-prohibited          Host prohibited
+  dod-net-prohibited           Net prohibited
+  dscp                         Match packets with given dscp value
+  echo                         Echo (ping)
+  echo-reply                   Echo reply
+  fragments                    Check non-initial fragments
+  general-parameter-problem    Parameter problem
+  host-isolated                Host isolated
+  host-precedence-unreachable  Host unreachable for precedence
+  host-redirect                Host redirect
+  host-tos-redirect            Host redirect for TOS
+  host-tos-unreachable         Host unreachable for TOS
+  host-unknown                 Host unknown
+  host-unreachable             Host unreachable
+  information-reply            Information replies
+  information-request          Information requests
+  log                          Log matches against this entry
+  log-input                    Log matches against this entry, including input
+                               interface
+  mask-reply                   Mask replies
+  mask-request                 Mask requests
+  mobile-redirect              Mobile host redirect
+  net-redirect                 Network redirect
+  net-tos-redirect             Net redirect for TOS
+  net-tos-unreachable          Network unreachable for TOS
+  net-unreachable              Net unreachable
+  network-unknown              Network unknown
+  no-room-for-option           Parameter required but no room
+  option                       Match packets with given IP Options value
+  option-missing               Parameter required but not present
+  packet-too-big               Fragmentation needed and DF set
+  parameter-problem            All parameter problems
+  port-unreachable             Port unreachable
+  precedence                   Match packets with given precedence value
+  precedence-unreachable       Precedence cutoff
+  protocol-unreachable         Protocol unreachable
+  reassembly-timeout           Reassembly timeout
+  redirect                     All redirects
+  reflect                      Create reflexive access list entry
+  router-advertisement         Router discovery advertisements
+  router-solicitation          Router discovery solicitations
+  source-quench                Source quenches
+  source-route-failed          Source route failed
+  time-exceeded                All time exceededs
+  time-range                   Specify a time-range
+  timestamp-reply              Timestamp replies
+  timestamp-request            Timestamp requests
+  tos                          Match packets with given TOS value
+  traceroute                   Traceroute
+  ttl                          Match packets with given TTL value
+  ttl-exceeded                 TTL exceeded
+  unreachable                  All unreachables
