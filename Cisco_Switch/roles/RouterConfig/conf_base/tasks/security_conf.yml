@@ -1,28 +1,28 @@
 #####PROMPT-REQUEST#####
-  - name: User
+  - name: SECURITY
     pause:
       prompt: "[???] Would you like to create a new User ? (yes/no)"
     register: CISCO_USER_CHOICE
 
-  - name: User
+  - name: SECURITY
     pause:
       prompt: "[???] Choose a Username : "
     register: CISCO_USER
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: User
+  - name: SECURITY
     pause:
       prompt: "[???] Choose a password : "
     register: CISCO_USER_PASS
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: User
+  - name: SECURITY
     pause:
       prompt: "[???] What level of privilege would you like to set ? (Level 1 : Read-Only | Level 2 : Read-Only + Ping | Level 15 : Full Access)"
     register: CISCO_USER_PRIVILEGE
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: User
+  - name: SECURITY
     pause:
       prompt: "[???] What password would you like to set for the Enable Password ? "
     register: CISCO_SECRET
