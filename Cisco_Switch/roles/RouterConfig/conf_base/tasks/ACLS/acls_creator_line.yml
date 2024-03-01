@@ -6,11 +6,19 @@
 
 
 ####################################################################PROMPT####################################################################
-#####ACLS_COMMAND_LINE_EXAMPLE#####
+#####ACLS_LINE_NAME#####
   - name: ACLS
-    debug:
-      msg: "example : ip access-list extended 110, deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 echo dscp ef ttl eq 10, permit ip host 2.2.2.2 host 3.3.3.3"
-#####ACLS_COMMAND_LINE_EXAMPLE#####
+    pause:
+      prompt: "[???] What name would you like for your ACLs ? "
+    register: ACLS_LINE_NAME
+#####ACLS_LINE_NAME#####
+
+#####ACLS_LINE_TYPE#####
+  - name: ACLS
+    pause:
+      prompt: "[???] What type would you like your ACLs to be ? (extended/standard/resequence/logging/log-update)"
+    register: ACLS_LINE_TYPE
+#####ACLS_LINE_TYPE#####
 
 #####ACLS_COMMAND_LINE#####
   - name: ACLS
@@ -21,6 +29,8 @@
 
 #####ACLS_LINE_CREATOR#####
   - name: Apply the ACLs configuration
-    cisco.ios.ios_command:
-      commands: "{{ ACLS_COMMAND_LINE.user_input }}"
+    cisco.ios.ios_config:
+      lines:
+        - ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}
+        - {{ ACLS_COMMAND_LINE.user_input }}
 #####ACLS_LINE_CREATOR#####
