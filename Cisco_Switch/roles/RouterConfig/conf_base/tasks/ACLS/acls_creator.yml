@@ -63,22 +63,27 @@
 
 #####ACLS-PORT-PROTOCOL-eq#####
   - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_eq.yml
+    when: ACLS_PORT_PROTOCOL.user_input == "eq"
 #####ACLS-PORT-PROTOCOL-eq#####
 
 #####ACLS-PORT-PROTOCOL-gt#####
   - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_gt.yml
+    when: ACLS_PORT_PROTOCOL.user_input == "gt"
 #####ACLS-PORT-PROTOCOL-gt#####
 
 #####ACLS-PORT-PROTOCOL-lt#####
   - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_lt.yml
+    when: ACLS_PORT_PROTOCOL.user_input == "lt"
 #####ACLS-PORT-PROTOCOL-lt#####
 
 #####ACLS-PORT-PROTOCOL-neq#####
   - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_neq.yml
+    when: ACLS_PORT_PROTOCOL.user_input == "neq"
 #####ACLS-PORT-PROTOCOL-neq#####
 
 #####ACLS-PORT-PROTOCOL-range#####
 #  - include_tasks: ./ACLS_PORT_PROTOCOL_DATA/acls_port_protocol_data_range.yml
+#    when: ACLS_PORT_PROTOCOL.user_input == "range"
 #####ACLS-PORT-PROTOCOL-range#####
 #########################################################################################################################################################
 
