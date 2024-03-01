@@ -47,24 +47,14 @@
 #####ACLS-SOURCE#####
   - name: ACLS
     pause:
-      prompt: "[???] SOURCE IP ? "
+      prompt: "[???] Configure your Source host : (any/host/[ip])"
     register: ACLS_SOURCE_IP
-
-  - name: ACLS
-    pause:
-      prompt: "[???] SOURCE Wildcard_bits ? "
-    register: ACLS_SOURCE_WILD
 #####ACLS-SOURCE#####
 #####ACLS-DESTINATION#####
   - name: ACLS
     pause:
       prompt: "[???] DESTINATION IP ? "
     register: ACLS_DEST_IP
-
-  - name: ACLS
-    pause:
-      prompt: "[???] DESTINATION Wildcard_bits ? "
-    register: ACLS_DEST_WILD
 #####ACLS-DESTINATION#####
 ####################################################################COMMAND-2####################################################################
 ####################################################################PROMPT####################################################################
