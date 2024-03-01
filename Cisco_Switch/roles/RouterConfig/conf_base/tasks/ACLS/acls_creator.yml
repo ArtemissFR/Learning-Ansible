@@ -175,7 +175,53 @@
 ####################################################################PROMPT####################################################################
 
 ####################################################################DEBUG####################################################################
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_AFI.user_input }}"
 
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_GRANT.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_SOURCE_IP.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_SOURCE_WILD.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_DEST_IP.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_DEST_WILD.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_PORT_PROTOCOL.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_PORT_PROTOCOL_data.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_DSCP.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_TTL.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_TTL_data.user_input }}"
+
+  - name: cat ACLS
+    debug:
+      msg: "{{ ACLS_STATE.user_input }}"
 ####################################################################DEBUG####################################################################
 
 ####################################################################CONFIG-OF-ACLS####################################################################
@@ -199,7 +245,7 @@
                     address: "{{ ACLS_DEST_IP.user_input }}"
                     wildcard_bits: "{{ ACLS_DEST_WILD.user_input }}"
                     port_protocol:
-                      "{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_data }}"
+                      "{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_data.user_input }}"
                   dscp: "{{ ACLS_DSCP.user_input }}"
                   ttl:
                     "{{ ACLS_TTL.user_input }}": "{{ ACLS_TTL_data.user_input }}"
