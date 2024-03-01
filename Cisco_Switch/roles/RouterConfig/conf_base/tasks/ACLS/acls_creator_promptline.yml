@@ -59,12 +59,12 @@
 
 #  - name: ACLS
 #    ansible.builtin.debug:
-#      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt') | list }}"
+#      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONSPARAMETERS.txt') | list }}"
 #    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 
   - name: "Read a file content"
     shell: |
-      cat ./HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt
+      cat ./HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
     register: ACLS_OPTIONSPARAMETERS
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
   
