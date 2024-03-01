@@ -65,7 +65,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for eq ? "
-    register: ACLS_PORT_PROTOCOL_data
+    register: ACLS_PORT_PROTOCOL_DATA
     when: ACLS_PORT_PROTOCOL.user_input == "eq"
 #####ACLS-PORT-PROTOCOL-eq#####
 
@@ -73,7 +73,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for gt ?"
-    register: ACLS_PORT_PROTOCOL_data
+    register: ACLS_PORT_PROTOCOL_DATA
     when: ACLS_PORT_PROTOCOL.user_input == "gt"
 #####ACLS-PORT-PROTOCOL-gt#####
 
@@ -81,7 +81,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for lt ?"
-    register: ACLS_PORT_PROTOCOL_data
+    register: ACLS_PORT_PROTOCOL_DATA
     when: ACLS_PORT_PROTOCOL.user_input == "lt"
 #####ACLS-PORT-PROTOCOL-lt#####
 
@@ -89,7 +89,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for neq ?"
-    register: ACLS_PORT_PROTOCOL_data
+    register: ACLS_PORT_PROTOCOL_DATA
     when: ACLS_PORT_PROTOCOL.user_input == "neq"
 #####ACLS-PORT-PROTOCOL-neq#####
 
@@ -129,7 +129,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for eq ? "
-    register: ACLS_TTL_data
+    register: ACLS_TTL_DATA
     when: ACLS_TTL.user_input == "eq"
 #####ACLS-TTL-eq#####
 
@@ -137,7 +137,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for gt ?"
-    register: ACLS_TTL_data
+    register: ACLS_TTL_DATA
     when: ACLS_TTL.user_input == "gt"
 #####ACLS-TTL-gt#####
 
@@ -145,7 +145,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for lt ?"
-    register: ACLS_TTL_data
+    register: ACLS_TTL_DATA
     when: ACLS_TTL.user_input == "lt"
 #####ACLS-TTL-lt#####
 
@@ -153,7 +153,7 @@
   - name: ACLS
     pause:
       prompt: "[???] What is the number of packets you want to set for neq ?"
-    register: ACLS_TTL_data
+    register: ACLS_TTL_DATA
     when: ACLS_TTL.user_input == "neq"
 #####ACLS-TTL-neq#####
 
@@ -199,10 +199,10 @@
                     address: "{{ ACLS_DEST_IP.user_input }}"
                     wildcard_bits: "{{ ACLS_DEST_WILD.user_input }}"
                     port_protocol:
-                      "{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_data.user_input }}"
+                      "{{ ACLS_PORT_PROTOCOL.user_input }}": "{{ ACLS_PORT_PROTOCOL_DATA.user_input }}"
                   dscp: "{{ ACLS_DSCP.user_input }}"
                   ttl:
-                    "{{ ACLS_TTL.user_input }}": "{{ ACLS_TTL_data.user_input }}"
+                    "{{ ACLS_TTL.user_input }}": "{{ ACLS_TTL_DATA.user_input }}"
 #            - name: 150
 #              aces:
 #                - grant: deny
