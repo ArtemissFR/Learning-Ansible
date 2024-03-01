@@ -57,9 +57,20 @@
       prompt: "[???] Would you like a list of all option and parameters you can add ? (yes/no)"
     register: ACLS_OPTION_LIST_CHOICE
 
-  - name: ACLS
-    ansible.builtin.debug:
-      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt') | list }}"
+#  - name: ACLS
+#    ansible.builtin.debug:
+#      msg: "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt') | list }}"
+#    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+
+  - name: "Read a file content"
+    shell: |
+      cat ./HELP_DOC/ACLS_OPTIONS&PARAMETERS.txt
+    register: ACLS_OPTIONS&PARAMETERS
+    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+  
+  - name: "Print the file content to a console"
+    debug:
+      msg: "{{ ACLS_OPTIONS&PARAMETERS.stdout }}"
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 #####HELP#####
 
