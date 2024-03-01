@@ -20,28 +20,33 @@
     pause:
       prompt: "[???] Do you want to launch the ACLS Creator ? (yes/no)"
     register: ACLS_CREATOR_CHOICE
+
+  - name: ACLS
+    pause:
+      prompt: "[???] Do you want to launch the ACLS Creator with PROMPT or in LINE ? (prompt/line)"
+    register: ACLS_CREATOR_TYPE_CHOICE
+    when: ACLS_CREATOR_CHOICE.user_input | bool
 ######################################PROMPT######################################
 
-######################################INFORMATION######################################
+######################################ACLS_DESTRUCTOR######################################
   - name: INFORMATION
     debug:
       msg:  Starting the ACLS destructor engine ... 
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
-######################################INFORMATION######################################
 
-######################################ACLS_CREATOR######################################
   - include_tasks: acls_destructor.yml
     when: ACLS_DESTRUCTOR.user_input | bool
-######################################ACLS_CREATOR######################################
+######################################ACLS_DESTRUCTOR######################################
 
-######################################INFORMATION######################################
+######################################ACLS_CREATOR######################################
   - name: INFORMATION
     debug:
-      msg:  Starting the ACLS creator engine ... 
-    when: ACLS_CREATOR_CHOICE.user_input | bool
-######################################INFORMATION######################################
+      msg:  "Starting the ACLS creator {{  ACLS_CREATOR_TYPE_CHOICE.user_input }} engine ... "
 
+  - include_tasks: acls_creator_prompt.yml
+    when: ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt"
+
+  - include_tasks: acls_creator_line.yml
+    when: ACLS_CREATOR_TYPE_CHOICE.user_input == "line"
 ######################################ACLS_CREATOR######################################
-  - include_tasks: acls_creator.yml
-    when: ACLS_CREATOR_CHOICE.user_input | bool
-######################################ACLS_CREATOR######################################
+
