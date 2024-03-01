@@ -23,7 +23,7 @@
 
   - name: ACLS
     pause:
-      prompt: "[???] Do you want to launch the ACLS Creator with PROMPT or in LINE ? (prompt/line)"
+      prompt: "[???] Do you want to launch the ACLS Creator with PROMPT or in LINE ? (prompt/line (prompt is limited) )"
     register: ACLS_CREATOR_TYPE_CHOICE
     when: ACLS_CREATOR_CHOICE.user_input | bool
 ######################################PROMPT######################################
