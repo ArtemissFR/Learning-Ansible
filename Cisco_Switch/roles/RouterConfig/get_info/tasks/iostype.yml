@@ -15,11 +15,27 @@
 ########################################INFORMATION#########################################
 
 ########################################FINDING-ROUTER-OR-SWITCH#########################################
-  - name: PRINT IOS TYPE
+  - name: IOS
     debug:
-       msg: "Your IOS Type is {{ ansible_net_iostype }} !"
+       msg: "Your machine is a ROUTER !"
+    when: (ansible_net_model == "3725") or
+          (ansible_net_model == "4000") or
+          (ansible_net_model == "2900") or
+          (ansible_net_model == "1900") or
+          (ansible_net_model == "800") or
+          (ansible_net_model == "7200") or
+          (ansible_net_model == "3800") or
+          (ansible_net_model == "1800")
 
-  - name: PRINT MODEL TYPE
+  - name: IOS
     debug:
-       msg: "Your Model Type is {{ ansible_net_model }} !"
+       msg: "Your machine is SWITCH !"
+    when: (ansible_net_model == "IOSv") or
+          (ansible_net_model == "9000") or
+          (ansible_net_model == "3850") or
+          (ansible_net_model == "3650") or
+          (ansible_net_model == "9000") or
+          (ansible_net_model == "7000") or
+          (ansible_net_model == "5000") or
+          (ansible_net_model == "9300")
 ########################################FINDING-ROUTER-OR-SWITCH#########################################
