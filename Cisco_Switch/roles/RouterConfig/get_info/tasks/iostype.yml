@@ -13,3 +13,13 @@
     debug:
        msg: "Your Model Type is {{ ansible_net_model }} !"
 ########################################INFORMATION#########################################
+
+########################################FINDING-ROUTER-OR-SWITCH#########################################
+  - name: PRINT IOS TYPE
+    debug:
+       msg: "Your IOS Type is {{ ansible_net_iostype }} !"
+
+  - name: PRINT MODEL TYPE
+    debug:
+       msg: "Your Model Type is {{ ansible_net_model }} !"
+########################################FINDING-ROUTER-OR-SWITCH#########################################
