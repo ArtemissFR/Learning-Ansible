@@ -32,3 +32,10 @@
       msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
     when: INT_CHOICE.user_input | bool
 #------------------------------------#RECAP-INTERFACE#------------------------------------#
+
+#------------------------------------#RECAP-SECURITY#------------------------------------#
+  - name: RECAP
+    debug:
+      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
+    when: (CISCO_USER_CHOICE.user_input == "yes") and (SECURITY_CHOICE.user_input == "yes")
+#------------------------------------#RECAP-SECURITY#------------------------------------#
