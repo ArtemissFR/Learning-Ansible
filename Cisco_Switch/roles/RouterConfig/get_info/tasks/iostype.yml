@@ -42,8 +42,3 @@
        msg: "Your machine is a {{ MACHINE_TYPE }} with model type {{ ansible_net_model }}."
 
 ########################################INFORMATION#########################################
-
-  - name: IOS TEST
-    debug:
-       var: ansible_net_gather_subset
-
