@@ -56,6 +56,7 @@
     when: (MACHINE_TYPE == "ROUTER")
 
   - include_tasks: ./ACLS/main.yml
-    when: ACLS_CHOICE.user_input | bool
+    when: (ACLS_CHOICE.user_input | bool) or
+          (MACHINE_TYPE == "ROUTER")
     
 ######################################ACLS######################################
