@@ -33,26 +33,6 @@
     debug:
       msg:  Starting the ACLS destructor engine ... 
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
-    
-  - name: Afficher le texte spécial
-    ansible.builtin.debug:
-     msg: |
-              ⠀⠀⠀⠀⣴⡤⠤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡤⠤⣤⠀⠀⠀
-              ⠀⠀⠀⠀⢿⡄⠀⠀⠙⢷⡀⠀⠀⡀⣄⠄⠀⠀⣴⠋⠀⠀⢀⣿⠀⠀⠀
-              ⠀⠀⠀⠀⠈⢷⣄⣀⢀⣼⠇⣤⣤⣼⣯⣤⣤⡸⣧⡀⢀⣠⡾⠃⠀⠀⠀
-              ⠀⠀⠀⠀⠀⠀⠉⠙⠛⠡⣿⣿⣿⣿⣿⣿⣿⣷⣌⠛⠛⠉⠀⠀⠀⠀⠀
-              ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⣤⠉⠙⠻⠿⠛⠉⢻⣿⡇⠀⠀⠀⠀⠀⠀⠀
-              ⢀⡀⠀⠀⠀⠀⠀⣤⣼⣿⣿⣄⣀⠴⠶⣀⡠⣼⣿⣧⣤⠀⠀⠀⠀⠀⡠
-              ⠀⢷⣄⠀⠀⠲⣶⣶⣿⣿⣿⣿⣯⣤⣤⣼⣿⣿⣿⣿⣶⣶⠶⠀⢀⣾⠃
-              ⠀⠈⢿⣷⣄⠀⠀⠀⠉⠉⡍⠈⠝⡟⢻⠻⠉⢩⠉⠉⠀⠀⢀⣴⣿⠃⠀
-              ⠀⠀⠀⠙⣿⣷⣄⠀⠀⠀⢿⢃⡀⠀⠀⢀⠀⡾⠀⠀⢀⣴⣿⠟⠁⠀⠀
-              ⠀⠀⠀⠀⠈⠛⢿⣿⣦⣀⠈⠷⢥⣧⣼⡬⠾⠁⣀⡴⣻⡿⠋⠀⠀⠀⠀
-              ⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣷⢦⣄⠀⠀⣀⡴⢞⣭⠞⠉⠀⠀⠀⠀⠀⠀
-              ⠀⠀⠀⠀⠀⠀⠲⣆⠀⠈⢙⡿⣮⣝⣒⠦⣬⣉⡀⠀⠀⢠⡶⠂⠀⠀⠀
-              ⠀⠀⠀⣠⡀⣤⣤⣿⣦⢘⣭⠷⠒⠈⠙⠛⠶⢯⣭⣟⣵⡟⣥⣤⣔⣶⠀
-              ⠀⠀⠘⠭⠉⠉⠉⠘⢿⣄⣄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣿⠃⠀⠀⠊⠉⠀
-              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀
-    when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
 
   - include_tasks: acls_destructor.yml
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
