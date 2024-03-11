@@ -1,7 +1,7 @@
 #########################################GATHER#########################################
-- name: Gather IOS type facts
-  cisco.ios.ios_facts:
-    gather_subset: hardware
+  - name: Gather IOS type facts
+    cisco.ios.ios_facts:
+      gather_subset: hardware
 #########################################GATHER#########################################
 
 ########################################INFORMATION#########################################
