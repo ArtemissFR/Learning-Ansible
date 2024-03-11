@@ -62,8 +62,12 @@
 #####SCP-CONFIG#####
 
 #####RECAP#####
-  - name: RECAP
+  - name: RECAP (USER)
     debug:
       msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
     when: CISCO_USER_CHOICE.user_input | bool
+
+  - name: RECAP (SCP)
+    debug:
+      msg: " You said {{ SCP_SERVER_CHOICE.user_input }} to activating the scp server."
 #####RECAP#####
