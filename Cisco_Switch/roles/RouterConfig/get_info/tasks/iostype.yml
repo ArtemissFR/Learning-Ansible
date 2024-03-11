@@ -45,8 +45,5 @@
 
   - name: IOS TEST
     debug:
-       var: ansible_net_version
+       var: ansible_net_gather_subset
 
-  - name: IOS TEST
-    debug:
-       var: ansible_net_config
