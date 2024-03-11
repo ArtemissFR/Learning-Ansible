@@ -42,7 +42,7 @@
   - name: INFORMATION
     debug:
       msg:  "Starting the ACLS Creator < {{  ACLS_CREATOR_TYPE_CHOICE.user_input }} > engine ... "
-    when: ACLS_CREATOR_TYPE_CHOICE.user_input is defined and ACLS_CREATOR_TYPE_CHOICE.user_input | length > 0
+    when: ACLS_CREATOR_CHOICE.user_input | bool
 
   - include_tasks: acls_creator_prompt.yml
     when: ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt"
