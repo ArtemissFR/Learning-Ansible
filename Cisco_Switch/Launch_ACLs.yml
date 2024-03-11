@@ -1,7 +1,0 @@
----
-- hosts: R1
-  become: yes
-
-  tasks:
-  
-    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/ACLS/main.yml
