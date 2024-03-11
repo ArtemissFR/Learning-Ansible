@@ -64,13 +64,16 @@
       msg:  "Starting the ACLS Creator < {{  ACLS_CREATOR_TYPE_CHOICE.user_input }} > engine ... "
     when: ACLS_CREATOR_CHOICE.user_input | bool
 
-  - include_tasks: acls_creator_prompt.yml
-    when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt") and (ACLS_CREATOR_CHOICE.user_input == "yes")
-
-  - include_tasks: acls_creator_line.yml
-    when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "line") and (ACLS_CREATOR_CHOICE.user_input == "yes")
-
-  - include_tasks: acls_creator_promptline.yml
-    when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "promptline") and(ACLS_CREATOR_CHOICE.user_input == "yes")
+  - name: Launch the ACLS Creator...
+    block:
+        - include_tasks: acls_creator_prompt.yml
+          when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt")
+      
+        - include_tasks: acls_creator_line.yml
+          when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "line")
+      
+        - include_tasks: acls_creator_promptline.yml
+          when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "promptline")
+    when: ACLS_CREATOR_CHOICE.user_input | bool
 ######################################ACLS_CREATOR######################################
 
