@@ -65,11 +65,11 @@
 #####PROMPT#####
 
 #####APPLY-CONF#####
-- name: APPLY BASE BANNER
-  cisco.ios.ios_banner:
-    banner: motd
-    text: {{ BASE_BANNER.user_input }}
-    state: present
+#- name: APPLY BASE BANNER
+#  cisco.ios.ios_banner:
+#    banner: motd
+#    text: "{{ BASE_BANNER.user_input }}"
+#    state: present
 
 - name: APPLY LOGIN BANNER
   cisco.ios.ios_banner:
