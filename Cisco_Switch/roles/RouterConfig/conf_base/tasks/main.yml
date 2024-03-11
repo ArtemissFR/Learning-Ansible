@@ -17,6 +17,7 @@
     pause:
       prompt: "[???] Would you like to customise an interface ? (yes/no)"
     register: INT_CHOICE
+    when: (MACHINE_TYPE == "ROUTER")
 
   - include_tasks: interface_conf.yml
     when: INT_CHOICE.user_input | bool
