@@ -1,1 +1,7 @@
+  - name: ACLS
+    pause:
+      prompt: "[???] Would you like to edit ACLS parameters ? (yes/no)"
+    register: ACLS_CHOICE
 
+  - include_tasks: /main.yml
+    when: ACLS_CHOICE.user_input | bool
