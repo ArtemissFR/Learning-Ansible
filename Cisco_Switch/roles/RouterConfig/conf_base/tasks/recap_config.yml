@@ -1,20 +1,27 @@
+#------------------------------------#INFORMATION#------------------------------------#
   - name: INFORMATION
     debug:
        msg: "This role resume you all the change and action you have done !"
+#------------------------------------#INFORMATION#------------------------------------#
 
-
+#------------------------------------#RECAP-BASIC_CONF#------------------------------------#
   - name: RECAP (HOSTNAME)
     debug:
       msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
+    when: BASICS_CHOICE.user_input | bool
 
   - name: RECAP (DOMAIN)
     debug:
       msg: " You have set {{ DOMAIN.user_input }} as Domain."
+    when: BASICS_CHOICE.user_input | bool
 
   - name: RECAP (BASE-BANNER)
     debug:
       msg: " You have add {{ BASE_BANNER.user_input }} as Base Banner."
+    when: BASICS_CHOICE.user_input | bool
 
   - name: RECAP (LOGIN-BANNER)
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
+    when: BASICS_CHOICE.user_input | bool
+#------------------------------------#RECAP-BASIC_CONF#------------------------------------#
