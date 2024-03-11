@@ -25,3 +25,10 @@
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
     when: (BASICS_CHOICE.user_input == "yes") and (LOGIN_BANNER_CHOICE.user_input == "yes")
 #------------------------------------#RECAP-BASIC_CONF#------------------------------------#
+
+#------------------------------------#RECAP-INTERFACE#------------------------------------#
+  - name: RECAP
+    debug:
+      msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
+    when: INT_CHOICE.user_input | bool
+#------------------------------------#RECAP-INTERFACE#------------------------------------#
