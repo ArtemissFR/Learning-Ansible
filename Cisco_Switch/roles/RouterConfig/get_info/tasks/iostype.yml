@@ -27,7 +27,11 @@
           (ansible_net_model == "9000") or
           (ansible_net_model == "7000") or
           (ansible_net_model == "5000") or
-          (ansible_net_model == "9300")
+          (ansible_net_model == "9300") or
+          (ansible_net_model == "2960") or # This switch allow ACLS configuration.
+          (ansible_net_model == "3560") or # This switch allow ACLS configuration.
+          (ansible_net_model == "3750") or # This switch allow ACLS configuration.
+          (ansible_net_model == "3850")    # This switch allow ACLS configuration.
 ########################################KEEPING-MACHINE-TYPE#########################################
 
 ########################################INFORMATION#########################################
