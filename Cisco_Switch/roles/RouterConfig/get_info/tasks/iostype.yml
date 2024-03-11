@@ -5,5 +5,5 @@
 
   - name: PRINT IOS TYPE
     debug:
-       msg: "This role will collect information about {{ ansible_net_iostype }} to help you !"
+       msg: "Your IOS Type is {{ ansible_net_iostype }} !"
 
