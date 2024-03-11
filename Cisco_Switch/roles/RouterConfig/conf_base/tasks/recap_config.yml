@@ -18,10 +18,10 @@
   - name: RECAP (BASE-BANNER)
     debug:
       msg: " You have add {{ BASE_BANNER.user_input }} as Base Banner."
-    when: BASICS_CHOICE.user_input | bool
+    when: (BASICS_CHOICE.user_input == "yes") and (BASE_BANNER_CHOICE.user_input == "yes")
 
   - name: RECAP (LOGIN-BANNER)
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
-    when: BASICS_CHOICE.user_input | bool
+    when: (BASICS_CHOICE.user_input == "yes") and (LOGIN_BANNER_CHOICE.user_input == "yes")
 #------------------------------------#RECAP-BASIC_CONF#------------------------------------#
