@@ -34,10 +34,17 @@
 #------------------------------------#RECAP-INTERFACE#------------------------------------#
 
 #------------------------------------#RECAP-SECURITY#------------------------------------#
+#  - name: RECAP (SECURITY)
+#    debug:
+#      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
+#    when: (CISCO_USER_CHOICE.user_input == "yes") and (SECURITY_CHOICE.user_input == "yes")
+
   - name: RECAP (SECURITY)
-    debug:
-      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
-    when: (CISCO_USER_CHOICE.user_input == "yes") and (SECURITY_CHOICE.user_input == "yes")
+    block:
+      debug:
+        msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
+      when: (CISCO_USER_CHOICE.user_input == "yes")
+    when: (SECURITY_CHOICE.user_input == "yes")
 
   - name: RECAP (SCP)
     debug:
