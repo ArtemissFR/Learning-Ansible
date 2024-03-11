@@ -38,3 +38,9 @@
     set_fact:
       interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
 #########################################CONVERT#########################################
+
+#########################################INCLUDE-TASKS#########################################
+
+  - include_tasks: iostype.yml
+
+#########################################INCLUDE-TASKS#########################################
