@@ -71,11 +71,11 @@
 #    text: "{{ BASE_BANNER.user_input }}"
 #    state: present
 
-- name: APPLY LOGIN BANNER
-  cisco.ios.ios_banner:
-    banner: login
-    text: "{{ LOGIN_BANNER.user_input }}"
-    state: present
+#- name: APPLY LOGIN BANNER
+#  cisco.ios.ios_banner:
+#    banner: login
+#    text: "{{ LOGIN_BANNER.user_input }}"
+#    state: present
 #####APPLY-CONF#####
 
 #####RECAP#####
