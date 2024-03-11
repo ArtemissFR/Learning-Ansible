@@ -8,16 +8,12 @@
   - name: PRINT IOS TYPE
     debug:
        msg: "Your IOS Type is {{ ansible_net_iostype }} !"
-
-  - name: PRINT MODEL TYPE
-    debug:
-       msg: "Your Model Type is {{ ansible_net_model }} !"
 ########################################INFORMATION#########################################
 
-########################################FINDING-ROUTER-OR-SWITCH#########################################
-  - name: IOS
-    debug:
-       msg: "Your machine is a ROUTER !"
+########################################KEEPING-MACHINE-TYPE#########################################
+  - name: Keeping machine type in var
+    set_fact:
+      MACHINE_TYPE: "ROUTER"
     when: (ansible_net_model == "3725") or
           (ansible_net_model == "4000") or
           (ansible_net_model == "2900") or
@@ -27,9 +23,9 @@
           (ansible_net_model == "3800") or
           (ansible_net_model == "1800")
 
-  - name: IOS
-    debug:
-       msg: "Your machine is SWITCH !"
+  - name: Keeping machine type in var
+    set_fact:
+      MACHINE_TYPE: "SWITCH"
     when: (ansible_net_model == "IOSv") or
           (ansible_net_model == "9000") or
           (ansible_net_model == "3850") or
@@ -38,4 +34,11 @@
           (ansible_net_model == "7000") or
           (ansible_net_model == "5000") or
           (ansible_net_model == "9300")
-########################################FINDING-ROUTER-OR-SWITCH#########################################
+########################################KEEPING-MACHINE-TYPE#########################################
+
+########################################INFORMATION#########################################
+  - name: IOS
+    debug:
+       msg: "Your machine is a {{ MACHINE_TYPE }} with model type {{ ansible_net_model }}."
+
+########################################INFORMATION#########################################
