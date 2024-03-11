@@ -51,3 +51,19 @@
       msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
     when: (SNMP_PRIVATE_CHOICE.user_input == "yes") and (SNMP_CHOICE.user_input == "yes")
 #------------------------------------#RECAP-SNMP#------------------------------------#
+
+#------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------#
+  - name: RECAP (ACLS_DESTRUCTOR)
+    debug:
+      msg: " You have decided to delete all ACLS already present ."
+    when: (ACLS_DELETE_ALL.user_input == "yes") and (ACLS_CHOICE.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
+
+  - name: RECAP (ACLS_DESTRUCTOR)
+    debug:
+      msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
+    when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_CHOICE.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
+#------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------#
+
+#------------------------------------#RECAP-ACLS_CREATOR#------------------------------------#
+
+#------------------------------------#RECAP-ACLS_CREATOR#------------------------------------#
