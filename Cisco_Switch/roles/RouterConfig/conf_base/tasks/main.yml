@@ -51,16 +51,8 @@
 
 #---------------------------------------------------------#ROUTER-CONFIG#---------------------------------------------------------#
 ######################################ACLS######################################
-
-  - name: ACLS
-    pause:
-      prompt: "[???] Would you like to edit ACLS parameters ? (yes/no)"
-    register: ACLS_CHOICE
-    when: (MACHINE_TYPE == "ROUTER")
-
   - include_tasks: ./ACLS/main.yml
-    when: ((ansible_facts['MACHINE_TYPE'] == "ROUTER") or (ACLS_CHOICE.user_input | bool)
-    
+    when: (MACHINE_TYPE == "ROUTER")
 ######################################ACLS######################################
 #---------------------------------------------------------#ROUTER-CONFIG#---------------------------------------------------------#
 
