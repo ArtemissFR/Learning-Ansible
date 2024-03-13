@@ -4,6 +4,12 @@
       - nmap
     state: present
 
+- name: Install Xrdp
+  ansible.builtin.package:
+    name:
+      - xrdp
+    state: present
+
 - name: Install Net-Tools
   ansible.builtin.package:
     name:
