@@ -1,13 +1,13 @@
 ---
-##################################LIST-OF-INTERFACES##################################
+#------------------------------------#INFORMATION#------------------------------------#
 
   - name: List of Interfaces
     debug:
       msg: "{{ interfaces_fact }}"
       
-##################################LIST-OF-INTERFACES##################################
+#------------------------------------#INFORMATION#------------------------------------#
 
-##################################CONFIG-OF-INTERFACES##################################
+#------------------------------------#PROMPT#------------------------------------#
 
 #####CHOOSE-INTERFACE#####
   - name: Interface
@@ -21,19 +21,19 @@
       prompt: "[???] What description do you want to put on the interface ? "
     register: ROUTER_INT_DESC
 #####ADD-DESCRIPTION-TO-INTERFACE#####
-#####APPLY-CONFIGURATION-TO-INTERFACE#####
+#------------------------------------#PROMPT#------------------------------------#
+
+#------------------------------------#ACTION#------------------------------------#
   - name: Enable {{ ROUTER_INT.user_input }} Interface on Router
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ ROUTER_INT.user_input }}"
           description: "{{ ROUTER_INT_DESC.user_input }}"
           enabled: true
-#####APPLY-CONFIGURATION-TO-INTERFACE#####
+#------------------------------------#ACTION#------------------------------------#
 
-#####RECAP-INTERFACE#####
+#------------------------------------#RESULT#------------------------------------#
   - name: RECAP
     debug:
       msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
-#####RECAP-INTERFACE#####
-
-##################################CONFIG-OF-INTERFACES##################################
+#------------------------------------#RESULT#------------------------------------#
