@@ -1,6 +1,4 @@
-#########################SNMP-CONFIGURATION#########################
-
-#####PROMPT#####
+#------------------------------------#PROMPT#------------------------------------#
   - name: SNMP
     pause:
       prompt: "[???] Would you like to set up a Public SNMP server ? (yes/no)"
@@ -22,9 +20,9 @@
       prompt: "[???] What PRIVATE SNMP server whould you like to set ? (example: ansible-cisco-private)"
     register: SNMP_PRIVATE
     when: SNMP_PRIVATE_CHOICE.user_input | bool
-#####PROMPT#####
+#------------------------------------#PROMPT#------------------------------------#
 
-#####APPLY-CONFIG#####
+#------------------------------------#ACTION#------------------------------------#
   - name: "Configuration of the SNMP Public Server ( {{ SNMP_PUBLIC.user_input }} )"
     ios_config:
       commands:
@@ -36,9 +34,9 @@
       commands:
         - snmp-server community {{ SNMP_PRIVATE.user_input }} RW
     when: SNMP_PRIVATE_CHOICE.user_input | bool
-#####APPLY-CONFIG#####
+#------------------------------------#ACTION#------------------------------------#
 
-#####RECAP#####
+#------------------------------------#RESULT#------------------------------------#
   - name: RECAP
     debug:
       msg: " You have decided to set up a PUBLIC SNMP Server : {{ SNMP_PUBLIC.user_input }} ."
@@ -48,6 +46,4 @@
     debug:
       msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
     when: SNMP_PRIVATE_CHOICE.user_input | bool
-#####RECAP#####
-
-#########################SNMP-CONFIGURATION#########################
+#------------------------------------#RESULT#------------------------------------#
