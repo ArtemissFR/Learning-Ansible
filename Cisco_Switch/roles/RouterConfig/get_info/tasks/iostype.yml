@@ -34,6 +34,12 @@
           (ansible_net_model == "3850")    # This switch allow ACLS configuration.
 ########################################KEEPING-MACHINE-TYPE#########################################
 
+########################################LAYER-TYPE#########################################
+  - name: Gather version information
+    cisco.ios.ios_command:
+      commands: show version
+########################################LAYER-TYPE#########################################
+
 ########################################INFORMATION#########################################
   - name: IOS
     debug:
