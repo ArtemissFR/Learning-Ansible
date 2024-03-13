@@ -3,3 +3,8 @@
     debug:
        msg: "Starting writing the configuration..."
 #------------------------------------#INFORMATION#------------------------------------#
+
+  - name: WRITING CONFIGURATION
+    ios_config:
+      commands:
+        - write
