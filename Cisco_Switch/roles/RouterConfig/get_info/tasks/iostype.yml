@@ -49,8 +49,12 @@
   - name: IOS # Switch Layer 3
     debug:
        msg: "This machine is a Switch Layer 3 !"
+    when: (MACHINE_TYPE == "SWITCH") and
+          ('l3' in version_ | lower)
 
   - name: IOS # Switch Layer 2
     debug:
        msg: "This machine is a Switch Layer 2 !"
+    when: (MACHINE_TYPE == "ROUTER") and
+          ('l2' in version_ | lower)
 ########################################INFORMATION#########################################
