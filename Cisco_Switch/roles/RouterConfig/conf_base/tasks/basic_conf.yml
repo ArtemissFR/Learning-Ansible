@@ -40,7 +40,7 @@
 
 ######################################BANNERS######################################
 
-#####PROMPT#####
+#------------------------------------#PROMPT#------------------------------------#
   - name: BANNERS
     pause:
       prompt: "[???] Would you like to configure the BASE banner ? (yes/no)"
@@ -62,7 +62,7 @@
       prompt: "[???] What do you want to put in your LOGIN banner ?"
     register: LOGIN_BANNER
     when: LOGIN_BANNER_CHOICE.user_input | bool
-#####PROMPT#####
+#------------------------------------#PROMPT#------------------------------------#
 
 #####APPLY-CONF#####
 #- name: APPLY BASE BANNER
@@ -78,7 +78,7 @@
 #    state: present
 #####APPLY-CONF#####
 
-#####RECAP#####
+#------------------------------------#RESULT#------------------------------------#
   - name: RECAP (HOSTNAME)
     debug:
       msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
@@ -96,5 +96,5 @@
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
     when: LOGIN_BANNER_CHOICE.user_input | bool
-#####RECAP#####
+#------------------------------------#RESULT#------------------------------------#
 ######################################BANNERS######################################
