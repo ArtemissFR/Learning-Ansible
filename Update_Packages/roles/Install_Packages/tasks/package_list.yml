@@ -77,6 +77,16 @@
       - traceroute
     state: present
 
+- name: Install VSCode
+  community.general.snap:
+    name:
+      - code
+
+- name: Install GitKraken
+  community.general.snap:
+    name:
+      - gitkraken
+
 - name: Result
   debug:
      msg: "All the packages have been correctly installed !"
