@@ -38,6 +38,7 @@
   - name: Gather version information
     cisco.ios.ios_command:
       commands: show version
+    register: version_
 ########################################LAYER-TYPE#########################################
 
 ########################################INFORMATION#########################################
@@ -45,4 +46,11 @@
     debug:
        msg: "Your machine is a {{ MACHINE_TYPE }} with model type {{ ansible_net_model }}."
 
+  - name: IOS # Switch Layer 3
+    debug:
+       msg: "This machine is a Switch Layer 3 !"
+
+  - name: IOS # Switch Layer 2
+    debug:
+       msg: "This machine is a Switch Layer 2 !"
 ########################################INFORMATION#########################################
