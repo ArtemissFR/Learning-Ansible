@@ -1,4 +1,4 @@
-#####PROMPT-REQUEST#####
+#------------------------------------#PROMPT#------------------------------------#
   - name: SECURITY
     pause:
       prompt: "[???] Would you like to create a new User ? (yes/no)"
@@ -27,9 +27,9 @@
       prompt: "[???] What password would you like to set for the Enable Password ? "
     register: CISCO_SECRET
     when: CISCO_USER_CHOICE.user_input | bool
-#####PROMPT-REQUEST#####
+#------------------------------------#PROMPT#------------------------------------#
 
-#####GENERAL-SECURITY-CONFIG#####
+#------------------------------------#ACTION[GENERAL]#------------------------------------#
   - name: "Creation of the new User : {{ CISCO_USER.user_input }}"
     ios_config:
       lines:
@@ -47,9 +47,9 @@
       lines:
       - service password-encryption
     when: CISCO_USER_CHOICE.user_input | bool
-#####GENERAL-SECURITY-CONFIG#####
+#------------------------------------#ACTION[GENERAL]#------------------------------------#
 
-#####SCP-CONFIG#####
+#------------------------------------#ACTION[SCP]#------------------------------------#
   - name: SCP
     pause:
       prompt: "[???] Would you like to enable the SCP Server ? (yes/no)"
@@ -59,9 +59,9 @@
     ios_config:
       lines: ip scp server enable 
     when: SCP_SERVER_CHOICE.user_input | bool
-#####SCP-CONFIG#####
+#------------------------------------#ACTION[SCP]#------------------------------------#
 
-#####RECAP#####
+#------------------------------------#RESULT#------------------------------------#
   - name: RECAP (USER)
     debug:
       msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
@@ -70,4 +70,4 @@
   - name: RECAP (SCP)
     debug:
       msg: " You said {{ SCP_SERVER_CHOICE.user_input }} to activating the scp server."
-#####RECAP#####
+#------------------------------------#RESULT#------------------------------------#
