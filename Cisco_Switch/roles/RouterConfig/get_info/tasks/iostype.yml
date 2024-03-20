@@ -56,6 +56,6 @@
   - name: IOS # Switch Layer 2
     debug:
        msg: "This machine is a Switch Layer 2 ! (L2)"
-    when: (MACHINE_TYPE == "ROUTER") and
+    when: (MACHINE_TYPE == "SWITCH") and
           ('l2' in version_ | lower)
 ########################################INFORMATION#########################################
