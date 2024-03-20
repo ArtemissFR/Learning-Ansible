@@ -19,9 +19,8 @@
 
 #------------------------------------#RESULT[CONF]#------------------------------------#
   - name: Gather Configuration
-    ios_config:
-      commands:
-        - show run
+    cisco.ios.ios_command:
+      commands: show run
     register: showrun_result
 
   - name: Show Running configuration
