@@ -6,9 +6,8 @@
 
 #------------------------------------#ACTION#------------------------------------#
   - name: WRITING CONFIGURATION
-    ios_config:
-      commands:
-        - write
+    cisco.ios.ios_command:
+      commands: write
     register: writing_result
 #------------------------------------#ACTION#------------------------------------#
 
