@@ -1,2 +1,6 @@
-
+######################################INFORMATION######################################
+  - name: RECAP
+    debug:
+      msg: " Make sure you have activate SCP server on your machine before doing any action !"
+######################################INFORMATION######################################
     when: SCP_SERVER_CHOICE.user_input | bool
