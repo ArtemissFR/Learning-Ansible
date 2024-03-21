@@ -1,49 +1,47 @@
-#------------------------------------#PROMPT#------------------------------------#
-  - name: SNMP
+#------------------------------------------#SNMP#------------------------------------------#
+  - name: SNMP | QUESTION
     pause:
       prompt: "[???] Would you like to set up a Public SNMP server ? (yes/no)"
     register: SNMP_PUBLIC_CHOICE
 
-  - name: SNMP
+  - name: SNMP | QUESTION
     pause:
       prompt: "[???] Would you like to set up a Private SNMP server ? (yes/no)"
     register: SNMP_PRIVATE_CHOICE
 
-  - name: SNMP
+  - name: SNMP | QUESTION
     pause:
       prompt: "[???] What PUBLIC SNMP server whould you like to set ? (example: ansible-cisco-public)"
     register: SNMP_PUBLIC
     when: SNMP_PUBLIC_CHOICE.user_input | bool
 
-  - name: SNMP
+  - name: SNMP | QUESTION
     pause:
       prompt: "[???] What PRIVATE SNMP server whould you like to set ? (example: ansible-cisco-private)"
     register: SNMP_PRIVATE
     when: SNMP_PRIVATE_CHOICE.user_input | bool
-#------------------------------------#PROMPT#------------------------------------#
 
-#------------------------------------#ACTION#------------------------------------#
-  - name: "Configuration of the SNMP Public Server ( {{ SNMP_PUBLIC.user_input }} )"
+  - name: "SNMP | Configuration of the SNMP Public Server ( {{ SNMP_PUBLIC.user_input }} )"
     ios_config:
       commands:
         - snmp-server community {{ SNMP_PUBLIC.user_input }} RO
     when: SNMP_PUBLIC_CHOICE.user_input | bool
 
-  - name: "Configuration of the SNMP private Server ( {{ SNMP_PRIVATE.user_input }} )"
+  - name: "SNMP | Configuration of the SNMP private Server ( {{ SNMP_PRIVATE.user_input }} )"
     ios_config:
       commands:
         - snmp-server community {{ SNMP_PRIVATE.user_input }} RW
     when: SNMP_PRIVATE_CHOICE.user_input | bool
-#------------------------------------#ACTION#------------------------------------#
+#------------------------------------------#SNMP#------------------------------------------#
 
-#------------------------------------#RESULT#------------------------------------#
-  - name: RECAP
+#------------------------------------------#RECAP#------------------------------------------#
+  - name: SNMP | RECAP - Public Server
     debug:
       msg: " You have decided to set up a PUBLIC SNMP Server : {{ SNMP_PUBLIC.user_input }} ."
     when: SNMP_PUBLIC_CHOICE.user_input | bool
 
-  - name: RECAP
+  - name: SNMP | RECAP - Private Server
     debug:
       msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
     when: SNMP_PRIVATE_CHOICE.user_input | bool
-#------------------------------------#RESULT#------------------------------------#
+#------------------------------------------#RECAP#------------------------------------------#
