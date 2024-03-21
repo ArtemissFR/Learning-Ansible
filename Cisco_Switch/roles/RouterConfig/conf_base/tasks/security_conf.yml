@@ -59,6 +59,12 @@
     ios_config:
       lines: ip scp server enable 
     when: SCP_SERVER_CHOICE.user_input | bool
+
+  - name: "Creation of the SCP User"
+    ios_config:
+      lines:
+      - username scp privilege 15 password {{ CISCO_USER_PASS.user_input }}
+    when: SCP_SERVER_CHOICE.user_input | bool
 #------------------------------------#ACTION[SCP]#------------------------------------#
 
 #------------------------------------#RESULT#------------------------------------#
