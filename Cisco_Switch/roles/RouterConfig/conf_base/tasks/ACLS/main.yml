@@ -1,50 +1,44 @@
 
 ---
-######################################INFORMATION######################################
+#------------------------------------------#INFORMATION#------------------------------------------#
   - name: INFORMATION
     debug:
       msg:  Starting gathering facts ... 
-######################################INFORMATION######################################
+#------------------------------------------#INFORMATION#------------------------------------------#
 
-######################################GATHER######################################
+#------------------------------------------#ACLS#------------------------------------------#
   - include_tasks: get_info_acls.yml    
-######################################GATHER######################################
 
-######################################PROMPT######################################
-  - name: ACLS
+  - name: ACLS | QUESTION - Destructor
     pause:
       prompt: "[???] Do you want to launch the ACLS Destructor ? (yes/no)"
     register: ACLS_DESTRUCTOR_CHOICE
 
-  - name: ACLS
+  - name: ACLS | QUESTION - Creator
     pause:
       prompt: "[???] Do you want to launch the ACLS Creator ? (yes/no)"
     register: ACLS_CREATOR_CHOICE
 
-  - name: ACLS
+  - name: ACLS | QUESTION - Creator Version
     pause:
       prompt: "[???] Choose a version of ACLs Creator : [prompt/line/promptline] ? (prompt is limited)"
     register: ACLS_CREATOR_TYPE_CHOICE
     when: ACLS_CREATOR_CHOICE.user_input | bool
-######################################PROMPT######################################
 
-######################################ACLS_DESTRUCTOR######################################
-  - name: INFORMATION
+  - name: ACLS | INFORMATION
     debug:
       msg:  Starting the ACLS destructor engine ... 
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
 
   - include_tasks: acls_destructor.yml
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
-######################################ACLS_DESTRUCTOR######################################
 
-######################################ACLS_CREATOR######################################
-  - name: INFORMATION
+  - name: ACLS | INFORMATION
     debug:
       msg:  "Starting the ACLS Creator < {{  ACLS_CREATOR_TYPE_CHOICE.user_input }} > engine ... "
     when: ACLS_CREATOR_CHOICE.user_input | bool
 
-  - name: Launch the ACLS Creator...
+  - name: ACLS | Launch the ACLS Creator...
     block:
         - include_tasks: acls_creator_prompt.yml
           when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt")
@@ -55,5 +49,5 @@
         - include_tasks: acls_creator_promptline.yml
           when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "promptline")
     when: ACLS_CREATOR_CHOICE.user_input | bool
-######################################ACLS_CREATOR######################################
+#------------------------------------------#ACLS#------------------------------------------#
 
