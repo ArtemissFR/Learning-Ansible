@@ -6,5 +6,5 @@
     password: Pro-Vost2911
     to: Louis Provost <louis.provost@satel.fr>
     subject: Ansible-Report
-    body: System {{ ansible_hostname }} has been successfully provisioned.
+    body: System has been successfully provisioned.
   delegate_to: localhost
