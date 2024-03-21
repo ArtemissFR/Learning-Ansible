@@ -59,7 +59,7 @@
   - name: "SECURITY | Creation of the SCP User"
     ios_config:
       lines:
-      - username scp privilege 15 password {{ CISCO_USER_PASS.user_input }}
+      - username scp privilege 15 password scp
     when: SCP_SERVER_CHOICE.user_input | bool
 #------------------------------------------#SECURITY#------------------------------------------#
 
