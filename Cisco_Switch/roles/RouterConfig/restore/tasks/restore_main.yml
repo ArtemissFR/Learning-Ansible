@@ -1,9 +1,3 @@
-######################################INFORMATION######################################
-  - name: RECAP
-    debug:
-      msg: " Make sure you have activate SCP server on your machine before doing any action !"
-######################################INFORMATION######################################
-
 ######################################RESTORE######################################
 
   - name: RESTORE
