@@ -20,3 +20,7 @@
 
     - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/restore/tasks/main.yml
 #-----------------------------#BACKUP+RESTORE#-----------------------------#
+
+#-----------------------------#MAIL#-----------------------------#
+    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/mail_sending/tasks/main.yml
+#-----------------------------#MAIL#-----------------------------#
