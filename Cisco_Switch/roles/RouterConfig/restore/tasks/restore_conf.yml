@@ -1,6 +1,6 @@
 ---
 #-------------------------------------#RESTORE#-------------------------------------#
-  - name: [RESTORE] Copy running config
+  - name: RESTORE
     ansible.builtin.expect:
       command:  "scp Backup/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
       responses:
