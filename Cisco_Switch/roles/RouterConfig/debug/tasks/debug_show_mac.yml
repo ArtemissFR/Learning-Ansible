@@ -1,4 +1,5 @@
-- name: DEBUG
+#------------------------------------------#DEBUG#------------------------------------------#
+- name: DEBUG | Gather MAC address-table
   ios_command:
     commands:
       - show mac address-table
@@ -6,7 +7,8 @@
   register: debug_show_mac
   ignore_errors: true
 
-- name: DEBUG
+- name: DEBUG | Show MAC address-table
   debug:
     var: debug_show_mac
   tags: show_mac
+#------------------------------------------#DEBUG#------------------------------------------#
