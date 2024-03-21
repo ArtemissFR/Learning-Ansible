@@ -1,4 +1,4 @@
-
+#-------------------------------------#BACKUP#-------------------------------------#
 ---
   - name: [BACKUP] Backup config
     ios_config:
@@ -23,3 +23,10 @@
     copy:
       src: "{{ config_output.backup_path }}"
       dest: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}_latest.config"
+#-------------------------------------#BACKUP#-------------------------------------#
+
+#-------------------------------------#RECAP#-------------------------------------#
+  - name: RECAP
+    debug:
+      msg: " Your configuration has been saved in /etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup."
+#-------------------------------------#RECAP#-------------------------------------#
