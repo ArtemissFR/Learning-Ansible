@@ -7,6 +7,6 @@
 
   - name: BACKUP | Create a directory
     ansible.builtin.file:
-      path: {{ BACKUP_DIRECTORY_PATH }}
+      path: "{{ BACKUP_DIRECTORY_PATH }}"
       state: directory
       mode: 0755
