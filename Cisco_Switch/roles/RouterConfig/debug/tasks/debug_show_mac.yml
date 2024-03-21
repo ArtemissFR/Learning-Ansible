@@ -1,4 +1,4 @@
-- name: [DEBUG] Collect Mac-address table
+- name: DEBUG
   ios_command:
     commands:
       - show mac address-table
@@ -6,7 +6,7 @@
   register: debug_show_mac
   ignore_errors: true
 
-- name: [DEBUG] Display Mac-address table
+- name: DEBUG
   debug:
     var: debug_show_mac
   tags: show_mac
