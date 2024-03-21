@@ -1,1 +1,2 @@
 
+    when: SCP_SERVER_CHOICE.user_input | bool
