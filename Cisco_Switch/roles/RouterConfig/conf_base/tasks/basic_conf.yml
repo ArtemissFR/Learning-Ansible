@@ -1,63 +1,54 @@
 
-######################################HOSTNAME######################################
+#------------------------------------------#BASICS#------------------------------------------#
 
-  - name: HOSTNAME
+  - name: BASICS | QUESTION - Hostname
     pause:
       prompt: "[???] Which hostname would you like to set for you Router ? "
     register: HOSTNAME
       
-  - name: Applying Hostname
+  - name: BASICS | Applying Hostname
     ios_config:
       lines: hostname "{{ HOSTNAME.user_input }}"
       
-######################################HOSTNAME######################################
 
-######################################DOMAIN######################################
-
-  - name: DOMAIN
+  - name: BASICS | QUESTION - Domain
     pause:
       prompt: "[???] Which domain would you like to set ? (example : ansible.lan)"
     register: DOMAIN
 
-  - name: Configure Domain Name
+  - name: BASICS | Configure Domain Name
     ios_system:
       domain_name: "{{ DOMAIN.user_input }}"
       
-######################################DOMAIN######################################
 
-######################################DNS-LOOKUP######################################
-
-  - name: DNS LOOKUP
+  - name: BASICS | QUESTION - DNS Lookup
     pause:
       prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
     register: DNS_LOOKUP
 
-  - name: Configure DNS lookup sources
+  - name: BASICS | Configure DNS lookup sources
     ios_system:
       lookup_enabled: yes
     when: DNS_LOOKUP.user_input | bool
-######################################DNS-LOOKUP######################################
-
-######################################BANNERS######################################
 
 #------------------------------------#PROMPT#------------------------------------#
-  - name: BANNERS
+  - name: BASICS | QUESTION - Banners
     pause:
       prompt: "[???] Would you like to configure the BASE banner ? (yes/no)"
     register: BASE_BANNER_CHOICE
 
-  - name: BANNERS
+  - name: BASICS | QUESTION - Banners
     pause:
       prompt: "[???] What do you want to put in your BASE banner ?"
     register: BASE_BANNER
     when: BASE_BANNER_CHOICE.user_input | bool
 
-  - name: BANNERS
+  - name: BASICS | QUESTION - Banners
     pause:
       prompt: "[???] Would you like to configure the LOGIN banner ? (yes/no)"
     register: LOGIN_BANNER_CHOICE
 
-  - name: BANNERS
+  - name: BASICS | QUESTION - Banners
     pause:
       prompt: "[???] What do you want to put in your LOGIN banner ?"
     register: LOGIN_BANNER
@@ -77,24 +68,24 @@
 #    text: "{{ LOGIN_BANNER.user_input }}"
 #    state: present
 #####APPLY-CONF#####
+#------------------------------------------#BASICS#------------------------------------------#
 
-#------------------------------------#RESULT#------------------------------------#
-  - name: RECAP (HOSTNAME)
+#------------------------------------------#RECAP#------------------------------------------#
+  - name: RECAP | HOSTNAME
     debug:
       msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
 
-  - name: RECAP (DOMAIN)
+  - name: RECAP | DOMAIN
     debug:
       msg: " You have set {{ DOMAIN.user_input }} as Domain."
 
-  - name: RECAP (BASE-BANNER)
+  - name: RECAP | BASE-BANNER
     debug:
       msg: " You have add {{ BASE_BANNER.user_input }} as Base Banner."
     when: BASE_BANNER_CHOICE.user_input | bool
 
-  - name: RECAP (LOGIN-BANNER)
+  - name: RECAP | LOGIN-BANNER
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
     when: LOGIN_BANNER_CHOICE.user_input | bool
-#------------------------------------#RESULT#------------------------------------#
-######################################BANNERS######################################
+#------------------------------------------#RECAP#------------------------------------------#
