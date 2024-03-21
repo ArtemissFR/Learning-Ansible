@@ -1,25 +1,25 @@
 #-------------------------------------#BACKUP#-------------------------------------#
 ---
-  - name: [BACKUP] Backup config
+  - name: BACKUP
     ios_config:
       backup: yes
       backup_options: 
         dir_path: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup
     register: config_output
 
-  - name: [BACKUP] Remove none important lines +1
+  - name: BACKUP
     lineinfile:
       path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/*.config"
       regex: 'Building configuration.*'
       state: absent
 
-  - name: [BACKUP] Remove none important lines +2
+  - name: BACKUP
     lineinfile:
       path: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/*.config"
       regex: 'Current configuration.*'
       state: absent
 
-  - name: [BACKUP] Set Latest Backup
+  - name: BACKUP
     copy:
       src: "{{ config_output.backup_path }}"
       dest: "/etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/{{ inventory_hostname }}_latest.config"
