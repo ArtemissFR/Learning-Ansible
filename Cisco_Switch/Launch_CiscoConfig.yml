@@ -8,3 +8,9 @@
     - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/get_info/tasks/main.yml
     
     - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/main.yml
+
+#-----------------------------#BACKUP+RESTORE#-----------------------------#
+    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/backup/tasks/main.yml
+
+    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/restore/tasks/main.yml
+#-----------------------------#BACKUP+RESTORE#-----------------------------#
