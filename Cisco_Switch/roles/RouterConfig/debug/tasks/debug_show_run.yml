@@ -1,4 +1,4 @@
-- name: [DEBUG] Get the Running config
+- name: DEBUG
   ios_command:
     commands:
       - show run
@@ -6,7 +6,7 @@
   register: debug_show_run
   ignore_errors: true
 
-- name: [DEBUG] Display the Running config
+- name: DEBUG
   debug:
     var: debug_show_run
   tags: show_run
