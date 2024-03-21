@@ -1,79 +1,75 @@
-#------------------------------------#PROMPT#------------------------------------#
-  - name: SECURITY
+#------------------------------------------#SECURITY#------------------------------------------#
+  - name: SECURITY | QUESTION - User
     pause:
       prompt: "[???] Would you like to create a new User ? (yes/no)"
     register: CISCO_USER_CHOICE
 
-  - name: SECURITY
+  - name: SECURITY | QUESTION - User
     pause:
       prompt: "[???] Choose a Username : "
     register: CISCO_USER
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: SECURITY
+  - name: SECURITY | QUESTION - User Password
     pause:
       prompt: "[???] Choose a password : "
     register: CISCO_USER_PASS
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: SECURITY
+  - name: SECURITY | QUESTION - User Privilege
     pause:
       prompt: "[???] What level of privilege would you like to set ? (Level 1 : Read-Only | Level 2 : Read-Only + Ping | Level 15 : Full Access)"
     register: CISCO_USER_PRIVILEGE
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: SECURITY
+  - name: SECURITY | QUESSTION - Secret
     pause:
       prompt: "[???] What password would you like to set for the Enable Password ? "
     register: CISCO_SECRET
     when: CISCO_USER_CHOICE.user_input | bool
-#------------------------------------#PROMPT#------------------------------------#
 
-#------------------------------------#ACTION[GENERAL]#------------------------------------#
-  - name: "Creation of the new User : {{ CISCO_USER.user_input }}"
+  - name: "SECURITY | Creation of the new User : {{ CISCO_USER.user_input }}"
     ios_config:
       lines:
       - username {{ CISCO_USER.user_input }} privilege {{ CISCO_USER_PRIVILEGE.user_input }} password {{ CISCO_USER_PASS.user_input }}
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: Enable password configuration
+  - name: SECURITY | Enable password configuration
     ios_config:
       lines: 
       - enable secret {{ CISCO_SECRET.user_input }}
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: Encrypt the passwords
+  - name: SECURITY | Encrypt the passwords
     ios_config:
       lines:
       - service password-encryption
     when: CISCO_USER_CHOICE.user_input | bool
-#------------------------------------#ACTION[GENERAL]#------------------------------------#
 
-#------------------------------------#ACTION[SCP]#------------------------------------#
-  - name: SCP
+  - name: SECURITY | QUESTION - scp
     pause:
       prompt: "[???] Would you like to enable the SCP Server ? (yes/no)"
     register: SCP_SERVER_CHOICE
   
-  - name: Enable scp server
+  - name: SECURITY | Enable scp server
     ios_config:
       lines: ip scp server enable 
     when: SCP_SERVER_CHOICE.user_input | bool
 
-  - name: "Creation of the SCP User"
+  - name: "SECURITY | Creation of the SCP User"
     ios_config:
       lines:
       - username scp privilege 15 password {{ CISCO_USER_PASS.user_input }}
     when: SCP_SERVER_CHOICE.user_input | bool
-#------------------------------------#ACTION[SCP]#------------------------------------#
+#------------------------------------------#SECURITY#------------------------------------------#
 
-#------------------------------------#RESULT#------------------------------------#
-  - name: RECAP (USER)
+#------------------------------------------#RECAP#------------------------------------------#
+  - name: SECURITY | RECAP - User
     debug:
       msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
     when: CISCO_USER_CHOICE.user_input | bool
 
-  - name: RECAP (SCP)
+  - name: SECURITY | RECAP - scp
     debug:
       msg: " You said {{ SCP_SERVER_CHOICE.user_input }} to activating the scp server."
-#------------------------------------#RESULT#------------------------------------#
+#------------------------------------#RECAP#------------------------------------#
