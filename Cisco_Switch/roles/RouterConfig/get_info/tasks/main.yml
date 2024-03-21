@@ -1,15 +1,15 @@
 ---
-#########################################INFORMATION#########################################
+#------------------------------------------#INFORMATION#------------------------------------------#
 
   - name: INFORMATION
     debug:
        msg: "This role will collect information about {{ inventory_hostname }} to help you !"
 
-#########################################INFORMATION#########################################
+#------------------------------------------#INFORMATION#------------------------------------------#
 
-#########################################GATHER#########################################
+#------------------------------------------#GET-INFO#------------------------------------------#
 
-  - name: Gather interfaces facts
+  - name: INFO | Gather interfaces facts
     cisco.ios.ios_facts:
       gather_subset: 
       - '!all'
@@ -18,29 +18,23 @@
       - interfaces
     register: interfaces_
 
-  - name: Gather config facts
+  - name: INFO | Gather config facts
     cisco.ios.ios_facts:
       gather_subset: 
       - config
     register: config_
 
-  - name: Gather hardware facts
+  - name: INFO | Gather hardware facts
     cisco.ios.ios_facts:
       gather_subset: 
       - hardware
     register: hardware_
 
-#########################################GATHER#########################################
 
-#########################################CONVERT#########################################
-
-  - name: Convert Interfaces facts in List
+  - name: INFO | Convert Interfaces facts in List
     set_fact:
       interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
-#########################################CONVERT#########################################
-
-#########################################INCLUDE-TASKS#########################################
+#------------------------------------------#GET-INFO#------------------------------------------#
 
   - include_tasks: iostype.yml
 
-#########################################INCLUDE-TASKS#########################################
