@@ -5,7 +5,7 @@
       prompt: "[???] Would you like to restore a backup configuration ? (yes/no)"
     register: RESTORE_CHOICE
 
-  - include_tasks: backup_conf.yml
+  - include_tasks: restore_conf.yml
     when: RESTORE_CHOICE.user_input | bool
     
 ######################################RESTORE######################################
