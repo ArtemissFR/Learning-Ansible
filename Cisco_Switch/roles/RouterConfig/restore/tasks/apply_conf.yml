@@ -1,5 +1,7 @@
 ---
-  - name: RESTORE
+#------------------------------------------#RESTORE#------------------------------------------#
+  - name: RESTORE | Apply the backup file configuration
     ios_command:
        commands:
           - "config replace flash0:{{ inventory_hostname }}_latest.config force"
+#------------------------------------------#RESTORE#------------------------------------------#
