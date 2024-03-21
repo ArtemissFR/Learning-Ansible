@@ -1,1 +1,11 @@
+######################################DEBUG######################################
 
+  - name: DEBUG
+    pause:
+      prompt: "[???] Would you like to do a debug before any action ? (yes/no)"
+    register: DEBUG_CHOICE
+
+  - include_tasks: debug_conf.yml
+    when: DEBUG_CHOICE.user_input | bool
+    
+######################################DEBUG######################################
