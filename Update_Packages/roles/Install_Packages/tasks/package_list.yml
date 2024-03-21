@@ -22,6 +22,12 @@
       - wget
     state: present
 
+- name: Install Tree
+  ansible.builtin.package:
+    name:
+      - tree
+    state: present
+
 - name: Install Curl
   ansible.builtin.package:
     name:
