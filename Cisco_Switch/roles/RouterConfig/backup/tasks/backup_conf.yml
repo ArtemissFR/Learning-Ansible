@@ -4,7 +4,7 @@
     ios_config:
       backup: yes
       backup_options: 
-        dir_path: {{ BACKUP_DIRECTORY_PATH }}
+        dir_path: "{{ BACKUP_DIRECTORY_PATH }}"
     register: config_output
 
   - name: BACKUP | Delete none important line in file
