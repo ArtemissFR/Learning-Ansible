@@ -1,39 +1,35 @@
 ---
-#------------------------------------#INFORMATION#------------------------------------#
-
-  - name: List of Interfaces
+#------------------------------------------#INFORMATION#------------------------------------------#
+  - name: INTERFACE | List of Interfaces
     debug:
-      msg: "{{ interfaces_fact }}"
-      
-#------------------------------------#INFORMATION#------------------------------------#
+      msg: "{{ interfaces_fact }}"    
+#------------------------------------------#INFORMATION#------------------------------------------#
 
-#------------------------------------#PROMPT#------------------------------------#
+#------------------------------------------#INTERFACE#------------------------------------------#
 
 #####CHOOSE-INTERFACE#####
-  - name: Interface
+  - name: INTERFACE | QUESTION 
     pause:
       prompt: "[???] Which router interface would you like to set ? (example : FastEthernet0/0)"
     register: ROUTER_INT
 #####CHOOSE-INTERFACE#####
 #####ADD-DESCRIPTION-TO-INTERFACE#####
-  - name: Interface
+  - name: INTERFACE | QUESTION
     pause:
       prompt: "[???] What description do you want to put on the interface ? "
     register: ROUTER_INT_DESC
 #####ADD-DESCRIPTION-TO-INTERFACE#####
-#------------------------------------#PROMPT#------------------------------------#
 
-#------------------------------------#ACTION#------------------------------------#
-  - name: Enable {{ ROUTER_INT.user_input }} Interface on Router
+  - name: INTERFACE | Enable {{ ROUTER_INT.user_input }} Interface on Router
     cisco.ios.ios_interfaces:
       config:
         - name: "{{ ROUTER_INT.user_input }}"
           description: "{{ ROUTER_INT_DESC.user_input }}"
           enabled: true
-#------------------------------------#ACTION#------------------------------------#
+#------------------------------------------#INTERFACE#------------------------------------------#
 
-#------------------------------------#RESULT#------------------------------------#
-  - name: RECAP
+#------------------------------------------#RECAP#------------------------------------------#
+  - name: INTERFACE | RECAP
     debug:
       msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
-#------------------------------------#RESULT#------------------------------------#
+#------------------------------------------#RECAP#------------------------------------------#
