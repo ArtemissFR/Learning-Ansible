@@ -1,1 +1,51 @@
+- name: [DEBUG] Run "show version" & "show interfaces" on remote nodes.
+  cisco.ios.ios_command:
+    commands:
+      - show version
+      - show interfaces
+  register: debug_info
 
+- name: [DEBUG] Gather config legacy facts
+  cisco.ios.ios_facts:
+    gather_subset: 
+    - config
+  register: debug_config
+
+- name: [DEBUG] Gather hardware legacy facts
+  cisco.ios.ios_facts:
+    gather_subset: 
+    - hardware
+  register: debug_hardware  
+
+- name: [DEBUG] Gather interfaces legacy facts
+  cisco.ios.ios_facts:
+    gather_subset: 
+    - interfaces
+  register: debug_interfaces
+
+- name: [DEBUG] Show info results
+  debug:
+     var: debug_info
+
+- name: [DEBUG] Show config results
+  debug:
+     var: debug_config
+
+- name: [DEBUG] Show hardware results
+  debug:
+     var: debug_hadware
+
+- name: [DEBUG] Show interfaces results
+  debug:
+     var: debug_interfaces
+
+- name: [DEBUG] Show the hostname
+  debug:
+     msg: "The name of the hostname is : {{ ansible_net_hostname }}"
+
+- name: [DEBUG] Show the IpV4 information
+  debug:
+     msg: "The Ip of this machine is : {{ ansible_net_all_ipv4_addresses }}"
+
+- include_tasks: show_mac.yml
+- include_tasks: show_run.yml
