@@ -29,5 +29,5 @@
 #------------------------------------------#RECAP#------------------------------------------#
   - name: BACKUP | RECAP
     debug:
-      msg: " Your configuration has been saved in {{ BACKUP_DIRECTORY_PATH }}."
+      msg: " Your configuration has been saved in /etc/ansible/roles/Learning-Ansible/Cisco_Switch/Backup/."
 #------------------------------------------#RECAP#------------------------------------------#
