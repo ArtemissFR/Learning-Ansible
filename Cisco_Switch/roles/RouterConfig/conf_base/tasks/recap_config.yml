@@ -1,10 +1,10 @@
-#------------------------------------#INFORMATION#------------------------------------#
+#------------------------------------------#INFORMATION#------------------------------------------#
   - name: INFORMATION
     debug:
        msg: "This role resume you all the change and action you have done !"
-#------------------------------------#INFORMATION#------------------------------------#
+#------------------------------------------#INFORMATION#------------------------------------------#
 
-#------------------------------------#RECAP-BASIC_CONF#------------------------------------#
+#------------------------------------------#RECAP-BASICS#------------------------------------------#
   - name: RECAP (HOSTNAME)
     debug:
       msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
@@ -24,16 +24,16 @@
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
     when: (BASICS_CHOICE.user_input == "yes") and (LOGIN_BANNER_CHOICE.user_input == "yes")
-#------------------------------------#RECAP-BASIC_CONF#------------------------------------#
+#------------------------------------------#RECAP-BASICS#------------------------------------------#
 
-#------------------------------------#RECAP-INTERFACE#------------------------------------#
+#------------------------------------------#RECAP-INTERFACE#------------------------------------------#
   - name: RECAP (INTERFACE)
     debug:
       msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
     when: INT_CHOICE.user_input | bool
-#------------------------------------#RECAP-INTERFACE#------------------------------------#
+#------------------------------------------#RECAP-INTERFACE#------------------------------------------#
 
-#------------------------------------#RECAP-SECURITY#------------------------------------#
+#------------------------------------------#RECAP-SECURITY#------------------------------------------#
 #  - name: RECAP (SECURITY)
 #    debug:
 #      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
@@ -51,9 +51,9 @@
     debug:
       msg: " You said {{ SCP_SERVER_CHOICE.user_input }} to activating the scp server."
     when: (SECURITY_CHOICE.user_input == "yes")
-#------------------------------------#RECAP-SECURITY#------------------------------------#
+#------------------------------------------#RECAP-SECURITY#------------------------------------------#
 
-#------------------------------------#RECAP-SNMP#------------------------------------#
+#------------------------------------------#RECAP-SNMP#------------------------------------------#
 #  - name: RECAP (SNMP)
 #    debug:
 #      msg: " You have decided to set up a PUBLIC SNMP Server : {{ SNMP_PUBLIC.user_input }} ."
@@ -76,9 +76,9 @@
             msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
           when: (SNMP_PRIVATE_CHOICE.user_input == "yes")
     when: (SNMP_CHOICE.user_input == "yes")
-#------------------------------------#RECAP-SNMP#------------------------------------#
+#------------------------------------------#RECAP-SNMP#------------------------------------------#
 
-#------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------#
+#------------------------------------------#RECAP-ACLS_DESCTRUCTOR#------------------------------------------#
 #  - name: RECAP (ACLS_DESTRUCTOR)
 #    debug:
 #      msg: " You have decided to delete all ACLS already present ."
@@ -101,9 +101,9 @@
             msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
           when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
     when: (ACLS_CHOICE.user_input == "yes")
-#------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------#
+#------------------------------------------#RECAP-ACLS_DESCTRUCTOR#------------------------------------------#
 
-#------------------------------------#RECAP-ACLS_CREATOR#------------------------------------#
+#------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
   - name: RECAP (Gather ACLS current configuration)
     cisco.ios.ios_acls:
       state: gathered
@@ -112,4 +112,4 @@
   - name: RECAP (List current ACLS)
     debug:
       var: ACLS_current
-#------------------------------------#RECAP-ACLS_CREATOR#------------------------------------#
+#------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
