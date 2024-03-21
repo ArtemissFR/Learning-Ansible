@@ -1,16 +1,17 @@
-######################################INFORMATION######################################
-  - name: RECAP
+#------------------------------------------#INFORMATION#------------------------------------------#
+  - name: INFORMATION
     debug:
       msg: " Make sure you have activate SCP server on your machine before doing any action !"
-######################################INFORMATION######################################
+#------------------------------------------#INFORMATION#------------------------------------------#
 
-  - name: extract config
+#------------------------------------------#RESTORE#------------------------------------------#
+  - name: RESTORE | Extract configuration
     ios_command:
       commands:
         - show running-config
     register: verif_config_output
 
-  - name: verif phrase
+  - name: RESTORE | Check if scp server is enable
     debug:
       msg: "La phrase est présente !"
     when: "'ip scp server enable' in verif_config_output.stdout_lines[0]"
@@ -18,3 +19,4 @@
 
   - include_tasks: restore_main.yml
     when: "'ip scp server enable' in verif_config_output.stdout_lines[0]"
+#------------------------------------------#RESTORE#------------------------------------------#
