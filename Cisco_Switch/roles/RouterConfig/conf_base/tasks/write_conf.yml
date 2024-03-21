@@ -1,29 +1,27 @@
-#------------------------------------#INFORMATION#------------------------------------#
+#------------------------------------------#INFORMATION#------------------------------------------#
   - name: INFORMATION
     debug:
        msg: "Starting writing the configuration..."
-#------------------------------------#INFORMATION#------------------------------------#
+#------------------------------------------#INFORMATION#------------------------------------------#
 
-#------------------------------------#ACTION#------------------------------------#
-  - name: WRITING CONFIGURATION
+#------------------------------------------#WRITE#------------------------------------------#
+  - name: WRITE | Writing configuration
     cisco.ios.ios_command:
       commands: write
     register: writing_result
-#------------------------------------#ACTION#------------------------------------#
 
-#------------------------------------#RESULT[ACTION]#------------------------------------#
-  - name: RESULT
+  - name: WRITE | Showing the result of writing configuration
     debug:
       var: writing_result
-#------------------------------------#RESULT[ACTION]#------------------------------------#
+#------------------------------------------#WRITE#------------------------------------------#
 
-#------------------------------------#RESULT[CONF]#------------------------------------#
-  - name: Gather Configuration
+#------------------------------------#RECAP#------------------------------------#
+  - name: WRITE | Gather Configuration
     cisco.ios.ios_command:
       commands: show run
     register: showrun_result
 
-  - name: Show Running configuration
+  - name: WRITE | Show Running configuration
     debug:
       var: showrun_result
-#------------------------------------#RESULT[CONF]#------------------------------------#
+#------------------------------------#RECAP#------------------------------------#
