@@ -12,11 +12,6 @@
       config:
       state: gathered
     register: ROUTE
-#  - name: Gather Existing ACLS
-#    cisco.ios.ios_command:
-#      commands:
-#        - show access-lists
-#    register: ACLS
 
   - name: ROUTE | List Static_Route
     debug:
