@@ -1,5 +1,5 @@
 ---
-- hosts: R3
+- hosts: S4
   gather_facts: no
   become: yes
 
