@@ -4,10 +4,6 @@
       prompt: "[???] Would you like to edit ACLS parameters ? (yes/no)"
     register: ACLS_CHOICE
 
-  - name: Set default var ACLS_DESTRUCTOR_CHOICE
-    ansible.builtin.set_fact:
-      ma_variable: "valeur_de_ma_variable"
-
   - include_tasks: main.yml
     when: ACLS_CHOICE.user_input | bool
 #------------------------------------------#ACLS#------------------------------------------#
