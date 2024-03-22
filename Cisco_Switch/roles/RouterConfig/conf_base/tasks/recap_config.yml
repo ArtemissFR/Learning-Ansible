@@ -97,7 +97,7 @@
           when: (ACLS_DELETE_ALL.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
     
         - name: RECAP | ACLS_DESTRUCTOR
-           debug:
+          debug:
             msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
           when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
     when: (ACLS_CHOICE.user_input == "yes")
