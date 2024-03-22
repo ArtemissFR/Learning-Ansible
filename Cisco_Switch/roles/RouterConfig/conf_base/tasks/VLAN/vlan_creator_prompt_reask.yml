@@ -4,6 +4,6 @@
     register: VLAN_REASK_CREATOR_CHOICE
 
   - name: VLAN | Launch the VLAN Creator...
-     block:
-         - include_tasks: vlan_creator_prompt.yml
-           when: (VLAN_REASK_CREATOR_CHOICE.user_input | bool)
+    block:
+        - include_tasks: vlan_creator_prompt.yml
+          when: (VLAN_REASK_CREATOR_CHOICE.user_input | bool)
