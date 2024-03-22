@@ -56,17 +56,19 @@
 #------------------------------------#PROMPT#------------------------------------#
 
 #####APPLY-CONF#####
-#- name: APPLY BASE BANNER
-#  cisco.ios.ios_banner:
-#    banner: motd
-#    text: "{{ BASE_BANNER.user_input }}"
-#    state: present
-
-#- name: APPLY LOGIN BANNER
-#  cisco.ios.ios_banner:
-#    banner: login
-#    text: "{{ LOGIN_BANNER.user_input }}"
-#    state: present
+  - name: APPLY BASE BANNER
+    cisco.ios.ios_banner:
+      banner: motd
+      text: "{{ BASE_BANNER.user_input }}"
+      state: present
+    when: BASE_BANNER_CHOICE.user_input | bool
+  
+  - name: APPLY LOGIN BANNER
+    cisco.ios.ios_banner:
+      banner: login
+      text: "{{ LOGIN_BANNER.user_input }}"
+      state: present
+    when: LOGIN_BANNER_CHOICE.user_input | bool
 #####APPLY-CONF#####
 #------------------------------------------#BASICS#------------------------------------------#
 
