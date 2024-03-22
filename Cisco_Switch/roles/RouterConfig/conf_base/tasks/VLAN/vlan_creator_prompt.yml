@@ -51,12 +51,12 @@
   - name: VLAN | Apply the new VLAN configuration
     cisco.ios.ios_vlans:
       config:
-        - name: "{ VLAN_NAME.user_input }"
-          vlan_id: "{ VLAN_ID.user_input }"
+        - name: "{{ VLAN_NAME.user_input }}"
+          vlan_id: "{{ VLAN_ID.user_input }}"
           state: active
-          shutdown: "{ VLAN_SHUTDOWN.user_input }"
-          remote_span: "{ VLAN_REMOTE_SPAN.user_input }"
-      state: "{ VLAN_STATE.user_input }"
+          shutdown: "{{ VLAN_SHUTDOWN.user_input }}"
+          remote_span: "{{ VLAN_REMOTE_SPAN.user_input }}"
+      state: "{{ VLAN_STATE.user_input }}"
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_prompt_reask.yml
