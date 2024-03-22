@@ -8,10 +8,10 @@
 #####ROUTE_LINE_NAME#####
 
 #####ROUTE_LINE_VRF#####
-  - name: ROUTE | QUESTION - VRF
-    pause:
-      prompt: "[???] What VRF would you like for your Static Route ? "
-    register: ROUTE_LINE_VRF
+#  - name: ROUTE | QUESTION - VRF
+#    pause:
+#      prompt: "[???] What VRF would you like for your Static Route ? "
+#    register: ROUTE_LINE_VRF
 #####ROUTE_LINE_VRF#####
 
 #ip route vrf test 172.31.10.0 255.255.255.0 10.10.10.2 name new_test multicast
@@ -26,7 +26,7 @@
 #####ROUTE_COMMAND_LINE#####
   - name: ROUTE | QUESTION - Options
     pause:
-      prompt: "[???] Write your Static Route options here : (example : multicast)"
+      prompt: "[???] Write your Static Route options here : (example : permanent/tag)"
     register: ROUTE_OPTION_LINE
 #####ROUTE_COMMAND_LINE#####
 
@@ -34,7 +34,7 @@
   - name: ROUTE | Apply the Static Route configuration
     cisco.ios.ios_config:
       lines:
-        - "ip route vrf {{ ROUTE_LINE_VRF.user_input }} {{ ROUTE_COMMAND_LINE.user_input }} name {{ ROUTE_LINE_NAME.user_input }} {{ ROUTE_OPTION_LINE.user_input }}"
+        - "ip route static {{ ROUTE_COMMAND_LINE.user_input }} name {{ ROUTE_LINE_NAME.user_input }} {{ ROUTE_OPTION_LINE.user_input }}"
 #####ROUTE_LINE_CREATOR#####
 #------------------------------------------#ROUTE#------------------------------------------#
 
