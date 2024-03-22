@@ -1,0 +1,4 @@
+  cisco.ios.ios_vlans:
+    config:
+    configuration: true
+    state: gathered
