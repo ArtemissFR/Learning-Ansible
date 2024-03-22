@@ -22,7 +22,7 @@
 
   - name: ROUTE | QUESTION - Creator Version
     pause:
-      prompt: "[???] Choose a version of Static_Route Creator : [prompt/line/promptline] ? (prompt is limited)"
+      prompt: "[???] Choose a version of Static_Route Creator : [line/promptline] ? "
     register: ROUTE_CREATOR_TYPE_CHOICE
     when: ROUTE_CREATOR_CHOICE.user_input | bool
 
@@ -40,10 +40,7 @@
     when: ROUTE_CREATOR_CHOICE.user_input | bool
 
   - name: ROUTE | Launch the Static_Route Creator...
-    block:
-        - include_tasks: static_route_creator_prompt.yml
-          when: (ROUTE_CREATOR_TYPE_CHOICE.user_input == "prompt")
-      
+    block:   
         - include_tasks: static_route_creator_line.yml
           when: (ROUTE_CREATOR_TYPE_CHOICE.user_input == "line")
       
