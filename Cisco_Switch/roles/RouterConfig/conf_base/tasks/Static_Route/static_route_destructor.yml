@@ -1,0 +1,30 @@
+#------------------------------------------#ROUTE#------------------------------------------#
+  - name: ROUTE | QUESTION - Delete ALL
+    pause:
+      prompt: "[???] Do you want to delete ALL of configured Static Route ? (yes/no)"
+    register: ROUTE_DELETE_ALL
+
+  - name: ROUTE | QUESTION - Delete based AFI
+    pause:
+      prompt: "[???] Do you want to delete Static Route based on VRF ? (yes/no)"
+    register: ROUTE_DELETE_VRF_BASED
+    when: ROUTE_DELETE_ALL.user_input == "no"
+
+  - name: ROUTE | QUESTION - VRF Type
+    pause:
+      prompt: "[???] Choose what type of VRF you want to delete : (example : blue) "
+    register: ROUTE_DELETE_VRF_BASED_TYPE
+    when: (ROUTE_DELETE_ALL.user_input == "no" and ROUTE_DELETE_VRF_BASED.user_input == "yes")
+
+  - name: ROUTE | Delete ALL of configured Static Route
+    cisco.ios.ios_static_routes:
+      state: deleted
+    when: ROUTE_DELETE_ALL.user_input | bool
+  
+  - name: ROUTE | Delete Static Route based on vrf
+    cisco.ios.ios_static_routes:
+      config:
+        - vrf: "{{ ROUTE_DELETE_VRF_BASED_TYPE }}"
+      state: deleted
+    when: ROUTE_DELETE_ALL.user_input == "no"
+#------------------------------------------#ROUTE#------------------------------------------#
