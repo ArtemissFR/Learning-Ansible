@@ -114,7 +114,7 @@
       var: ACLS_current
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
 
-#------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
+#------------------------------------------#RECAP-ROUTE_DESTRUCTOR#------------------------------------------#
   - name: RECAP | ROUTE_DESTRUCTOR
     block:
         - name: RECAP | ROUTE_DESTRUCTOR
@@ -122,14 +122,14 @@
             msg: " You have decided to delete all Static Route already present ."
           when: (ROUTE_DELETE_ALL.user_input == "yes") and (ROUTE_DESTRUCTOR_CHOICE.user_input == "yes")
   
-#        - name: RECAP | ROUTE_DESTRUCTOR
-#          debug:
-#            msg: " You have decided to delete the static route named {{ ROUTE_DELETE_VRF_NAME_TYPE.user_input }} ."
-#          when: (ROUTE_DELETE_ALL.user_input == "no") and (ROUTE_DESTRUCTOR_CHOICE.user_input == "yes")
+        - name: RECAP | ROUTE_DESTRUCTOR
+          debug:
+            msg: " You have decided to delete the static route based on vrf {{ ROUTE_DELETE_VRF_TYPE.user_input }} ."
+          when: (ROUTE_DELETE_ALL.user_input == "no") and (ROUTE_DESTRUCTOR_CHOICE.user_input == "yes")
     when: (ROUTE_CHOICE.user_input == "yes")
-#------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
+#------------------------------------------#RECAP-ROUTE_DESTRUCTOR#------------------------------------------#
 
-#------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
+#------------------------------------------#RECAP-ROUTE_CREATOR#------------------------------------------#
   - name: ROUTE | Gather Static Route configuration 
     cisco.ios.ios_static_routes:
       config:
@@ -139,4 +139,4 @@
   - name: ROUTE | List Static Route
     debug:
       var: ROUTE_current
-#------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
+#------------------------------------------#RECAP-ROUTE_CREATOR#------------------------------------------#
