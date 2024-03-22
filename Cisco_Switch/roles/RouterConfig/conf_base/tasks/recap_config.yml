@@ -124,7 +124,7 @@
   
         - name: RECAP | ROUTE_DESTRUCTOR
           debug:
-            msg: " You have decided to delete the static route based on vrf {{ ROUTE_DELETE_VRF_TYPE.user_input }} ."
+            msg: " You have decided to delete the static route based on vrf {{ ROUTE_DELETE_VRF_BASED_TYPE.user_input }} ."
           when: (ROUTE_DELETE_ALL.user_input == "no") and (ROUTE_DESTRUCTOR_CHOICE.user_input == "yes")
     when: (ROUTE_CHOICE.user_input == "yes")
 #------------------------------------------#RECAP-ROUTE_DESTRUCTOR#------------------------------------------#
