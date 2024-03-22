@@ -9,6 +9,7 @@
     pause:
       prompt: "[???] Where is your backup directory ? (example: /etc/ansible/Backup)"
     register: BACKUP_DIRECTORY_CHOICE
+    when: BACKUP_DIRECTORY_CHOICE is not defined
 
   - include_tasks: restore_conf.yml
     when: RESTORE_CHOICE.user_input | bool
