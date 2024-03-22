@@ -91,16 +91,18 @@
 
   - name: RECAP | ACLS_DESTRUCTOR
     block:
-        - name: RECAP | ACLS_DESTRUCTOR
-          debug:
-            msg: " You have decided to delete all ACLS already present ."
-          when: (ACLS_DELETE_ALL.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
-  
-        - name: RECAP | ACLS_DESTRUCTOR
-          debug:
-            msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
-          when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
-    when: (ACLS_CHOICE.user_input == "yes") and (MACHINE_TYPE == "ROUTER") or (ansible_net_model == "2960") or (ansible_net_model == "3560") or (ansible_net_model == "3750") or (ansible_net_model == "3850")
+      block:
+          - name: RECAP | ACLS_DESTRUCTOR
+            debug:
+              msg: " You have decided to delete all ACLS already present ."
+            when: (ACLS_DELETE_ALL.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
+    
+          - name: RECAP | ACLS_DESTRUCTOR
+            debug:
+              msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
+            when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
+      when: (ACLS_CHOICE.user_input == "yes")
+    when: (MACHINE_TYPE == "ROUTER") or (ansible_net_model == "2960") or (ansible_net_model == "3560") or (ansible_net_model == "3750") or (ansible_net_model == "3850")
 #------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
 
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
