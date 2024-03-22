@@ -1,0 +1,9 @@
+#------------------------------------------#VLAN#------------------------------------------#
+  - name: VLAN
+    pause:
+      prompt: "[???] Would you like to configure VLANs ? (yes/no)"
+    register: VLAN_CHOICE
+
+  - include_tasks: main.yml
+    when: VLAN_CHOICE.user_input | bool
+#------------------------------------------#VLAN#------------------------------------------#
