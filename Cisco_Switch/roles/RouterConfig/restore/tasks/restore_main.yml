@@ -5,6 +5,11 @@
       prompt: "[???] Would you like to restore a backup configuration ? (yes/no)"
     register: RESTORE_CHOICE
 
+  - name: RESTORE | QUESION - Restore directory
+    pause:
+      prompt: "[???] Where is your backup directory ? (example: /etc/ansible/Backup)"
+    register: BACKUP_DIRECTORY_CHOICE
+
   - include_tasks: restore_conf.yml
     when: RESTORE_CHOICE.user_input | bool
     
