@@ -63,9 +63,9 @@
 
 #---------------------------------------------------------#ROUTER-CONFIG#---------------------------------------------------------#
 #------------------------------------------#ACLS#------------------------------------------#
-  - name: Set default var ACLS_DESTRUCTOR_CHOICE (for Switch)
+  - name: Set default var ACLS_CHOICE (for Switch)
     ansible.builtin.set_fact:
-      ma_variable: "valeur_de_ma_variable"
+      ACLS_CHOICE: "no"
     when: (MACHINE_TYPE == "SWITCH")
 
   - include_tasks: ./ACLS/acls_main.yml
