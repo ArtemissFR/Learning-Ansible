@@ -130,12 +130,13 @@
 #------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
 
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
-  - name: RECAP | ROUTE - Gather Static Route configuration
-    cisco.ios.ios_acls:
+  - name: ROUTE | Gather Static Route configuration 
+    cisco.ios.ios_static_routes:
+      config:
       state: gathered
-    register: ACLS_current
+    register: ROUTE_current
 
-  - name: RECAP | ROUTE - Show Static Route configuration
+  - name: ROUTE | List Static Route
     debug:
-      var: ACLS_current
+      var: ROUTE_current
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
