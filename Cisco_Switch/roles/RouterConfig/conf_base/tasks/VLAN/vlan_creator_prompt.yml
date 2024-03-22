@@ -58,4 +58,6 @@
           remote_span: "{ VLAN_REMOTE_SPAN.user_input }"
       state: "{ VLAN_STATE.user_input }"
 #####APPLY-CONFIGURATION#####
+
+  - include_tasks: vlan_creator_prompt_reask.yml
 #------------------------------------------#ACLS#------------------------------------------#
