@@ -1,4 +1,20 @@
-  cisco.ios.ios_vlans:
-    config:
-    configuration: true
-    state: gathered
+
+#------------------------------------------#INFORMATION#------------------------------------------#
+  - name: INFORMATION
+    debug:
+      msg: "This role will collect information about VLAN from {{ inventory_hostname }} to help you !"
+#------------------------------------------#INFORMATION#------------------------------------------#
+
+#------------------------------------------#RECAP#------------------------------------------#
+
+  - name: VLAN | Gather configuration from target device
+    cisco.ios.ios_vlans:
+      config:
+      configuration: true
+      state: gathered
+    register: VLAN
+
+  - name: VLAN | List VLANs
+    debug:
+      var: VLAN
+#------------------------------------------#RECAP#------------------------------------------#
