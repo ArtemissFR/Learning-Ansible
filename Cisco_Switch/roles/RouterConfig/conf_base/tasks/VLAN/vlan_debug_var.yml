@@ -15,7 +15,7 @@
     debug:
       msg: "{{ VLAN_SHUTDOWN.user_input }}"
 
-  - name: VLAN | REMOTE_SPAN
-    debug:
-      msg: "{{ VLAN_REMOTE_SPAN.user_input }}"
+#  - name: VLAN | REMOTE_SPAN
+#    debug:
+#      msg: "{{ VLAN_REMOTE_SPAN.user_input }}"
 #------------------------------------------#VLAN#------------------------------------------#
