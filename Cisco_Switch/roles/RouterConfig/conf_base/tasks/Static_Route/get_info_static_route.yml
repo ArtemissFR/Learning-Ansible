@@ -1,0 +1,24 @@
+
+#------------------------------------------#INFORMATION#------------------------------------------#
+  - name: INFORMATION
+    debug:
+      msg: "This role will collect information about Static_Route from {{ inventory_hostname }} to help you !"
+#------------------------------------------#INFORMATION#------------------------------------------#
+
+#------------------------------------------#RECAP#------------------------------------------#
+
+  - name: ROUTE | Gather configuration from target device
+    cisco.ios.ios_static_routes:
+      config:
+      state: gathered
+    register: ROUTE
+#  - name: Gather Existing ACLS
+#    cisco.ios.ios_command:
+#      commands:
+#        - show access-lists
+#    register: ACLS
+
+  - name: ROUTE | List Static_Route
+    debug:
+      var: ROUTE
+#------------------------------------------#RECAP#------------------------------------------#
