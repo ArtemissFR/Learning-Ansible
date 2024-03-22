@@ -10,5 +10,4 @@
     ansible.builtin.file:
       path: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}"
       state: directory
-      creates: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}"
 #------------------------------------------#BACKUP#------------------------------------------#
