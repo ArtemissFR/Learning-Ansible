@@ -24,6 +24,18 @@
     
 #------------------------------------------#INTERFACE#------------------------------------------#
 
+#------------------------------------------#STATIC_ROUTE#------------------------------------------#
+
+  - name: ROUTE
+    pause:
+      prompt: "[???] Would you like to customise a static route ? (yes/no)"
+    register: ROUTE_CHOICE
+
+  - include_tasks: ./Static_Route/main.yml
+    when: ROUTE_CHOICE.user_input | bool
+    
+#------------------------------------------#STATIC_ROUTE#------------------------------------------#
+
 #------------------------------------------#SECURITY#------------------------------------------#
 
   - name: SECURITY
