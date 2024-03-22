@@ -1,1 +1,21 @@
+#------------------------------------------#VLAN#------------------------------------------#
+  - name: VLAN | NAME
+    debug:
+      msg: "{{ VLAN_NAME.user_input }}"
 
+  - name: VLAN | STATE
+    debug:
+      msg: "{{ VLAN_STATE.user_input }}"
+
+  - name: VLAN | ID
+    debug:
+      msg: "{{ VLAN_ID.user_input }}"
+
+  - name: VLAN | SHUTDOWN
+    debug:
+      msg: "{{ VLAN_SHUTDOWN.user_input }}"
+
+  - name: VLAN | REMOTE_SPAN
+    debug:
+      msg: "{{ VLAN_REMOTE_SPAN.user_input }}"
+#------------------------------------------#VLAN#------------------------------------------#
