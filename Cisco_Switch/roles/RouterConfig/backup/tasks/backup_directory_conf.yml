@@ -3,7 +3,7 @@
 
   - name: BACKUP | QUESTION - Directory
     pause:
-      prompt: "[???] Where do you want to create your Backup directory ?"
+      prompt: "[???] Where do you want to create your Backup directory ? (example: /etc/ansible/Backup)"
     register: BACKUP_DIRECTORY_CHOICE
     
 #------------------------------------------#BACKUP#------------------------------------------#
