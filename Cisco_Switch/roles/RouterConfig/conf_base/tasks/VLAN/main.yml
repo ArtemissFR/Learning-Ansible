@@ -1,1 +1,52 @@
 
+---
+#------------------------------------------#INFORMATION#------------------------------------------#
+  - name: INFORMATION
+    debug:
+      msg:  Starting gathering facts ... 
+#------------------------------------------#INFORMATION#------------------------------------------#
+
+#------------------------------------------#VLAN#------------------------------------------#
+  - include_tasks: get_info_vlan.yml    
+
+  - name: VLAN | QUESTION - Destructor
+    pause:
+      prompt: "[???] Do you want to launch the VLAN Destructor ? (yes/no)"
+    register: VLAN_DESTRUCTOR_CHOICE
+
+  - name: VLAN | QUESTION - Creator
+    pause:
+      prompt: "[???] Do you want to launch the VLAN Creator ? (yes/no)"
+    register: VLAN_CREATOR_CHOICE
+
+  - name: VLAN | QUESTION - Creator Version
+    pause:
+      prompt: "[???] Choose a version of VLAN Creator : [prompt/line/promptline] ? (prompt is limited)"
+    register: VLAN_CREATOR_TYPE_CHOICE
+    when: VLAN_CREATOR_CHOICE.user_input | bool
+
+  - name: VLAN | INFORMATION
+    debug:
+      msg:  Starting the VLAN destructor engine ... 
+    when: VLAN_DESTRUCTOR_CHOICE.user_input | bool
+
+  - include_tasks: vlan_destructor.yml
+    when: VLAN_DESTRUCTOR_CHOICE.user_input | bool
+
+  - name: VLAN | INFORMATION
+    debug:
+      msg:  "Starting the VLAN Creator < {{  VLAN_CREATOR_TYPE_CHOICE.user_input }} > engine ... "
+    when: VLAN_CREATOR_CHOICE.user_input | bool
+
+  - name: VLAN | Launch the VLAN Creator...
+    block:
+        - include_tasks: vlan_creator_prompt.yml
+          when: (VLAN_CREATOR_TYPE_CHOICE.user_input == "prompt")
+      
+        - include_tasks: vlan_creator_line.yml
+          when: (VLAN_CREATOR_TYPE_CHOICE.user_input == "line")
+      
+        - include_tasks: vlan_creator_promptline.yml
+          when: (VLAN_CREATOR_TYPE_CHOICE.user_input == "promptline")
+    when: VLAN_CREATOR_CHOICE.user_input | bool
+#------------------------------------------#VLAN#------------------------------------------#
