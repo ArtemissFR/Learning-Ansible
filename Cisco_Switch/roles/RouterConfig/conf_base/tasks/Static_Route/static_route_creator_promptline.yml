@@ -34,7 +34,7 @@
   - name: ROUTE | Apply the Static Route configuration
     cisco.ios.ios_config:
       lines:
-        - "ip route static {{ ROUTE_COMMAND_LINE.user_input }} name {{ ROUTE_LINE_NAME.user_input }} {{ ROUTE_OPTION_LINE.user_input }}"
+        - "ip route {{ ROUTE_COMMAND_LINE.user_input }} name {{ ROUTE_LINE_NAME.user_input }} {{ ROUTE_OPTION_LINE.user_input }}"
 #####ROUTE_LINE_CREATOR#####
 #------------------------------------------#ROUTE#------------------------------------------#
 
