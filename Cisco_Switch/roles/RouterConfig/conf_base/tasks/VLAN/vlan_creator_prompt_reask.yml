@@ -1,1 +1,4 @@
-
+  - name: VLAN | QUESTION - Finish
+    pause:
+      prompt: "[???] Do you want to create another VLAN ? (yes/no)"
+    register: VLAN_REASK_CREATOR_CHOICE
