@@ -29,11 +29,18 @@
 #####VLAN-SHUTDOWN#####
 
 #####VLAN-REMOTE_SPAN#####
-  - name: VLAN | QUESTION - Remote Span
-    pause:
-      prompt: "[???] Do you want to activate the remote span ? (true/false) "
-    register: VLAN_REMOTE_SPAN
+#  - name: VLAN | QUESTION - Remote Span
+#    pause:
+#      prompt: "[???] Do you want to activate the remote span ? (true/false) "
+#    register: VLAN_REMOTE_SPAN
 #####VLAN-REMOTE_SPAN#####
+
+#####VLAN-MTU#####
+#  - name: VLAN | QUESTION - mtu
+#    pause:
+#      prompt: "[???] What is the mtu you want to set ? "
+#    register: VLAN_MTU
+#####VLAN-MTU#####
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
@@ -55,7 +62,8 @@
           vlan_id: "{{ VLAN_ID.user_input }}"
           state: active
           shutdown: "{{ VLAN_SHUTDOWN.user_input }}"
-          remote_span: "{{ VLAN_REMOTE_SPAN.user_input }}"
+#          mtu: "{{ VLAN_MTU.user_input }}"
+#          remote_span: "{{ VLAN_REMOTE_SPAN.user_input }}"
       state: "{{ VLAN_STATE.user_input }}"
 #####APPLY-CONFIGURATION#####
 
