@@ -1,1 +1,30 @@
+#------------------------------------------#ACLS#------------------------------------------#
+  - name: VLAN | QUESTION - Delete ALL
+    pause:
+      prompt: "[???] Do you want to delete ALL of configured VLAN ? (yes/no)"
+    register: VLAN_DELETE_ALL
 
+  - name: VLAN | QUESTION - Delete precise VLAN
+    pause:
+      prompt: "[???] Do you want to delete a precise VLAN ? (yes/no)"
+    register: VLAN_DELETE_ID_BASED
+    when: VLAN_DELETE_ALL.user_input == "no"
+
+  - name: VLAN | QUESTION - VLAN ID
+    pause:
+      prompt: "[???] Choose which VLAN you want to delete : (ID) "
+    register: VLAN_DELETE_ID_BASED_TYPE
+    when: (VLAN_DELETE_ALL.user_input == "no" and VLAN_DELETE_ID_BASED.user_input == "yes")
+
+  - name: VLAN | Delete ALL of configured VLAN
+    cisco.ios.ios_vlans:
+      state: deleted
+    when: VLAN_DELETE_ALL.user_input | bool
+  
+  - name: VLAN | Delete VLAN based on ID
+    cisco.ios.ios_acls:
+      config:
+        - afi: "{{ VLAN_DELETE_ID_BASED_TYPE.user_input }}"
+      state: deleted
+    when: VLAN_DELETE_ALL.user_input == "no"
+#------------------------------------------#ACLS#------------------------------------------#
