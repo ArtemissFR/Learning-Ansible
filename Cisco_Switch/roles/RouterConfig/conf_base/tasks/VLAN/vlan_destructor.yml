@@ -22,9 +22,10 @@
     when: VLAN_DELETE_ALL.user_input | bool
   
   - name: VLAN | Delete VLAN based on ID
-    cisco.ios.ios_acls:
+    cisco.ios.ios_vlans:
       config:
-        - afi: "{{ VLAN_DELETE_ID_BASED_TYPE.user_input }}"
+        - vlan_id: "{{ VLAN_DELETE_ID_BASED_TYPE }}"
+      configuration: true
       state: deleted
     when: VLAN_DELETE_ALL.user_input == "no"
 #------------------------------------------#ACLS#------------------------------------------#
