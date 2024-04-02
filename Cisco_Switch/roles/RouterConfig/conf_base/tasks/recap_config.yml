@@ -134,20 +134,13 @@
 #------------------------------------------#RECAP-VLANS_DESTRUCTOR#------------------------------------------#
 
 #------------------------------------------#RECAP-VLANS_CREATOR#------------------------------------------#
-#  - name: RECAP | VLANs - Gather VLANs configuration
-#    cisco.ios.ios_vlans:
-#      config:
-#      configuration: true
-#      state: gathered
-#    register: VLANS_current
-
   - name: RECAP | VLANs - Gather VLANs configuration
-    cisco.ios.ios_facts:
-      gather_subset: min
-      gather_network_resources: vlans
+    cisco.ios.ios_command:
+      commands:
+        - show vlan
     register: VLANS_current
 
   - name: RECAP | VLANs - Show VLANs configuration
     debug:
-      var: VLANS_current
+      var: VLANS_current.stdout_lines
 #------------------------------------------#RECAP-VLANS_CREATOR#------------------------------------------#
