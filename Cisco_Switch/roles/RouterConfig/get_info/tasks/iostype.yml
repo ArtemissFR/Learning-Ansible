@@ -31,6 +31,14 @@
           (ansible_net_model == "3750") or 
           (ansible_net_model == "3850")    
 
+  - name: INFO | Keeping machine type in var (if SPECIAL)
+    set_fact:
+      MACHINE_TYPE_SPECIAL: "ACLS_SWITCH"
+    when: (ansible_net_model == "2960") or
+          (ansible_net_model == "3560") or 
+          (ansible_net_model == "3750") or 
+          (ansible_net_model == "3850")   
+
   - name: INFO | Gather version information
     cisco.ios.ios_command:
       commands: show version
