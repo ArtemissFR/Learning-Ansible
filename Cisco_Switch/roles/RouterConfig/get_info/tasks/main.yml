@@ -38,13 +38,14 @@
 
 #------------------------------------------#GET-INFO#------------------------------------------#
   - name: RECAP | VLANs - Gather VLANs configuration
-    cisco.ios.ios_facts:
-      gather_subset: min
-      gather_network_resources: vlans
+    cisco.ios.ios_command:
+      commands:
+        - show vlan
+    register: VLANS_current
 
   - name: RECAP | VLANs - Show VLANs configuration
     debug:
-      var: ansible_net_gather_network_resources_vlans
+      var: VLANS_current
 #------------------------------------------#GET-INFO#------------------------------------------#
 
   - include_tasks: iostype.yml
