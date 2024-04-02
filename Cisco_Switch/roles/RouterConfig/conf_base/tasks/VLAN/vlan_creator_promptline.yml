@@ -69,7 +69,7 @@
         - "vlan {{ VLAN_ID.user_input }}"
         - "name {{ VLAN_NAME.user_input }}"
         - "{{ VLAN_SHUTDOWN.user_input }}"
-        - "{{ VLAN_STATE.user_input }}"
+        - "state {{ VLAN_STATE.user_input }}"
         - "mtu {{ VLAN_MTU.user_input }}"
 
   - name: VLAN | Apply others options
