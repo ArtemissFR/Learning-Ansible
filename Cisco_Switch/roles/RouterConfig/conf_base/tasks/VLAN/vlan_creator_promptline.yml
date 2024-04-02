@@ -66,17 +66,17 @@
   - name: VLAN | Apply the new VLAN configuration
     cisco.ios.ios_config:
       lines:
-        - vlan {{ VLAN_ID.user_input }}
-        - name {{ VLAN_NAME.user_input }}
-        - {{ VLAN_SHUTDOWN.user_input }}
-        - {{ VLAN_STATE.user_input }}
-        - mtu {{ VLAN_MTU.user_input }}
+        - "vlan {{ VLAN_ID.user_input }}"
+        - "name {{ VLAN_NAME.user_input }}"
+        - "{{ VLAN_SHUTDOWN.user_input }}"
+        - "{{ VLAN_STATE.user_input }}"
+        - "mtu {{ VLAN_MTU.user_input }}"
 
   - name: VLAN | Apply others options
     cisco.ios.ios_config:
       lines:
-        - vlan {{ VLAN_ID.user_input }}
-        - {{ VLAN_OPTION.user_input }}
+        - "vlan {{ VLAN_ID.user_input }}"
+        - "{{ VLAN_OPTION.user_input }}"
     when: VLAN_OPTION_CHOICE | bool
 #####APPLY-CONFIGURATION#####
 
