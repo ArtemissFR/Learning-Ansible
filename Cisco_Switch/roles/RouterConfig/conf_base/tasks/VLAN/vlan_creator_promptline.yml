@@ -24,7 +24,7 @@
 #####VLAN-STATE#####
   - name: VLAN | QUESTION - State
     pause:
-      prompt: "[???] Which STATE you want your VLAN to be ? [merged/replaced/overriden/deleted/rendered]"
+      prompt: "[???] Which STATE you want your VLAN to be ? (active / suspend)"
     register: VLAN_STATE
 #####VLAN-STATE#####
 #------------------------------------------#ACLS#------------------------------------------#
@@ -47,6 +47,7 @@
         - vlan {{ VLAN_ID.user_input }}
         - name {{ VLAN_NAME.user_input }}
         - {{ VLAN_SHUTDOWN.user_input }}
+        - {{ VLAN_STATE.user_input }}
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_promptline_reask.yml
