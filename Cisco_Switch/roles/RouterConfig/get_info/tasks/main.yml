@@ -36,17 +36,5 @@
       interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
 #------------------------------------------#GET-INFO#------------------------------------------#
 
-#------------------------------------------#GET-INFO#------------------------------------------#
-  - name: RECAP | VLANs - Gather VLANs configuration
-    cisco.ios.ios_command:
-      commands:
-        - show vlan
-    register: VLANS_current
-
-  - name: RECAP | VLANs - Show VLANs configuration
-    debug:
-      var: VLANS_current.stdout_lines
-#------------------------------------------#GET-INFO#------------------------------------------#
-
   - include_tasks: iostype.yml
 
