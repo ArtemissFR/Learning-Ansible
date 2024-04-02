@@ -2,18 +2,22 @@
   - name: VLAN | NAME
     debug:
       msg: "{{ VLAN_NAME.user_input }}"
+    when: VLAN_NAME is defined
 
   - name: VLAN | STATE
     debug:
       msg: "{{ VLAN_STATE.user_input }}"
+    when: VLAN_STATE is defined
 
   - name: VLAN | ID
     debug:
       msg: "{{ VLAN_ID.user_input }}"
+    when: VLAN_ID is defined
 
   - name: VLAN | SHUTDOWN
     debug:
       msg: "{{ VLAN_SHUTDOWN.user_input }}"
+    when: VLAN_SHUTDOWN is defined
 
   - name: VLAN | MTU
     debug:
