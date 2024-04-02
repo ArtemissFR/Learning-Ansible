@@ -34,11 +34,6 @@
 #------------------------------------------#RECAP-INTERFACE#------------------------------------------#
 
 #------------------------------------------#RECAP-SECURITY#------------------------------------------#
-#  - name: RECAP (SECURITY)
-#    debug:
-#      msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
-#    when: (CISCO_USER_CHOICE.user_input == "yes") and (SECURITY_CHOICE.user_input == "yes")
-
   - name: RECAP | SECURITY
     block:
         - name: RECAP | SECURITY
@@ -54,16 +49,6 @@
 #------------------------------------------#RECAP-SECURITY#------------------------------------------#
 
 #------------------------------------------#RECAP-SNMP#------------------------------------------#
-#  - name: RECAP (SNMP)
-#    debug:
-#      msg: " You have decided to set up a PUBLIC SNMP Server : {{ SNMP_PUBLIC.user_input }} ."
-#    when: (SNMP_PUBLIC_CHOICE.user_input == "yes") and (SNMP_CHOICE.user_input == "yes")
-#
-#  - name: RECAP (SNMP)
-#    debug:
-#      msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
-#    when: (SNMP_PRIVATE_CHOICE.user_input == "yes") and (SNMP_CHOICE.user_input == "yes")
-
   - name: RECAP | SNMP
     block:
         - name: RECAP | SNMP - Public Server
@@ -79,16 +64,6 @@
 #------------------------------------------#RECAP-SNMP#------------------------------------------#
 
 #------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
-#  - name: RECAP (ACLS_DESTRUCTOR)
-#    debug:
-#      msg: " You have decided to delete all ACLS already present ."
-#    when: (ACLS_DELETE_ALL.user_input == "yes") and (ACLS_CHOICE.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
-#
-#  - name: RECAP (ACLS_DESTRUCTOR)
-#    debug:
-#      msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
-#    when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_CHOICE.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes")
-
   - name: RECAP | ACLS_DESTRUCTOR
     block:
         - name: RECAP | ACLS_DESTRUCTOR
