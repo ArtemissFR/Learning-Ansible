@@ -45,10 +45,11 @@
 #####VLAN-OPTION-CHOICE#####
   - name: VLAN | QUESTION - Options
     pause:
-      prompt: "[???] Type the option you want to add to your vlan :"
+      prompt: "[???] Type the option you want to add to your vlan "
     register: VLAN_OPTION
+    when: VLAN_OPTION_CHOICE.user_input | bool
 #####VLAN-OPTION-CHOICE#####
-#------------------------------------------#ACLS#------------------------------------------#
+#------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
   - name: VLAN | VALIDATION
@@ -76,7 +77,7 @@
       lines:
         - "vlan {{ VLAN_ID.user_input }}"
         - "{{ VLAN_OPTION.user_input }}"
-    when: VLAN_OPTION_CHOICE | bool
+    when: VLAN_OPTION_CHOICE.user_input | bool
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_promptline_reask.yml
