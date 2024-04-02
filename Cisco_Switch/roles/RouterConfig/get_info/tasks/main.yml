@@ -45,7 +45,7 @@
 
   - name: RECAP | VLANs - Show VLANs configuration
     debug:
-      var: VLANS_current
+      var: VLANS_current.stdout_lines
 #------------------------------------------#GET-INFO#------------------------------------------#
 
   - include_tasks: iostype.yml
