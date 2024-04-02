@@ -50,6 +50,11 @@
     debug:
        msg: "Your machine is a {{ MACHINE_TYPE }} with model type {{ ansible_net_model }}."
 
+  - name: INFO IOS | ACLS SWITCH # Switch that use ACLS
+    debug:
+       msg: "This machine is a Switch that can use ACLS !"
+    when: (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH")
+
   - name: INFO IOS | Layer type (if L3) # Switch Layer 3
     debug:
        msg: "This machine is a Switch Layer 3 ! (L3)"
