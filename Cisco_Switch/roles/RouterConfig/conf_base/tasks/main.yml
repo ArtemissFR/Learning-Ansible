@@ -69,7 +69,7 @@
     when: (MACHINE_TYPE == "SWITCH")
 
   - include_tasks: ./ACLS/acls_main.yml
-    when: (MACHINE_TYPE == "ROUTER") or (ansible_net_model == "2960") or (ansible_net_model == "3560") or (ansible_net_model == "3750") or (ansible_net_model == "3850")
+    when: (MACHINE_TYPE == "ROUTER") or (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH")
 #------------------------------------------#ACLS#------------------------------------------#
 #---------------------------------------------------------#ROUTER-CONFIG#---------------------------------------------------------#
 
