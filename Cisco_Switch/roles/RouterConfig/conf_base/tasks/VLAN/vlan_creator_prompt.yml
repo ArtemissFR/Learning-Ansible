@@ -44,10 +44,15 @@
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
-  - name: VLAN | VALIDATION
+  - name: VLAN | VERIFICATION
     pause:
       prompt: "[???] Do you want to check your vars ? (yes/no)"
     register: VLAN_DEBUG_CHECK
+
+  - name: VLAN | VALIDATION 
+    pause:
+      prompt: "[???] Do you want to apply your configuration ? (yes/no)"
+    register: VLAN_VALID_CHECK
 
   - include_tasks: vlan_debug_var.yml
     when: VLAN_DEBUG_CHECK.user_input | bool
@@ -65,6 +70,7 @@
 #          mtu: "{{ VLAN_MTU.user_input }}"
 #          remote_span: "{{ VLAN_REMOTE_SPAN.user_input }}"
       state: "{{ VLAN_STATE.user_input }}"
+    when: VLAN_VALID_CHECK.user_input | bool
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_prompt_reask.yml
