@@ -47,7 +47,7 @@
     pause:
       prompt: "[???] Type the option you want to add to your vlan :"
     register: VLAN_OPTION
-    when: VLAN_OPTION_CHOICE | bool
+    when: (VLAN_OPTION_CHOICE == "yes")
 #####VLAN-OPTION-CHOICE#####
 #------------------------------------------#ACLS#------------------------------------------#
 
