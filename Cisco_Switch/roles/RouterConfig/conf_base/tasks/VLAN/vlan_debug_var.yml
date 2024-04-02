@@ -24,6 +24,10 @@
       msg: "{{ VLAN_MTU.user_input }}"
     when: VLAN_MTU is defined
 
+  - name: VLAN | OPTIONS
+    debug:
+      msg: "{{ VLAN_OPTION.user_input }}"
+    when: VLAN_OPTION is defined
 
 #  - name: VLAN | REMOTE_SPAN
 #    debug:
