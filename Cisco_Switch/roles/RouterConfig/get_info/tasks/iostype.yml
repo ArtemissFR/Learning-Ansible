@@ -53,7 +53,7 @@
   - name: INFO IOS | ACLS SWITCH # Switch that use ACLS
     debug:
        msg: "This machine is a Switch that can use ACLS !"
-    when: (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH")
+    when: (MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH")
 
   - name: INFO IOS | Layer type (if L3) # Switch Layer 3
     debug:
