@@ -27,20 +27,6 @@
       prompt: "[???] Do you want to enable Shutdown for your VLAN ? (enabled/disabled)"
     register: VLAN_SHUTDOWN
 #####VLAN-SHUTDOWN#####
-
-#####VLAN-REMOTE_SPAN#####
-#  - name: VLAN | QUESTION - Remote Span
-#    pause:
-#      prompt: "[???] Do you want to activate the remote span ? (true/false) "
-#    register: VLAN_REMOTE_SPAN
-#####VLAN-REMOTE_SPAN#####
-
-#####VLAN-MTU#####
-#  - name: VLAN | QUESTION - mtu
-#    pause:
-#      prompt: "[???] What is the mtu you want to set ? "
-#    register: VLAN_MTU
-#####VLAN-MTU#####
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
