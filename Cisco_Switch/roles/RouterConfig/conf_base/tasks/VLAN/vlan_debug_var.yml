@@ -15,6 +15,12 @@
     debug:
       msg: "{{ VLAN_SHUTDOWN.user_input }}"
 
+  - name: VLAN | MTU
+    debug:
+      msg: "{{ VLAN_MTU.user_input }}"
+    when: VLAN_MTU is defined
+
+
 #  - name: VLAN | REMOTE_SPAN
 #    debug:
 #      msg: "{{ VLAN_REMOTE_SPAN.user_input }}"
