@@ -27,6 +27,28 @@
       prompt: "[???] Which STATE you want your VLAN to be ? (active / suspend)"
     register: VLAN_STATE
 #####VLAN-STATE#####
+
+#####VLAN-MTU#####
+  - name: VLAN | QUESTION - Mtu
+    pause:
+      prompt: "[???] Which MTU you want your VLAN to be ? (<576-18190>)"
+    register: VLAN_MTU
+#####VLAN-MTU#####
+
+#####VLAN-OPTION-CHOICE#####
+  - name: VLAN | QUESTION - Options
+    pause:
+      prompt: "[???] Do you want to add others options to your VLAN ? (yes/no)"
+    register: VLAN_OPTION_CHOICE
+#####VLAN-OPTION-CHOICE#####
+
+#####VLAN-OPTION-CHOICE#####
+  - name: VLAN | QUESTION - Options
+    pause:
+      prompt: "[???] Type the option you want to add to your vlan :"
+    register: VLAN_OPTION
+    when: VLAN_OPTION_CHOICE | bool
+#####VLAN-OPTION-CHOICE#####
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
@@ -48,6 +70,14 @@
         - name {{ VLAN_NAME.user_input }}
         - {{ VLAN_SHUTDOWN.user_input }}
         - {{ VLAN_STATE.user_input }}
+        - mtu {{ VLAN_MTU.user_input }}
+
+  - name: VLAN | Apply others options
+    cisco.ios.ios_config:
+      lines:
+        - vlan {{ VLAN_ID.user_input }}
+        - {{ VLAN_OPTION.user_input }}
+    when: VLAN_OPTION_CHOICE | bool
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_promptline_reask.yml
