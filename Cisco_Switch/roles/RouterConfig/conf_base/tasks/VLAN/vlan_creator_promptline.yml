@@ -1,19 +1,5 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
-#####VLAN_NAME#####
-  - name: VLAN | QUESTION - Name
-    pause:
-      prompt: "[???] What name do you want to set ?"
-    register: VLAN_NAME
-#####VLAN_NAME#####
-
-#####VLAN-STATE#####
-  - name: VLAN | QUESTION - State
-    pause:
-      prompt: "[???] Which STATE you want your VLAN to be ? [merged/replaced/overriden/deleted/rendered]"
-    register: VLAN_STATE
-#####VLAN-STATE#####
-
 #####VLAN-ID#####
   - name: VLAN | QUESTION - ID
     pause:
@@ -21,12 +7,26 @@
     register: VLAN_ID
 #####VLAN-ID#####
 
+#####VLAN_NAME#####
+  - name: VLAN | QUESTION - Name
+    pause:
+      prompt: "[???] What name do you want to set ?"
+    register: VLAN_NAME
+#####VLAN_NAME#####
+
 #####VLAN-SHUTDOWN#####
   - name: VLAN | QUESTION - Shutdown
     pause:
-      prompt: "[???] Do you want to enable Shutdown for your VLAN ? (enabled/disabled)"
+      prompt: "[???] Do you want to enable Shutdown for your VLAN ? (shutdown / no shutdown)"
     register: VLAN_SHUTDOWN
 #####VLAN-SHUTDOWN#####
+
+#####VLAN-STATE#####
+  - name: VLAN | QUESTION - State
+    pause:
+      prompt: "[???] Which STATE you want your VLAN to be ? [merged/replaced/overriden/deleted/rendered]"
+    register: VLAN_STATE
+#####VLAN-STATE#####
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
@@ -39,11 +39,15 @@
     when: VLAN_DEBUG_CHECK.user_input | bool
 #------------------------------------------#VALIDATION------------------------------------------#
 
-#------------------------------------------#ACLS#------------------------------------------#
+#------------------------------------------#VLAN#------------------------------------------#
 #####APPLY-CONFIGURATION#####
   - name: VLAN | Apply the new VLAN configuration
-
+    cisco.ios.ios_config:
+      lines:
+        - vlan {{ VLAN_ID.user_input }}
+        - name {{ VLAN_NAME.user_input }}
+        - {{ VLAN_SHUTDOWN.user_input }}
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_promptline_reask.yml
-#------------------------------------------#ACLS#------------------------------------------#
+#------------------------------------------#VLAN#------------------------------------------#
