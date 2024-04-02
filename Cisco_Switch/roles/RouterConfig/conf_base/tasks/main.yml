@@ -69,7 +69,7 @@
     when: (MACHINE_TYPE == "SWITCH")
 
   - include_tasks: ./ACLS/acls_main.yml
-    when: (MACHINE_TYPE == "ROUTER") or (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH")
+    when: (MACHINE_TYPE == "ROUTER") or ((MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH"))
 #------------------------------------------#ACLS#------------------------------------------#
 #---------------------------------------------------------#ROUTER-CONFIG#---------------------------------------------------------#
 
