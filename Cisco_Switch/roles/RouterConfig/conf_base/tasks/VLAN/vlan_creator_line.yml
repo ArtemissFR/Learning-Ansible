@@ -96,21 +96,86 @@
 #------------------------------------------#VALIDATION------------------------------------------#
 
 #------------------------------------------#VLAN#------------------------------------------#
-#####APPLY-CONFIGURATION#####
-  - name: VLAN | Apply the new VLAN configuration
+#####APPLY-CONFIGURATION_VLAN_LINES_1|2#####
+  - name: VLAN | Apply command lines 1|2
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
         - "{{ VLAN_LINE_2.user_input }}"
-    when: (VLAN_VALID_CHECK.user_input | bool) 
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "2"))
+#####APPLY-CONFIGURATION_VLAN_LINES_1|2#####
 
-  - name: VLAN | Apply others options
+#####APPLY-CONFIGURATION_VLAN_LINES_3#####
+  - name: VLAN | Apply command line 3
     cisco.ios.ios_config:
       lines:
-        - "vlan {{ VLAN_ID.user_input }}"
-        - "{{ VLAN_OPTION.user_input }}"
-    when: (VLAN_OPTION_CHOICE.user_input | bool) and (VLAN_VALID_CHECK.user_input | bool)
-#####APPLY-CONFIGURATION#####
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_3.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "3"))
+#####APPLY-CONFIGURATION_VLAN_LINES_3#####
 
-  - include_tasks: vlan_creator_prompt_reask.yml
+#####APPLY-CONFIGURATION_VLAN_LINES_4#####
+  - name: VLAN | Apply command line 4
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_4.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "4"))
+#####APPLY-CONFIGURATION_VLAN_LINES_4#####
+
+#####APPLY-CONFIGURATION_VLAN_LINES_5#####
+  - name: VLAN | Apply command line 5
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_5.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "5"))
+#####APPLY-CONFIGURATION_VLAN_LINES_5#####
+
+#####APPLY-CONFIGURATION_VLAN_LINES_6#####
+  - name: VLAN | Apply command line 6
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_6.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "6"))
+#####APPLY-CONFIGURATION_VLAN_LINES_6#####
+
+#####APPLY-CONFIGURATION_VLAN_LINES_7#####
+  - name: VLAN | Apply command line 7
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_7.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "7"))
+#####APPLY-CONFIGURATION_VLAN_LINES_7#####
+
+#####APPLY-CONFIGURATION_VLAN_LINES_8#####
+  - name: VLAN | Apply command line 8
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_8.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "8"))
+#####APPLY-CONFIGURATION_VLAN_LINES_8#####
+
+#####APPLY-CONFIGURATION_VLAN_LINES_9#####
+  - name: VLAN | Apply command line 9
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_9.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "9"))
+#####APPLY-CONFIGURATION_VLAN_LINES_9#####
+
+#####APPLY-CONFIGURATION_VLAN_LINES_10#####
+  - name: VLAN | Apply command line 10
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_10.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) and ((VLAN_LINES is defined) and (VLAN_LINES == "10"))
+#####APPLY-CONFIGURATION_VLAN_LINES_10#####
+
+  - include_tasks: vlan_creator_line_reask.yml
 #------------------------------------------#VLAN#------------------------------------------#
