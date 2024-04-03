@@ -76,13 +76,14 @@
         - "{{ VLAN_SHUTDOWN.user_input }}"
         - "state {{ VLAN_STATE.user_input }}"
         - "mtu {{ VLAN_MTU.user_input }}"
+    when: VLAN_VALID_CHECK.user_input | bool
 
   - name: VLAN | Apply others options
     cisco.ios.ios_config:
       lines:
         - "vlan {{ VLAN_ID.user_input }}"
         - "{{ VLAN_OPTION.user_input }}"
-    when: VLAN_OPTION_CHOICE.user_input | bool
+    when: (VLAN_OPTION_CHOICE.user_input | bool) and (VLAN_VALID_CHECK.user_input | bool)
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_promptline_reask.yml
