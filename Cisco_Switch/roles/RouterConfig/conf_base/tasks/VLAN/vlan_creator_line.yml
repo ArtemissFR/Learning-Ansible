@@ -89,6 +89,11 @@
 #------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
+  - name: VLAN | VERIFICATION
+    pause:
+      prompt: "[???] Do you want to check your vars ? (yes/no)"
+    register: VLAN_DEBUG_CHECK
+  
   - name: VLAN | VALIDATION 
     pause:
       prompt: "[???] Do you want to apply your configuration ? (yes/no)"
