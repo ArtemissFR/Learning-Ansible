@@ -1,47 +1,12 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
-#####VLAN_NAME#####
-  - name: VLAN | QUESTION - Name
+#####VLAN_LINES#####
+  - name: VLAN | QUESTION - Lines
     pause:
-      prompt: "[???] What name do you want to set ?"
-    register: VLAN_NAME
-#####VLAN_NAME#####
-
-#####VLAN-STATE#####
-  - name: VLAN | QUESTION - State
-    pause:
-      prompt: "[???] Which STATE you want your VLAN to be ? [merged/replaced/overriden/deleted/rendered]"
-    register: VLAN_STATE
-#####VLAN-STATE#####
-
-#####VLAN-ID#####
-  - name: VLAN | QUESTION - ID
-    pause:
-      prompt: "[???] Which ID you want your VLAN to be ? "
-    register: VLAN_ID
-#####VLAN-ID#####
-
-#####VLAN-SHUTDOWN#####
-  - name: VLAN | QUESTION - Shutdown
-    pause:
-      prompt: "[???] Do you want to enable Shutdown for your VLAN ? (enabled/disabled)"
-    register: VLAN_SHUTDOWN
-#####VLAN-SHUTDOWN#####
-
-#####VLAN-REMOTE_SPAN#####
-#  - name: VLAN | QUESTION - Remote Span
-#    pause:
-#      prompt: "[???] Do you want to activate the remote span ? (true/false) "
-#    register: VLAN_REMOTE_SPAN
-#####VLAN-REMOTE_SPAN#####
-
-#####VLAN-MTU#####
-#  - name: VLAN | QUESTION - mtu
-#    pause:
-#      prompt: "[???] What is the mtu you want to set ? "
-#    register: VLAN_MTU
-#####VLAN-MTU#####
-#------------------------------------------#ACLS#------------------------------------------#
+      prompt: "[???] How many lines do you whant to configure ?"
+    register: VLAN_LINES
+#####VLAN_LINES#####
+#------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
   - name: VLAN | VALIDATION
@@ -53,7 +18,7 @@
     when: VLAN_DEBUG_CHECK.user_input | bool
 #------------------------------------------#VALIDATION------------------------------------------#
 
-#------------------------------------------#ACLS#------------------------------------------#
+#------------------------------------------#VLAN#------------------------------------------#
 #####APPLY-CONFIGURATION#####
   - name: VLAN | Apply the new VLAN configuration
     cisco.ios.ios_vlans:
@@ -68,4 +33,4 @@
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_prompt_reask.yml
-#------------------------------------------#ACLS#------------------------------------------#
+#------------------------------------------#VLAN#------------------------------------------#
