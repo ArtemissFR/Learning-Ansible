@@ -53,8 +53,6 @@
           vlan_id: "{{ VLAN_ID.user_input }}"
           state: active
           shutdown: "{{ VLAN_SHUTDOWN.user_input }}"
-#          mtu: "{{ VLAN_MTU.user_input }}"
-#          remote_span: "{{ VLAN_REMOTE_SPAN.user_input }}"
       state: "{{ VLAN_STATE.user_input }}"
     when: VLAN_VALID_CHECK.user_input | bool
 #####APPLY-CONFIGURATION#####
