@@ -93,6 +93,9 @@
     pause:
       prompt: "[???] Do you want to check your vars ? (yes/no)"
     register: VLAN_DEBUG_CHECK
+
+  - include_tasks: vlan_debug_commandline.yml
+    when: VLAN_DEBUG_CHECK.user_input | bool
   
   - name: VLAN | VALIDATION 
     pause:
