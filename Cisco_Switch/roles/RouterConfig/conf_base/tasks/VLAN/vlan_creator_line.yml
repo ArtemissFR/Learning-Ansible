@@ -3,9 +3,89 @@
 #####VLAN_LINES#####
   - name: VLAN | QUESTION - Lines
     pause:
-      prompt: "[???] How many lines do you whant to configure ?"
+      prompt: "[???] How many lines do you whant to configure ? (Minimum : 2 | Max : 10)"
     register: VLAN_LINES
 #####VLAN_LINES#####
+
+#####VLAN_LINE_1#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 1 (example : vlan 12)"
+    register: VLAN_LINE_1
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "2")
+#####VLAN_LINE_1#####
+
+#####VLAN_LINE_2#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 2"
+    register: VLAN_LINE_2
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "2")
+#####VLAN_LINE_2#####
+
+#####VLAN_LINE_3#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 3"
+    register: VLAN_LINE_3
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "3")
+#####VLAN_LINE_3#####
+
+#####VLAN_LINE_4#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 4"
+    register: VLAN_LINE_4
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "4")
+#####VLAN_LINE_4#####
+
+#####VLAN_LINE_5#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 5"
+    register: VLAN_LINE_5
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "5")
+#####VLAN_LINE_5#####
+
+#####VLAN_LINE_6#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 6"
+    register: VLAN_LINE_6
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "6")
+#####VLAN_LINE_6#####
+
+#####VLAN_LINE_7#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 7"
+    register: VLAN_LINE_7
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "7")
+#####VLAN_LINE_7#####
+
+#####VLAN_LINE_8#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 8"
+    register: VLAN_LINE_8
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "8")
+#####VLAN_LINE_8#####
+
+#####VLAN_LINE_9#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 9"
+    register: VLAN_LINE_9
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "9")
+#####VLAN_LINE_9#####
+
+#####VLAN_LINE_10#####
+  - name: VLAN | QUESTION - Lines
+    pause:
+      prompt: "[???] Command Line 10"
+    register: VLAN_LINE_5
+    when: (VLAN_LINES is defined) and (VLAN_LINES == "10")
+#####VLAN_LINE_10#####
 #------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
@@ -18,15 +98,18 @@
 #------------------------------------------#VLAN#------------------------------------------#
 #####APPLY-CONFIGURATION#####
   - name: VLAN | Apply the new VLAN configuration
-    cisco.ios.ios_vlans:
-      config:
-        - name: "{{ VLAN_NAME.user_input }}"
-          vlan_id: "{{ VLAN_ID.user_input }}"
-          state: active
-          shutdown: "{{ VLAN_SHUTDOWN.user_input }}"
-#          mtu: "{{ VLAN_MTU.user_input }}"
-#          remote_span: "{{ VLAN_REMOTE_SPAN.user_input }}"
-      state: "{{ VLAN_STATE.user_input }}"
+    cisco.ios.ios_config:
+      lines:
+        - "{{ VLAN_LINE_1.user_input }}"
+        - "{{ VLAN_LINE_2.user_input }}"
+    when: (VLAN_VALID_CHECK.user_input | bool) 
+
+  - name: VLAN | Apply others options
+    cisco.ios.ios_config:
+      lines:
+        - "vlan {{ VLAN_ID.user_input }}"
+        - "{{ VLAN_OPTION.user_input }}"
+    when: (VLAN_OPTION_CHOICE.user_input | bool) and (VLAN_VALID_CHECK.user_input | bool)
 #####APPLY-CONFIGURATION#####
 
   - include_tasks: vlan_creator_prompt_reask.yml
