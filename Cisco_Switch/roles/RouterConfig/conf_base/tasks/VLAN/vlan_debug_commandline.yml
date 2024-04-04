@@ -2,50 +2,50 @@
   - name: VLAN | Command Line 1
     debug:
       msg: "{{ VLAN_LINE_1.user_input }}"
-    when: VLAN_LINE_1 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
   - name: VLAN | Command Line 2
     debug:
       msg: "{{ VLAN_LINE_2.user_input }}"
-    when: VLAN_LINE_2 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
   - name: VLAN | Command Line 3
     debug:
       msg: "{{ VLAN_LINE_3.user_input }}"
-    when: VLAN_LINE_3 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["3", "4", "5", "6", "7", "8", "9", "10"]
 
   - name: VLAN | Command Line 4
     debug:
       msg: "{{ VLAN_LINE_4.user_input }}"
-    when: VLAN_LINE_4 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["4", "5", "6", "7", "8", "9", "10"]
 
   - name: VLAN | Command Line 5
     debug:
       msg: "{{ VLAN_LINE_5.user_input }}"
-    when: VLAN_LINE_5 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["5", "6", "7", "8", "9", "10"]
 
   - name: VLAN | Command Line 6
     debug:
       msg: "{{ VLAN_LINE_6.user_input }}"
-    when: VLAN_LINE_6 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["6", "7", "8", "9", "10"]
 
   - name: VLAN | Command Line 7
     debug:
       msg: "{{ VLAN_LINE_7.user_input }}"
-    when: VLAN_LINE_7 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["7", "8", "9", "10"]
 
   - name: VLAN | Command Line 8
     debug:
       msg: "{{ VLAN_LINE_8.user_input }}"
-    when: VLAN_LINE_8 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["8", "9", "10"]
 
   - name: VLAN | Command Line 9
     debug:
       msg: "{{ VLAN_LINE_9.user_input }}"
-    when: VLAN_LINE_9 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["9", "10"]
 
   - name: VLAN | Command Line 10
     debug:
       msg: "{{ VLAN_LINE_10.user_input }}"
-    when: VLAN_LINE_10 is defined
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["10"]
 #------------------------------------------#VLAN#------------------------------------------#
