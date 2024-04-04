@@ -21,7 +21,8 @@
     pause:
       prompt: "[???] Command Line 2"
     register: VLAN_LINE_2
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "2")
+    #when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "2")
+    when: (VLAN_LINES is defined) and ((VLAN_LINES.user_input >= "2") and (VLAN_LINES.user_input <= "10"))
 #####VLAN_LINE_2#####
 
 #####VLAN_LINE_3#####
@@ -29,7 +30,8 @@
     pause:
       prompt: "[???] Command Line 3"
     register: VLAN_LINE_3
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "3")
+    #when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "3")
+    when: (VLAN_LINES is defined) and ((VLAN_LINES.user_input >= "3") and (VLAN_LINES.user_input <= "10"))
 #####VLAN_LINE_3#####
 
 #####VLAN_LINE_4#####
