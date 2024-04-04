@@ -36,7 +36,7 @@
     pause:
       prompt: "[???] Command Line 4"
     register: VLAN_LINE_4
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "4")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["4", "5", "6", "7", "8", "9", "10"]
 #####VLAN_LINE_4#####
 
 #####VLAN_LINE_5#####
@@ -44,7 +44,7 @@
     pause:
       prompt: "[???] Command Line 5"
     register: VLAN_LINE_5
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "5")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["5", "6", "7", "8", "9", "10"]
 #####VLAN_LINE_5#####
 
 #####VLAN_LINE_6#####
@@ -52,7 +52,7 @@
     pause:
       prompt: "[???] Command Line 6"
     register: VLAN_LINE_6
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "6")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["6", "7", "8", "9", "10"]
 #####VLAN_LINE_6#####
 
 #####VLAN_LINE_7#####
@@ -60,7 +60,7 @@
     pause:
       prompt: "[???] Command Line 7"
     register: VLAN_LINE_7
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "7")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["7", "8", "9", "10"]
 #####VLAN_LINE_7#####
 
 #####VLAN_LINE_8#####
@@ -68,7 +68,7 @@
     pause:
       prompt: "[???] Command Line 8"
     register: VLAN_LINE_8
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "8")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["8", "9", "10"]
 #####VLAN_LINE_8#####
 
 #####VLAN_LINE_9#####
@@ -76,7 +76,7 @@
     pause:
       prompt: "[???] Command Line 9"
     register: VLAN_LINE_9
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "9")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["9", "10"]
 #####VLAN_LINE_9#####
 
 #####VLAN_LINE_10#####
@@ -84,7 +84,7 @@
     pause:
       prompt: "[???] Command Line 10"
     register: VLAN_LINE_5
-    when: (VLAN_LINES is defined) and (VLAN_LINES.user_input == "10")
+    when: VLAN_LINES is defined and VLAN_LINES.user_input in ["10"]
 #####VLAN_LINE_10#####
 #------------------------------------------#VLAN#------------------------------------------#
 
