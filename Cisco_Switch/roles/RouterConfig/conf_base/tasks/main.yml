@@ -66,7 +66,7 @@
   - name: Set default var ACLS_CHOICE (for Switch)
     ansible.builtin.set_fact:
       ACLS_CHOICE: "no"
-    when: (MACHINE_TYPE == "SWITCH")
+    when: (MACHINE_TYPE == "SWITCH") and ((MACHINE_TYPE_SPECIAL is not defined) or (MACHINE_TYPE_SPECIAL != "ACLS_SWITCH"))
 
   - include_tasks: ./ACLS/acls_main.yml
     when: (MACHINE_TYPE == "ROUTER") or ((MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH"))
