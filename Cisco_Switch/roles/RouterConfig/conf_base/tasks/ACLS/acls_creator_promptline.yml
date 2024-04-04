@@ -61,7 +61,7 @@
   - name: ACLS | HELP
     ansible.builtin.debug:
       msg: "Ligne {{ item.0 + 1 }} : {{ item.1 }}"
-    loop: "{{ ACLS_HELP.stdout_lines | enumerate }}"
+    loop: "{{ ACLS_HELP.stdout_lines }}"
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 
 #  - name: ACLS | HELP
