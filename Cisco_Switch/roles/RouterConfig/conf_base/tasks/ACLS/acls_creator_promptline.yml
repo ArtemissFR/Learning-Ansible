@@ -54,7 +54,7 @@
     register: ACLS_OPTION_LIST_CHOICE
 
   - name: ACLS | HELP
-    ansible.builtin.shell: cat ./HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
+    ansible.builtin.shell: cat HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
     register: ACLS_HELP
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 
