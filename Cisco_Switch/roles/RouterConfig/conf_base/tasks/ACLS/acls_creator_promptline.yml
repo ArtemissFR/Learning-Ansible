@@ -54,10 +54,21 @@
     register: ACLS_OPTION_LIST_CHOICE
 
   - name: ACLS | HELP
-    ansible.builtin.debug:
-      msg: |
-      "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONSPARAMETERS.txt') }}"
+    ansible.builtin.shell: cat ./HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
+    register: ACLS_HELP
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+
+  - name: ACLS | HELP
+    ansible.builtin.debug:
+      msg: "Ligne {{ item.0 + 1 }} : {{ item.1 }}"
+    loop: "{{ ACLS_HELP.stdout_lines | enumerate }}"
+    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
+
+#  - name: ACLS | HELP
+#    ansible.builtin.debug:
+#      msg: |
+#      "{{ lookup('ansible.builtin.file', './HELP_DOC/ACLS_OPTIONSPARAMETERS.txt') }}"
+#    when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 
 #####HELP#####
 
