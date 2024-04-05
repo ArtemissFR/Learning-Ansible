@@ -86,7 +86,7 @@
 #------------------------------------------#CONFIG-RECAP#------------------------------------------#
 
 #------------------------------------------#WRITE#------------------------------------------#
-  - name: WRITE
+  - name: ✍️ WRITE
     pause:
       prompt: "[???] Would you like to write the configuration ? (yes/no)"
     register: WRITE_CHOICE
