@@ -26,7 +26,7 @@
 
 - name: 🐞 DEBUG | Show base informations
   debug:
-     var: debug_info
+     var: debug_info.stdout_lines
 
 - name: 🐞 DEBUG | Show config facts
   debug:
