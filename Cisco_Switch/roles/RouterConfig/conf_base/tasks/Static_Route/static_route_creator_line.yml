@@ -4,14 +4,14 @@
 #ip route vrf test 172.31.10.0 255.255.255.0 10.10.10.2 name new_test multicast
 
 #####ROUTE_COMMAND_LINE#####
-  - name: ROUTE | QUESTION - Set your static route
+  - name: 🛣️ ROUTE | QUESTION - Set your static route
     pause:
       prompt: "[???] Write your Static Route command here : (example : ip route vrf test 172.31.10.0 255.255.255.0 10.10.10.2 name test permanent)"
     register: ROUTE_COMMAND_LINE
 #####ROUTE_COMMAND_LINE#####
 
 #####ROUTE_LINE_CREATOR#####
-  - name: ROUTE | Apply the Static Route configuration
+  - name: 🛣️ ROUTE | Apply the Static Route configuration
     cisco.ios.ios_config:
       lines:
         - "{{ ROUTE_COMMAND_LINE }}"
@@ -20,7 +20,7 @@
 
 #------------------------------------------#RECAP#------------------------------------------#
 #####INFORMATION#####
-  - name: INFORMATION
+  - name: 🛣️ ROUTE | INFORMATION
     debug:
       msg: "Done ! Your Static Route configuration has been deployed perfectly !"
 #####INFORMATION#####
