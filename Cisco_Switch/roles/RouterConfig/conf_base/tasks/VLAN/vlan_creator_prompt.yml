@@ -1,28 +1,28 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
 #####VLAN_NAME#####
-  - name: VLAN | QUESTION - Name
+  - name: 🔀 VLAN | QUESTION - Name
     pause:
       prompt: "[???] What name do you want to set ?"
     register: VLAN_NAME
 #####VLAN_NAME#####
 
 #####VLAN-STATE#####
-  - name: VLAN | QUESTION - State
+  - name: 🔀 VLAN | QUESTION - State
     pause:
       prompt: "[???] Which STATE you want your VLAN to be ? [merged/replaced/overriden/deleted/rendered]"
     register: VLAN_STATE
 #####VLAN-STATE#####
 
 #####VLAN-ID#####
-  - name: VLAN | QUESTION - ID
+  - name: 🔀 VLAN | QUESTION - ID
     pause:
       prompt: "[???] Which ID you want your VLAN to be ? "
     register: VLAN_ID
 #####VLAN-ID#####
 
 #####VLAN-SHUTDOWN#####
-  - name: VLAN | QUESTION - Shutdown
+  - name: 🔀 VLAN | QUESTION - Shutdown
     pause:
       prompt: "[???] Do you want to enable Shutdown for your VLAN ? (enabled/disabled)"
     register: VLAN_SHUTDOWN
@@ -30,7 +30,7 @@
 #------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
-  - name: VLAN | VERIFICATION
+  - name: 🔀 VLAN | VERIFICATION
     pause:
       prompt: "[???] Do you want to check your vars ? (yes/no)"
     register: VLAN_DEBUG_CHECK
@@ -38,7 +38,7 @@
   - include_tasks: vlan_debug_var.yml
     when: VLAN_DEBUG_CHECK.user_input | bool
 
-  - name: VLAN | VALIDATION 
+  - name: 🔀 VLAN | VALIDATION 
     pause:
       prompt: "[???] Do you want to apply your configuration ? (yes/no)"
     register: VLAN_VALID_CHECK
@@ -46,7 +46,7 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
 #####APPLY-CONFIGURATION#####
-  - name: VLAN | Apply the new VLAN configuration
+  - name: 🔀 VLAN | Apply the new VLAN configuration
     cisco.ios.ios_vlans:
       config:
         - name: "{{ VLAN_NAME.user_input }}"
