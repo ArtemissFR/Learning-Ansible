@@ -2,7 +2,7 @@
 #---------------------------------------------------------#EVERYONE-CONFIG#---------------------------------------------------------#
 #------------------------------------------#BASICS#------------------------------------------#
 
-  - name: BASICS
+  - name: ⚙️ BASICS
     pause:
       prompt: "[???] Would you like to customise the basic parameters ? (yes/no)"
     register: BASICS_CHOICE
