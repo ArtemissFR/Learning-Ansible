@@ -80,14 +80,15 @@
 
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
   - name: 🚦 RECAP | ACLS - Gather ACLS configuration
-    cisco.ios.ios_acls:
-      state: gathered
+    cisco.ios.ios_command:
+      commands:
+        - show access-lists
     register: ACLS_current
     when: (MACHINE_TYPE == "ROUTER") or ((MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH"))
 
   - name: 🚦 RECAP | ACLS - Show ACLS configuration
     debug:
-      var: ACLS_current
+      var: ACLS_current.stdout_lines
     when: (MACHINE_TYPE == "ROUTER") or ((MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH"))
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
 
