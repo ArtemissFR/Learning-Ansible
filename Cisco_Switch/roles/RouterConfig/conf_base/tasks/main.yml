@@ -38,7 +38,7 @@
 
 #------------------------------------------#SECURITY#------------------------------------------#
 
-  - name: SECURITY
+  - name: 🔒 SECURITY
     pause:
       prompt: "[???] Would you like to customise the security parameters ? (yes/no)"
     register: SECURITY_CHOICE
