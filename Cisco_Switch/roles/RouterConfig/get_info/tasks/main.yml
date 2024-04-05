@@ -36,5 +36,5 @@
       interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
 #------------------------------------------#GET-INFO#------------------------------------------#
 
-  - include_tasks: iostype.yml
+#  - include_tasks: iostype.yml
 
