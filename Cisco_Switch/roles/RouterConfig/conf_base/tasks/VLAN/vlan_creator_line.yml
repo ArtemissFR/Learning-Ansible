@@ -1,14 +1,14 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
 #####VLAN_LINES#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] How many lines do you whant to configure ? (Minimum : 2 | Max : 10)"
     register: VLAN_LINES
 #####VLAN_LINES#####
 
 #####VLAN_LINE_1#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 1 (example : vlan 12)"
     register: VLAN_LINE_1
@@ -16,7 +16,7 @@
 #####VLAN_LINE_1#####
 
 #####VLAN_LINE_2#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 2"
     register: VLAN_LINE_2
@@ -24,7 +24,7 @@
 #####VLAN_LINE_2#####
 
 #####VLAN_LINE_3#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 3"
     register: VLAN_LINE_3
@@ -32,7 +32,7 @@
 #####VLAN_LINE_3#####
 
 #####VLAN_LINE_4#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 4"
     register: VLAN_LINE_4
@@ -40,7 +40,7 @@
 #####VLAN_LINE_4#####
 
 #####VLAN_LINE_5#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 5"
     register: VLAN_LINE_5
@@ -48,7 +48,7 @@
 #####VLAN_LINE_5#####
 
 #####VLAN_LINE_6#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 6"
     register: VLAN_LINE_6
@@ -56,7 +56,7 @@
 #####VLAN_LINE_6#####
 
 #####VLAN_LINE_7#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 7"
     register: VLAN_LINE_7
@@ -64,7 +64,7 @@
 #####VLAN_LINE_7#####
 
 #####VLAN_LINE_8#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 8"
     register: VLAN_LINE_8
@@ -72,7 +72,7 @@
 #####VLAN_LINE_8#####
 
 #####VLAN_LINE_9#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 9"
     register: VLAN_LINE_9
@@ -80,7 +80,7 @@
 #####VLAN_LINE_9#####
 
 #####VLAN_LINE_10#####
-  - name: VLAN | QUESTION - Lines
+  - name: 🔀 VLAN | QUESTION - Lines
     pause:
       prompt: "[???] Command Line 10"
     register: VLAN_LINE_5
@@ -89,7 +89,7 @@
 #------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
-  - name: VLAN | VERIFICATION
+  - name: 🔀 VLAN | VERIFICATION
     pause:
       prompt: "[???] Do you want to check your vars ? (yes/no)"
     register: VLAN_DEBUG_CHECK
@@ -97,7 +97,7 @@
   - include_tasks: vlan_debug_commandline.yml
     when: VLAN_DEBUG_CHECK.user_input | bool
   
-  - name: VLAN | VALIDATION 
+  - name: 🔀 VLAN | VALIDATION 
     pause:
       prompt: "[???] Do you want to apply your configuration ? (yes/no)"
     register: VLAN_VALID_CHECK
@@ -105,7 +105,7 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
 #####APPLY-CONFIGURATION_VLAN_LINES_1|2#####
-  - name: VLAN | Apply command lines 1|2
+  - name: 🔀 VLAN | Apply command lines 1|2
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -114,7 +114,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_1|2#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_3#####
-  - name: VLAN | Apply command line 3
+  - name: 🔀 VLAN | Apply command line 3
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -123,7 +123,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_3#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_4#####
-  - name: VLAN | Apply command line 4
+  - name: 🔀 VLAN | Apply command line 4
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -132,7 +132,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_4#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_5#####
-  - name: VLAN | Apply command line 5
+  - name: 🔀 VLAN | Apply command line 5
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -141,7 +141,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_5#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_6#####
-  - name: VLAN | Apply command line 6
+  - name: 🔀 VLAN | Apply command line 6
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -150,7 +150,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_6#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_7#####
-  - name: VLAN | Apply command line 7
+  - name: 🔀 VLAN | Apply command line 7
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -159,7 +159,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_7#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_8#####
-  - name: VLAN | Apply command line 8
+  - name: 🔀 VLAN | Apply command line 8
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -168,7 +168,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_8#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_9#####
-  - name: VLAN | Apply command line 9
+  - name: 🔀 VLAN | Apply command line 9
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
@@ -177,7 +177,7 @@
 #####APPLY-CONFIGURATION_VLAN_LINES_9#####
 
 #####APPLY-CONFIGURATION_VLAN_LINES_10#####
-  - name: VLAN | Apply command line 10
+  - name: 🔀 VLAN | Apply command line 10
     cisco.ios.ios_config:
       lines:
         - "{{ VLAN_LINE_1.user_input }}"
