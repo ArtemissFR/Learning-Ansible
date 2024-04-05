@@ -152,10 +152,10 @@
   - name: 🎁 RECAP | EASTER_EGG
     ansible.builtin.shell: cat /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/ACLS/HELP_DOC/EASTER_EGG.txt
     register: EASTER_EGG
-    when: 
+    when: (DEBUG_CHOICE.user_input == "no") and (BASICS_CHOICE.user_input == "no") and (INT_CHOICE.user_input == "no") and (ROUTE_CHOICE.user_input == "no") and (SECURITY_CHOICE.user_input == "no") and (SNMP_CHOICE.user_input == "no") and (ACLS_CHOICE.user_input == "no") and (VLAN_CHOICE.user_input == "no")
 
   - name: 🎁 RECAP | EASTER_EGG
     ansible.builtin.debug:
       var: EASTER_EGG.stdout_lines
-    when: 
+    when: (DEBUG_CHOICE.user_input == "no") and (BASICS_CHOICE.user_input == "no") and (INT_CHOICE.user_input == "no") and (ROUTE_CHOICE.user_input == "no") and (SECURITY_CHOICE.user_input == "no") and (SNMP_CHOICE.user_input == "no") and (ACLS_CHOICE.user_input == "no") and (VLAN_CHOICE.user_input == "no")
 #------------------------------------------#EASTER_EGG#------------------------------------------#
