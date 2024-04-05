@@ -25,5 +25,5 @@
 
   - name: 🚦 ACLS | List ACLS
     debug:
-      var: ACLS
+      var: ACLS.stdout_lines
 #------------------------------------------#RECAP#------------------------------------------#
