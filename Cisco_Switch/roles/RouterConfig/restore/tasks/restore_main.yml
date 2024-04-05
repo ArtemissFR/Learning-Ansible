@@ -1,11 +1,11 @@
 #------------------------------------------#RESTORE#------------------------------------------#
 
-  - name: RESTORE | QUESION
+  - name: 🔄 RESTORE | QUESION
     pause:
       prompt: "[???] Would you like to restore a backup configuration ? (yes/no)"
     register: RESTORE_CHOICE
 
-  - name: RESTORE | QUESION - Restore directory
+  - name: 🔄 RESTORE | QUESION - Restore directory
     pause:
       prompt: "[???] Where is your backup directory ? (example: /etc/ansible/Backup)"
     register: BACKUP_DIRECTORY_CHOICE
