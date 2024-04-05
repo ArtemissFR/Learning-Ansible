@@ -1,5 +1,5 @@
 #------------------------------------------#VLAN#------------------------------------------#
-  - name: VLAN
+  - name: 🔀 VLAN
     pause:
       prompt: "[???] Would you like to configure VLANs ? (yes/no)"
     register: VLAN_CHOICE
