@@ -1,6 +1,6 @@
 #------------------------------------------#DEBUG#------------------------------------------#
 
-  - name: DEBUG | QUESTION
+  - name: 🐞 DEBUG | QUESTION
     pause:
       prompt: "[???] Would you like to do a debug before any action ? (yes/no)"
     register: DEBUG_CHOICE
