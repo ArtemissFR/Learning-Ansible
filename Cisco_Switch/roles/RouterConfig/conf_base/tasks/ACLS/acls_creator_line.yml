@@ -7,28 +7,28 @@
 
 #------------------------------------------#ACLS#------------------------------------------#
 #####ACLS_LINE_NAME#####
-  - name: ACLS | QUESTION - Name
+  - name: 🚦 ACLS | QUESTION - Name
     pause:
       prompt: "[???] What name would you like for your ACLs ? "
     register: ACLS_LINE_NAME
 #####ACLS_LINE_NAME#####
 
 #####ACLS_LINE_TYPE#####
-  - name: ACLS | QUESTION - Type
+  - name: 🚦 ACLS | QUESTION - Type
     pause:
       prompt: "[???] What type would you like your ACLs to be ? (extended/standard/resequence/logging/log-update)"
     register: ACLS_LINE_TYPE
 #####ACLS_LINE_TYPE#####
 
 #####ACLS_COMMAND_LINE#####
-  - name: ACLS | QUESTION - Command
+  - name: 🚦 ACLS | QUESTION - Command
     pause:
       prompt: "[???] Write your ACLs command here : (example : deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 echo dscp ef ttl eq 10"
     register: ACLS_COMMAND_LINE
 #####ACLS_COMMAND_LINE#####
 
 #####ACLS_LINE_CREATOR#####
-  - name: ACLS | Apply the ACLs configuration
+  - name: 🚦 ACLS | Apply the ACLs configuration
     cisco.ios.ios_config:
       lines:
         - "ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}"
@@ -38,7 +38,7 @@
 
 #------------------------------------------#RECAP#------------------------------------------#
 #####INFORMATION#####
-  - name: INFORMATION
+  - name: 🚦 ACLS | INFORMATION
     debug:
       msg: "Done ! Your ACLs configuration has been deployed perfectly !"
 #####INFORMATION#####
