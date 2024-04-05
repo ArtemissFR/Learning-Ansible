@@ -60,7 +60,7 @@
 
   - name: ACLS | HELP
     ansible.builtin.debug:
-      var: ACLS_HELP
+      var: ACLS_HELP.stdout_lines
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 #####HELP#####
 
