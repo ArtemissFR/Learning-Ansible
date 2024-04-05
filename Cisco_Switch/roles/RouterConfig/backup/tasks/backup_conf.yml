@@ -1,32 +1,32 @@
 #------------------------------------------#BACKUP#------------------------------------------#
 ---
-  - name: BACKUP | Copy the backup
+  - name: 💾 BACKUP | Copy the backup
     ios_config:
       backup: yes
       backup_options: 
         dir_path: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}"
     register: config_output
 
-  - name: BACKUP | Delete none important line in file
+  - name: 💾 BACKUP | Delete none important line in file
     lineinfile:
       path: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}/*.config"
       regex: 'Building configuration.*'
       state: absent
 
-  - name: BACKUP | Delete none important line in file
+  - name: 💾 BACKUP | Delete none important line in file
     lineinfile:
       path: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}/*.config"
       regex: 'Current configuration.*'
       state: absent
 
-  - name: BACKUP | Set latest conf file
+  - name: 💾 BACKUP | Set latest conf file
     copy:
       src: "{{ config_output.backup_path }}"
       dest: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}/{{ inventory_hostname }}_latest.config"
 #------------------------------------------#BACKUP#------------------------------------------#
 
 #------------------------------------------#RECAP#------------------------------------------#
-  - name: BACKUP | RECAP
+  - name: 💾 BACKUP | RECAP
     debug:
       msg: " Your configuration has been saved in {{ BACKUP_DIRECTORY_CHOICE.user_input }}/."
 #------------------------------------------#RECAP#------------------------------------------#
