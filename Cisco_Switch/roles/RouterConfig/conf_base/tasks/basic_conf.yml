@@ -1,54 +1,54 @@
 
 #------------------------------------------#BASICS#------------------------------------------#
 
-  - name: BASICS | QUESTION - Hostname
+  - name: ⚙️ BASICS | QUESTION - Hostname
     pause:
       prompt: "[???] Which hostname would you like to set for you Router ? "
     register: HOSTNAME
       
-  - name: BASICS | Applying Hostname
+  - name: ⚙️ BASICS | Applying Hostname
     ios_config:
       lines: hostname "{{ HOSTNAME.user_input }}"
       
 
-  - name: BASICS | QUESTION - Domain
+  - name: ⚙️ BASICS | QUESTION - Domain
     pause:
       prompt: "[???] Which domain would you like to set ? (example : ansible.lan)"
     register: DOMAIN
 
-  - name: BASICS | Configure Domain Name
+  - name: ⚙️ BASICS | Configure Domain Name
     ios_system:
       domain_name: "{{ DOMAIN.user_input }}"
       
 
-  - name: BASICS | QUESTION - DNS Lookup
+  - name: ⚙️ BASICS | QUESTION - DNS Lookup
     pause:
       prompt: "[???] Would you like to activate the DNS lookup ? (yes/no)"
     register: DNS_LOOKUP
 
-  - name: BASICS | Configure DNS lookup sources
+  - name: ⚙️ BASICS | Configure DNS lookup sources
     ios_system:
       lookup_enabled: yes
     when: DNS_LOOKUP.user_input | bool
 
 #------------------------------------#PROMPT#------------------------------------#
-  - name: BASICS | QUESTION - Banners
+  - name: ⚙️ BASICS | QUESTION - Banners
     pause:
       prompt: "[???] Would you like to configure the BASE banner ? (yes/no)"
     register: BASE_BANNER_CHOICE
 
-  - name: BASICS | QUESTION - Banners
+  - name: ⚙️ BASICS | QUESTION - Banners
     pause:
       prompt: "[???] What do you want to put in your BASE banner ?"
     register: BASE_BANNER
     when: BASE_BANNER_CHOICE.user_input | bool
 
-  - name: BASICS | QUESTION - Banners
+  - name: ⚙️ BASICS | QUESTION - Banners
     pause:
       prompt: "[???] Would you like to configure the LOGIN banner ? (yes/no)"
     register: LOGIN_BANNER_CHOICE
 
-  - name: BASICS | QUESTION - Banners
+  - name: ⚙️ BASICS | QUESTION - Banners
     pause:
       prompt: "[???] What do you want to put in your LOGIN banner ?"
     register: LOGIN_BANNER
@@ -56,14 +56,14 @@
 #------------------------------------#PROMPT#------------------------------------#
 
 #####APPLY-CONF#####
-  - name: APPLY BASE BANNER
+  - name: ⚙️ APPLY BASE BANNER
     cisco.ios.ios_banner:
       banner: motd
       text: "{{ BASE_BANNER.user_input }}"
       state: present
     when: BASE_BANNER_CHOICE.user_input | bool
   
-  - name: APPLY LOGIN BANNER
+  - name: ⚙️ APPLY LOGIN BANNER
     cisco.ios.ios_banner:
       banner: login
       text: "{{ LOGIN_BANNER.user_input }}"
@@ -73,20 +73,20 @@
 #------------------------------------------#BASICS#------------------------------------------#
 
 #------------------------------------------#RECAP#------------------------------------------#
-  - name: RECAP | HOSTNAME
+  - name: ⚙️ RECAP | HOSTNAME
     debug:
       msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
 
-  - name: RECAP | DOMAIN
+  - name: ⚙️ RECAP | DOMAIN
     debug:
       msg: " You have set {{ DOMAIN.user_input }} as Domain."
 
-  - name: RECAP | BASE-BANNER
+  - name: ⚙️ RECAP | BASE-BANNER
     debug:
       msg: " You have add {{ BASE_BANNER.user_input }} as Base Banner."
     when: BASE_BANNER_CHOICE.user_input | bool
 
-  - name: RECAP | LOGIN-BANNER
+  - name: ⚙️ RECAP | LOGIN-BANNER
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
     when: LOGIN_BANNER_CHOICE.user_input | bool
