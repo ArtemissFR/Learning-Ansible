@@ -14,7 +14,7 @@
 
 #------------------------------------------#INTERFACE#------------------------------------------#
 
-  - name: INTERFACE
+  - name: 💻 INTERFACE
     pause:
       prompt: "[???] Would you like to customise an interface ? (yes/no)"
     register: INT_CHOICE
