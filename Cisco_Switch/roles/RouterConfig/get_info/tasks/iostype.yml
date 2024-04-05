@@ -1,9 +1,9 @@
 #------------------------------------------#GET-INFO#------------------------------------------#
-  - name: INFO | Gather IOS type facts
+  - name: 📚 INFO | Gather IOS type facts
     cisco.ios.ios_facts:
       gather_subset: hardware
 
-  - name: INFO | Keeping machine type in var (if ROUTER)
+  - name: 📚 INFO | Keeping machine type in var (if ROUTER)
     set_fact:
       MACHINE_TYPE: "ROUTER"
     when: (ansible_net_model == "3725") or
@@ -15,7 +15,7 @@
           (ansible_net_model == "3800") or
           (ansible_net_model == "1800")
 
-  - name: INFO | Keeping machine type in var (if SWITCH)
+  - name: 📚 INFO | Keeping machine type in var (if SWITCH)
     set_fact:
       MACHINE_TYPE: "SWITCH"
     when: (ansible_net_model == "IOSv") or
@@ -31,7 +31,7 @@
           (ansible_net_model == "3750") or 
           (ansible_net_model == "3850")    
 
-  - name: INFO | Keeping machine type in var (if SPECIAL)
+  - name: 📚 INFO | Keeping machine type in var (if SPECIAL)
     set_fact:
       MACHINE_TYPE_SPECIAL: "ACLS_SWITCH"
     when: (ansible_net_model == "2960") or
@@ -39,14 +39,14 @@
           (ansible_net_model == "3750") or 
           (ansible_net_model == "3850")   
 
-  - name: INFO | Gather version information
+  - name: 📚 INFO | Gather version information
     cisco.ios.ios_command:
       commands: show version
     register: version_
 #------------------------------------------#GET-INFO#------------------------------------------#
 
 #------------------------------------------#INFORMATION#------------------------------------------#
-  - name: INFO IOS
+  - name: 📚 INFO IOS
     debug:
        msg: "Your machine is a {{ MACHINE_TYPE }} with model type {{ ansible_net_model }}."
 
@@ -55,13 +55,13 @@
        msg: "This machine is a Switch that can use ACLS !"
     when: (MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH")
 
-  - name: INFO IOS | Layer type (if L3) # Switch Layer 3
+  - name: 📚 INFO IOS | Layer type (if L3) # Switch Layer 3
     debug:
        msg: "This machine is a Switch Layer 3 ! (L3)"
     when: (MACHINE_TYPE == "SWITCH") and
           ('l3' in version_ | lower)
 
-  - name: INFO IOS | Layer type (if L2) # Switch Layer 2
+  - name: 📚 INFO IOS | Layer type (if L2) # Switch Layer 2
     debug:
        msg: "This machine is a Switch Layer 2 ! (L2)"
     when: (MACHINE_TYPE == "SWITCH") and
