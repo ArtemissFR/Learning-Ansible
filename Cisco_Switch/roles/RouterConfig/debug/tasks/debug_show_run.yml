@@ -9,6 +9,6 @@
 
 - name: 🐞 DEBUG | Show running-configuration
   debug:
-    var: debug_show_run
+    var: debug_show_run.stdout_lines
   tags: show_run
 #------------------------------------------#DEBUG#------------------------------------------#
