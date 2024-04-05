@@ -13,15 +13,15 @@
 
 #------------------------------------------#RECAP#------------------------------------------#
 
-  - name: 🚦 ACLS | Gather configuration from target device
-    cisco.ios.ios_acls:
-      state: gathered
-    register: ACLS
-#  - name: Gather Existing ACLS
-#    cisco.ios.ios_command:
-#      commands:
-#        - show access-lists
+#  - name: 🚦 ACLS | Gather configuration from target device
+#    cisco.ios.ios_acls:
+#      state: gathered
 #    register: ACLS
+  - name: 🚦 ACLS | Gather configuration from target device
+    cisco.ios.ios_command:
+      commands:
+        - show access-lists
+    register: ACLS
 
   - name: 🚦 ACLS | List ACLS
     debug:
