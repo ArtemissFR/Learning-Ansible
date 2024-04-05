@@ -5,13 +5,13 @@
 #------------------------------------------#INFORMATION#------------------------------------------#
 
 #------------------------------------------#RESTORE#------------------------------------------#
-  - name: RESTORE | Extract configuration
+  - name: 🔄 RESTORE | Extract configuration
     ios_command:
       commands:
         - show running-config
     register: verif_config_output
 
-  - name: RESTORE | Check if scp server is enable
+  - name: 🔄 RESTORE | Check if scp server is enable
     debug:
       msg: "La phrase est présente !"
     when: "'ip scp server enable' in verif_config_output.stdout_lines[0]"
