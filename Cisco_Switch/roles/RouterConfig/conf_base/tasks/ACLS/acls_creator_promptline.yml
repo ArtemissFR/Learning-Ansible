@@ -7,74 +7,74 @@
 
 #------------------------------------------#ACLS#------------------------------------------#
 #####ACLS_LINE_NAME#####
-  - name: ACLS | QUESTION - Name
+  - name: 🚦 ACLS | QUESTION - Name
     pause:
       prompt: "[???] What name would you like for your ACLs ? "
     register: ACLS_LINE_NAME
 #####ACLS_LINE_NAME#####
 
 #####ACLS_LINE_TYPE#####
-  - name: ACLS | QUESTION - Type
+  - name: 🚦 ACLS | QUESTION - Type
     pause:
       prompt: "[???] What type would you like your ACLs to be ? (extended/standard/resequence/logging/log-update)"
     register: ACLS_LINE_TYPE
 #####ACLS_LINE_TYPE#####
 
 #####ACLS-GRANT#####
-  - name: ACLS | QUESTION - Grant
+  - name: 🚦 ACLS | QUESTION - Grant
     pause:
       prompt: "[???] Which type of GRANT you want your ACLs to be ? (permit/deny)"
     register: ACLS_GRANT
 #####ACLS-GRANT#####
 
 #####ACLS-PROTOCOL#####
-  - name: ACLS | QUESTION - Protocol
+  - name: 🚦 ACLS | QUESTION - Protocol
     pause:
       prompt: "[???] Which protocol should the rule apply to? (ahp/eigrp/esp/gre/icmp/igmp/ip/ipinip/nos/ospf/pcp/pim/tcp/udp)"
     register: ACLS_BASE_PROTOCOL
 #####ACLS-PROTOCOL#####
 
 #####ACLS-SOURCE#####
-  - name: ACLS | QUESTION - Source
+  - name: 🚦 ACLS | QUESTION - Source
     pause:
       prompt: "[???] Configure your SOURCE host : (any/host/[ip])"
     register: ACLS_SOURCE_IP
 #####ACLS-SOURCE#####
 #####ACLS-DESTINATION#####
-  - name: ACLS | QUESTION - Destination
+  - name: 🚦 ACLS | QUESTION - Destination
     pause:
       prompt: "[???] Configure your DESTINATION host : (any/host/[ip])"
     register: ACLS_DEST_IP
 #####ACLS-DESTINATION#####
 
 #####HELP#####
-  - name: ACLS | QUESTION - Help
+  - name: 🚦 ACLS | QUESTION - Help
     pause:
       prompt: "[???] Would you like a list of all option and parameters you can add ? (yes/no)"
     register: ACLS_OPTION_LIST_CHOICE
 
-  - name: ACLS | HELP
+  - name: 🚦 ACLS | HELP
     ansible.builtin.shell: cat /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/ACLS/HELP_DOC/ACLS_OPTIONSPARAMETERS.txt
     register: ACLS_HELP
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 
-  - name: ACLS | HELP
+  - name: 🚦 ACLS | HELP
     ansible.builtin.debug:
       var: ACLS_HELP.stdout_lines
     when: ACLS_OPTION_LIST_CHOICE.user_input | bool
 #####HELP#####
 
-  - name: ACLS | QUESTION - Options
+  - name: 🚦 ACLS | QUESTION - Options
     pause:
       prompt: "[???] Which options would you like to add ? (format : ttl eq 10 )"
     register: ACLS_OPTION
 #------------------------------------------#ACLS#------------------------------------------#
 #------------------------------------------#VALIDATION#------------------------------------------#
-  - name: "ACLS | Your Access-List :"
+  - name: "🚦 ACLS | Your Access-List :"
     debug:
       msg: "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }} {{ ACLS_OPTION.user_input }}"
 
-  - name: ACLS | VALIDATION
+  - name: 🚦 ACLS | VALIDATION
     pause:
       prompt: "[???] Are you sure you want to apply this Access-List ? (yes/no)"
     register: ACLS_VALIDATION_CHOICE
@@ -82,7 +82,7 @@
 
 #------------------------------------------#ACLS#------------------------------------------#
 #####ACLS_LINE_CREATOR#####
-  - name: ACLS | Apply the ACLs configuration
+  - name: 🚦 ACLS | Apply the ACLs configuration
     cisco.ios.ios_config:
       lines:
         - "ip access-list {{ ACLS_LINE_TYPE.user_input }} {{ ACLS_LINE_NAME.user_input }}"
@@ -92,17 +92,17 @@
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#RECAP#------------------------------------------#
-  - name: INFORMATION
+  - name: 🚦 ACLS | INFORMATION
     debug:
       msg: "Done ! Your ACLs configuration has been deployed perfectly !"
     when: ACLS_VALIDATION_CHOICE.user_input | bool
 
-  - name: INFORMATION
+  - name: 🚦 ALCS | INFORMATION
     debug:
       msg: "Configuration aborted !"
     when: ACLS_VALIDATION_CHOICE.user_input == "no"
 
-  - name: "ACLS | RECAP of {{ ACLS_LINE_NAME.user_input }}"
+  - name: "🚦 ACLS | RECAP of {{ ACLS_LINE_NAME.user_input }}"
     debug:
       msg: "{{ ACLS_GRANT.user_input }} {{ ACLS_BASE_PROTOCOL.user_input }} {{ ACLS_SOURCE_IP.user_input }} {{ ACLS_DEST_IP.user_input }} {{ ACLS_OPTION.user_input }}"
     when: ACLS_VALIDATION_CHOICE.user_input | bool
