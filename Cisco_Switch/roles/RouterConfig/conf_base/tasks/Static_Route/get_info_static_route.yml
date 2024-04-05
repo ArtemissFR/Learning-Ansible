@@ -7,13 +7,13 @@
 
 #------------------------------------------#RECAP#------------------------------------------#
 
-  - name: ROUTE | Gather configuration from target device
+  - name: 🛣️ ROUTE | Gather configuration from target device
     cisco.ios.ios_static_routes:
       config:
       state: gathered
     register: ROUTE
 
-  - name: ROUTE | List Static_Route
+  - name: 🛣️ ROUTE | List Static_Route
     debug:
       var: ROUTE
 #------------------------------------------#RECAP#------------------------------------------#
