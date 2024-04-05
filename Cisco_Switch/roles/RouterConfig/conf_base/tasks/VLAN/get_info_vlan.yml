@@ -6,13 +6,13 @@
 #------------------------------------------#INFORMATION#------------------------------------------#
 
 #------------------------------------------#RECAP#------------------------------------------#
-  - name: VLAN | Gather configuration from target device
+  - name: 🔀 VLAN | Gather configuration from target device
     cisco.ios.ios_command:
       commands:
         - show vlan
     register: VLANS_current
 
-  - name: VLAN | List VLANs
+  - name: 🔀 VLAN | List VLANs
     debug:
       var: VLANS_current.stdout_lines
 #------------------------------------------#RECAP#------------------------------------------#
