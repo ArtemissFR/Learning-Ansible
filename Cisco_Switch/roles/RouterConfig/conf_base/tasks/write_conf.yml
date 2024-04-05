@@ -5,23 +5,23 @@
 #------------------------------------------#INFORMATION#------------------------------------------#
 
 #------------------------------------------#WRITE#------------------------------------------#
-  - name: WRITE | Writing configuration
+  - name: ✍️ WRITE | Writing configuration
     cisco.ios.ios_command:
       commands: write
     register: writing_result
 
-  - name: WRITE | Showing the result of writing configuration
+  - name: ✍️ WRITE | Showing the result of writing configuration
     debug:
       var: writing_result
 #------------------------------------------#WRITE#------------------------------------------#
 
 #------------------------------------#RECAP#------------------------------------#
-  - name: WRITE | Gather Configuration
+  - name: ✍️ WRITE | Gather Configuration
     cisco.ios.ios_command:
       commands: show run
     register: showrun_result
 
-  - name: WRITE | Show Running configuration
+  - name: ✍️ WRITE | Show Running configuration
     debug:
       var: showrun_result
 #------------------------------------#RECAP#------------------------------------#
