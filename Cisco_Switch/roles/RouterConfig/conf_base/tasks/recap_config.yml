@@ -5,58 +5,58 @@
 #------------------------------------------#INFORMATION#------------------------------------------#
 
 #------------------------------------------#RECAP-BASICS#------------------------------------------#
-  - name: RECAP | HOSTNAME
+  - name: ⚙️ RECAP | HOSTNAME
     debug:
       msg: " You have set {{ HOSTNAME.user_input }} as Hostname."
     when: BASICS_CHOICE.user_input | bool
 
-  - name: RECAP | DOMAIN
+  - name: ⚙️ RECAP | DOMAIN
     debug:
       msg: " You have set {{ DOMAIN.user_input }} as Domain."
     when: BASICS_CHOICE.user_input | bool
 
-  - name: RECAP | BASE-BANNER
+  - name: ⚙️ RECAP | BASE-BANNER
     debug:
       msg: " You have add {{ BASE_BANNER.user_input }} as Base Banner."
     when: (BASICS_CHOICE.user_input == "yes") and (BASE_BANNER_CHOICE.user_input == "yes")
 
-  - name: RECAP | LOGIN-BANNER
+  - name: ⚙️ RECAP | LOGIN-BANNER
     debug:
       msg: " You have add {{ LOGIN_BANNER.user_input }} as Login Banner."
     when: (BASICS_CHOICE.user_input == "yes") and (LOGIN_BANNER_CHOICE.user_input == "yes")
 #------------------------------------------#RECAP-BASICS#------------------------------------------#
 
 #------------------------------------------#RECAP-INTERFACE#------------------------------------------#
-  - name: RECAP | INTERFACE
+  - name: 💻 RECAP | INTERFACE
     debug:
       msg: "You have choose the interface {{ ROUTER_INT.user_input }} to be enabled and you have add this in the description : {{ ROUTER_INT_DESC.user_input }}."
     when: INT_CHOICE.user_input | bool
 #------------------------------------------#RECAP-INTERFACE#------------------------------------------#
 
 #------------------------------------------#RECAP-SECURITY#------------------------------------------#
-  - name: RECAP | SECURITY
+  - name: 🔒 RECAP | SECURITY
     block:
-        - name: RECAP | SECURITY
+        - name: 🔒 RECAP | SECURITY
           debug:
             msg: " You have decided to create a new User named : {{ CISCO_USER.user_input }} with a level of privilege of : {{ CISCO_USER_PRIVILEGE.user_input }}."
           when: (CISCO_USER_CHOICE.user_input == "yes")
     when: (SECURITY_CHOICE.user_input == "yes")
 
-  - name: RECAP | SCP
+  - name: 🔒 RECAP | SCP
     debug:
       msg: " You said {{ SCP_SERVER_CHOICE.user_input }} to activating the scp server."
     when: (SECURITY_CHOICE.user_input == "yes")
 #------------------------------------------#RECAP-SECURITY#------------------------------------------#
 
 #------------------------------------------#RECAP-SNMP#------------------------------------------#
-  - name: RECAP | SNMP
+  - name: 📡 RECAP | SNMP
     block:
-        - name: RECAP | SNMP - Public Server
+        - name: 📡 RECAP | SNMP - Public Server
           debug:
             msg: " You have decided to set up a PUBLIC SNMP Server : {{ SNMP_PUBLIC.user_input }} ."
           when: (SNMP_PUBLIC_CHOICE.user_input == "yes")
 
-        - name: RECAP | SNMP - Private Server
+        - name: 📡 RECAP | SNMP - Private Server
           debug:
             msg: " You have decided to set up a PRIVATE SNMP Server : {{ SNMP_PRIVATE.user_input }} ."
           when: (SNMP_PRIVATE_CHOICE.user_input == "yes")
@@ -64,14 +64,14 @@
 #------------------------------------------#RECAP-SNMP#------------------------------------------#
 
 #------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
-  - name: RECAP | ACLS_DESTRUCTOR
+  - name: 🚦 RECAP | ACLS_DESTRUCTOR
     block:
-        - name: RECAP | ACLS_DESTRUCTOR
+        - name: 🚦 RECAP | ACLS_DESTRUCTOR
           debug:
             msg: " You have decided to delete all ACLS already present ."
           when: (ACLS_DELETE_ALL.user_input == "yes") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes") and (ACLS_CHOICE.user_input == "yes")
     
-        - name: RECAP | ACLS_DESTRUCTOR
+        - name: 🚦 RECAP | ACLS_DESTRUCTOR
           debug:
             msg: " You have decided to delete all ACLS based on AFI {{ ACLS_DELETE_AFI_BASED_TYPE.user_input }} already present ."
           when: (ACLS_DELETE_ALL.user_input == "no") and (ACLS_DESTRUCTOR_CHOICE.user_input == "yes") and (ACLS_CHOICE.user_input == "yes")
@@ -79,27 +79,27 @@
 #------------------------------------------#RECAP-ACLS_DESTRUCTOR#------------------------------------------#
 
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
-  - name: RECAP | ACLS - Gather ACLS configuration
+  - name: 🚦 RECAP | ACLS - Gather ACLS configuration
     cisco.ios.ios_acls:
       state: gathered
     register: ACLS_current
     when: (MACHINE_TYPE == "ROUTER") or ((MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH"))
 
-  - name: RECAP | ACLS - Show ACLS configuration
+  - name: 🚦 RECAP | ACLS - Show ACLS configuration
     debug:
       var: ACLS_current
     when: (MACHINE_TYPE == "ROUTER") or ((MACHINE_TYPE_SPECIAL is defined) and (MACHINE_TYPE_SPECIAL == "ACLS_SWITCH"))
 #------------------------------------------#RECAP-ACLS_CREATOR#------------------------------------------#
 
 #------------------------------------------#RECAP-ROUTE_DESTRUCTOR#------------------------------------------#
-  - name: RECAP | ROUTE_DESTRUCTOR
+  - name: 🛣️ RECAP | ROUTE_DESTRUCTOR
     block:
-        - name: RECAP | ROUTE_DESTRUCTOR
+        - name: 🛣️ RECAP | ROUTE_DESTRUCTOR
           debug:
             msg: " You have decided to delete all Static Route already present ."
           when: (ROUTE_DELETE_ALL.user_input == "yes") and (ROUTE_DESTRUCTOR_CHOICE.user_input == "yes")
   
-        - name: RECAP | ROUTE_DESTRUCTOR
+        - name: 🛣️ RECAP | ROUTE_DESTRUCTOR
           debug:
             msg: " You have decided to delete the static route based on vrf {{ ROUTE_DELETE_VRF_BASED_TYPE.user_input }} ."
           when: (ROUTE_DELETE_ALL.user_input == "no") and (ROUTE_DESTRUCTOR_CHOICE.user_input == "yes")
@@ -107,26 +107,26 @@
 #------------------------------------------#RECAP-ROUTE_DESTRUCTOR#------------------------------------------#
 
 #------------------------------------------#RECAP-ROUTE_CREATOR#------------------------------------------#
-  - name: ROUTE | Gather Static Route configuration 
+  - name: 🛣️ RECAP | Gather Static Route configuration 
     cisco.ios.ios_static_routes:
       config:
       state: gathered
     register: ROUTE_current
 
-  - name: ROUTE | List Static Route
+  - name: 🛣️ RECAP | List Static Route
     debug:
       var: ROUTE_current
 #------------------------------------------#RECAP-ROUTE_CREATOR#------------------------------------------#
 
 #------------------------------------------#RECAP-VLANS_DESTRUCTOR#------------------------------------------#
-  - name: RECAP | VLAN_DESTRUCTOR
+  - name: 🔀 RECAP | VLAN_DESTRUCTOR
     block:
-        - name: RECAP | VLAN_DESTRUCTOR
+        - name: 🔀 RECAP | VLAN_DESTRUCTOR
           debug:
             msg: " You have decided to delete all VLANs already present ."
           when: (VLAN_DELETE_ALL.user_input == "yes") and (VLAN_DESTRUCTOR_CHOICE.user_input == "yes") and (VLAN_CHOICE.user_input == "yes")
     
-        - name: RECAP | VLAN_DESTRUCTOR
+        - name: 🔀 RECAP | VLAN_DESTRUCTOR
           debug:
             msg: " You have decided to delete all VLAN based on ID {{ VLAN_DELETE_ID_BASED_TYPE.user_input }} already present ."
           when: (VLAN_DELETE_ALL.user_input == "no") and (VLAN_DESTRUCTOR_CHOICE.user_input == "yes") and (VLAN_CHOICE.user_input == "yes")
@@ -134,14 +134,14 @@
 #------------------------------------------#RECAP-VLANS_DESTRUCTOR#------------------------------------------#
 
 #------------------------------------------#RECAP-VLANS_CREATOR#------------------------------------------#
-  - name: RECAP | VLANs - Gather VLANs configuration
+  - name: 🔀 RECAP | VLANs - Gather VLANs configuration
     cisco.ios.ios_command:
       commands:
         - show vlan
     register: VLANS_current
     when: (MACHINE_TYPE == "SWITCH")
 
-  - name: RECAP | VLANs - Show VLANs configuration
+  - name: 🔀 RECAP | VLANs - Show VLANs configuration
     debug:
       var: VLANS_current.stdout_lines
     when: (MACHINE_TYPE == "SWITCH")
