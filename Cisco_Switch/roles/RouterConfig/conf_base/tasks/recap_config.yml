@@ -148,6 +148,7 @@
     when: (MACHINE_TYPE == "SWITCH")
 #------------------------------------------#RECAP-VLANS_CREATOR#------------------------------------------#
 
+#------------------------------------------#EASTER_EGG#------------------------------------------#
   - name: 🎁 RECAP | EASTER_EGG
     ansible.builtin.shell: cat /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/conf_base/tasks/ACLS/HELP_DOC/EASTER_EGG.txt
     register: EASTER_EGG
@@ -157,3 +158,4 @@
     ansible.builtin.debug:
       var: EASTER_EGG.stdout_lines
     when: 
+#------------------------------------------#EASTER_EGG#------------------------------------------#
