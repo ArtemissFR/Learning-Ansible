@@ -1,49 +1,49 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
 #####VLAN-ID#####
-  - name: VLAN | QUESTION - ID
+  - name: 🔀 VLAN | QUESTION - ID
     pause:
       prompt: "[???] Which ID you want your VLAN to be ? "
     register: VLAN_ID
 #####VLAN-ID#####
 
 #####VLAN_NAME#####
-  - name: VLAN | QUESTION - Name
+  - name: 🔀 VLAN | QUESTION - Name
     pause:
       prompt: "[???] What name do you want to set ?"
     register: VLAN_NAME
 #####VLAN_NAME#####
 
 #####VLAN-SHUTDOWN#####
-  - name: VLAN | QUESTION - Shutdown
+  - name: 🔀 VLAN | QUESTION - Shutdown
     pause:
       prompt: "[???] Do you want to enable Shutdown for your VLAN ? (shutdown / no shutdown)"
     register: VLAN_SHUTDOWN
 #####VLAN-SHUTDOWN#####
 
 #####VLAN-STATE#####
-  - name: VLAN | QUESTION - State
+  - name: 🔀 VLAN | QUESTION - State
     pause:
       prompt: "[???] Which STATE you want your VLAN to be ? (active / suspend)"
     register: VLAN_STATE
 #####VLAN-STATE#####
 
 #####VLAN-MTU#####
-  - name: VLAN | QUESTION - Mtu
+  - name: 🔀 VLAN | QUESTION - Mtu
     pause:
       prompt: "[???] Which MTU you want your VLAN to be ? (<576-18190>)"
     register: VLAN_MTU
 #####VLAN-MTU#####
 
 #####VLAN-OPTION-CHOICE#####
-  - name: VLAN | QUESTION - Options
+  - name: 🔀 VLAN | QUESTION - Options
     pause:
       prompt: "[???] Do you want to add others options to your VLAN ? (yes/no)"
     register: VLAN_OPTION_CHOICE
 #####VLAN-OPTION-CHOICE#####
 
 #####VLAN-OPTION-CHOICE#####
-  - name: VLAN | QUESTION - Options
+  - name: 🔀 VLAN | QUESTION - Options
     pause:
       prompt: "[???] Type the option you want to add to your vlan "
     register: VLAN_OPTION
@@ -52,12 +52,12 @@
 #------------------------------------------#VLAN#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
-  - name: VLAN | VERIFICATION
+  - name: 🔀 VLAN | VERIFICATION
     pause:
       prompt: "[???] Do you want to check your vars ? (yes/no)"
     register: VLAN_DEBUG_CHECK
 
-  - name: VLAN | VALIDATION 
+  - name: 🔀 VLAN | VALIDATION 
     pause:
       prompt: "[???] Do you want to apply your configuration ? (yes/no)"
     register: VLAN_VALID_CHECK
@@ -68,7 +68,7 @@
 
 #------------------------------------------#VLAN#------------------------------------------#
 #####APPLY-CONFIGURATION#####
-  - name: VLAN | Apply the new VLAN configuration
+  - name: 🔀 VLAN | Apply the new VLAN configuration
     cisco.ios.ios_config:
       lines:
         - "vlan {{ VLAN_ID.user_input }}"
@@ -78,7 +78,7 @@
         - "mtu {{ VLAN_MTU.user_input }}"
     when: VLAN_VALID_CHECK.user_input | bool
 
-  - name: VLAN | Apply others options
+  - name: 🔀 VLAN | Apply others options
     cisco.ios.ios_config:
       lines:
         - "vlan {{ VLAN_ID.user_input }}"
