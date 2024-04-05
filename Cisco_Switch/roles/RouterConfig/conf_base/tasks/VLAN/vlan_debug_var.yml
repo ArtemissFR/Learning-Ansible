@@ -1,30 +1,30 @@
 #------------------------------------------#VLAN#------------------------------------------#
-  - name: VLAN | NAME
+  - name: 🔀 VLAN | NAME
     debug:
       msg: "{{ VLAN_NAME.user_input }}"
     when: VLAN_NAME is defined
 
-  - name: VLAN | STATE
+  - name: 🔀 VLAN | STATE
     debug:
       msg: "{{ VLAN_STATE.user_input }}"
     when: VLAN_STATE is defined
 
-  - name: VLAN | ID
+  - name: 🔀 VLAN | ID
     debug:
       msg: "{{ VLAN_ID.user_input }}"
     when: VLAN_ID is defined
 
-  - name: VLAN | SHUTDOWN
+  - name: 🔀 VLAN | SHUTDOWN
     debug:
       msg: "{{ VLAN_SHUTDOWN.user_input }}"
     when: VLAN_SHUTDOWN is defined
 
-  - name: VLAN | MTU
+  - name: 🔀 VLAN | MTU
     debug:
       msg: "{{ VLAN_MTU.user_input }}"
     when: VLAN_MTU is defined
 
-  - name: VLAN | OPTIONS
+  - name: 🔀 VLAN | OPTIONS
     debug:
       msg: "{{ VLAN_OPTION.user_input }}"
     when: VLAN_OPTION is defined
