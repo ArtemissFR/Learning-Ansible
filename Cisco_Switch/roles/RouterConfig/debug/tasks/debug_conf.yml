@@ -1,50 +1,50 @@
 #------------------------------------------#DEBUG#------------------------------------------#
-- name: DEBUG | Do show version and show interfaces
+- name: 🐞 DEBUG | Do show version and show interfaces
   cisco.ios.ios_command:
     commands:
       - show version
       - show interfaces
   register: debug_info
 
-- name: DEBUG | Gather config facts
+- name: 🐞 DEBUG | Gather config facts
   cisco.ios.ios_facts:
     gather_subset: 
     - config
   register: debug_config
 
-- name: DEBUG | Gather hardware facts
+- name: 🐞 DEBUG | Gather hardware facts
   cisco.ios.ios_facts:
     gather_subset: 
     - hardware
   register: debug_hardware  
 
-- name: DEBUG | Gather interfaces facts
+- name: 🐞 DEBUG | Gather interfaces facts
   cisco.ios.ios_facts:
     gather_subset: 
     - interfaces
   register: debug_interfaces
 
-- name: DEBUG | Show base informations
+- name: 🐞 DEBUG | Show base informations
   debug:
      var: debug_info
 
-- name: DEBUG | Show config facts
+- name: 🐞 DEBUG | Show config facts
   debug:
      var: debug_config
 
-- name: DEBUG | Show hardware facts
+- name: 🐞 DEBUG | Show hardware facts
   debug:
      var: debug_hadware
 
-- name: DEBUG | Show interfaces facts
+- name: 🐞 DEBUG | Show interfaces facts
   debug:
      var: debug_interfaces
 
-- name: DEBUG | Show the hostname
+- name: 🐞 DEBUG | Show the hostname
   debug:
      msg: "The name of the hostname is : {{ ansible_net_hostname }}"
 
-- name: DEBUG | Show the IP
+- name: 🐞 DEBUG | Show the IP
   debug:
      msg: "The Ip of this machine is : {{ ansible_net_all_ipv4_addresses }}"
 
