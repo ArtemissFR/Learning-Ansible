@@ -1,12 +1,12 @@
 
 #------------------------------------------#BACKUP#------------------------------------------#
 
-  - name: BACKUP | QUESTION - Directory
+  - name: 💾 BACKUP | QUESTION - Directory
     pause:
       prompt: "[???] Choose where you want your Backup directory (if it doesn't exist it will be created) ? (example: /etc/ansible/Backup)"
     register: BACKUP_DIRECTORY_CHOICE
 
-  - name: BACKUP | Create directory
+  - name: 💾 BACKUP | Create directory
     ansible.builtin.file:
       path: "{{ BACKUP_DIRECTORY_CHOICE.user_input }}"
       state: directory
