@@ -5,6 +5,10 @@
 
   tasks:
 
+#-----------------------------#IOS-TYPE#-----------------------------#
+    - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/debug/tasks/main.yml
+#-----------------------------#IOS-TYPE#-----------------------------#
+
 #-----------------------------#DEBUG#-----------------------------#
     - include_tasks: /etc/ansible/roles/Learning-Ansible/Cisco_Switch/roles/RouterConfig/debug/tasks/main.yml
 #-----------------------------#DEBUG#-----------------------------#
