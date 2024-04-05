@@ -9,23 +9,23 @@
 #------------------------------------------#ACLS#------------------------------------------#
   - include_tasks: get_info_acls.yml    
 
-  - name: ACLS | QUESTION - Destructor
+  - name: 🚦 ACLS | QUESTION - Destructor
     pause:
       prompt: "[???] Do you want to launch the ACLS Destructor ? (yes/no)"
     register: ACLS_DESTRUCTOR_CHOICE
 
-  - name: ACLS | QUESTION - Creator
+  - name: 🚦 ACLS | QUESTION - Creator
     pause:
       prompt: "[???] Do you want to launch the ACLS Creator ? (yes/no)"
     register: ACLS_CREATOR_CHOICE
 
-  - name: ACLS | QUESTION - Creator Version
+  - name: 🚦 ACLS | QUESTION - Creator Version
     pause:
       prompt: "[???] Choose a version of ACLs Creator : [prompt/line/promptline] ? (prompt is limited)"
     register: ACLS_CREATOR_TYPE_CHOICE
     when: ACLS_CREATOR_CHOICE.user_input | bool
 
-  - name: ACLS | INFORMATION
+  - name: 🚦 ACLS | INFORMATION
     debug:
       msg:  Starting the ACLS destructor engine ... 
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
@@ -33,12 +33,12 @@
   - include_tasks: acls_destructor.yml
     when: ACLS_DESTRUCTOR_CHOICE.user_input | bool
 
-  - name: ACLS | INFORMATION
+  - name: 🚦 ACLS | INFORMATION
     debug:
       msg:  "Starting the ACLS Creator < {{  ACLS_CREATOR_TYPE_CHOICE.user_input }} > engine ... "
     when: ACLS_CREATOR_CHOICE.user_input | bool
 
-  - name: ACLS | Launch the ACLS Creator...
+  - name: 🚦 ACLS | Launch the ACLS Creator...
     block:
         - include_tasks: acls_creator_prompt.yml
           when: (ACLS_CREATOR_TYPE_CHOICE.user_input == "prompt")
