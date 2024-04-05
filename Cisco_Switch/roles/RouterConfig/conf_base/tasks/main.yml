@@ -50,7 +50,7 @@
 
 #------------------------------------------#SNMP#------------------------------------------#
 
-  - name: SNMP
+  - name: 📡 SNMP
     pause:
       prompt: "[???] Would you like to customise the SNMP parameters ? (yes/no)"
     register: SNMP_CHOICE
