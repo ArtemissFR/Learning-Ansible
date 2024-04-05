@@ -1,6 +1,6 @@
 ---
 #------------------------------------------#RESTORE#------------------------------------------#
-  - name: RESTORE | Copy backup in the remote host
+  - name: 🔄 RESTORE | Copy backup in the remote host
     ansible.builtin.expect:
       command:  "scp {{ BACKUP_DIRECTORY_CHOICE.user_input }}/{{ inventory_hostname }}_latest.config scp@{{ inventory_hostname }}:{{ inventory_hostname }}_latest.config"
       responses:
@@ -13,7 +13,7 @@
 #------------------------------------------#RESTORE#------------------------------------------#
 
 #------------------------------------------#RECAP#------------------------------------------#
-  - name: RESTORE | RECAP
+  - name: 🔄 RESTORE | RECAP
     debug:
       msg: " You have copied and applied the latest backup configuration file to your machine."
 #------------------------------------------#RECAP#------------------------------------------#
