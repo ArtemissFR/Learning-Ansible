@@ -32,6 +32,6 @@ Pour utiliser ce playbook, vous devez avoir Ansible installé sur votre machine.
 
 ```bash
 ansible-playbook Cisco_Switch.yml
-
+```
 
 ![Logo](https://media.licdn.com/dms/image/D5612AQHnijgzV7qlCw/article-cover_image-shrink_600_2000/0/1698729502059?e=2147483647&v=beta&t=qJcTqaDJWis2hXc1G9l3xo-Z_FI3AuV85Laij_-ZRbI)
