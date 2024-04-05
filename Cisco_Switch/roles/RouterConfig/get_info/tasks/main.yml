@@ -9,7 +9,7 @@
 
 #------------------------------------------#GET-INFO#------------------------------------------#
 
-  - name: INFO | Gather interfaces facts
+  - name: 📚 INFO | Gather interfaces facts
     cisco.ios.ios_facts:
       gather_subset: 
       - '!all'
@@ -18,20 +18,20 @@
       - interfaces
     register: interfaces_
 
-  - name: INFO | Gather config facts
+  - name: 📚 INFO | Gather config facts
     cisco.ios.ios_facts:
       gather_subset: 
       - config
     register: config_
 
-  - name: INFO | Gather hardware facts
+  - name: 📚 INFO | Gather hardware facts
     cisco.ios.ios_facts:
       gather_subset: 
       - hardware
     register: hardware_
 
 
-  - name: INFO | Convert Interfaces facts in List
+  - name: 📚 INFO | Convert Interfaces facts in List
     set_fact:
       interfaces_fact: "{{ interfaces_.ansible_facts.ansible_network_resources.interfaces | map(attribute='name') | list }}"
 #------------------------------------------#GET-INFO#------------------------------------------#
