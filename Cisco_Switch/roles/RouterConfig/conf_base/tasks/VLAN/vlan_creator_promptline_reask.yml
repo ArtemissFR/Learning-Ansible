@@ -1,9 +1,9 @@
-  - name: VLAN | QUESTION - Finish
+  - name: 🔀 VLAN | QUESTION - Finish
     pause:
       prompt: "[???] Do you want to create another VLAN ? (yes/no)"
     register: VLAN_REASK_CREATOR_CHOICE
 
-  - name: VLAN | Launch the VLAN Creator...
+  - name: 🔀 VLAN | Launch the VLAN Creator...
     block:
         - include_tasks: vlan_creator_promptline.yml
           when: (VLAN_REASK_CREATOR_CHOICE.user_input | bool)
