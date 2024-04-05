@@ -1,7 +1,7 @@
 
 #------------------------------------------#BACKUP#------------------------------------------#
 
-  - name: BACKUP | QUESTION
+  - name: 💾 BACKUP | QUESTION
     pause:
       prompt: "[???] Would you like to do a backup of the actual configuration ? (yes/no)"
     register: BACKUP_CHOICE
