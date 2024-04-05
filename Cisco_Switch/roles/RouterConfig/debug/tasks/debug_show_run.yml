@@ -1,5 +1,5 @@
 #------------------------------------------#DEBUG#------------------------------------------#
-- name: DEBUG | Do show running-configuration
+- name: 🐞 DEBUG | Do show running-configuration
   ios_command:
     commands:
       - show run
@@ -7,7 +7,7 @@
   register: debug_show_run
   ignore_errors: true
 
-- name: DEBUG | Show running-configuration
+- name: 🐞 DEBUG | Show running-configuration
   debug:
     var: debug_show_run
   tags: show_run
