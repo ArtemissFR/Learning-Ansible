@@ -7,58 +7,58 @@
 
 #------------------------------------------#ACLS#------------------------------------------#
 #####ACLS_NAME#####
-  - name: ACLS | QUESTION - Name
+  - name: 🚦 ACLS | QUESTION - Name
     pause:
       prompt: "[???] What name do you want to set ?"
     register: ACLS_NAME
 #####ACLS_NAME#####
 
 #####ACLS-STATE#####
-  - name: ACLS | QUESTION - State
+  - name: 🚦 ACLS | QUESTION - State
     pause:
       prompt: "[???] Which STATE you want your ACLs to be ? [merged/replaced/overriden/deleted/rendered]"
     register: ACLS_STATE
 #####ACLS-STATE#####
 
 #####ACLS-AFI#####
-  - name: ACLS | QUESTION - AFI Type
+  - name: 🚦 ACLS | QUESTION - AFI Type
     pause:
       prompt: "[???] Which type of AFI you want your ACLs to be ? [ipv4/ipv6]"
     register: ACLS_AFI
 #####ACLS-AFI#####
 
 #####ACLS-GRANT#####
-  - name: ACLS | QUESTION - Grant
+  - name: 🚦 ACLS | QUESTION - Grant
     pause:
       prompt: "[???] Which type of GRANT you want your ACLs to be ? [permit/deny]"
     register: ACLS_GRANT
 #####ACLS-GRANT#####
 
 #####ACLS-SOURCE#####
-  - name: ACLS | QUESTION - Source IP
+  - name: 🚦 ACLS | QUESTION - Source IP
     pause:
       prompt: "[???] SOURCE IP ? "
     register: ACLS_SOURCE_IP
 
-  - name: ACLS | QUESTION - Source Wild
+  - name: 🚦 ACLS | QUESTION - Source Wild
     pause:
       prompt: "[???] SOURCE Wildcard_bits ? "
     register: ACLS_SOURCE_WILD
 #####ACLS-SOURCE#####
 #####ACLS-DESTINATION#####
-  - name: ACLS | QUESTION - Destination IP
+  - name: 🚦 ACLS | QUESTION - Destination IP
     pause:
       prompt: "[???] DESTINATION IP ? "
     register: ACLS_DEST_IP
 
-  - name: ACLS | QUESTION - Destination Wild
+  - name: 🚦 ACLS | QUESTION - Destination Wild
     pause:
       prompt: "[???] DESTINATION Wildcard_bits ? "
     register: ACLS_DEST_WILD
 #####ACLS-DESTINATION#####
 
 #####ACLS-PORT-PROTOCOL#####
-  - name: ACLS | QUESTION - Port Protocol
+  - name: 🚦 ACLS | QUESTION - Port Protocol
     pause:
       prompt: "[???] Port protocol ?  [eq/gt/lt/neq/range]"
     register: ACLS_PORT_PROTOCOL
@@ -90,14 +90,14 @@
 #####ACLS-PORT-PROTOCOL-range#####
 
 #####ACLS-DSCP#####
-  - name: ACLS | QUESTION - DSCP
+  - name: 🚦 ACLS | QUESTION - DSCP
     pause:
       prompt: "[???] dscp var ? "
     register: ACLS_DSCP
 #####ACLS-DSCP#####
 
 #####ACLS-TTL#####
-  - name: ACLS | QUESTION - ttl
+  - name: 🚦 ACLS | QUESTION - ttl
     pause:
       prompt: "[???] Which type of TTL you want your ACLs to be ? [eq/gt/lt/neq/range]"
     register: ACLS_TTL
@@ -130,7 +130,7 @@
 #------------------------------------------#ACLS#------------------------------------------#
 
 #------------------------------------------#VALIDATION------------------------------------------#
-  - name: ACLS | VALIDATION
+  - name: 🚦 ACLS | VALIDATION
     pause:
       prompt: "[???] Do you want to check your vars ? (yes/no)"
     register: ACLS_DEBUG_CHECK
@@ -141,7 +141,7 @@
 
 #------------------------------------------#ACLS#------------------------------------------#
 #####APPLY-CONFIGURATION#####
-  - name: ACLS | Apply the new ACLs configuration
+  - name: 🚦 ACLS | Apply the new ACLs configuration
     cisco.ios.ios_acls:
       config:
         - afi: "{{ ACLS_AFI.user_input }}"
