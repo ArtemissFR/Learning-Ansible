@@ -10,23 +10,23 @@
 #------------------------------------------#ROUTE#------------------------------------------#
   - include_tasks: get_info_static_route.yml    
 
-  - name: ROUTE | QUESTION - Destructor
+  - name: 🛣️ ROUTE | QUESTION - Destructor
     pause:
       prompt: "[???] Do you want to launch the Static_Route Destructor ? (yes/no)"
     register: ROUTE_DESTRUCTOR_CHOICE
 
-  - name: ROUTE | QUESTION - Creator
+  - name: 🛣️ ROUTE | QUESTION - Creator
     pause:
       prompt: "[???] Do you want to launch the Static_Route Creator ? (yes/no)"
     register: ROUTE_CREATOR_CHOICE
 
-  - name: ROUTE | QUESTION - Creator Version
+  - name: 🛣️ ROUTE | QUESTION - Creator Version
     pause:
       prompt: "[???] Choose a version of Static_Route Creator : [line/promptline] ? "
     register: ROUTE_CREATOR_TYPE_CHOICE
     when: ROUTE_CREATOR_CHOICE.user_input | bool
 
-  - name: ROUTE | INFORMATION
+  - name: 🛣️ ROUTE | INFORMATION
     debug:
       msg:  Starting the Static_Route destructor engine ... 
     when: ROUTE_DESTRUCTOR_CHOICE.user_input | bool
@@ -34,12 +34,12 @@
   - include_tasks: static_route_destructor.yml
     when: ROUTE_DESTRUCTOR_CHOICE.user_input | bool
 
-  - name: ROUTE | INFORMATION
+  - name: 🛣️ ROUTE | INFORMATION
     debug:
       msg:  "Starting the Static_Route Creator < {{  ROUTE_CREATOR_TYPE_CHOICE.user_input }} > engine ... "
     when: ROUTE_CREATOR_CHOICE.user_input | bool
 
-  - name: ROUTE | Launch the Static_Route Creator...
+  - name: 🛣️ ROUTE | Launch the Static_Route Creator...
     block:   
         - include_tasks: static_route_creator_line.yml
           when: (ROUTE_CREATOR_TYPE_CHOICE.user_input == "line")
