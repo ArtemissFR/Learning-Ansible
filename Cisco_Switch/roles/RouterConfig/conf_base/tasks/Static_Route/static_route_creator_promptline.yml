@@ -1,7 +1,7 @@
 
 #------------------------------------------#ROUTE#------------------------------------------#
 #####ROUTE_PROMPTLINE_NAME#####
-  - name: ROUTE | QUESTION - Name
+  - name: 🛣️ ROUTE | QUESTION - Name
     pause:
       prompt: "[???] What name would you like for your Static Route ? "
     register: ROUTE_PROMPTLINE_NAME
@@ -17,21 +17,21 @@
 #ip route vrf test 172.31.10.0 255.255.255.0 10.10.10.2 name new_test multicast
 
 #####ROUTE_COMMAND_PROMPTLINE#####
-  - name: ROUTE | QUESTION - Command
+  - name: 🛣️ ROUTE | QUESTION - Command
     pause:
       prompt: "[???] Write your Static Route command here : (example : 172.31.10.0 255.255.255.0 10.10.10.2)"
     register: ROUTE_COMMAND_PROMPTLINE
 #####ROUTE_COMMAND_PROMPTLINE#####
 
 #####ROUTE_COMMAND_PROMPTLINE#####
-  - name: ROUTE | QUESTION - Options
+  - name: 🛣️ ROUTE | QUESTION - Options
     pause:
       prompt: "[???] Write your Static Route options here : (example : permanent/tag)"
     register: ROUTE_OPTION_PROMPTLINE
 #####ROUTE_COMMAND_PROMPTLINE#####
 
 #####ROUTE_PROMPTLINE_CREATOR#####
-  - name: ROUTE | Apply the Static Route configuration
+  - name: 🛣️ ROUTE | Apply the Static Route configuration
     cisco.ios.ios_config:
       lines:
         - "ip route {{ ROUTE_COMMAND_PROMPTLINE.user_input }} name {{ ROUTE_PROMPTLINE_NAME.user_input }} {{ ROUTE_OPTION_PROMPTLINE.user_input }}"
@@ -40,7 +40,7 @@
 
 #------------------------------------------#RECAP#------------------------------------------#
 #####INFORMATION#####
-  - name: INFORMATION
+  - name: 🛣️ ROUTE | INFORMATION
     debug:
       msg: "Done ! Your Static Route configuration has been deployed perfectly !"
 #####INFORMATION#####
