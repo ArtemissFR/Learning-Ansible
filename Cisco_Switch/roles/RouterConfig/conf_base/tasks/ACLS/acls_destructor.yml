@@ -1,27 +1,27 @@
 #------------------------------------------#ACLS#------------------------------------------#
-  - name: ACLS | QUESTION - Delete ALL
+  - name: 🚦 ACLS | QUESTION - Delete ALL
     pause:
       prompt: "[???] Do you want to delete ALL of configured ACLs ? (yes/no)"
     register: ACLS_DELETE_ALL
 
-  - name: ACLS | QUESTION - Delete based AFI
+  - name: 🚦 ACLS | QUESTION - Delete based AFI
     pause:
       prompt: "[???] Do you want to delete ACLs based on AFI ? (yes/no)"
     register: ACLS_DELETE_AFI_BASED
     when: ACLS_DELETE_ALL.user_input == "no"
 
-  - name: ACLS | QUESTION - AFI Type
+  - name: 🚦 ACLS | QUESTION - AFI Type
     pause:
       prompt: "[???] Choose what type of AFI you want to delete : (ipv4/ipv6) "
     register: ACLS_DELETE_AFI_BASED_TYPE
     when: (ACLS_DELETE_ALL.user_input == "no" and ACLS_DELETE_AFI_BASED.user_input == "yes")
 
-  - name: ACLS | Delete ALL of configured ACLs
+  - name: 🚦 ACLS | Delete ALL of configured ACLs
     cisco.ios.ios_acls:
       state: deleted
     when: ACLS_DELETE_ALL.user_input | bool
   
-  - name: ACLS | Delete ACLs based on AFI
+  - name: 🚦 ACLS | Delete ACLs based on AFI
     cisco.ios.ios_acls:
       config:
         - afi: "{{ ACLS_DELETE_AFI_BASED_TYPE.user_input }}"
