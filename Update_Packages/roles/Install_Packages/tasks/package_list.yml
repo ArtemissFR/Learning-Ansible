@@ -68,6 +68,7 @@
   ansible.builtin.package:
     name:
       - tor
+      - torbrowser-launcher
     state: present
 
 #- name: Install Torcs (Cars Game)
