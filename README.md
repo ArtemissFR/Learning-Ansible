@@ -6,6 +6,7 @@ This Ansible project is a collection of various tests and roles that I have expe
 
 . **Clone the Project:**
    ```bash
+   cd /etc/ansible/roles
    git clone https://github.com/ArtemissFR/Learning-Ansible
    cd Learning-Ansible
    ```
