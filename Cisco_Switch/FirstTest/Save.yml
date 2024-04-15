@@ -1,7 +1,0 @@
----
-- hosts: CISCO
-  gather_facts: no
-  become: yes
-
-  roles:
-    - save_config

@@ -1,7 +1,0 @@
----
-- hosts: S1,S2,S3
-  gather_facts: no
-  become: yes
-
-  roles:
-    - restore_conf
