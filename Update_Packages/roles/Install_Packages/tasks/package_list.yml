@@ -77,6 +77,12 @@
 #      - torcs
 #    state: present
 
+#- name: Install PowerManga (Shooter Game)
+#  ansible.builtin.package:
+#    name:
+#      - powermanga
+#    state: present
+
 - name: Install Pip
   ansible.builtin.package:
     name:
