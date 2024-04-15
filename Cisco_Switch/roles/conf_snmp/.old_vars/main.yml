@@ -1,4 +1,0 @@
-# Modify the variables here for the configuration of SNMP public and private.
-SNMP_PUBLIC: ansible-cisco-public
-SNMP_PRIVATE: ansible-cisco-private
-SNMP_PRIVATE_TEST: ansible-cisco-private-test
