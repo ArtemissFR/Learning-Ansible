@@ -1,6 +1,0 @@
----
-
-- include_tasks: config.yml
-- include_tasks: affect.yml
-- include_tasks: gateway_config.yml
-- include_tasks: ports_security.yml
