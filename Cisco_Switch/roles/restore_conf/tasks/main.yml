@@ -1,3 +1,0 @@
----
-  - include_tasks: copy_config.yml
-  - include_tasks: apply_config.yml

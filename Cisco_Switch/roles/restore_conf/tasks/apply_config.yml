@@ -1,5 +1,0 @@
----
-  - name: Config replace
-    ios_command:
-       commands:
-          - "config replace flash0:{{ inventory_hostname }}_latest.config force"
