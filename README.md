@@ -11,6 +11,6 @@ This Ansible project is a collection of various tests and roles that I have expe
    cd Learning-Ansible
    ```
 
-🖼️ ![Ansible Logo](https://docs.ansible.com/ansible/latest/_static/images/Ansible-Mark-RGB_White.png)
+ ![Ansible Logo](https://docs.ansible.com/ansible/latest/_static/images/Ansible-Mark-RGB_White.png)
 
 Feel free to explore the different roles and experiments within this project to gain insights into Ansible's capabilities and usage in various scenarios.
