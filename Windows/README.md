@@ -1,8 +1,7 @@
-Certainly! Here is the translated version of the README.md summarizing the steps to allow ping (ICMP) and activate SSH (OpenSSH) on Windows using PowerShell.
 
 ---
 
-# Allow Ping and Activate SSH on Windows
+# 🌐 Allow Ping and Activate SSH on Windows
 
 This guide outlines the steps to allow ICMP ping and activate the SSH server (OpenSSH) on a Windows system using PowerShell.
 
@@ -21,7 +20,7 @@ This guide outlines the steps to allow ICMP ping and activate the SSH server (Op
    New-NetFirewallRule -DisplayName "Allow incoming ICMPv6 ping" -Protocol ICMPv6 -IcmpType 128 -Enabled True -Action Allow
    ```
 
-## Activate SSH (OpenSSH)
+## Activate SSH (OpenSSH) 🔒
 
 1. **Install the OpenSSH server via PowerShell:**
    ```powershell
@@ -43,7 +42,7 @@ This guide outlines the steps to allow ICMP ping and activate the SSH server (Op
    New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
    ```
 
-## Notes
+## Notes ℹ️
 
 - Ensure all PowerShell commands are run as Administrator.
 - After configuring the SSH server, you will be able to connect to your Windows machine using a third-party SSH client (e.g., PuTTY).
