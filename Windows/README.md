@@ -1,7 +1,7 @@
 
 ---
 
-# 🌐 Allow Ping and Activate SSH on Windows
+# 🌐 Allow Ping and Activate SSH/WinRM on Windows
 
 This guide outlines the steps to allow ICMP ping and activate the SSH server (OpenSSH) on a Windows system using PowerShell.
 
