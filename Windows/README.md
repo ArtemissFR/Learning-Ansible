@@ -42,6 +42,37 @@ This guide outlines the steps to allow ICMP ping and activate the SSH server (Op
    New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
    ```
 
+## Enable WinRM (Windows Remote Management) 🚀
+
+1. **Enable WinRM and configure firewall rules:**
+   Run the following commands in PowerShell as Administrator to enable WinRM and configure firewall rules for WinRM:
+
+   ```powershell
+   # Enable WinRM (Windows Remote Management)
+   Enable-PSRemoting -Force
+
+   # Configure firewall rule for WinRM HTTP (port 5985)
+   New-NetFirewallRule -Name "WinRM-HTTP-In-TCP" -DisplayName "Windows Remote Management (HTTP-In)" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5985
+   ```
+
+   If you use WinRM with encryption (HTTPS), also configure a firewall rule for WinRM HTTPS (port 5986):
+
+   ```powershell
+   # Configure firewall rule for WinRM HTTPS (port 5986)
+   New-NetFirewallRule -Name "WinRM-HTTPS-In-TCP" -DisplayName "Windows Remote Management (HTTPS-In)" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5986
+   ```
+
+2. **Verify WinRM status:**
+   After running the commands, verify the current status of WinRM using the following PowerShell commands:
+
+   ```powershell
+   # Check WinRM service status
+   Get-Service WinRM
+
+   # Check WinRM configuration
+   Get-WSManInstance WinRM/Config/WinRS -ComputerName localhost
+   ```
+   
 ## Notes ℹ️
 
 - Ensure all PowerShell commands are run as Administrator.
