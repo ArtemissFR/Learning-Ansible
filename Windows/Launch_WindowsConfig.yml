@@ -1,6 +1,5 @@
 ---
 - hosts: Target
-  become: yes
 
   roles:
     - Windows_Config
