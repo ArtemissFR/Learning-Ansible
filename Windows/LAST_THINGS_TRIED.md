@@ -23,6 +23,7 @@ Téléchargez le script [configure-ansibletarget.ps1](https://gist.github.com/tr
 
 ```powershell
 Set-ExecutionPolicy Unrestricted
+
 powershell.exe ./configure-ansibletarget.ps1
 ```
 
@@ -44,6 +45,7 @@ cd /etc/ansible/
 
 ```bash
 mkdir group_vars
+
 cd group_vars/
 ```
 
