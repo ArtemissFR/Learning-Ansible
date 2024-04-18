@@ -81,3 +81,13 @@ ansible windows -m win_ping --ask-vault-pass
 N'oubliez pas de remplacer `[user]` et `[password]` par vos informations d'identification Windows appropriées dans le fichier `windows.yml`.
 
 Ces étapes devraient vous aider à configurer votre environnement Ansible pour gérer à la fois des machines Windows et Linux de manière efficace. N'hésitez pas à ajuster les détails en fonction de votre configuration spécifique et des exigences de sécurité de votre environnement.
+
+# ERREUR :
+
+```powershell
+10.1.2.204 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "basic: HTTPSConnectionPool(host='10.1.2.204', port=5986): Max retries exceeded with url: /wsman (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7004c75c2b90>, 'Connection to 10.1.2.204 timed out. (connect timeout=30)'))",
+    "unreachable": true
+}
+```
