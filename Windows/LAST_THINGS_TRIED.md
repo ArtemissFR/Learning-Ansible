@@ -1,6 +1,3 @@
-Voici comment vous pourriez résumer ces étapes dans un fichier README.md pour expliquer comment configurer Ansible pour gérer des machines Windows et Linux :
-
----
 
 # Configuration d'Ansible pour Windows et Linux
 
