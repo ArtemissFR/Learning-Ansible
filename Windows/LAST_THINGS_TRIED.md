@@ -7,9 +7,13 @@
 
 ```powershell
 Enable-PSRemoting -Force
+
 Set-Item WSMan:\localhost\Client\TrustedHosts *
+
 Restart-Service winrm
+
 winrm set winrm/config/client/auth '@{Basic="true"}'
+
 winrm set winrm/config/service/auth '@{Basic="true"}'
 ```
 
