@@ -1,0 +1,7 @@
+
+
+- name: Download the DynFi Manager file
+  get_url:
+    url: "https://dynfi.com/scripts/DynFi_Manager_Installer.sh.tgz"
+    dest: "/tmp/DynFi_Manager_Installer.sh.tgz"  # Emplacement où le fichier sera téléchargé
+    mode: '0644'
