@@ -12,13 +12,13 @@ Before getting started with the installation, make sure that:
 
 1. Clone this Git repository to your local machine:
 
-   ```linux
+   ```cmd
    cd /etc/ansible/roles
    git clone https://github.com/ArtemissFR/Learning-Ansible
    ```
 
 2. Edit the Ansible inventory files to include details of your Ubuntu 16.04 remote machine.
-   ```bash
+   ```cmd
    nano /etc/ansible/roles/Learning-Ansible/DynFi/hosts.ini
    ```
 
