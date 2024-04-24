@@ -4,3 +4,8 @@
     dest: "{{ DOWNLOAD_LOCATION.user_input }}/"
     remote_src: yes
     mode: '0755'
+
+- name: Changer les permissions du script
+  file:
+    path: "{{ DOWNLOAD_LOCATION.user_input }}/DynFi_Manager_Installer.sh"
+    mode: '0755'
