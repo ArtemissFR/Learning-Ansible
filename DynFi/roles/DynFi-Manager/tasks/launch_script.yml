@@ -1,0 +1,7 @@
+- name: Exécuter le script DynFi Manager avec interaction
+  expect:
+    command: "/tmp/DynFi_Manager_Installer.sh"  # Chemin vers le script à exécuter
+    responses:
+      "Voulez-vous continuer ?": "yes\n"  # Exemple de réponse à un prompt
+      "Saisissez votre nom :": "ansible\n"  # Exemple de réponse à un autre prompt
+    echo: yes  # Permet d'afficher la sortie du script dans la console d'Ansible
