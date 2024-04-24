@@ -1,1 +1,3 @@
-
+  - name: INFORMATION
+    debug:
+       msg: "This role resume you all the change and action you have done !"
