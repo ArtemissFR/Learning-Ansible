@@ -1,6 +1,10 @@
 
 # Installing DynFi Manager with Ansible
 
+## Manual Step
+
+https://dynfi.com/thanks/dfm/ 
+
 ## Prerequisites
 
 Before getting started with the installation, make sure that:
