@@ -4,3 +4,4 @@
 
 
   - include_tasks: download_script.yml
+  - include_tasks: extract_script.yml
