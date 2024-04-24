@@ -24,6 +24,6 @@ Before getting started with the installation, make sure that:
 
 3. Run the Ansible playbook to install DynFi Manager:
 
-   ```bash
+   ```cmd
    ansible-playbook Launch_DynFi.yml
    ```
