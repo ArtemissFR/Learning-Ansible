@@ -12,7 +12,7 @@ Before getting started with the installation, make sure that:
 
 1. Clone this Git repository to your local machine:
 
-   ```bash
+   ```cmd
    cd /etc/ansible/roles
    git clone https://github.com/ArtemissFR/Learning-Ansible
    ```
