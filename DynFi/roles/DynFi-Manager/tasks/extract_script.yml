@@ -5,7 +5,7 @@
     remote_src: yes
     mode: '0755'
 
-- name: Changer les permissions du script
+- name: Change the permissions of the script
   file:
     path: "{{ DOWNLOAD_LOCATION.user_input }}/DynFi_Manager_Installer.sh"
     mode: '0755'
