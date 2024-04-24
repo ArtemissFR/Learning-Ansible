@@ -4,4 +4,4 @@
     responses:
       "Voulez-vous continuer ?": "yes\n"  # Exemple de réponse à un prompt
       "Saisissez votre nom :": "ansible\n"  # Exemple de réponse à un autre prompt
-    echo: yes  # Permet d'afficher la sortie du script dans la console d'Ansible
+    echo: yes
