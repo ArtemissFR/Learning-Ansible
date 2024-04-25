@@ -2,6 +2,6 @@
   expect:
     command: "{{ DOWNLOAD_LOCATION.user_input }}/DynFi_Manager_Installer.sh"
     responses:
-      "Voulez-vous continuer ?": "yes\n"  # Exemple de réponse à un prompt
-      "Saisissez votre nom :": "ansible\n"  # Exemple de réponse à un autre prompt
+      "Proceed with the installation?": "yes\n"
+      "Do you want to install MongoDB locally (recommended)?": "yes\n"
     echo: yes
