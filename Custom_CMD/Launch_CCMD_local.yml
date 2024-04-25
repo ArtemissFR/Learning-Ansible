@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+
+  roles:
+    - Packages_Install
+    - Apply_Configuration
