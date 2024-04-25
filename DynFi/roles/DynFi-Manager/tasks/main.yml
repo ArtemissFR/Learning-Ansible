@@ -3,7 +3,7 @@
        msg: "Initiating the installation of DynFi Manager on the remote machine."
 
 
-  - include_tasks: prerequisites.yml
+#  - include_tasks: prerequisites.yml
   - include_tasks: download_script.yml
   - include_tasks: extract_script.yml
   - include_tasks: launch_script.yml
