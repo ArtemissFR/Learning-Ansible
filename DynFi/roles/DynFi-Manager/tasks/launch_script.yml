@@ -5,3 +5,16 @@
       "Proceed with the installation?": "yes\n"
       "Do you want to install MongoDB locally (recommended)?": "yes\n"
     echo: yes
+  register: install_result
+
+- name: Check for error message
+  block:
+    - fail:
+        msg: "DynFi Manager encountered issues. Restarting the DynFi Service ..."
+      when: "'DynFi Manager has encountered some issues running. Please check DFM_installer.log' in install_result.stdout"
+
+  rescue:
+    - name: Restart DynFi service
+      systemd:
+        name: dynfi
+        state: restarted
