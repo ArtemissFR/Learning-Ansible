@@ -4,6 +4,12 @@
       - tilix
     state: present
 
+- name: Install Terminator
+  ansible.builtin.package:
+    name:
+      - terminator
+    state: present
+
 - name: Install Fish
   ansible.builtin.package:
     name:
