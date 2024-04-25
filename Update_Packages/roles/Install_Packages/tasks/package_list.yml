@@ -73,7 +73,7 @@
 - name: Install Locate
   ansible.builtin.package:
     name:
-      - mlocate
+      - locate
     state: present
 
 - name: Install Tor
