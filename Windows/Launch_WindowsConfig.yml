@@ -1,5 +1,6 @@
 ---
 - hosts: Target
+  connection: winrm
 
   roles:
     - Windows_Config
