@@ -4,6 +4,18 @@
       - nmap
     state: present
 
+- name: Install TCPDump
+  ansible.builtin.package:
+    name:
+      - tcpdump
+    state: present
+
+- name: Install Vim
+  ansible.builtin.package:
+    name:
+      - vim
+    state: present
+
 - name: Install Xrdp
   ansible.builtin.package:
     name:
