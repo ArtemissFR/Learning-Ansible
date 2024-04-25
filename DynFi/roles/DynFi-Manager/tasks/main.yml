@@ -2,6 +2,11 @@
     debug:
       msg: "Initiating the installation of DynFi Manager on the remote machine."
 
-  - include_tasks: download_script.yml
-  - include_tasks: extract_script.yml
-  - include_tasks: launch_script.yml
+  - name: Include download_script.yml
+    include_tasks: download_script.yml
+
+  - name: Include extract_script.yml
+    include_tasks: extract_script.yml
+
+  - name: Include launch_script.yml
+    include_tasks: launch_script.yml
