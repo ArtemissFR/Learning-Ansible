@@ -53,7 +53,7 @@ Avant de commencer, assurez-vous que PowerShell est exécuté en tant qu'adminis
     ssh username@ip
     ```
 
-## Bonus
+### Bonus
 
 Si vous souhaitez désinstaller les services SSH ultérieurement, vous pouvez le faire en suivant ces étapes :
 
@@ -69,7 +69,24 @@ Si vous souhaitez désinstaller les services SSH ultérieurement, vous pouvez le
     Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
     ```
 
-## Source
+### Source
 
 Ce guide est basé sur la documentation officielle de Microsoft pour l'installation et la configuration initiale d'OpenSSH sur Windows. Vous pouvez trouver plus d'informations sur [le site de Microsoft](https://learn.microsoft.com/fr-fr/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell).
 
+## Lancer le script de configuration Windows pour Ansible
+
+1. Télécharger le script depuis le site officiel ou utiliser celui donner dans le playbook :
+
+    **Site officiel** : https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html#winrm-setup
+
+2. (Optionnel) Pour ne pas avoir de contrainte pour lancer le script :
+
+    ```powershell
+   Set-ExecutionPolicy Unrestricted
+    ```
+
+3. Lancer le script :
+
+    ```powershell
+    .\ConfigureRemotingForAnsible.ps1
+    ```
