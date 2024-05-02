@@ -1,0 +1,8 @@
+- name: Vérifier la connectivité
+  win_ping:
+
+- name: Afficher les informations système
+  win_command: systeminfo
+
+- name: Vérifier la version de PowerShell
+  win_shell: $PSVersionTable.PSVersion

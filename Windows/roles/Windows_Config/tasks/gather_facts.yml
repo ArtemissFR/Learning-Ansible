@@ -1,2 +1,0 @@
-- name: run the setup facts
-  ansible.builtin.setup:
