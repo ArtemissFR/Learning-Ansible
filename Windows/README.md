@@ -1,8 +1,6 @@
-# Activation du service SSH sur Windows
+# Ansible X Windows
 
-Ce guide détaille les étapes nécessaires pour activer le service SSH sur un système Windows à l'aide de PowerShell.
-
-## Prérequis
+## Prérequis : Activation du service SSH sur Windows
 
 Avant de commencer, assurez-vous que PowerShell est exécuté en tant qu'administrateur.
 
