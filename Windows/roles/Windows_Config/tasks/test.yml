@@ -3,6 +3,8 @@
 
 - name: Afficher les informations système
   win_command: systeminfo
+  register: systeminfo_result
 
 - name: Vérifier la version de PowerShell
   win_shell: $PSVersionTable.PSVersion
+  register: psversion_result
