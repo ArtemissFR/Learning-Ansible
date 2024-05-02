@@ -8,3 +8,11 @@
 - name: Vérifier la version de PowerShell
   win_shell: $PSVersionTable.PSVersion
   register: psversion_result
+
+- name: INFO SYSTEM
+  debug:
+      var: systeminfo_result
+
+- name: INFO PS VERSION
+  debug:
+      var: psversion_result
