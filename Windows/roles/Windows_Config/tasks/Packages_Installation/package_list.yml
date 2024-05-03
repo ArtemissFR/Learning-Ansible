@@ -4,7 +4,9 @@
     name: "{{ WEB_BROWSER_CHOICE.user_input }}"
     state: present
 
-
+- name: INFORMATION
+  debug:
+      msg: "Installing some usefull packages..."
 
 - name: Install Zzip
   win_chocolatey:
