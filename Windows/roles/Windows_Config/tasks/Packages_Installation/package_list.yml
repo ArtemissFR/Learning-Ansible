@@ -12,26 +12,31 @@
   win_chocolatey:
     name: 7zip
     state: present
+  when: 7ZIP_CHOICE.user_input | bool
 
 - name: Install Putty
   win_chocolatey:
     name: putty
     state: present
+  when: PUTTY_CHOICE.user_input | bool
 
 - name: Install VScode
   win_chocolatey:
     name: vscode
     state: present
+  when: VSCODE_CHOICE.user_input | bool
 
 - name: Install Malwarebytes
   win_chocolatey:
     name: malwarebytes
     state: present
+  when: MALWAREBYTES_CHOICE.user_input | bool
 
 - name: Install VLC media player 
   win_chocolatey:
     name: vlc
     state: present
+  when: VLC_CHOICE.user_input | bool
 
 - name: Install Audacity
   win_chocolatey:
