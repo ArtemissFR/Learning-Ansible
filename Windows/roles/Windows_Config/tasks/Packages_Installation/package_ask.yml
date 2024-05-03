@@ -1,9 +1,34 @@
-- name: Ask user for Web Browser choice
+- name: PACKAGE
   pause:
-    prompt: "Which search engine would you like to install? (googlechrome/firefox/opera)"
+    prompt: "[???] Which search engine would you like to install? (googlechrome/firefox/opera)"
   register: WEB_BROWSER_CHOICE
 
-- name: BASICS
+- name: PACKAGE
   pause:
-    prompt: "[???] Would you like to customise the basic parameters ? (yes/no)"
-  register: BASICS_CHOICE
+    prompt: "[???] Would you like to install 7Zip ? (yes/no)"
+  register: 7ZIP_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install Putty ? (yes/no)"
+  register: PUTTY_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install VSCode ? (yes/no)"
+  register: VSCODE_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install Malwarebytes ? (yes/no)"
+  register: MALWAREBYTES_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install VLC ? (yes/no)"
+  register: VLC_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install Audacity ? (yes/no)"
+  register: AUDACITY_CHOICE
