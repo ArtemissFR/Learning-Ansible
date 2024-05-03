@@ -1,7 +1,7 @@
 - name: Verify connection
   win_ping:
 
-- name: Run the setup facts
+- name: Gather system information
   ansible.builtin.setup:
   register: setup_facts
 
@@ -9,7 +9,7 @@
   ansible.windows.win_service_info:
   register: service_info
 
-- name: Get info system
+- name: Run systeminfo command
   win_command: systeminfo
   register: system_info
 
@@ -17,10 +17,10 @@
   debug:
       var: setup_facts
 
-- name: Show service info
+- name: Show service information
   debug:
       var: service_info
 
-- name: Show service info
+- name: Show system information
   debug:
       var: system_info
