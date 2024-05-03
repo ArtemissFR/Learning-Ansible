@@ -25,7 +25,7 @@
 
 - name: PACKAGE
   pause:
-    prompt: "[???] Would you like to install VLC ? (yes/no)"
+    prompt: "[???] Would you like to install VLC media player  ? (yes/no)"
   register: VLC_CHOICE
 
 - name: PACKAGE
