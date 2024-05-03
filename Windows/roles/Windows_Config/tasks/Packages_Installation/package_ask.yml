@@ -2,3 +2,8 @@
   pause:
     prompt: "Which search engine would you like to install? (googlechrome/firefox/opera)"
   register: WEB_BROWSER_CHOICE
+
+- name: BASICS
+  pause:
+    prompt: "[???] Would you like to customise the basic parameters ? (yes/no)"
+  register: BASICS_CHOICE
