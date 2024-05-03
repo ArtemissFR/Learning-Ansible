@@ -1,3 +1,6 @@
+- name: Verify connection
+  win_ping:
+
 - name: Run the setup facts
   ansible.builtin.setup:
   register: setup_facts
