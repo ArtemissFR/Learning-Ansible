@@ -6,7 +6,7 @@
 - name: PACKAGE
   pause:
     prompt: "[???] Would you like to install 7Zip ? (yes/no)"
-  register: 7ZIP_CHOICE
+  register: ZZIP_CHOICE
 
 - name: PACKAGE
   pause:
