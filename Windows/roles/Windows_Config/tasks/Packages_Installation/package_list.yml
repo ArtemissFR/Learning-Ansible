@@ -1,7 +1,7 @@
 
-- name: Install Search Engine via Chocolatey
+- name: Install Web Browser via Chocolatey
   win_chocolatey:
-    name: "{{ search_engine }}"
+    name: "{{  }}"
     state: present
 
 - name: Install packages via Chocolatey
