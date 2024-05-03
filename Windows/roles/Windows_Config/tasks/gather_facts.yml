@@ -9,6 +9,10 @@
   ansible.windows.win_service_info:
   register: service_info
 
+- name: Get info system
+  win_command: systeminfo
+  register: system_info
+
 - name: Show setup facts
   debug:
       var: setup_facts
@@ -16,3 +20,7 @@
 - name: Show service info
   debug:
       var: service_info
+
+- name: Show service info
+  debug:
+      var: system_info
