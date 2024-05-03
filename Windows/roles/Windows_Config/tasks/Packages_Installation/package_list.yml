@@ -42,3 +42,10 @@
   win_chocolatey:
     name: audacity
     state: present
+  when: AUDACITY_CHOICE.user_input | bool
+
+- name: Install Notepad++
+  win_chocolatey:
+    name: notepadplusplus
+    state: present
+  when: NOTEPADPLUSPLUS_CHOICE.user_input | bool
