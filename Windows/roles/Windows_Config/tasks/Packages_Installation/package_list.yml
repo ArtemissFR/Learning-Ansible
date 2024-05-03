@@ -1,13 +1,12 @@
-
+- name: INFORMATION
+  debug:
+      msg: "Installing packages..."
+      
 - name: Install Web Browser via Chocolatey
   win_chocolatey:
     name: "{{ WEB_BROWSER_CHOICE.user_input }}"
     state: present
   when: WEB_BROWSER_CHOICE is defined and WEB_BROWSER_CHOICE.user_input in ["firefox", "googlechrome", "opera"]
-
-- name: INFORMATION
-  debug:
-      msg: "Installing some usefull packages..."
 
 - name: Install Zzip
   win_chocolatey:
