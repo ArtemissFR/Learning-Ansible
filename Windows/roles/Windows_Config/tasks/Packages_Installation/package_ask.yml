@@ -32,3 +32,8 @@
   pause:
     prompt: "[???] Would you like to install Audacity ? (yes/no)"
   register: AUDACITY_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install Notepad++  ? (yes/no)"
+  register: NOTEPADPLUSPLUS_CHOICE
