@@ -1,7 +1,7 @@
 
 - name: Install Web Browser via Chocolatey
   win_chocolatey:
-    name: "{{  }}"
+    name: "{{ WEB_BROWSER_CHOICE.user_input }}"
     state: present
 
 - name: Install packages via Chocolatey
