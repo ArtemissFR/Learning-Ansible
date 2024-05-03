@@ -1,1 +1,10 @@
-
+- name: INFORMATION
+  debug:
+      msg: "Installing packages..."
+      
+- name: Install Web Browser
+  ansible.windows.win_package:
+    path: 
+    product_id: '{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}'
+    arguments: /install /passive /norestart
+  when: WEB_BROWSER_CHOICE is defined and WEB_BROWSER_CHOICE.user_input in ["firefox", "googlechrome", "opera"]
