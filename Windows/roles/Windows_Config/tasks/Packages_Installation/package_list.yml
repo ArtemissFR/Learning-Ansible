@@ -12,7 +12,7 @@
   ansible.windows.win_package:
     name: 7zip
     state: present
-  when: 7ZIP_CHOICE.user_input | bool
+  when: ZZIP_CHOICE.user_input | bool
 
 - name: Install Putty
   ansible.windows.win_package:
