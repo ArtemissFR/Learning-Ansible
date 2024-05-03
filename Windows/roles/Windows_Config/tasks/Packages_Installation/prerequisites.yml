@@ -7,3 +7,8 @@
   win_command: powershell.exe -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
   when: choco_version.rc != 0
 
+- name: Update Chocolatey if already installed
+  win_chocolatey:
+    name: chocolatey
+    state: latest
+  when: choco_version.rc == 0
