@@ -1,1 +1,4 @@
-
+- name: Ask user for search engine choice
+  pause:
+    prompt: "Which search engine would you like to install? (googlechrome/firefox/opera)"
+  register: SEARCH_ENGINE_CHOICE
