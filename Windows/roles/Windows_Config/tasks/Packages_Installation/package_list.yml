@@ -7,4 +7,4 @@
     path: https://www.7-zip.org/a/7z2404-x64.exe
     product_id: Z-zip
     arguments: /install /passive /norestart
-  when: WEB_BROWSER_CHOICE is defined and WEB_BROWSER_CHOICE.user_input in ["firefox", "googlechrome", "opera"]
+  when: ZZIP_CHOICE.user_input | bool
