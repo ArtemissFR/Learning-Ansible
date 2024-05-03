@@ -4,12 +4,34 @@
     name: "{{ WEB_BROWSER_CHOICE.user_input }}"
     state: present
 
-- name: Install packages via Chocolatey
+
+
+- name: Install Zzip
   win_chocolatey:
-    name: "{{ item }}"
+    name: 7zip
     state: present
-  loop:
-    - googlechrome
-    - 7zip
-    - git
-    # Add other packages you want to install
+
+- name: Install Putty
+  win_chocolatey:
+    name: putty
+    state: present
+
+- name: Install VScode
+  win_chocolatey:
+    name: vscode
+    state: present
+
+- name: Install Malwarebytes
+  win_chocolatey:
+    name: malwarebytes
+    state: present
+
+- name: Install VLC media player 
+  win_chocolatey:
+    name: vlc
+    state: present
+
+- name: Install Audacity
+  win_chocolatey:
+    name: audacity
+    state: present
