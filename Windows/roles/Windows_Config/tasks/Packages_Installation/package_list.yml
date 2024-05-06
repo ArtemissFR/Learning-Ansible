@@ -2,10 +2,10 @@
   debug:
       msg: "Installing packages..."
       
-- name: Install Visual C thingy with list of arguments instead of a string
+- name: Install 7Zip
   ansible.windows.win_package:
-    path: http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe
-    product_id: '{CF2BEA3C-26EA-32F8-AA9B-331F7E34BA97}'
+    path: https://www.7-zip.org/a/7z2404-x64.exe
+    product_id: '7-Zip'
     arguments:
     - /install
     - /passive
