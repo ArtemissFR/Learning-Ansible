@@ -2,11 +2,14 @@
   debug:
       msg: "Starting to update..."
 
+#-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
 - name: Create directory Updates structure
   ansible.windows.win_file:
     path: C:\Updates
     state: directory
+#-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
 
+#-----------------------------#UPDATES-SEARCH#-----------------------------#
 - name: Search-only, return list of found updates (if any), log to C:\Updates\latest_updates_result.txt
   ansible.windows.win_updates:
     state: searched
@@ -16,7 +19,9 @@
 - name: Show list of found updates
   debug:
       var: list_found_updates
+#-----------------------------#UPDATES-SEARCH#-----------------------------#
 
+#-----------------------------#UPDATES-INSTALLATION#-----------------------------#
 - name: Install all updates
   ansible.windows.win_updates:
     category_names: '*'
@@ -26,3 +31,4 @@
 - name: Show result of installation
   debug:
       var: installation_updates
+#-----------------------------#UPDATES-INSTALLATION#-----------------------------#
