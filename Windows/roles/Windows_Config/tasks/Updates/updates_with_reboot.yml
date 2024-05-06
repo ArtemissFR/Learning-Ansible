@@ -1,4 +1,29 @@
-- name: Set a server alive interval during update stage for the ssh connection plugin
+
+- name: INFORMATION
+  debug:
+      msg: "Starting to update..."
+
+#-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
+- name: Create directory Updates structure
+  ansible.windows.win_file:
+    path: C:\Updates
+    state: directory
+#-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
+
+#-----------------------------#UPDATES-SEARCH#-----------------------------#
+- name: Search-only, return list of found updates (if any), log to C:\Updates\latest_updates_result.txt
+  ansible.windows.win_updates:
+    state: searched
+    log_path: C:\Updates\latest_updates_result.txt
+  register: list_found_updates
+
+- name: Show list of found updates
+  debug:
+      var: list_found_updates.stdout_lines
+#-----------------------------#UPDATES-SEARCH#-----------------------------#
+
+#-----------------------------#UPDATES-INSTALLATION#-----------------------------#
+- name: Install all updates with reboot
   ansible.windows.win_updates:
     category_names: '*'
     reboot: true
@@ -8,3 +33,9 @@
     # value is applied for this connection instead of through the cached
     # connection.
     ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=30
+  register: installation_updates
+  
+- name: Show result of installation
+  debug:
+      var: installation_updates
+#-----------------------------#UPDATES-INSTALLATION#-----------------------------#
