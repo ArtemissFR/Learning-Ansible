@@ -1,3 +1,7 @@
+- name: INFORMATION
+  debug:
+      msg: "Starting to update..."
+
 - name: Search-only, return list of found updates (if any), log to C:\ansible_wu.txt
   ansible.windows.win_updates:
     state: searched
