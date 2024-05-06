@@ -25,6 +25,10 @@
   debug:
       var: system_info.stdout_lines
 
-- name: Extraire le nom du système d'exploitation
+- name: Extract OS name
+  set_fact:
+    os_name: "{{ system_info.stdout_lines[2] | regex_replace('^Nom du système d’exploitation: +', '') }}"
+
+- name: Show OS NAME
   debug:
-    msg: "{{ system_info.stdout_lines | select('regex_search', '^Nom du système d’exploitation: (.+)$') | map('regex_replace', '^Nom du système d’exploitation: (.+)$', '\\1') | list }}"
+      var: os_name
