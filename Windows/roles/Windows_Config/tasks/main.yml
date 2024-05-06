@@ -3,9 +3,19 @@
 #-----------------------------#FACTS#-----------------------------#
 
 #-----------------------------#UPDATES#-----------------------------#
+    - name: UPDATES
+      pause:
+        prompt: "[???] Would you like to updates windows ? (yes/no)"
+      register: UPDATES_CHOICE
+      
     - include_tasks: Updates/main.yml
 #-----------------------------#UPDATES#-----------------------------#
 
 #-----------------------------#PACKAGES#-----------------------------#
+    - name: PACKAGE
+      pause:
+        prompt: "[???] Would you like to install some packages ? (yes/no)"
+      register: PACKAGES_CHOICE
+
     - include_tasks: Packages_Installation/main.yml
 #-----------------------------#PACKAGES#-----------------------------#
