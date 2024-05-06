@@ -21,3 +21,8 @@
   ansible.windows.win_updates:
     category_names: '*'
     reboot: false
+  register: installation_updates
+
+- name: Show result of installation
+  debug:
+      var: installation_updates
