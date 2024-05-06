@@ -3,6 +3,11 @@
 - name: INFORMATION
   debug:
       msg: "Installing packages..."
+
+- name: Install Web Browser
+  win_chocolatey:
+    name: 7zip
+  when: ZZIP_CHOICE.user_input | bool
       
 - name: Install Z-zip
   win_chocolatey:
