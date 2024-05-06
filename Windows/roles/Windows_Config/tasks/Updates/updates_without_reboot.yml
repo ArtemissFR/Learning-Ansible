@@ -36,4 +36,5 @@
 - name: Show result of installation
   debug:
       var: installation_updates.msg
+  when: installation_updates | failed
 #-----------------------------#UPDATES-INSTALLATION#-----------------------------#
