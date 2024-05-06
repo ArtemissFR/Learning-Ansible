@@ -7,7 +7,7 @@
     path: C:\Updates
     state: directory
 
-- name: Search-only, return list of found updates (if any), log to C:\ansible_wu.txt
+- name: Search-only, return list of found updates (if any), log to C:\Updates\latest_updates_result.txt
   ansible.windows.win_updates:
     state: searched
     log_path: C:\Updates\latest_updates_result.txt
