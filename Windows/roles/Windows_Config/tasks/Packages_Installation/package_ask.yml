@@ -30,6 +30,11 @@
 
 - name: PACKAGE
   pause:
+    prompt: "[???] Would you like to install CCleaner ? (yes/no)"
+  register: CCLEANER_CHOICE
+
+- name: PACKAGE
+  pause:
     prompt: "[???] Would you like to install VLC media player  ? (yes/no)"
   register: VLC_CHOICE
 
