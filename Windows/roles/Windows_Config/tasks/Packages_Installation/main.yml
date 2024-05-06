@@ -1,8 +1,9 @@
 #-----------------------------#FACTS#-----------------------------#
-#    - include_tasks: prerequisites.yml
+    - include_tasks: prerequisites.yml
 #-----------------------------#FACTS#-----------------------------#
 
 #-----------------------------#PACKAGES#-----------------------------#
+    - include_tasks: prerequisites.yml
     - include_tasks: package_ask.yml
     - include_tasks: package_list.yml
 #-----------------------------#PACKAGES#-----------------------------#
