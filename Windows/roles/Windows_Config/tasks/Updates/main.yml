@@ -2,6 +2,11 @@
   debug:
       msg: "Starting to update..."
 
+- name: Create directory Updates structure
+  ansible.windows.win_file:
+    path: C:\Updates
+    state: directory
+
 - name: Search-only, return list of found updates (if any), log to C:\ansible_wu.txt
   ansible.windows.win_updates:
     state: searched
