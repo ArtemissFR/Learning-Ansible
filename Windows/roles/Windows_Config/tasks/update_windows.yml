@@ -1,8 +1,0 @@
-- name: Search and download Windows updates without installing them
-  ansible.windows.win_updates:
-    state: downloaded
-
-- name: Install all updates 
-  ansible.windows.win_updates:
-    category_names: '*'
-    reboot: false
