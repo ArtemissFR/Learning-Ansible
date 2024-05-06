@@ -15,12 +15,16 @@
 
 - name: Show setup facts
   debug:
-      var: setup_facts.stdout_lines
+      var: setup_facts
 
 - name: Show service information
   debug:
-      var: service_info.stdout_lines
+      var: service_info
 
 - name: Show system information
   debug:
       var: system_info.stdout_lines
+
+- name: Extraire le nom du système d'exploitation
+  debug:
+    msg: "{{ system_info.stdout_lines | select('regex_search', '^Nom du système d’exploitation: (.+)$') | map('regex_replace', '^Nom du système d’exploitation: (.+)$', '\\1') | list }}"
