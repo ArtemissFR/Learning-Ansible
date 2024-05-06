@@ -27,6 +27,7 @@
   ansible.windows.win_updates:
     category_names: '*'
     reboot: true
+    reboot_timeout: 3600
   vars:
     # This can be set in a few ways, see the ssh connection plugin for more
     # information. ControlMaster should be disabled to ensure the new timeout
