@@ -32,7 +32,7 @@
     # information. ControlMaster should be disabled to ensure the new timeout
     # value is applied for this connection instead of through the cached
     # connection.
-    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=30
+    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=60
   register: installation_updates
   
 - name: Show result of installation
