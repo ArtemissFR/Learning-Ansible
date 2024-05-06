@@ -16,3 +16,8 @@
 - name: Show list of found updates
   debug:
       var: list_found_updates
+
+- name: Install all updates
+  ansible.windows.win_updates:
+    category_names: '*'
+    reboot: false
