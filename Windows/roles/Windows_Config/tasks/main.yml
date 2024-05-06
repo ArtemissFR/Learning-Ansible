@@ -9,6 +9,7 @@
       register: UPDATES_CHOICE
       
     - include_tasks: Updates/main.yml
+      when: UPDATES_CHOICE.user_input | bool
 #-----------------------------#UPDATES#-----------------------------#
 
 #-----------------------------#PACKAGES#-----------------------------#
@@ -18,4 +19,5 @@
       register: PACKAGES_CHOICE
 
     - include_tasks: Packages_Installation/main.yml
+      when: PACKAGES_CHOICE.user_input | bool
 #-----------------------------#PACKAGES#-----------------------------#
