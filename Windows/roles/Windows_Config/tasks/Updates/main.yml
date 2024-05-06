@@ -6,4 +6,8 @@
   ansible.windows.win_updates:
     state: searched
     log_path: C:\Updates\latest_updates_result.txt
-  register:
+  register: list_found_updates
+
+- name: Show list of found updates
+  debug:
+      var: list_found_updates
