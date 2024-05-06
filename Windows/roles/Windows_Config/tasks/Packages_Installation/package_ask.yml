@@ -15,6 +15,11 @@
 
 - name: PACKAGE
   pause:
+    prompt: "[???] Would you like to install FileZilla ? (yes/no)"
+  register: FILEZILLA_CHOICE
+
+- name: PACKAGE
+  pause:
     prompt: "[???] Would you like to install Putty ? (yes/no)"
   register: PUTTY_CHOICE
 
