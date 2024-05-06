@@ -7,13 +7,6 @@
   ansible.windows.win_file:
     path: C:\Updates
     state: directory
-
-- name: Create a shortcut of the directory on the desktop
-  community.windows.win_shortcut:
-    directory: C:\
-    src: Updates
-    dest: Desktop\
-    state: present
 #-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
 
 #-----------------------------#UPDATES-SEARCH#-----------------------------#
@@ -21,12 +14,19 @@
   ansible.windows.win_updates:
     state: searched
     log_path: C:\Updates\latest_updates_result.txt
-  register: list_found_updates
+  register: list_found_updates.stdout_lines
 
 - name: Show list of found updates
   debug:
-      var: list_found_updates
+      var: list_found_updates.stdout_lines
 #-----------------------------#UPDATES-SEARCH#-----------------------------#
+
+- name: Create a shortcut of the document on the desktop
+  community.windows.win_shortcut:
+    directory: C:\Updates
+    src: latest_updates_result.txt
+    dest: Desktop\latest_updates_result.txt
+    state: present
 
 #-----------------------------#UPDATES-INSTALLATION#-----------------------------#
 - name: Install all updates
