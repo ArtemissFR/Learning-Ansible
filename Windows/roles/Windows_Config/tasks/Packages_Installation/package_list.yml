@@ -2,12 +2,16 @@
   debug:
       msg: "Installing packages..."
       
-- name: Install 7Zip
-  ansible.windows.win_package:
-    path: https://www.7-zip.org/a/7z2404-x64.exe
-    product_id: '7-Zip'
-    arguments:
-    - /install
-    - /passive
-    - /norestart
+- name: Ensure Chocolatey itself is installed, using community repo for the bootstrap
+  win_chocolatey:
+    name: chocolatey
   when: ZZIP_CHOICE.user_input | bool
+
+- name: Upgrade installed packages
+  win_chocolatey:
+    name: all
+    state: latest
+
+- name: Install notepadplusplus
+  win_chocolatey:
+    name: notepadplusplus
