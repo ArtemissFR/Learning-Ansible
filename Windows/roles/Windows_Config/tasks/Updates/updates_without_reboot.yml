@@ -4,7 +4,7 @@
 
 - name: INFORMATION - IMPORTANT
   debug:
-      msg: "Be aware that updating Windows without rebooting can lead to errors."
+      msg: "[!!!] Be aware that updating Windows without rebooting can lead to errors."
 
 #-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
 - name: Create directory Updates structure
