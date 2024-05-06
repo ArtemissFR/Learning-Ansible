@@ -4,6 +4,6 @@
       
 - name: Install notepadplusplus
   win_chocolatey:
-    name: notepadplusplus
+    name: 7zip
   when: ZZIP_CHOICE.user_input | bool
 
