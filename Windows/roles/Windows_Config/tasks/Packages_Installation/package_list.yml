@@ -2,16 +2,8 @@
   debug:
       msg: "Installing packages..."
       
-- name: Ensure Chocolatey itself is installed, using community repo for the bootstrap
-  win_chocolatey:
-    name: chocolatey
-  when: ZZIP_CHOICE.user_input | bool
-
-- name: Upgrade installed packages
-  win_chocolatey:
-    name: all
-    state: latest
-
 - name: Install notepadplusplus
   win_chocolatey:
     name: notepadplusplus
+  when: ZZIP_CHOICE.user_input | bool
+
