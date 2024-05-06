@@ -10,6 +10,11 @@
 
 - name: PACKAGE
   pause:
+    prompt: "[???] Would you like to install Winrar ? (yes/no)"
+  register: WINRAR_CHOICE
+
+- name: PACKAGE
+  pause:
     prompt: "[???] Would you like to install Putty ? (yes/no)"
   register: PUTTY_CHOICE
 
