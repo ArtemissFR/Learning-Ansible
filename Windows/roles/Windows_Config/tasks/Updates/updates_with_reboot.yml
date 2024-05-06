@@ -1,0 +1,10 @@
+- name: Set a server alive interval during update stage for the ssh connection plugin
+  ansible.windows.win_updates:
+    category_names: '*'
+    reboot: true
+  vars:
+    # This can be set in a few ways, see the ssh connection plugin for more
+    # information. ControlMaster should be disabled to ensure the new timeout
+    # value is applied for this connection instead of through the cached
+    # connection.
+    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=30
