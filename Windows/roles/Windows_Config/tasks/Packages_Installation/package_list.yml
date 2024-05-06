@@ -23,3 +23,23 @@
   win_chocolatey:
     name: vscode
   when: VSCODE_CHOICE.user_input | bool
+
+- name: Install Malwarebytes
+  win_chocolatey:
+    name: malwarebytes
+  when: MALWAREBYTES_CHOICE.user_input | bool
+
+- name: Install VLC Media Player
+  win_chocolatey:
+    name: vlc
+  when: VLC_CHOICE.user_input | bool
+
+- name: Install Audacity
+  win_chocolatey:
+    name: audacity
+  when: AUDACITY_CHOICE.user_input | bool
+
+- name: Install Notepad++
+  win_chocolatey:
+    name: notepadplusplus
+  when: NOTEPADPLUSPLUS_CHOICE.user_input | bool
