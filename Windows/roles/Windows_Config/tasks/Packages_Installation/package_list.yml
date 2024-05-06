@@ -44,6 +44,16 @@
     name: ccleaner
   when: CCLEANER_CHOICE.user_input | bool
 
+- name: Install Wireshark
+  win_chocolatey:
+    name: wireshark
+  when: WIRESHARK_CHOICE.user_input | bool
+
+- name: Install Keepass
+  win_chocolatey:
+    name: keepass
+  when: KEEPASS_CHOICE.user_input | bool
+
 - name: Install VLC Media Player
   win_chocolatey:
     name: vlc
