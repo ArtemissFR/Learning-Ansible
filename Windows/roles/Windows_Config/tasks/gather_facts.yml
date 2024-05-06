@@ -15,17 +15,11 @@
 
 - name: Show setup facts
   debug:
-      var: setup_facts
+      var: setup_facts.stdout_lines
 
 - name: Show service information
   debug:
-      var: service_info
-
-- name: Show system information
-  debug:
-      var: system_info
-
-####TEST
+      var: service_info.stdout_lines
 
 - name: Show system information
   debug:
