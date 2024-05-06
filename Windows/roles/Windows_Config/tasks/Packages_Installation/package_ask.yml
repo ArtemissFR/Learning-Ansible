@@ -40,6 +40,16 @@
 
 - name: PACKAGE
   pause:
+    prompt: "[???] Would you like to install Wireshark ? (yes/no)"
+  register: WIRESHARK_CHOICE
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Would you like to install Keepass ? (yes/no)"
+  register: KEEPASS_CHOICE
+
+- name: PACKAGE
+  pause:
     prompt: "[???] Would you like to install VLC media player  ? (yes/no)"
   register: VLC_CHOICE
 
