@@ -1,0 +1,10 @@
+    - name: UPDATES
+      pause:
+        prompt: "[???] Would you like to updates with reboot ? (yes/no)"
+      register: UPDATES_REBOOT_CHOICE
+      
+    - include_tasks: updates_with_reboot.yml
+      when: UPDATES_REBOOT_CHOICE.user_input | bool
+
+    - include_tasks: updates_without_reboot.yml
+      when: UPDATES_REBOOT_CHOICE.user_input == "no"
