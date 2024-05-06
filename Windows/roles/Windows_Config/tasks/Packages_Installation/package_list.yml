@@ -7,7 +7,7 @@
 - name: Install Web Browser
   win_chocolatey:
     name: {{ WEB_BROWSER_CHOICE.user_input }}
-  when: WEB_BROWSER_CHOICE.user_input | bool
+  when: WEB_BROWSER_CHOICE is defined
       
 - name: Install Z-zip
   win_chocolatey:
