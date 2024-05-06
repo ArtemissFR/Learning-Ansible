@@ -8,7 +8,7 @@
   win_chocolatey:
     name: "{{ WEB_BROWSER_CHOICE.user_input }}"
   when: WEB_BROWSER_CHOICE is defined and WEB_BROWSER_CHOICE.user_input in ["firefox", "googlechrome", "opera"]
-      
+
 - name: Install Z-zip
   win_chocolatey:
     name: 7zip
@@ -33,6 +33,11 @@
   win_chocolatey:
     name: malwarebytes
   when: MALWAREBYTES_CHOICE.user_input | bool
+
+- name: Install CCleaner
+  win_chocolatey:
+    name: ccleaner
+  when: CCLEANER_CHOICE.user_input | bool
 
 - name: Install VLC Media Player
   win_chocolatey:
