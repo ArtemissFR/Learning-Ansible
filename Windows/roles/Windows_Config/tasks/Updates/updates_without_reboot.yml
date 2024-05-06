@@ -26,20 +26,21 @@
 #-----------------------------#UPDATES-SEARCH#-----------------------------#
 
 #-----------------------------#UPDATES-INSTALLATION#-----------------------------#
-block:
-  - name: Install all updates
-    ansible.windows.win_updates:
-      category_names: '*'
-      reboot: false
-    register: installation_updates
-    ignore_errors: yes
-
-  - name: Show result of installation
-    debug:
-        var: installation_updates
-
-rescue:
-  - name: Show result of installation
-    debug:
-        var: installation_updates.msg
+- name: Updates without Reboot
+  block:
+    - name: Install all updates
+      ansible.windows.win_updates:
+        category_names: '*'
+        reboot: false
+      register: installation_updates
+      ignore_errors: yes
+  
+    - name: Show result of installation
+      debug:
+          var: installation_updates
+  
+  rescue:
+    - name: Show result of installation
+      debug:
+          var: installation_updates.msg
 #-----------------------------#UPDATES-INSTALLATION#-----------------------------#
