@@ -22,7 +22,7 @@
 
 - name: Show list of found updates
   debug:
-      var: list_found_updates.stdout_lines
+      var: list_found_updates
 #-----------------------------#UPDATES-SEARCH#-----------------------------#
 
 #-----------------------------#UPDATES-INSTALLATION#-----------------------------#
