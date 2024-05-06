@@ -7,6 +7,13 @@
   ansible.windows.win_file:
     path: C:\Updates
     state: directory
+
+- name: Create a shortcut of the directory on the desktop
+  community.windows.win_shortcut:
+    directory: C:\
+    src: Updates
+    dest: Desktop\
+    state: present
 #-----------------------------#DIRECTORY-UPDATES-SEARCH#-----------------------------#
 
 #-----------------------------#UPDATES-SEARCH#-----------------------------#
