@@ -21,15 +21,6 @@
       var: list_found_updates.stdout_lines
 #-----------------------------#UPDATES-SEARCH#-----------------------------#
 
-#-----------------------------#SHORTCUT-UPDATES-SEARCH#-----------------------------#
-- name: Create a shortcut of the document on the desktop
-  community.windows.win_shortcut:
-    directory: C:\Updates
-    src: latest_updates_result.txt
-    dest: Desktop\latest_updates_result.txt
-    state: present
-#-----------------------------#SHORTCUT-UPDATES-SEARCH#-----------------------------#
-
 #-----------------------------#UPDATES-INSTALLATION#-----------------------------#
 - name: Install all updates
   ansible.windows.win_updates:
