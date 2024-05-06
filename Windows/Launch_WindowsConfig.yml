@@ -2,6 +2,9 @@
 - hosts: Target
   connection: winrm
   gather_facts: no
+  become: yes
+  become_method: runas 
+  become_user: Administrateur
 
   roles:
     - Windows_Config
