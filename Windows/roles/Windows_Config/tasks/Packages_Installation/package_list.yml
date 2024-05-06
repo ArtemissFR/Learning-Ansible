@@ -19,6 +19,11 @@
     name: winrar
   when: WINRAR_CHOICE.user_input | bool
 
+- name: Install FileZilla
+  win_chocolatey:
+    name: filezilla
+  when: FILEZILLA_CHOICE.user_input | bool
+
 - name: Install Putty
   win_chocolatey:
     name: putty
