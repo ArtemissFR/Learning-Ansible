@@ -2,7 +2,6 @@
 - hosts: Target
   connection: winrm
   gather_facts: no
-  become: yes
 
   roles:
     - Windows_Config
