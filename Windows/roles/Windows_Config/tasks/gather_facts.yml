@@ -24,3 +24,9 @@
 - name: Show system information
   debug:
       var: system_info
+
+####TEST
+
+- name: Show system information
+  debug:
+      var: system_info.stdout_lines
