@@ -17,6 +17,6 @@
     - FS-SMB1
     state: present
 
-- name: Install Psexec
-  win_chocolatey:
-    name: psexec
+#- name: Install Psexec
+#  win_chocolatey:
+#    name: psexec
