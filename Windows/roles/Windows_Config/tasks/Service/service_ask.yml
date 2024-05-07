@@ -5,7 +5,7 @@
 
 - name: SERVICE
   pause:
-    prompt: "[???] What is the application path ? (ex : 'C:\Windows\System32\OpenSSH\sshd.exe')"
+    prompt: "[???] What is the application path ?"
   register: SERVICE_PATH_CHOICE
 
 - name: SERVICE
