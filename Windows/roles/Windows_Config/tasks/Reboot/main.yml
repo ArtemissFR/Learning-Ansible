@@ -1,10 +1,17 @@
-#-----------------------------#REBOOT#-----------------------------#
+#-----------------------------#REBOOT-INFORMATION#-----------------------------#
+    - name: INFORMATION - Classic Reboot
+      debug:
+          msg: "Starting to update..."
+#-----------------------------#REBOOT-INFORMATION#-----------------------------#
+
+#-----------------------------#REBOOT-ASK#-----------------------------#
     - name: UPDATES
       pause:
         prompt: "[???] Choose a type of reboot ? (classic/update/slow)"
       register: REBOOT_CHOICE
-#-----------------------------#REBOOT#-----------------------------#
+#-----------------------------#REBOOT-ASK#-----------------------------#
 
+#-----------------------------#REBOOT#-----------------------------#
     - name: Reboot Classic
       ansible.windows.win_reboot:
       when: REBOOT_CHOICE is defined and REBOOT_CHOICE.user_input in ["classic"]    
@@ -18,3 +25,4 @@
       ansible.windows.win_reboot:
         post_reboot_delay: 120
       when: REBOOT_CHOICE is defined and REBOOT_CHOICE.user_input in ["slow"]    
+#-----------------------------#REBOOT#-----------------------------#
