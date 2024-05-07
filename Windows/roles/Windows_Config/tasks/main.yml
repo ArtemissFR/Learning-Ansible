@@ -32,6 +32,16 @@
       when: PACKAGES_CHOICE.user_input | bool
 #-----------------------------#PACKAGES#-----------------------------#
 
+#-----------------------------#FEATURES#-----------------------------#
+    - name: FEATURES
+      pause:
+        prompt: "[???] Would you like to install features ? (yes/no)"
+      register: FEATURES_CHOICE
+
+    - include_tasks: Features/main.yml
+      when: FEATURES_CHOICE.user_input | bool
+#-----------------------------#FEATURES#-----------------------------#
+
 #-----------------------------#SERVICE#-----------------------------#
     - name: SERVICE
       pause:
