@@ -1,7 +1,12 @@
 - name: SERVICE
   pause:
-    prompt: "[???] Which service would you like to install ?"
+    prompt: "[???] Which service would you like to install ? (ex : OpenSSH)"
   register: SERVICE_NAME_CHOICE
+
+- name: SERVICE
+  pause:
+    prompt: "[???] What is the application path ? (ex : C:\Windows\System32\OpenSSH\sshd.exe)"
+  register: SERVICE_PATH_CHOICE
 
 - name: SERVICE
   pause:
