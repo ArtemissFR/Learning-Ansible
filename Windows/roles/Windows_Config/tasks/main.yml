@@ -15,7 +15,7 @@
 #-----------------------------#PACKAGES#-----------------------------#
     - name: PACKAGE
       pause:
-        prompt: "[???] Would you like to install some packages ? (yes/no)"
+        prompt: "[???] Would you like to install or update some packages ? (yes/no)"
       register: PACKAGES_CHOICE
 
     - include_tasks: Packages_Installation/main.yml
