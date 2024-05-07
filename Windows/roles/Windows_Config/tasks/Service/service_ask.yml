@@ -2,3 +2,13 @@
   pause:
     prompt: "[???] Which service would you like to install ?"
   register: SERVICE_NAME_CHOICE
+
+- name: SERVICE
+  pause:
+    prompt: "[???] In wich state would you like the service to be ?"
+  register: SERVICE_STATE_CHOICE
+
+- name: SERVICE
+  pause:
+    prompt: "[???] Would you like the service to start automatically ?"
+  register: SERVICE_STATE_AUTO_CHOICE
