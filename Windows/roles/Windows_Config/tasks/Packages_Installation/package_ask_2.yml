@@ -1,1 +1,4 @@
-
+- name: PACKAGE
+  pause:
+    prompt: "[???] Which package would you like to install ?"
+  register: PACKAGE_INSTALL_CHOICE
