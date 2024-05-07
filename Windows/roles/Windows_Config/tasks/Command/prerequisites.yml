@@ -11,6 +11,9 @@
       win_chocolatey:
         name: chocolatey
 
-- name: Install Python interpreter
-  win_chocolatey:
-    name: python311
+- name: Install SMB
+  ansible.windows.win_feature:
+    name:
+    - FS-SMB1
+    - FS-SMB2
+    state: present
