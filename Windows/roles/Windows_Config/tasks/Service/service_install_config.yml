@@ -3,7 +3,7 @@
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     state: present
 
-- name: Start service
+- name: Configure state of service
   ansible.builtin.service:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     state: "{{ SERVICE_STATE_CHOICE.user_input }}"
