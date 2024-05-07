@@ -14,4 +14,4 @@
   ansible.windows.win_service:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     start_mode: auto
-  when: SERVICE_NAME_CHOICE is defined and 
+  when: SERVICE_NAME_CHOICE is defined and SERVICE_STATE_AUTO_CHOICE.user_input | bool
