@@ -21,3 +21,13 @@
     - include_tasks: Packages_Installation/main.yml
       when: PACKAGES_CHOICE.user_input | bool
 #-----------------------------#PACKAGES#-----------------------------#
+
+#-----------------------------#REBOOT#-----------------------------#
+    - name: REBOOT
+      pause:
+        prompt: "[???] Do you want to do a reboot ? (yes/no)"
+      register: REBOOT_CHOICE
+
+    - include_tasks: Reboot/main.yml
+      when: REBOOT_CHOICE.user_input | bool
+#-----------------------------#REBOOT#-----------------------------#
