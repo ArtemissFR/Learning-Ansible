@@ -1,12 +1,7 @@
 - name: SERVICE
   pause:
-    prompt: "[???] Which service would you like to install ? (ex : OpenSSH)"
+    prompt: "[???] Which service would you like to configure? (ex : OpenSSH)"
   register: SERVICE_NAME_CHOICE
-
-- name: SERVICE
-  pause:
-    prompt: "[???] What is the application path ?"
-  register: SERVICE_PATH_CHOICE
 
 - name: SERVICE
   pause:
