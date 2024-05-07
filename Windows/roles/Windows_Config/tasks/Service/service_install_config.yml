@@ -2,13 +2,16 @@
   community.windows.win_nssm:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     state: present
+  when: SERVICE_NAME_CHOICE is defined
 
 - name: Configure state of service
   ansible.builtin.service:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     state: "{{ SERVICE_STATE_CHOICE.user_input }}"
+  when: SERVICE_NAME_CHOICE is defined and SERVICE_STATE_CHOICE is defined
 
 - name: Set service startup mode to auto
   ansible.windows.win_service:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     start_mode: auto
+  when: SERVICE_NAME_CHOICE is defined and 
