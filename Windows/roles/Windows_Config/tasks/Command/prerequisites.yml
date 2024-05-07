@@ -11,12 +11,6 @@
       win_chocolatey:
         name: chocolatey
 
-- name: Install SMB
-  ansible.windows.win_feature:
-    name:
-    - FS-SMB1
-    state: present
-
 #- name: Install Psexec
 #  win_chocolatey:
 #    name: psexec
