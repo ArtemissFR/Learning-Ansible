@@ -3,3 +3,9 @@
     executable: powershell.exe
     arguments: Write-Host Hello World
   register: COMMAND_RESULT
+
+- name: COMMAND
+  pause:
+    prompt: "[???] Would you like to run another command ?"
+  register: CMD_REASK
+
