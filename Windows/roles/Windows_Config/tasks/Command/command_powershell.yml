@@ -1,7 +1,7 @@
-- name: Run an executable and send data to the stdin for the executable
+- name: Run the command with Powershell
   ansible.windows.win_command: powershell.exe -
   args:
-    stdin: "Get-WindowsFeature -Name *"
+    stdin: "{{ CMD_EXEC.user_input }}"
   register: COMMAND_RESULT
 
 - name: Show command result
