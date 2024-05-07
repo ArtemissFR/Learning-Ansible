@@ -8,6 +8,9 @@
     - name: Reboot the host to complete the install
       ansible.windows.win_reboot:
         reboot_timeout: 3600
+    - name: Verify Chocolatey is installed
+      win_chocolatey:
+        name: chocolatey
 
 - name: Install NSSM
   win_chocolatey:
