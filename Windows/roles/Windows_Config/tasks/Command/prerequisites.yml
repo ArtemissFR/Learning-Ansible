@@ -14,5 +14,5 @@
 - name: Install SMB
   ansible.windows.win_feature:
     name:
-    - SMB
+    - FS-SMB1
     state: present
