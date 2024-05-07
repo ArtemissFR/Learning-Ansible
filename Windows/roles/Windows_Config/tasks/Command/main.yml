@@ -8,10 +8,4 @@
 
 #-----------------------------#COMMAND#-----------------------------#
     - include_tasks: command_powershell.yml
-      when: CMD_CHOICE is defined and CMD_CHOICE.user_input == "powershell"
-#-----------------------------#COMMAND#-----------------------------#
-
-#-----------------------------#COMMAND#-----------------------------#
-    - include_tasks: command_psexec.yml
-      when: CMD_CHOICE is defined and CMD_CHOICE.user_input == "psexec"
 #-----------------------------#COMMAND#-----------------------------#
