@@ -1,7 +1,7 @@
 - name: Ensure Chocolatey itself is installed, using community repo for the bootstrap
   win_chocolatey:
     name: chocolatey
-  when: PACKAGES_CHOICE.user_input | bool
+  when: PACKAGES_CHOICE.user_input == "no"
 
 - name: Install NSSM
   win_chocolatey:
