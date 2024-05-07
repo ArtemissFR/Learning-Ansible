@@ -7,7 +7,9 @@
     arguments: Write-Host Hello World
   register: COMMAND_RESULT
 
-
+- name: Show command result
+  debug:
+      var: COMMAND_RESULT
 
 - name: COMMAND
   pause:
