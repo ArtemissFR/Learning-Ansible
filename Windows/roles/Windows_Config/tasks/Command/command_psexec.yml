@@ -1,1 +1,3 @@
-
+- name: Verify Psexec is installed
+  win_chocolatey:
+    name: psexec
