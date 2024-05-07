@@ -1,4 +1,12 @@
+#- name: PACKAGE
+#  pause:
+#    prompt: "[???] Which package would you like to install ?"
+#  register: PACKAGE_INSTALL_CHOICE
+
 - name: PACKAGE
   pause:
-    prompt: "[???] Which package would you like to install ?"
+    prompt: "[???] Which package(s) would you like to install (separate multiple packages with a comma)?"
   register: PACKAGE_INSTALL_CHOICE
+
+- set_fact:
+    PACKAGE_LIST: "{{ PACKAGE_INSTALL_CHOICE.user_input.split(',') }}"
