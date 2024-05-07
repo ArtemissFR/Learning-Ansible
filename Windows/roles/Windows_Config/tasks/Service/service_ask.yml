@@ -1,1 +1,4 @@
-
+- name: SERVICE
+  pause:
+    prompt: "[???] Which service would you like to install ?"
+  register: SERVICE_NAME_CHOICE
