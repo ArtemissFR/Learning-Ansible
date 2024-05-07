@@ -17,6 +17,6 @@
     - FS-SMB1
     state: present
 
-- name: Install python interpreter
+- name: Install Psexec
   win_chocolatey:
-    name: python311
+    name: psexec
