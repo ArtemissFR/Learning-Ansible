@@ -7,3 +7,8 @@
   ansible.builtin.service:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
     state: started
+
+- name: Set service startup mode to auto
+  ansible.windows.win_service:
+    name: "{{ SERVICE_NAME_CHOICE.user_input }}"
+    start_mode: auto
