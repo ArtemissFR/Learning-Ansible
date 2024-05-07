@@ -1,7 +1,3 @@
-- name: COMMAND
-  pause:
-    prompt: "[???] Which type of cmd would you like to use ? (psexec/powershell)"
-  register: CMD_CHOICE
 
 - name: COMMAND
   pause:
