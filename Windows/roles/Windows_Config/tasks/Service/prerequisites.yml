@@ -7,6 +7,7 @@
   rescue:
     - name: Reboot the host to complete the install
       ansible.windows.win_reboot:
+        reboot_timeout: 3600
 
 - name: Install NSSM
   win_chocolatey:
