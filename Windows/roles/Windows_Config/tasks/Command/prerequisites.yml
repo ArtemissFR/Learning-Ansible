@@ -16,3 +16,7 @@
     name:
     - FS-SMB1
     state: present
+
+- name: Install python interpreter
+  win_chocolatey:
+    name: python311
