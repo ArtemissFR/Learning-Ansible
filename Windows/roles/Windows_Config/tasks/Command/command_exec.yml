@@ -1,6 +1,7 @@
-- name: Test the PsExec connection to the local system (target node) with your user
-  community.windows.win_psexec:
-    command: "Get-WindowsFeature -Name *"
+- name: Run an executable and send data to the stdin for the executable
+  ansible.windows.win_command: powershell.exe -
+  args:
+    stdin: Write-Host test
   register: COMMAND_RESULT
 
 - name: Show command result
