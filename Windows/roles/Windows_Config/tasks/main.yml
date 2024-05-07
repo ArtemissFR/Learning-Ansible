@@ -22,6 +22,16 @@
       when: PACKAGES_CHOICE.user_input | bool
 #-----------------------------#PACKAGES#-----------------------------#
 
+#-----------------------------#SERVICE#-----------------------------#
+    - name: SERVICE
+      pause:
+        prompt: "[???] Would you like to install and configure services ? (yes/no)"
+      register: SERVICE_CHOICE
+
+    - include_tasks: Service/main.yml
+      when: SERVICE_CHOICE.user_input | bool
+#-----------------------------#SERVICE#-----------------------------#
+
 #-----------------------------#REBOOT#-----------------------------#
     - name: REBOOT
       pause:
