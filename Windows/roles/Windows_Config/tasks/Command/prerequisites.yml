@@ -13,4 +13,4 @@
 
 - name: Install Python interpreter
   win_chocolatey:
-    name: python
+    name: python311
