@@ -1,6 +1,6 @@
 - name: Test the PsExec connection to the local system (target node) with your user
   community.windows.win_psexec:
-    command: whoami.exe
+    command: "Get-WindowsFeature -Name *"
   register: COMMAND_RESULT
 
 - name: Show command result
