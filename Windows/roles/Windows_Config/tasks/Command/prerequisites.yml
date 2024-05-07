@@ -1,3 +1,16 @@
+- name: CHOCOLATEY
+  block:
+    - name: Ensure Chocolatey itself is installed, using community repo for the bootstrap
+      win_chocolatey:
+        name: chocolatey
+  rescue:
+    - name: Reboot the host to complete the install
+      ansible.windows.win_reboot:
+        reboot_timeout: 3600
+    - name: Verify Chocolatey is installed
+      win_chocolatey:
+        name: chocolatey
+
 - name: Install Python interpreter
   win_chocolatey:
     name: python
