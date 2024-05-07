@@ -5,5 +5,5 @@
 
 - name: COMMAND
   pause:
-    prompt: "[???] Type you command )"
+    prompt: "[???] Type you command "
   register: CMD_EXEC
