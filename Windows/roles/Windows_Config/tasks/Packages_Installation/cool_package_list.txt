@@ -1,1 +1,31 @@
+Chocolatey Packages List
+(Package Name : Install name)
+
+Adobe Acrobat Reader : adobereader
+Google Chrome : googlechrome
+Mozilla Firefox : firefox
+Microsoft Edge : microsoft-edge
+Zoom Client for Meetings : zoom
+Notepad++ : notepadplusplus.install
+7-Zip : 7zip.install
+VLC media player : vlc
+Paint.NET : paint.net
+Malwarebytes : malwarebytes
+WinRAR : winrar
+CCleaner : ccleaner
+Visual Studio Code : vscode
+Skype : skype
+FileZilla : filezilla
+PuTTY : putty.install
+Mozilla Thunderbird : thunderbird
+Wireshark : wireshark
+Spotify : spotify
+Keepass : keepass
+Brave Browser : brave
+Audacity : audacity
+Opera : opera
+AnyDesk Exe : anydesk
+OpenVPN - Open Source SSL VPN Solution : openvpn
+Tor Browser : tor-browser
+Rufus : rufus
 
