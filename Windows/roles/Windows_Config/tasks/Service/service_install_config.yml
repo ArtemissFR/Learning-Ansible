@@ -1,1 +1,9 @@
+- name: Install the service
+  community.windows.win_nssm:
+    name: "{{ SERVICE_NAME_CHOICE.user_input }}"
+    state: present
 
+- name: Start service
+  ansible.builtin.service:
+    name: "{{ SERVICE_NAME_CHOICE.user_input }}"
+    state: started
