@@ -2,4 +2,6 @@
   win_chocolatey:
     name: chocolatey
 
-
+- name: Install NSSM
+  win_chocolatey:
+    name: nssm
