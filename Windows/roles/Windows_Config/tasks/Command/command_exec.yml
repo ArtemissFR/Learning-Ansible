@@ -1,8 +1,13 @@
 - name: Run a command
   community.windows.psexec:
+    hostname: 10.1.2.213
+    connection_username: Administrateur@10.1.2.213
+    connection_password: ansible-123
     executable: powershell.exe
     arguments: Write-Host Hello World
   register: COMMAND_RESULT
+
+
 
 - name: COMMAND
   pause:
