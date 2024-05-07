@@ -1,8 +1,3 @@
 - name: Ensure Chocolatey itself is installed, using community repo for the bootstrap
   win_chocolatey:
     name: chocolatey
-
-- name: Upgrade installed packages
-  win_chocolatey:
-    name: all
-    state: latest
