@@ -1,3 +1,7 @@
 - name: Verify Psexec is installed
   win_chocolatey:
     name: psexec
+
+- name: Run the command with Psexec
+  community.windows.win_psexec:
+    command: "Get-WindowsFeature -Name *"
