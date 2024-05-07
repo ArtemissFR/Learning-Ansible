@@ -7,5 +7,5 @@
 #-----------------------------#SERVICE-ASK#-----------------------------#
 
 #-----------------------------#SERVICE-INSTALL+CONFIG#-----------------------------#
-    - include_tasks: service_install_config.yml
+    - include_tasks: service_config.yml
 #-----------------------------#SERVICE-INSTALL+CONFIG#-----------------------------#
