@@ -1,8 +1,11 @@
+#-----------------------------#PACKAGES#-----------------------------#
+    - include_tasks: prerequisites.yml
+#-----------------------------#PACKAGES#-----------------------------#
 
 #-----------------------------#PACKAGES-PROMPT#-----------------------------#
     - name: PACKAGE
       pause:
-        prompt: "[???] Would you like to update packages or install new one ? (update/install)"
+        prompt: "[???] Would you like to update packages or install new one ? (update/install/both)"
       register: PACKAGE_TYPE_CHOICE
 #-----------------------------#PACKAGES-PROMPT#-----------------------------#
 
@@ -11,10 +14,24 @@
       pause:
         prompt: "[???] How would you like your installation to be? ? (interactive/customized)"
       register: PACKAGE_INSTALLATION_TYPE_CHOICE
+      when: PACKAGE_TYPE_CHOICE is defined and PACKAGE_TYPE_CHOICE.user_input in ["install", "both"]
 #-----------------------------#PACKAGES-PROMPT#-----------------------------#
 
-#-----------------------------#PACKAGES#-----------------------------#
-    - include_tasks: prerequisites.yml
-    - include_tasks: package_ask.yml
-    - include_tasks: package_list.yml
-#-----------------------------#PACKAGES#-----------------------------#
+#-----------------------------#PACKAGES-UPDATE-ONLY#-----------------------------#
+    - include_tasks: package_update.yml
+      when: PACKAGE_TYPE_CHOICE is defined and PACKAGE_TYPE_CHOICE.user_input in ["update", "both"]
+#-----------------------------#PACKAGES-UPDATE-ONLY#-----------------------------#
+
+#-----------------------------#PACKAGES-INSTALL-INTERACTIVE#-----------------------------#
+    - include_tasks: package_ask_interactive.yml
+      when: PACKAGE_INSTALLATION_TYPE_CHOICE is defined and PACKAGE_INSTALLATION_TYPE_CHOICE.user_input in ["interactive"]
+    - include_tasks: package_list_interactive.yml
+      when: PACKAGE_INSTALLATION_TYPE_CHOICE is defined and PACKAGE_INSTALLATION_TYPE_CHOICE.user_input in ["interactive"]
+#-----------------------------#PACKAGES-INSTALL-INTERACTIVE#-----------------------------#
+
+#-----------------------------#PACKAGES-INSTALL-CUSTOMIZED#-----------------------------#
+    - include_tasks: package_ask_customized.yml
+      when: PACKAGE_INSTALLATION_TYPE_CHOICE is defined and PACKAGE_INSTALLATION_TYPE_CHOICE.user_input in ["customized"]
+    - include_tasks: package_list_customized.yml
+      when: PACKAGE_INSTALLATION_TYPE_CHOICE is defined and PACKAGE_INSTALLATION_TYPE_CHOICE.user_input in ["customized"]
+#-----------------------------#PACKAGES-INSTALL-CUSTOMIZED#-----------------------------#
