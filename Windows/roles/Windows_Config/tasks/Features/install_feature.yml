@@ -3,3 +3,11 @@
     name:
     - "{{ FEATURE_NAME.user_input }}"
     state: present
+
+- name: FEATURE
+  pause:
+    prompt: "[???] Would you like to install others features ? (yes/no)"
+  register: FEATURE_REASK
+
+- include_tasks: main.yml
+  when: FEATURE_REASK.user_input | bool
