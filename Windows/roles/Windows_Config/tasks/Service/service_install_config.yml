@@ -1,8 +1,8 @@
 - name: Install the service
   community.windows.win_nssm:
     name: "{{ SERVICE_NAME_CHOICE.user_input }}"
-    state: present
-  when: SERVICE_NAME_CHOICE is defined
+    application: "{{ SERVICE_PATH_CHOICE.user_input }}"
+  when: SERVICE_NAME_CHOICE is defined and SERVICE_PATH_CHOICE is defined
 
 - name: Configure state of service
   ansible.builtin.service:
