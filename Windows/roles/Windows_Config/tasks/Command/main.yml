@@ -8,8 +8,10 @@
 
 #-----------------------------#COMMAND#-----------------------------#
     - include_tasks: command_powershell.yml
+      when: CMD_REASK.user_input | bool
 #-----------------------------#COMMAND#-----------------------------#
 
 #-----------------------------#COMMAND#-----------------------------#
     - include_tasks: command_psexec.yml
+      when: CMD_REASK.user_input | bool
 #-----------------------------#COMMAND#-----------------------------#
