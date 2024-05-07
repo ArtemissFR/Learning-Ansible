@@ -2,6 +2,16 @@
     - include_tasks: gather_facts.yml
 #-----------------------------#FACTS#-----------------------------#
 
+#-----------------------------#COMMAND#-----------------------------#
+    - name: COMMAND
+      pause:
+        prompt: "[???] Would you like to execute a command ? (yes/no)"
+      register: COMMAND_CHOICE
+      
+    - include_tasks: Command/main.yml
+      when: COMMAND_CHOICE.user_input | bool
+#-----------------------------#COMMAND#-----------------------------#
+
 #-----------------------------#UPDATES#-----------------------------#
     - name: UPDATES
       pause:
