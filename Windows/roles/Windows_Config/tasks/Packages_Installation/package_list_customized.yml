@@ -11,7 +11,7 @@
 
 - name: PACKAGE
   pause:
-    prompt: "[???] Do you want to add other packages ?"
+    prompt: "[???] Do you want to add other packages ? (yes/no)"
   register: PACKAGE_REASK_CHOICE
 
 - include_tasks: package_ask_customized.yml
