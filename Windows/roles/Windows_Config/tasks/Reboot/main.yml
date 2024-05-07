@@ -5,13 +5,16 @@
       register: REBOOT_CHOICE
 #-----------------------------#REBOOT#-----------------------------#
 
-- name: Reboot Classic
-  ansible.windows.win_reboot:
-
-- name: Reboot for Update
-  ansible.windows.win_reboot:
-    reboot_timeout: 3600
-
-- name: Reboot Slow
-  ansible.windows.win_reboot:
-    post_reboot_delay: 120
+    - name: Reboot Classic
+      ansible.windows.win_reboot:
+      when: REBOOT_CHOICE is defined and REBOOT_CHOICE.user_input in ["classic"]    
+    
+    - name: Reboot for Update
+      ansible.windows.win_reboot:
+        reboot_timeout: 3600
+      when: REBOOT_CHOICE is defined and REBOOT_CHOICE.user_input in ["update"]    
+    
+    - name: Reboot Slow
+      ansible.windows.win_reboot:
+        post_reboot_delay: 120
+      when: REBOOT_CHOICE is defined and REBOOT_CHOICE.user_input in ["slow"]    
