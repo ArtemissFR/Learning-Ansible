@@ -1,10 +1,6 @@
-- name: Run a command
-  community.windows.psexec:
-    hostname: 10.1.2.213
-    connection_username: Administrateur@10.1.2.213
-    connection_password: ansible-123
-    executable: powershell.exe
-    arguments: Write-Host Hello World
+- name: Test the PsExec connection to the local system (target node) with your user
+  community.windows.win_psexec:
+    command: whoami.exe
   register: COMMAND_RESULT
 
 - name: Show command result
