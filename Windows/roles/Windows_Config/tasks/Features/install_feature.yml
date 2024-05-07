@@ -1,5 +1,5 @@
-- name: Install SMB
+- name: "Install the feature {{ FEATURE_NAME.user_input }}"
   ansible.windows.win_feature:
     name:
-    - FS-SMB1
+    - "{{ FEATURE_NAME.user_input }}"
     state: present
