@@ -2,3 +2,8 @@
   win_chocolatey:
     name: "{{ PACKAGE_INSTALL_CHOICE.user_input }}"
   when: PACKAGE_INSTALL_CHOICE is defined
+
+- name: PACKAGE
+  pause:
+    prompt: "[???] Do you want to add another package ?"
+  register: PACKAGE_REASK_CHOICE
