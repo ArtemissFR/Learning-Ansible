@@ -1,1 +1,4 @@
-
+- name: FEATURE
+  pause:
+    prompt: "[???] Which feature you would like to install ? "
+  register: FEATURE_NAME
