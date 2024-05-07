@@ -1,1 +1,9 @@
+- name: Retrieve feature list
+  ansible.windows.win_command: powershell.exe -
+  args:
+    stdin: "Get-WindowsFeature -Name *"
+  register: FEATURE_LIST
 
+- name: Show Feature List
+  debug:
+      var: FEATURE_LIST.stdout_lines
