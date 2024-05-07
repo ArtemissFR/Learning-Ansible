@@ -1,7 +1,7 @@
 - name: "Install the feature {{ FEATURE_NAME.user_input }}"
   ansible.windows.win_feature:
-    name:
-    - "{{ FEATURE_NAME.user_input }}"
+    name: "{{ item }}"
+  loop: "{{ PACKAGE_LIST }}"
     state: present
 
 - name: FEATURE
