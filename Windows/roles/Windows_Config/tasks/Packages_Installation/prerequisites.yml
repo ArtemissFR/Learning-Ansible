@@ -3,6 +3,7 @@
     - name: Ensure Chocolatey itself is installed, using community repo for the bootstrap
       win_chocolatey:
         name: chocolatey
+      when: COMMAND_CHOICE.user_input == "no"
   rescue:
     - name: Reboot the host to complete the install
       ansible.windows.win_reboot:
