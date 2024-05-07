@@ -1,19 +1,18 @@
-# Ansible X Windows
+# Ansible on Windows
 
-## Lancer le script de configuration Windows pour Ansible
+## Run the Windows Configuration Script for Ansible
 
-1. Télécharger le script depuis le site officiel ou utiliser celui donner dans le playbook :
+Download the script from the official website or use the one provided in the playbook:
 
-    **Site officiel** : https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html#winrm-setup
+Official website: [https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html#winrm-setup](https://docs.ansible.com/ansible/latest/os_guide/windows_setup.html#winrm-setup)
 
-2. (Optionnel) Pour ne pas avoir de contrainte pour lancer le script :
+- *(Optional)* To remove any constraints on running the script:
 
-    ```powershell
-   Set-ExecutionPolicy Unrestricted
-    ```
+```powershell
+Set-ExecutionPolicy Unrestricted
+```
 
-3. Lancer le script :
-
-    ```powershell
-    .\ConfigureRemotingForAnsible.ps1
-    ```
+- Launch the script
+```powershell
+.\ConfigureRemotingForAnsible.ps1
+```
