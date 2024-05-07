@@ -2,6 +2,12 @@
     - include_tasks: gather_facts.yml
 #-----------------------------#FACTS#-----------------------------#
 
+#-----------------------------#INFORMATION#-----------------------------#
+- name: INFORMATION
+  debug:
+      msg: "Process of the playbook : COMMAND > UPDATE > PACKAGE > FEATURES > SERVICE > REBOOT"
+#-----------------------------#INFORMATION#-----------------------------#
+
 #-----------------------------#COMMAND#-----------------------------#
     - name: COMMAND
       pause:
