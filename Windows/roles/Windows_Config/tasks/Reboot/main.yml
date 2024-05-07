@@ -1,7 +1,15 @@
 #-----------------------------#REBOOT-INFORMATION#-----------------------------#
     - name: INFORMATION - Classic Reboot
       debug:
-          msg: "Starting to update..."
+          msg: "Classic Reboot : Reboot the machine with all defaults."
+
+    - name: INFORMATION - Update Reboot
+      debug:
+          msg: "Update Reboot : Reboot a slow machine that might have lots of updates to apply."
+
+    - name: INFORMATION - Slow Reboot
+      debug:
+          msg: "Slow Reboot : Reboot a machine that takes time to settle after being booted."
 #-----------------------------#REBOOT-INFORMATION#-----------------------------#
 
 #-----------------------------#REBOOT-ASK#-----------------------------#
