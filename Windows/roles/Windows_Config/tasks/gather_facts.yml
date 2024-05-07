@@ -17,9 +17,9 @@
   debug:
       var: setup_facts
 
-- name: Show service information
-  debug:
-      var: service_info
+#- name: Show service information
+#  debug:
+#      var: service_info
 
 - name: Show system information
   debug:
