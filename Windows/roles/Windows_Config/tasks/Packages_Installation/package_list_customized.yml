@@ -1,1 +1,4 @@
-
+- name: Install the package
+  win_chocolatey:
+    name: "{{ .user_input }}"
+  when: WEB_BROWSER_CHOICE is defined
