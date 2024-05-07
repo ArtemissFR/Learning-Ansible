@@ -3,9 +3,9 @@
 #-----------------------------#FACTS#-----------------------------#
 
 #-----------------------------#INFORMATION#-----------------------------#
-- name: INFORMATION
-  debug:
-      msg: "Process of the playbook : COMMAND > UPDATE > PACKAGE > FEATURES > SERVICE > REBOOT"
+    - name: INFORMATION
+      debug:
+          msg: "Process of the playbook : COMMAND > UPDATE > PACKAGE > FEATURES > SERVICE > REBOOT"
 #-----------------------------#INFORMATION#-----------------------------#
 
 #-----------------------------#COMMAND#-----------------------------#
