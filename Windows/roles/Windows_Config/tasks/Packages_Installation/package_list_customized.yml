@@ -6,7 +6,7 @@
 - name: Install the packages
   win_chocolatey:
     name: "{{ item }}"
-  loop: "{{ packages_list }}"
+  loop: "{{ PACKAGE_LIST }}"
   when: PACKAGE_INSTALL_CHOICE is defined
 
 - name: PACKAGE
