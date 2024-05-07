@@ -5,7 +5,7 @@
 
 - name: SERVICE
   pause:
-    prompt: "[???] In wich state would you like the service to be ?"
+    prompt: "[???] In wich state would you like the service to be ? (reloaded/restarted/started/stopped)"
   register: SERVICE_STATE_CHOICE
 
 - name: SERVICE
