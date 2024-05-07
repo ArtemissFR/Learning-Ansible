@@ -1,3 +1,7 @@
+- name: Get info for all installed services
+  ansible.windows.win_service_info:
+  register: SERVICE_INFO
+
 - name: SERVICE
   pause:
     prompt: "[???] Which service would you like to configure? (ex : OpenSSH)"
