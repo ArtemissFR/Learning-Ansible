@@ -10,5 +10,5 @@
 
 - name: SERVICE
   pause:
-    prompt: "[???] Would you like the service to start automatically ?"
+    prompt: "[???] Would you like the service to start automatically ? (yes/no)"
   register: SERVICE_STATE_AUTO_CHOICE
