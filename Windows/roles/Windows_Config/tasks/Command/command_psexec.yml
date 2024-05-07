@@ -10,3 +10,11 @@
 - name: Show command result
   debug:
       var: COMMAND_RESULT.stdout_lines
+
+- name: COMMAND
+  pause:
+    prompt: "[???] Would you like to run another command ? (yes/no)"
+  register: CMD_REASK
+
+- include_tasks: main.yml
+  when: CMD_REASK.user_input | bool
