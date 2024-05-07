@@ -1,7 +1,5 @@
 - name: FEATURE
   pause:
-    prompt: "[???] Which feature you would like to install ? (separate multiple packages with a comma)"
+    prompt: "[???] Which feature you would like to install ?"
   register: FEATURE_NAME
 
-- set_fact:
-    FEATURE_LIST_INSTALL: "{{ FEATURE_NAME.user_input.split(',') }}"
