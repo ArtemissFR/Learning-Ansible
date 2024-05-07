@@ -7,3 +7,6 @@
   pause:
     prompt: "[???] Do you want to add another package ?"
   register: PACKAGE_REASK_CHOICE
+
+- include_tasks: package_ask_customized.yml
+  when: PACKAGE_REASK_CHOICE is defined and PACKAGE_REASK_CHOICE.user_input | bool
