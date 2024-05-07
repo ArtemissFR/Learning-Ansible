@@ -2,9 +2,10 @@
   win_chocolatey:
     name: psexec
 
-- name: Run the command with Psexec
-  community.windows.win_psexec:
-    command: "Get-WindowsFeature -Name *"
+- name: Run a PowerShell command
+  community.windows.psexec:
+    executable: powershell.exe
+    arguments: "Get-WindowsFeature -Name *"
   register: COMMAND_RESULT
 
 - name: Show command result
