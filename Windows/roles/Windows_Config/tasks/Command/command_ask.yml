@@ -1,9 +1,9 @@
 - name: COMMAND
   pause:
-    prompt: "[???] Which type of cmd would you like to use ? (ex : powershell.exe)"
+    prompt: "[???] Which type of cmd would you like to use ? (psexec/powershell)"
   register: CMD_CHOICE
 
 - name: COMMAND
   pause:
-    prompt: "[???] Which type of cmd would you like to use ? (ex : powershell.exe)"
+    prompt: "[???] Type you command )"
   register: CMD_EXEC
