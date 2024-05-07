@@ -1,6 +1,6 @@
-- name: Get info for all installed services
-  ansible.windows.win_service_info:
-  register: SERVICE_INFO
+- name: Show service information
+  debug:
+      var: service_info
 
 - name: SERVICE
   pause:
