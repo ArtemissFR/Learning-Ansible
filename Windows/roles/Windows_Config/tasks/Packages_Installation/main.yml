@@ -1,6 +1,16 @@
 
 #-----------------------------#PACKAGES-PROMPT#-----------------------------#
+    - name: PACKAGE
+      pause:
+        prompt: "[???] Would you like to update packages or install new one ? (update/install)"
+      register: PACKAGE_TYPE_CHOICE
+#-----------------------------#PACKAGES-PROMPT#-----------------------------#
 
+#-----------------------------#PACKAGES-PROMPT#-----------------------------#
+    - name: PACKAGE
+      pause:
+        prompt: "[???] How would you like your installation to be? ? (interactive/customized)"
+      register: PACKAGE_INSTALLATION_TYPE_CHOICE
 #-----------------------------#PACKAGES-PROMPT#-----------------------------#
 
 #-----------------------------#PACKAGES#-----------------------------#
