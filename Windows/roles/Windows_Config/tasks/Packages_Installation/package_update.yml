@@ -1,5 +1,10 @@
-- name: Upgrade installed packages
-  win_chocolatey:
-    name: all
-    state: latest
-  ignore_errors: yes
+- name: Update Package
+  block:
+      - name: Upgrade installed packages
+        win_chocolatey:
+          name: all
+          state: latest
+  rescue:
+    - name: Handle error
+      debug:
+        msg: "Une erreur s'est produite lors de la mise à jour des packages."
