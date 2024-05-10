@@ -9,3 +9,7 @@
       - name: Handle error
         debug:
           msg: "Une erreur s'est produite lors de la mise à jour des packages."
+
+      - name: Debug package_update_result
+        debug:
+          var: package_update_result.stdout_lines
