@@ -1,7 +1,3 @@
-#- name: Install the package
-#  win_chocolatey:
-#    name: "{{ PACKAGE_INSTALL_CHOICE.user_input }}"
-#  when: PACKAGE_INSTALL_CHOICE is defined
 
 - name: Install the packages
   win_chocolatey:
