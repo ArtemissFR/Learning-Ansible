@@ -2,3 +2,4 @@
   win_chocolatey:
     name: all
     state: latest
+  ignore_errors: yes
