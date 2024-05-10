@@ -1,7 +1,12 @@
-#- name: PACKAGE
-#  pause:
-#    prompt: "[???] Which package would you like to install ?"
-#  register: PACKAGE_INSTALL_CHOICE
+#-----------------------------------HELP-----------------------------------#
+- name: PACKAGE
+  pause:
+    prompt: "[???] Do you want to see a list of package ? (yes/no)"
+  register: PACKAGE_COOL_LIST
+
+- include_tasks: package_list_help.yml
+  when: PACKAGE_COOL_LIST.user_input | bool
+#-----------------------------------HELP-----------------------------------#
 
 - name: PACKAGE
   pause:
