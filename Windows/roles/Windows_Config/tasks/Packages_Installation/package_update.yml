@@ -4,6 +4,7 @@
         win_chocolatey:
           name: all
           state: latest
+        register: package_update_result
   rescue:
       - name: Handle error
         debug:
