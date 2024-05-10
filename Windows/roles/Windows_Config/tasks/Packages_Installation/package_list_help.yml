@@ -1,0 +1,9 @@
+  - name: PACKAGE
+    ansible.builtin.shell: cat cool_package_list.txt
+    register: PACKAGE_LIST_HELP
+    when: PACKAGE_COOL_LIST.user_input | bool
+
+  - name: PACKAGE
+    ansible.builtin.debug:
+      var: PACKAGE_LIST_HELP.stdout_lines
+    when: PACKAGE_COOL_LIST.user_input | bool
