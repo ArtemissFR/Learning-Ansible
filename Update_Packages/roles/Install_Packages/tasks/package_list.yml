@@ -114,15 +114,15 @@
       - traceroute
     state: present
 
-- name: Install VSCode
-  community.general.snap:
-    name:
-      - code
+#- name: Install VSCode
+#  community.general.snap:
+#    name:
+#      - code
 
-- name: Install GitKraken
-  community.general.snap:
-    name:
-      - gitkraken
+#- name: Install GitKraken
+#  community.general.snap:
+#    name:
+#      - gitkraken
 
 - name: Install Ansible (Part 1)
   ansible.builtin.package:
