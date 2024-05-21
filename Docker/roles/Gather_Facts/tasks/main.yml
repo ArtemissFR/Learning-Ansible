@@ -1,23 +1,24 @@
 #-----------------------------#CHECK-CONTAINERS#-----------------------------#
-- name: Vérifier les conteneurs Docker existants
+- name: Check existing Docker containers
   command: docker ps -a
   register: docker_containers
 
-- name: Afficher les conteneurs Docker existants
+- name: Display existing Docker containers
   debug:
     var: docker_containers.stdout
 #-----------------------------#CHECK-CONTAINERS#-----------------------------#
 
 #-----------------------------#CHECK-IMAGES#-----------------------------#
-- name: Vérifier les images Docker existantes
+- name: Check existing Docker images
   command: docker images
   register: docker_images
 
-- name: Afficher les images Docker existantes
+- name: Display existing Docker images
   debug:
     var: docker_images.stdout
 #-----------------------------#CHECK-IMAGES#-----------------------------#
 
+#-----------------------------#GATHER_HOST_FACTS#-----------------------------#
 - name: Get info on docker host and list images
   community.docker.docker_host_info:
     images: true
@@ -26,3 +27,4 @@
 - name: Show host information
   ansible.builtin.debug:
     var: result.host_info
+#-----------------------------#GATHER_HOST_FACTS#-----------------------------#
