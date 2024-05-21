@@ -1,1 +1,12 @@
+- name: Get facts on current container
+  community.docker.current_container_facts:
 
+###STACK###
+- name: Shows stack info
+  community.docker.docker_stack_info:
+  register: result
+
+- name: Show results
+  ansible.builtin.debug:
+    var: result.results
+###STACK###
