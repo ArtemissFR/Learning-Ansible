@@ -18,12 +18,3 @@
     var: docker_images.stdout
 #-----------------------------#CHECK-IMAGES#-----------------------------#
 
-#-----------------------------#CHECK-STACKS#-----------------------------#
-- name: Vérifier les stacks Docker existants
-  command: docker stack ls
-  register: docker_stacks
-
-- name: Afficher les stacks Docker existants
-  debug:
-    var: docker_stacks.stdout
-#-----------------------------#CHECK-STACKS#-----------------------------#
