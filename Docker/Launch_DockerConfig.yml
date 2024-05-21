@@ -1,0 +1,7 @@
+---
+- hosts: Target
+  gather_facts: no
+  become: yes
+
+  roles:
+    - Gather_Facts
