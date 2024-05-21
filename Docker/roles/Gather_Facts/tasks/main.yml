@@ -1,6 +1,10 @@
-- name: Get facts on current container
-  community.docker.current_container_facts:
+- name: Vérifier les conteneurs Docker existants
+  command: docker ps -a
+  register: docker_containers
 
+- name: Afficher les conteneurs Docker existants
+  debug:
+    var: docker_containers.stdout
 ###STACK###
 - name: Shows stack info
   community.docker.docker_stack_info:
