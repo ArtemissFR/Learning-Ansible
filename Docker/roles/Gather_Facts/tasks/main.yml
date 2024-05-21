@@ -5,12 +5,11 @@
 - name: Afficher les conteneurs Docker existants
   debug:
     var: docker_containers.stdout
-###STACK###
-- name: Shows stack info
-  community.docker.docker_stack_info:
-  register: result
 
-- name: Show results
-  ansible.builtin.debug:
-    var: result.results
-###STACK###
+- name: Vérifier les images Docker existantes
+  command: docker images
+  register: docker_images
+
+- name: Afficher les images Docker existantes
+  debug:
+    var: docker_images.stdout
