@@ -1,0 +1,7 @@
+- name: Créer un conteneur Ubuntu
+  docker_container:
+    name: "{{ name_container_create.user_input }}"
+    image: "{{ image_container_create.user_input }}"
+    state: started
+    tty: yes
+    command: sleep infinity
