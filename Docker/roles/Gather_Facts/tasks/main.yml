@@ -1,3 +1,4 @@
+#-----------------------------#CHECK-CONTAINERS#-----------------------------#
 - name: Vérifier les conteneurs Docker existants
   command: docker ps -a
   register: docker_containers
@@ -5,7 +6,9 @@
 - name: Afficher les conteneurs Docker existants
   debug:
     var: docker_containers.stdout
+#-----------------------------#CHECK-CONTAINERS#-----------------------------#
 
+#-----------------------------#CHECK-IMAGES#-----------------------------#
 - name: Vérifier les images Docker existantes
   command: docker images
   register: docker_images
@@ -13,7 +16,9 @@
 - name: Afficher les images Docker existantes
   debug:
     var: docker_images.stdout
+#-----------------------------#CHECK-IMAGES#-----------------------------#
 
+#-----------------------------#CHECK-STACKS#-----------------------------#
 - name: Vérifier les stacks Docker existants
   command: docker stack ls
   register: docker_stacks
@@ -21,3 +26,4 @@
 - name: Afficher les stacks Docker existants
   debug:
     var: docker_stacks.stdout
+#-----------------------------#CHECK-STACKS#-----------------------------#
