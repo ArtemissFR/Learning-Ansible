@@ -1,0 +1,4 @@
+- name: Remove container
+  community.docker.docker_container:
+    name: "{{ container_rm_name }}"
+    state: absent
