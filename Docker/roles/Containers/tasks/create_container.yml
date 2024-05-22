@@ -3,6 +3,10 @@
     prompt: "[???] Set a name for the container "
   register: name_container_create
 
+- name: Display existing Docker images
+  debug:
+    var: docker_images.stdout
+
 - name: CONTAINER - CREATE
   pause:
     prompt: "[???] Set an image for the container "
