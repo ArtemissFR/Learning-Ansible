@@ -1,6 +1,6 @@
 - name: Display existing Docker containers
   debug:
-    var: docker_containers.stdout
+    var: docker_containers.stdout_lines
 
 - name: CONTAINER - REMOVE
   pause:
