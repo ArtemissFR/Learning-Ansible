@@ -1,5 +1,5 @@
 - include_tasks: update_facts.yml
-  when: | bool
+  when: IMAGES_PULL_CHOICE.user_input | bool or IMAGES_REMOVE_CHOICE.user_input | bool
 
 - name: CONTAINER
   pause:
