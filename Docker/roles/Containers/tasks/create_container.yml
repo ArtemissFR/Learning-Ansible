@@ -23,5 +23,6 @@
     image: "{{ image_container_create.user_input }}"
     state: started
     tty: yes
-    published_ports:
-      - "{{ ports_container_create.user_input }}"
+    restart_policy: always
+    ports:
+      - "{{ ports_container_create.user_input }}:80"
