@@ -2,20 +2,12 @@
 - name: Check existing Docker containers
   command: docker ps -a
   register: docker_containers
-
-- name: Display existing Docker containers
-  debug:
-    var: docker_containers.stdout
 #-----------------------------#CHECK-CONTAINERS#-----------------------------#
 
 #-----------------------------#CHECK-IMAGES#-----------------------------#
 - name: Check existing Docker images
   command: docker images
   register: docker_images
-
-- name: Display existing Docker images
-  debug:
-    var: docker_images.stdout
 #-----------------------------#CHECK-IMAGES#-----------------------------#
 
 #-----------------------------#GATHER_HOST_FACTS#-----------------------------#
