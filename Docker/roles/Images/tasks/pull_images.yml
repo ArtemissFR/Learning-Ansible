@@ -18,3 +18,11 @@
 - name: Display inspection result
   debug:
     var: IMAGES_PULL_INSPECT_RESULT.images
+
+- name: IMAGES
+  pause:
+    prompt: "[???] Do you want to pull another image ? (yes/no)"
+  register: IMAGES_PULL_REASK_CHOICE
+
+- include_tasks: pull_images.yml
+  when: IMAGES_PULL_REASK_CHOICE.user_input | bool
