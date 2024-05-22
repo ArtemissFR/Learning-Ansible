@@ -1,3 +1,8 @@
-- name: Inspect a single image
+- name: IMAGES - INSPECT
+  pause:
+    prompt: "[???] Which image do you want to inspect ?"
+  register: IMAGES_INSPECT_NAME
+
+- name: Inspect "{{ IMAGES_INSPECT_NAME.user_input }}"
   community.docker.docker_image_info:
-    name: pacur/centos-7
+    name: "{{ IMAGES_INSPECT_NAME.user_input }}"
