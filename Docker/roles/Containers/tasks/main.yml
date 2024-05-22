@@ -1,3 +1,5 @@
+- include_tasks: update_facts.yml
+
 - name: CONTAINER
   pause:
     prompt: "[???] Do you want to create a container ? (yes/no)"
