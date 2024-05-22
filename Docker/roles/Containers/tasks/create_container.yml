@@ -5,18 +5,23 @@
 
 - name: Display existing Docker images
   debug:
-    var: docker_images.stdout
+    var: docker_images
 
 - name: CONTAINER - CREATE
   pause:
     prompt: "[???] Set an image for the container "
   register: image_container_create
 
+- name: CONTAINER - CREATE
+  pause:
+    prompt: "[???] Set a port for the container "
+  register: ports_container_create
 
-- name: Créer un conteneur Ubuntu
+- name: "Créer un conteneur {{ image_container_create.user_input }}"
   docker_container:
     name: "{{ name_container_create.user_input }}"
     image: "{{ image_container_create.user_input }}"
     state: started
     tty: yes
-    command: sleep infinity
+    exposed_ports:
+      - "{{ ports_container_create.user_input }}"
