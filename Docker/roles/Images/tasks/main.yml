@@ -1,1 +1,14 @@
+- name: IMAGES
+  pause:
+    prompt: "[???] Do you want to inspect an image ? (yes/no)"
+  register: IMAGES_INSPECT_CHOICE
 
+- name: IMAGES
+  pause:
+    prompt: "[???] Do you want to pull an image ? (yes/no)"
+  register: IMAGES_PULL_CHOICE
+
+- name: IMAGES
+  pause:
+    prompt: "[???] Do you want to remove an image ? (yes/no)"
+  register: IMAGES_REMOVE_CHOICE
