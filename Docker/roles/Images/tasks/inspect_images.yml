@@ -15,3 +15,11 @@
 - name: Display inspection result
   debug:
     var: IMAGES_INSPECT_RESULT.images
+
+- name: IMAGES
+  pause:
+    prompt: "[???] Do you want to inspect another image ? (yes/no)"
+  register: IMAGES_INSPECT_REASK_CHOICE
+
+- include_tasks: inspect_images.yml
+  when: IMAGES_INSPECT_REASK_CHOICE.user_input | bool
