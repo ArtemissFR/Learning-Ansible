@@ -4,9 +4,24 @@
 
 - name: IMAGES - REMOVE
   pause:
+    prompt: "[???] Do you want to remove all unused images ? (yes/no)"
+  register: IMAGES_UNUSED_REMOVE
+
+- name: Remove unused Docker images
+  command: docker image prune -f
+  register: docker_prune_output
+
+- name: Show removed images
+  debug:
+    var: docker_prune_output.stdout_lines
+
+- name: IMAGES - REMOVE
+  pause:
     prompt: "[???] Which image do you want to remove ?"
   register: IMAGES_REMOVE_NAME
+  when: IMAGES_UNUSED_REMOVE.user_input == "no"
 
 - name: Remove an image
   community.docker.docker_image_remove:
     name: "{{ IMAGES_REMOVE_NAME.user_input }}"
+  when: IMAGES_UNUSED_REMOVE.user_input == "no" and IMAGES_REMOVE_NAME is defined
