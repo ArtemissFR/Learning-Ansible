@@ -1,3 +1,9 @@
+- name: CONTAINER - REMOVE
+  pause:
+    prompt: "[???] Which container would you like to remove (name) ? "
+  register: container_rm_name
+
+
 - name: Remove container
   community.docker.docker_container:
     name: "{{ container_rm_name.user_input }}"
