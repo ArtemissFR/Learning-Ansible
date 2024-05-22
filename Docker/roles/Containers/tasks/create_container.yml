@@ -27,6 +27,14 @@
     ports:
       - "{{ ports_container_create.user_input }}:80"
 
+- name: CONTAINER
+  pause:
+    prompt: "[???] Do you want to create another container ? (yes/no)"
+  register: CONTAINER_CREATE_REASK_CHOICE
+
+- include_tasks: create_container.yml
+  when: CONTAINER_CREATE_REASK_CHOICE.user_input | bool
+
 - name: Update existing Docker containers
   command: docker ps -a
   register: docker_containers
