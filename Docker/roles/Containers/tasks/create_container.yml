@@ -5,7 +5,7 @@
 
 - name: Display existing Docker images
   debug:
-    var: docker_images
+    var: docker_images.stdout_lines
 
 - name: CONTAINER - CREATE
   pause:
