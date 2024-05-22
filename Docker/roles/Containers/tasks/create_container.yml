@@ -23,5 +23,5 @@
     image: "{{ image_container_create.user_input }}"
     state: started
     tty: yes
-    exposed_ports:
+    published_ports:
       - "{{ ports_container_create.user_input }}"
