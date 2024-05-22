@@ -8,3 +8,7 @@
     name: "{{ IMAGES_PULL_NAME.user_input }}"
     # Select platform for pulling. If not specified, will pull whatever docker prefers.
 #    platform: amd64
+
+- name: Inspect "{{ IMAGES_PULL_NAME.user_input }}"
+  community.docker.docker_image_info:
+    name: "{{ IMAGES_PULL_NAME.user_input }}"
