@@ -26,3 +26,7 @@
     restart_policy: always
     ports:
       - "{{ ports_container_create.user_input }}:80"
+
+- name: Update existing Docker containers
+  command: docker ps -a
+  register: docker_containers
