@@ -4,8 +4,9 @@
   register: IMAGES_PULL_NAME
 
 - name: Pull an image
-  community.docker.docker_image_pull:
+  community.docker.docker_image:
     name: "{{ IMAGES_PULL_NAME.user_input }}"
+    source: pull
     # Select platform for pulling. If not specified, will pull whatever docker prefers.
 #    platform: amd64
 
