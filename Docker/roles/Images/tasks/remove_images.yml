@@ -21,7 +21,8 @@
   register: IMAGES_REMOVE_NAME
   when: IMAGES_UNUSED_REMOVE.user_input == "no"
 
-- name: Remove an image
-  community.docker.docker_image_remove:
+- name: Remove image
+  community.docker.docker_image:
+    state: absent
     name: "{{ IMAGES_REMOVE_NAME.user_input }}"
   when: IMAGES_UNUSED_REMOVE.user_input == "no" and IMAGES_REMOVE_NAME is defined
