@@ -14,4 +14,4 @@
 
 - name: Display inspection result
   debug:
-    var: IMAGES_INSPECT_RESULT.stdout_lines
+    var: IMAGES_INSPECT_RESULT
