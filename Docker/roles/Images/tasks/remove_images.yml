@@ -27,6 +27,14 @@
     name: "{{ IMAGES_REMOVE_NAME.user_input }}"
   when: IMAGES_UNUSED_REMOVE.user_input == "no" and IMAGES_REMOVE_NAME is defined
 
+- name: IMAGES
+  pause:
+    prompt: "[???] Do you want to remove another image ? (yes/no)"
+  register: IMAGES_REMOVE_REASK_CHOICE
+
+- include_tasks: remove_images.yml
+  when: IMAGES_REMOVE_REASK_CHOICE.user_input | bool
+
 - name: Update existing Docker images
   command: docker images
   register: docker_images
