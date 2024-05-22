@@ -5,4 +5,5 @@
 
   roles:
     - Gather_Facts
+    - Images
     - Containers
