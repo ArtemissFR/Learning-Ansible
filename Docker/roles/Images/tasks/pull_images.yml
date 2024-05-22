@@ -13,3 +13,8 @@
 - name: Inspect "{{ IMAGES_PULL_NAME.user_input }}"
   community.docker.docker_image_info:
     name: "{{ IMAGES_PULL_NAME.user_input }}"
+  register: IMAGES_PULL_INSPECT_RESULT
+
+- name: Display inspection result
+  debug:
+    var: IMAGES_PULL_INSPECT_RESULT.stdout_lines
