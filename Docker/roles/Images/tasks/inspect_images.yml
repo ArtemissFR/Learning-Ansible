@@ -10,3 +10,8 @@
 - name: Inspect "{{ IMAGES_INSPECT_NAME.user_input }}"
   community.docker.docker_image_info:
     name: "{{ IMAGES_INSPECT_NAME.user_input }}"
+  register: IMAGES_INSPECT_RESULT
+
+- name: Display inspection result
+  debug:
+    var: IMAGES_INSPECT_RESULT.stdout_lines
