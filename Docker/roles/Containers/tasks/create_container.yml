@@ -1,3 +1,14 @@
+- name: CONTAINER - CREATE
+  pause:
+    prompt: "[???] Set a name for the container "
+  register: name_container_create
+
+- name: CONTAINER - CREATE
+  pause:
+    prompt: "[???] Set an image for the container "
+  register: image_container_create
+
+
 - name: Créer un conteneur Ubuntu
   docker_container:
     name: "{{ name_container_create.user_input }}"
