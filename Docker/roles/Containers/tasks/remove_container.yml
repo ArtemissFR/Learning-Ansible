@@ -16,3 +16,11 @@
 - name: Update existing Docker containers
   command: docker ps -a
   register: docker_containers
+
+- name: CONTAINER
+  pause:
+    prompt: "[???] Do you want to remove another container ? (yes/no)"
+  register: CONTAINER_REMOVE_REASK_CHOICE
+
+- include_tasks: remove_container.yml
+  when: CONTAINER_REMOVE_REASK_CHOICE.user_input | bool
