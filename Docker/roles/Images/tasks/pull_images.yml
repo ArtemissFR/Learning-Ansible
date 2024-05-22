@@ -26,3 +26,7 @@
 
 - include_tasks: pull_images.yml
   when: IMAGES_PULL_REASK_CHOICE.user_input | bool
+
+- name: Update existing Docker images
+  command: docker images
+  register: docker_images
