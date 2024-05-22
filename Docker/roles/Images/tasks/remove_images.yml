@@ -26,3 +26,7 @@
     state: absent
     name: "{{ IMAGES_REMOVE_NAME.user_input }}"
   when: IMAGES_UNUSED_REMOVE.user_input == "no" and IMAGES_REMOVE_NAME is defined
+
+- name: Update existing Docker images
+  command: docker images
+  register: docker_images
