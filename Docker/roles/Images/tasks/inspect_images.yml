@@ -1,3 +1,7 @@
+- name: Display existing Docker images
+  debug:
+    var: docker_images.stdout_lines
+
 - name: IMAGES - INSPECT
   pause:
     prompt: "[???] Which image do you want to inspect ?"
