@@ -1,3 +1,7 @@
+- name: Display existing Docker containers
+  debug:
+    var: docker_containers.stdout
+
 - name: CONTAINER - REMOVE
   pause:
     prompt: "[???] Which container would you like to remove (name) ? "
