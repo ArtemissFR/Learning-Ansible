@@ -14,10 +14,10 @@
 
 - name: CONTAINER - CREATE
   pause:
-    prompt: "[???] Set a port for the container "
+    prompt: "[???] Set a port for the container (If the container does not need it, this parameter will not be considered)"
   register: ports_container_create
 
-- name: "Créer un conteneur {{ image_container_create.user_input }}"
+- name: "Create a container {{ image_container_create.user_input }}"
   docker_container:
     name: "{{ name_container_create.user_input }}"
     image: "{{ image_container_create.user_input }}"
