@@ -1,4 +1,4 @@
-- name: IMAGES
+- name: IMAGES - PULL
   pause:
     prompt: "[???] Which image do you want to pull ?"
   register: IMAGES_PULL_NAME
