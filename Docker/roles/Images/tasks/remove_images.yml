@@ -1,3 +1,12 @@
+- name: Display existing Docker images
+  debug:
+    var: docker_images.stdout_lines
+
+- name: IMAGES - REMOVE
+  pause:
+    prompt: "[???] Which image do you want to remove ?"
+  register: IMAGES_REMOVE_NAME
+
 - name: Remove an image
   community.docker.docker_image_remove:
-    name: pacur/centos-7
+    name: "{{ IMAGES_REMOVE_NAME.user_input }}"
