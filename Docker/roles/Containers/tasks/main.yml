@@ -1,1 +1,15 @@
+- name: CONTAINER
+  pause:
+    prompt: "[???] Do you want to create a container ? (yes/no)"
+  register: CONTAINER_CREATE_CHOICE
 
+- include_tasks: create_container.yml
+  when: CONTAINER_CREATE_CHOICE.user_input | bool
+
+- name: CONTAINER
+  pause:
+    prompt: "[???] Do you want to remove a container ? (yes/no)"
+  register: CONTAINER_REMOVE_CHOICE
+
+- include_tasks: remove_container.yml
+  when: CONTAINER_REMOVE_CHOICE.user_input | bool
