@@ -15,3 +15,15 @@
     name:
       - fish
     state: present
+
+- name: Install Aptitude (package manager)
+  ansible.builtin.package:
+    name:
+      - aptitude
+    state: present
+
+- name: Install Synaptic (package manager)
+  ansible.builtin.package:
+    name:
+      - synaptic
+    state: present
